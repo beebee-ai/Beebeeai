@@ -21,6 +21,18 @@ function ScrollManager() {
     // Set page title
     document.title = 'Beebee AI';
     
+    // Set favicon
+    const setFavicon = () => {
+      let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
+      if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.head.appendChild(link);
+      }
+      link.href = 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/beebee_ico.png';
+    };
+    setFavicon();
+    
     const isPageChange = prevPathnameRef.current !== location.pathname;
     
     // 如果有 hash，滚动到对应的锚点
