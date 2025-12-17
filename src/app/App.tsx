@@ -60,7 +60,7 @@ function HomePage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src={heroBackgroundImage}
+            src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/beebee_banner.jpg"
             alt=""
             className="w-full h-full object-cover"
             style={{ objectPosition: 'center', filter: 'brightness(1.15)' }}
@@ -1001,7 +1001,7 @@ function HomePage() {
                 <div className="lg:col-span-1">
                   <div className="aspect-[3/4] rounded-lg mb-4 overflow-hidden border border-white/10">
                     <img 
-                      src={ceoImage} 
+                      src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/pacer/pin.png" 
                       alt="周品 - BEEBEE AI 创始人 & CEO" 
                       className="w-full h-full object-cover"
                     />
@@ -1126,7 +1126,7 @@ function HomePage() {
             {/* Brand Column */}
             <div className="lg:col-span-1">
               <div className="mb-4">
-                <img src={logoImage} alt="BEEBEE Logo" className="w-10 h-10 mb-3" />
+                <img src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/beebee_ico.png" alt="BEEBEE Logo" className="w-10 h-10 mb-3" />
                 <p className="mb-3" style={{ color: 'var(--orange-primary)', fontSize: '15px' }}>{t(homeContent.footer.tagline, language)}</p>
               </div>
             </div>
