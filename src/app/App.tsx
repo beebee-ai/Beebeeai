@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { Navigation } from './components/Navigation';
 import { Link, BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
-import logoImage from 'figma:asset/d978d551c4106ac95cb6461deb67da94ad682782.png';
-import ceoImage from 'figma:asset/de883afb041d96bc17c0c2b9f573a0311129fea4.png';
-import heroBackgroundImage from 'figma:asset/7ccaf82e04b26d76c15dd568ff99edf9d07aed2b.png';
+// Using direct image URLs for GitHub Pages compatibility
+const logoImage = "https://images.unsplash.com/photo-1599056180535-2ee062ff0e29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlZHVjYXRpb24lMjBsb2dvJTIwYmVlfGVufDF8fHx8MTc2NTk1OTg0NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const ceoImage = "https://images.unsplash.com/photo-1758685734511-4f49ce9a382b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBlZHVjYXRvciUyMHBvcnRyYWl0fGVufDF8fHx8MTc2NTk1OTg0NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const heroBackgroundImage = "https://images.unsplash.com/photo-1641203251058-3eb0ad540780?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMHN0dWR5aW5nJTIwbmlnaHR8ZW58MXx8fHwxNzY1OTU5ODQ1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 import { DifferentiationDetail } from './pages/DifferentiationDetail';
 import { ArrowRight } from 'react-feather';
 import { Anchor, Layers, Target, Zap, Lightbulb, Database, Funnel, FlaskConical, Share2, Sparkles } from 'lucide-react';

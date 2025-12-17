@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import logoImage from 'figma:asset/772f420ffffbbadc61ebedf635d8030916a4ae9b.png';
+// Using direct image URL for GitHub Pages compatibility
+const logoImage = "https://images.unsplash.com/photo-1599056180535-2ee062ff0e29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlZHVjYXRpb24lMjBsb2dvJTIwYmVlfGVufDF8fHx8MTc2NTk1OTg0NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 import { useLanguage } from '../contexts/LanguageContext';
 import { navContent, t } from '../locales/navContent';
 
