@@ -18,6 +18,9 @@ function ScrollManager() {
   const prevPathnameRef = useRef(location.pathname);
 
   useEffect(() => {
+    // Set page title
+    document.title = 'Beebee AI';
+    
     const isPageChange = prevPathnameRef.current !== location.pathname;
     
     // 如果有 hash，滚动到对应的锚点
