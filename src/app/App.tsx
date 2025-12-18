@@ -1,10 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Navigation } from './components/Navigation';
 import { Link, BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
-// Using direct image URLs for GitHub Pages compatibility
-const logoImage = "https://images.unsplash.com/photo-1599056180535-2ee062ff0e29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlZHVjYXRpb24lMjBsb2dvJTIwYmVlfGVufDF8fHx8MTc2NTk1OTg0NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const ceoImage = "https://images.unsplash.com/photo-1758685734511-4f49ce9a382b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBlZHVjYXRvciUyMHBvcnRyYWl0fGVufDF8fHx8MTc2NTk1OTg0NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const heroBackgroundImage = "https://images.unsplash.com/photo-1641203251058-3eb0ad540780?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMHN0dWR5aW5nJTIwbmlnaHR8ZW58MXx8fHwxNzY1OTU5ODQ1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 import { DifferentiationDetail } from './pages/DifferentiationDetail';
 import { ArrowRight } from 'react-feather';
 import { Anchor, Layers, Target, Zap, Lightbulb, Database, Funnel, FlaskConical, Share2, Sparkles } from 'lucide-react';
@@ -69,16 +65,43 @@ function HomePage() {
       
       {/* Hero Section */}
       <section id="home" className="flex items-start px-4 relative overflow-hidden" style={{ paddingTop: '20vh', paddingBottom: '10vh' }}>
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/beebee_banner.jpg"
-            alt=""
-            className="w-full h-full object-cover"
-            style={{ objectPosition: 'center', filter: 'brightness(1.15)' }}
-          />
-          {/* Dark Overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80"></div>
+        {/* Honeycomb Background Pattern */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              {/* Standard honeycomb pattern - flat-top hexagons */}
+              <pattern id="honeycomb" x="0" y="0" width="90" height="52" patternUnits="userSpaceOnUse">
+                {/* Row 1 - Left hexagon */}
+                <path d="M15,0 L45,0 L60,26 L45,52 L15,52 L0,26 Z" 
+                  fill="none" 
+                  stroke="#FF6900" 
+                  strokeWidth="1.5"
+                  opacity="0.3"/>
+                {/* Row 2 - Right hexagon (offset) */}
+                <path d="M60,26 L90,26 L105,52 L90,78 L60,78 L45,52 Z" 
+                  fill="none" 
+                  stroke="#FF6900" 
+                  strokeWidth="1.5"
+                  opacity="0.3"/>
+              </pattern>
+              
+              {/* Radial gradient mask for center fade-out effect */}
+              <radialGradient id="centerFade">
+                <stop offset="0%" stopColor="#FFB380" stopOpacity="0"/>
+                <stop offset="30%" stopColor="#FFB380" stopOpacity="0.3"/>
+                <stop offset="50%" stopColor="#FFA366" stopOpacity="0.5"/>
+                <stop offset="70%" stopColor="#FFB380" stopOpacity="0.3"/>
+                <stop offset="100%" stopColor="#FFB380" stopOpacity="0"/>
+              </radialGradient>
+              
+              <mask id="honeycombMask">
+                <rect width="100%" height="100%" fill="url(#centerFade)"/>
+              </mask>
+            </defs>
+            
+            {/* Honeycomb grid with mask */}
+            <rect width="100%" height="100%" fill="url(#honeycomb)" mask="url(#honeycombMask)" />
+          </svg>
         </div>
         <div className="max-w-7xl mx-auto text-center w-full relative z-10" style={{ marginTop: '-8vh' }}>
           <h1 className="mb-0" style={{ 
@@ -158,7 +181,7 @@ function HomePage() {
             color: 'var(--text-secondary)',
             maxWidth: '680px',
             marginTop: '32px',
-            marginBottom: '64px'
+            marginBottom: '80px'
           }}>
             {t(homeContent.hero.subtitle, language)}
           </p>
@@ -169,7 +192,7 @@ function HomePage() {
               height: '52px',
               lineHeight: '52px',
               backgroundColor: '#FFFFFF',
-              color: '#1A1A1A',
+              color: '#FF6900',
               borderRadius: '26px',
               textDecoration: 'none',
               fontWeight: 600,
@@ -181,7 +204,7 @@ function HomePage() {
                 width: '24px',
                 height: '24px',
                 borderRadius: '50%',
-                backgroundColor: '#1A1A1A',
+                backgroundColor: '#FF6900',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center'
