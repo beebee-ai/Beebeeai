@@ -688,20 +688,20 @@ function HomePage() {
               <div className="aspect-video overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1712903911017-7c10a3c4b3e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwcHJvamVjdCUyMHByZXNlbnRhdGlvbnxlbnwxfHx8fDE3NjU4NzExNjl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="智能学习助手"
+                  alt={t(homeContent.works.projects.project1.title, language)}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6">
                 <div className="flex gap-2 mb-3">
-                  <span className="text-xs px-2 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">AI应用</span>
-                  <span className="text-xs px-2 py-1 rounded-full bg-orange-500/10 text-orange-500 border border-orange-500/20">教育科技</span>
+                  <span className="text-xs px-2 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">{t(homeContent.works.projects.project1.tags.tag1, language)}</span>
+                  <span className="text-xs px-2 py-1 rounded-full bg-orange-500/10 text-orange-500 border border-orange-500/20">{t(homeContent.works.projects.project1.tags.tag2, language)}</span>
                 </div>
-                <h4 className="mb-2">智能学习助手</h4>
-                <p className="text-gray-400 text-sm mb-4">基于GPT-4开发的个性化学习辅导系统，能够根据学生学习进度自动调整教学策略，提供针对性练习。</p>
+                <h4 className="mb-2">{t(homeContent.works.projects.project1.title, language)}</h4>
+                <p className="text-gray-400 text-sm mb-4">{t(homeContent.works.projects.project1.description, language)}</p>
                 <div className="flex items-center gap-2 text-sm text-gray-500">
-                  <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">张</div>
-                  <span>张晨曦 · 高二学员</span>
+                  <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">{language === 'ZH' ? '张' : 'Z'}</div>
+                  <span>{t(homeContent.works.projects.project1.author, language)}</span>
                 </div>
               </div>
             </div>
@@ -711,20 +711,20 @@ function HomePage() {
               <div className="aspect-video overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1558301204-e3226482a77b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2RpbmclMjBlZHVjYXRpb24lMjB3b3Jrc2hvcHxlbnwxfHx8fDE3NjU4NzExNzB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="编程学习平台"
+                  alt={t(homeContent.works.projects.project2.title, language)}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6">
                 <div className="flex gap-2 mb-3">
-                  <span className="text-xs px-2 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Web开发</span>
-                  <span className="text-xs px-2 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">互动平台</span>
+                  <span className="text-xs px-2 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">{t(homeContent.works.projects.project2.tags.tag1, language)}</span>
+                  <span className="text-xs px-2 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">{t(homeContent.works.projects.project2.tags.tag2, language)}</span>
                 </div>
-                <h4 className="mb-2">少儿编程互动平台</h4>
-                <p className="text-gray-400 text-sm mb-4">采用游戏化设计的编程学习网站，支持Scratch、Python等多种语言，已服务200+学员。</p>
+                <h4 className="mb-2">{t(homeContent.works.projects.project2.title, language)}</h4>
+                <p className="text-gray-400 text-sm mb-4">{t(homeContent.works.projects.project2.description, language)}</p>
                 <div className="flex items-center gap-2 text-sm text-gray-500">
-                  <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">李</div>
-                  <span>李思远 · 初三学员</span>
+                  <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">{language === 'ZH' ? '李' : 'L'}</div>
+                  <span>{t(homeContent.works.projects.project2.author, language)}</span>
                 </div>
               </div>
             </div>
@@ -734,20 +734,20 @@ function HomePage() {
               <div className="aspect-video overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1762968274962-20c12e6e8ecd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhaSUyMHJvYm90JTIwcHJvamVjdHxlbnwxfHx8fDE3NjU4NzExNzB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="智能机器人"
+                  alt={t(homeContent.works.projects.project3.title, language)}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6">
                 <div className="flex gap-2 mb-3">
-                  <span className="text-xs px-2 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">机器人</span>
-                  <span className="text-xs px-2 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">物联网</span>
+                  <span className="text-xs px-2 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">{t(homeContent.works.projects.project3.tags.tag1, language)}</span>
+                  <span className="text-xs px-2 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">{t(homeContent.works.projects.project3.tags.tag2, language)}</span>
                 </div>
-                <h4 className="mb-2">AI对话机器人</h4>
-                <p className="text-gray-400 text-sm mb-4">结合语音识别和自然语言处理技术，开发的智能陪伴机器人，可进行多轮对话和情感交互。</p>
+                <h4 className="mb-2">{t(homeContent.works.projects.project3.title, language)}</h4>
+                <p className="text-gray-400 text-sm mb-4">{t(homeContent.works.projects.project3.description, language)}</p>
                 <div className="flex items-center gap-2 text-sm text-gray-500">
-                  <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">王</div>
-                  <span>王诗涵 · 高一学员</span>
+                  <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">{language === 'ZH' ? '王' : 'W'}</div>
+                  <span>{t(homeContent.works.projects.project3.author, language)}</span>
                 </div>
               </div>
             </div>
@@ -757,20 +757,20 @@ function HomePage() {
               <div className="aspect-video overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1759661966728-4a02e3c6ed91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwdmlzdWFsaXphdGlvbiUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NjU3NTQ1MDd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="数据可视化"
+                  alt={t(homeContent.works.projects.project4.title, language)}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6">
                 <div className="flex gap-2 mb-3">
-                  <span className="text-xs px-2 py-1 rounded-full bg-pink-500/10 text-pink-400 border border-pink-500/20">数据分析</span>
-                  <span className="text-xs px-2 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">可视化</span>
+                  <span className="text-xs px-2 py-1 rounded-full bg-pink-500/10 text-pink-400 border border-pink-500/20">{t(homeContent.works.projects.project4.tags.tag1, language)}</span>
+                  <span className="text-xs px-2 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">{t(homeContent.works.projects.project4.tags.tag2, language)}</span>
                 </div>
-                <h4 className="mb-2">城市环境数据看板</h4>
-                <p className="text-gray-400 text-sm mb-4">采集本地空气质量、温度、湿度等数据，构建实时监测和可视化系统，参加科技竞赛获省一等奖。</p>
+                <h4 className="mb-2">{t(homeContent.works.projects.project4.title, language)}</h4>
+                <p className="text-gray-400 text-sm mb-4">{t(homeContent.works.projects.project4.description, language)}</p>
                 <div className="flex items-center gap-2 text-sm text-gray-500">
-                  <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">陈</div>
-                  <span>陈梓豪 · 初二学员</span>
+                  <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">{language === 'ZH' ? '陈' : 'C'}</div>
+                  <span>{t(homeContent.works.projects.project4.author, language)}</span>
                 </div>
               </div>
             </div>
@@ -780,20 +780,20 @@ function HomePage() {
               <div className="aspect-video overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1609921212029-bb5a28e60960?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXNpZ258ZW58MXx8fHwxNzY1ODQ5MjIxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="移动应用"
+                  alt={t(homeContent.works.projects.project5.title, language)}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6">
                 <div className="flex gap-2 mb-3">
-                  <span className="text-xs px-2 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">App开发</span>
-                  <span className="text-xs px-2 py-1 rounded-full bg-orange-500/10 text-orange-500 border border-orange-500/20">生活工具</span>
+                  <span className="text-xs px-2 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">{t(homeContent.works.projects.project5.tags.tag1, language)}</span>
+                  <span className="text-xs px-2 py-1 rounded-full bg-orange-500/10 text-orange-500 border border-orange-500/20">{t(homeContent.works.projects.project5.tags.tag2, language)}</span>
                 </div>
-                <h4 className="mb-2">校园生活助手App</h4>
-                <p className="text-gray-400 text-sm mb-4">集课程表、作业管理、校园通知于一体的移动应用，已在学校内推广使用，覆盖500+用户。</p>
+                <h4 className="mb-2">{t(homeContent.works.projects.project5.title, language)}</h4>
+                <p className="text-gray-400 text-sm mb-4">{t(homeContent.works.projects.project5.description, language)}</p>
                 <div className="flex items-center gap-2 text-sm text-gray-500">
-                  <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">刘</div>
-                  <span>刘雨萱 · 高三学员</span>
+                  <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">{language === 'ZH' ? '刘' : 'L'}</div>
+                  <span>{t(homeContent.works.projects.project5.author, language)}</span>
                 </div>
               </div>
             </div>
@@ -803,20 +803,20 @@ function HomePage() {
               <div className="aspect-video overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1489438497675-d1a8d6e0632e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXZlbG9wbWVudCUyMGNvZGluZ3xlbnwxfHx8fDE3NjU4MjMyNTd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="开源项目"
+                  alt={t(homeContent.works.projects.project6.title, language)}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6">
                 <div className="flex gap-2 mb-3">
-                  <span className="text-xs px-2 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">开源项目</span>
-                  <span className="text-xs px-2 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">前端框架</span>
+                  <span className="text-xs px-2 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">{t(homeContent.works.projects.project6.tags.tag1, language)}</span>
+                  <span className="text-xs px-2 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">{t(homeContent.works.projects.project6.tags.tag2, language)}</span>
                 </div>
-                <h4 className="mb-2">轻量级UI组件库</h4>
-                <p className="text-gray-400 text-sm mb-4">使用React和TypeScript开发的开源UI组件库，在GitHub获得800+ Stars，被多个项目采用。</p>
+                <h4 className="mb-2">{t(homeContent.works.projects.project6.title, language)}</h4>
+                <p className="text-gray-400 text-sm mb-4">{t(homeContent.works.projects.project6.description, language)}</p>
                 <div className="flex items-center gap-2 text-sm text-gray-500">
-                  <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">周</div>
-                  <span>周浩然 · 大一学员</span>
+                  <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">{language === 'ZH' ? '赵' : 'Z'}</div>
+                  <span>{t(homeContent.works.projects.project6.author, language)}</span>
                 </div>
               </div>
             </div>

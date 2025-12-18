@@ -140,7 +140,63 @@ export const homeContent = {
   works: {
     title: { ZH: '学员作品', EN: 'Student Works' },
     subtitle: { ZH: '真实项目，真实成长', EN: 'Real projects, real growth' },
-    viewAll: { ZH: '查看所有作品', EN: 'View All Works' }
+    viewAll: { ZH: '查看所有作品', EN: 'View All Works' },
+    projects: {
+      project1: {
+        title: { ZH: '智能学习助手', EN: 'AI Learning Assistant' },
+        description: { ZH: '基于GPT-4开发的个性化学习辅导系统，能够根据学生学习进度自动调整教学策略，提供针对性练习。', EN: 'Personalized learning tutoring system based on GPT-4, automatically adjusting teaching strategies and providing targeted exercises based on student progress.' },
+        tags: {
+          tag1: { ZH: 'AI应用', EN: 'AI Application' },
+          tag2: { ZH: '教育科技', EN: 'EdTech' }
+        },
+        author: { ZH: '张晨曦 · 高二学员', EN: 'Zhang Chenxi · Grade 11 Student' }
+      },
+      project2: {
+        title: { ZH: '少儿编程互动平台', EN: 'Kids Coding Interactive Platform' },
+        description: { ZH: '采用游戏化设计的编程学习网站，支持Scratch、Python等多种语言，已服务200+学员。', EN: 'Gamified coding learning website supporting Scratch, Python and more, serving 200+ students.' },
+        tags: {
+          tag1: { ZH: 'Web开发', EN: 'Web Development' },
+          tag2: { ZH: '互动平台', EN: 'Interactive Platform' }
+        },
+        author: { ZH: '李思远 · 初三学员', EN: 'Li Siyuan · Grade 9 Student' }
+      },
+      project3: {
+        title: { ZH: 'AI对话机器人', EN: 'AI Chatbot' },
+        description: { ZH: '结合语音识别和自然语言处理技术，开发的智能陪伴机器人，可进行多轮对话和情感交互。', EN: 'Intelligent companion robot combining voice recognition and NLP, capable of multi-turn dialogue and emotional interaction.' },
+        tags: {
+          tag1: { ZH: '机器人', EN: 'Robotics' },
+          tag2: { ZH: '物联网', EN: 'IoT' }
+        },
+        author: { ZH: '王诗涵 · 高一学员', EN: 'Wang Shihan · Grade 10 Student' }
+      },
+      project4: {
+        title: { ZH: '城市环境数据看板', EN: 'Urban Environment Data Dashboard' },
+        description: { ZH: '采集本地空气质量、温度、湿度等数据，构建实时监测和可视化系统，参加科技竞赛获省一等奖。', EN: 'Real-time monitoring and visualization system collecting local air quality, temperature, and humidity data. Won first prize in provincial technology competition.' },
+        tags: {
+          tag1: { ZH: '数据分析', EN: 'Data Analysis' },
+          tag2: { ZH: '可视化', EN: 'Visualization' }
+        },
+        author: { ZH: '陈梓豪 · 初二学员', EN: 'Chen Zihao · Grade 8 Student' }
+      },
+      project5: {
+        title: { ZH: '智能作文批改系统', EN: 'AI Essay Grading System' },
+        description: { ZH: '利用自然语言处理技术，自动分析作文结构、语法和论点，提供详细的改进建议和评分，帮助提升写作能力。', EN: 'Using NLP to automatically analyze essay structure, grammar and arguments, providing detailed improvement suggestions and grading to enhance writing skills.' },
+        tags: {
+          tag1: { ZH: 'NLP', EN: 'NLP' },
+          tag2: { ZH: '文本分析', EN: 'Text Analysis' }
+        },
+        author: { ZH: '刘雨桐 · 高三学员', EN: 'Liu Yutong · Grade 12 Student' }
+      },
+      project6: {
+        title: { ZH: '校园导航AR应用', EN: 'Campus Navigation AR App' },
+        description: { ZH: '基于增强现实技术的校园导航应用，新生通过手机摄像头就能看到虚拟箭头指引，快速找到目的地。', EN: 'AR-based campus navigation app. New students can see virtual arrow guidance through phone camera to quickly find destinations.' },
+        tags: {
+          tag1: { ZH: 'AR/VR', EN: 'AR/VR' },
+          tag2: { ZH: '移动应用', EN: 'Mobile App' }
+        },
+        author: { ZH: '赵子墨 · 高一学员', EN: 'Zhao Zimo · Grade 10 Student' }
+      }
+    }
   },
 
   // Philosophy Section
