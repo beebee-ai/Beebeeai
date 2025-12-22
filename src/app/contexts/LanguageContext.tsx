@@ -15,7 +15,24 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('ZH');
+  // 检测浏览器语言偏好或从 localStorage 获取
+  const getInitialLanguage = (): Language => {
+    // 首先检查是否有用户手动设置的语言偏好
+    const savedLanguage = localStorage.getItem('preferred-language');
+    if (savedLanguage === 'ZH' || savedLanguage === 'EN') {
+      return savedLanguage;
+    }
+    
+    // 如果没有，检测浏览器语言
+    const browserLang = navigator.language.toLowerCase();
+    // 如果浏览器语言是中文相关，返回 ZH，否则返回 EN
+    if (browserLang.startsWith('zh')) {
+      return 'ZH';
+    }
+    return 'EN';
+  };
+
+  const [language, setLanguageState] = useState<Language>(getInitialLanguage());
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
