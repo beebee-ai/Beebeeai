@@ -15,7 +15,7 @@ function ScrollManager() {
 
   useEffect(() => {
     // Set page title
-    document.title = 'Beebee AI';
+    document.title = 'BEEBEE AI';
     
     // Set favicon
     const setFavicon = () => {
@@ -450,20 +450,12 @@ function HomePage() {
                   <div className="aspect-[4/3] bg-gradient-to-br from-white/5 to-white/[0.02] rounded-lg border border-white/10 overflow-hidden relative group">
                     {/* Real Image */}
                     <img 
-                      src="https://images.unsplash.com/photo-1762329367301-9009fd143ffa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbmxpbmUlMjBsZWFybmluZyUyMHBsYXRmb3JtJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc2NTg3NDQxN3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                      src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/beebee_edu.jpg"
                       alt="学习平台界面"
                       className="w-full h-full object-cover"
                     />
                     {/* Dark Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                    {/* Icon Overlay */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="w-20 h-20 rounded-2xl bg-purple-500/90 border-2 border-white/30 flex items-center justify-center backdrop-blur-sm">
-                        <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                        </svg>
-                      </div>
-                    </div>
                   </div>
                 </div>
 

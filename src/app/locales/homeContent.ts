@@ -50,7 +50,7 @@ export const homeContent = {
       }
     },
     alpha: {
-      title: { ZH: 'Alpha 实战营', EN: 'Alpha Bootcamp' },
+      title: { ZH: 'Alpha 实训营', EN: 'Alpha Training Camp' },
       subtitle: { ZH: '无代码经验 · 快速落地', EN: 'No Coding · Quick Results' },
       description: {
         ZH: '以终为始，不问细节只求落地。重术轻道，快速掌握AI产品能力。',
@@ -65,7 +65,7 @@ export const homeContent = {
       cta: { ZH: '了解详情', EN: 'Learn More' }
     },
     beta: {
-      title: { ZH: 'Beta 实战营', EN: 'Beta Bootcamp' },
+      title: { ZH: 'Beta 实训营', EN: 'Beta Training Camp' },
       subtitle: { ZH: '有编程经验 · 深度掌控', EN: 'Coding Experience · Deep Control' },
       description: {
         ZH: '以始为终，既探本质更求实用。道术并重，全面打造AI开发能力。',
@@ -74,8 +74,8 @@ export const homeContent = {
       features: {
         feature1: { ZH: '真实商业项目实战', EN: 'Real business projects' },
         feature2: { ZH: '深入技术实现细节', EN: 'Deep technical details' },
-        feature3: { ZH: '1v1 AI Master 导师', EN: '1v1 AI Master mentor' },
-        feature4: { ZH: '完整产品开发流程', EN: 'Full development lifecycle' }
+        feature3: { ZH: '完整产品开发流程', EN: 'Full development lifecycle' },
+        feature4: { ZH: '系统级架构与工程化能力', EN: 'System architecture & engineering capabilities' }
       },
       cta: { ZH: '了解详情', EN: 'Learn More' }
     },
@@ -83,8 +83,8 @@ export const homeContent = {
       title: { ZH: '学习平台', EN: 'Learning Platform' },
       subtitle: { ZH: '内部应用 · 知识中枢', EN: 'Internal App · Knowledge Hub' },
       description: {
-        ZH: '服务于所有实战营学员的统一学习平台，提供课程资源、工具库和学习社区支持。',
-        EN: 'Unified learning platform for all bootcamp students, providing course resources, tools, and community support.'
+        ZH: '服务于所有实训营学员的统一学习平台，提供课程资源、工具库和学习社区支持。',
+        EN: 'Unified learning platform for all training camp students, providing course resources, tools, and community support.'
       },
       featuresTitle: { ZH: '平台核心功能', EN: 'Core Features' },
       features: {
@@ -354,8 +354,8 @@ export const homeContent = {
       EN: 'Quick Navigation'
     },
     platformLinks: {
-      alpha: { ZH: 'Alpha实战营', EN: 'Alpha Bootcamp' },
-      beta: { ZH: 'Beta实战营', EN: 'Beta Bootcamp' },
+      alpha: { ZH: 'Alpha实训营', EN: 'Alpha Training Camp' },
+      beta: { ZH: 'Beta实训营', EN: 'Beta Training Camp' },
       platform: { ZH: '学习平台', EN: 'Learning Platform' }
     },
     contactInfo: {
