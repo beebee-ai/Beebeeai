@@ -100,7 +100,7 @@ export const homeContent = {
   // Differentiation Section
   differentiation: {
     title: { ZH: '我们的差异化', EN: 'Our Differentiation' },
-    subtitle: { ZH: '为什么选择 BEEBEE？', EN: 'Why Choose BEEBEE?' },
+    subtitle: { ZH: '为什么选择 BEEBEE AI？', EN: 'Why Choose BEEBEE AI?' },
     item1: {
       title: { ZH: '理念革新', EN: 'Innovative Philosophy' },
       subtitle: { ZH: '拒绝填鸭教育，掌握AI提问力', EN: 'Reject rote learning, master AI questioning' },
@@ -270,7 +270,7 @@ export const homeContent = {
     },
     founderSection: { ZH: '创始人介绍', EN: 'Founder Introduction' },
     story: {
-      ZH: 'BEEBEE 诞生于对传统教育模式的反思。我们看到太多人在学习AI的过程中迷失方向，看到太多课程只教工具却忽视思维。我们决定做出改变。',
+      ZH: 'BEEBEE 诞生于对传统教育模式的反思。我们看到���多人在学习AI的过程中迷失方向，看到太多课程只教工具却忽视思维。我们决定做出改变。',
       EN: 'BEEBEE was born from reflection on traditional education. We saw too many lost in learning AI, too many courses teaching tools but ignoring thinking. We decided to make a change.'
     },
     ceo: {
@@ -362,8 +362,8 @@ export const homeContent = {
       address: { ZH: '中国·北京市朝阳区', EN: 'Beijing, China' }
     },
     copyright: {
-      ZH: '© 2024 BEEBEE 学习力平台. All rights reserved.',
-      EN: '© 2024 BEEBEE Learning Platform. All rights reserved.'
+      ZH: '© 2025 BEEBEE AI 学习力平台. All rights reserved.',
+      EN: '© 2025 BEEBEE AI Learning Platform. All rights reserved.'
     }
   },
 

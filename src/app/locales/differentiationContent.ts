@@ -182,7 +182,7 @@ export const differentiationContent = {
   // CTA Section
   cta: {
     title: { ZH: '准备好开始你的AI学习之旅了吗？', EN: 'Ready to Start Your AI Learning Journey?' },
-    subtitle: { ZH: '加入BEEBEE，和我们一起重新定义学习', EN: 'Join BEEBEE and redefine learning together' },
+    subtitle: { ZH: '加入BEEBEE AI，和我们一起重新定义学习', EN: 'Join BEEBEE AI and redefine learning together' },
     button1: { ZH: '联系我们', EN: 'Contact Us' },
     button2: { ZH: '返回首页', EN: 'Back to Home' }
   }
