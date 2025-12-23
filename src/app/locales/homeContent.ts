@@ -336,7 +336,10 @@ export const homeContent = {
     },
     info: {
       address: { ZH: '地址', EN: 'Address' },
-      addressValue: { ZH: '新西兰 | 澳大利亚 | 美国 | 中国', EN: 'NZ | AU | US | CN' },
+      addressValue: { 
+        ZH: '成都|中国(四川)成都高新孵化园1号楼A座\n新西兰|B:Hive, 74 Taharoto Road, Smales Farm, Takapuna, AKL 0622', 
+        EN: 'New Zealand|B:Hive, 74 Taharoto Road, Smales Farm, Takapuna, AKL 0622\nChengdu|Building A, No.1 Chengdu High-tech Incubation Park, Sichuan, China' 
+      },
       email: { ZH: '邮箱', EN: 'Email' },
       emailIntern: 'internprogram@beebee.ai',
       emailBusiness: 'brinny@beebee.ai'
@@ -359,7 +362,10 @@ export const homeContent = {
       platform: { ZH: '学习平台', EN: 'Learning Platform' }
     },
     contactInfo: {
-      address: { ZH: '新西兰 | 澳大利亚 | 美国 | 中国', EN: 'NZ | AU | US | CN' }
+      address: { 
+        ZH: '成都|中国(四川)成都高新孵化园1号楼A座\n新西兰|B:Hive, 74 Taharoto Road, Smales Farm, Takapuna, AKL 0622', 
+        EN: 'New Zealand|B:Hive, 74 Taharoto Road, Smales Farm, Takapuna, AKL 0622\nChengdu|Building A, No.1 Chengdu High-tech Incubation Park, Sichuan, China' 
+      }
     },
     copyright: {
       ZH: '© 2025 BEEBEE AI 学习力平台. All rights reserved.',

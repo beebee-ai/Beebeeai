@@ -1120,7 +1120,7 @@ function HomePage() {
             <div className="space-y-6">
               <div>
                 <h3 className="mb-2">{t(homeContent.contact.info.address, language)}</h3>
-                <p className="text-gray-400">{t(homeContent.contact.info.addressValue, language)}</p>
+                <p className="text-gray-400 whitespace-pre-line">{t(homeContent.contact.info.addressValue, language)}</p>
               </div>
               <div>
                 <h3 className="mb-2">{t(homeContent.contact.info.email, language)}</h3>
@@ -1257,7 +1257,7 @@ function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  <span style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>{t(homeContent.footer.contactInfo.address, language)}</span>
+                  <span style={{ color: 'var(--text-secondary)', fontSize: '14px' }} className="whitespace-pre-line">{t(homeContent.footer.contactInfo.address, language)}</span>
                 </li>
               </ul>
             </div>
