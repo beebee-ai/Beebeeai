@@ -270,7 +270,7 @@ export const homeContent = {
     },
     founderSection: { ZH: '创始人介绍', EN: 'Founder Introduction' },
     story: {
-      ZH: 'BEEBEE 诞生于对传统教育模式的反思。我们看到���多人在学习AI的过程中迷失方向，看到太多课程只教工具却忽视思维。我们决定做出改变。',
+      ZH: 'BEEBEE 诞生于对传统教育模式的反思。我们看到多人在学习AI的过程中迷失方向，看到太多课程只教工具却忽视思维。我们决定做出改变。',
       EN: 'BEEBEE was born from reflection on traditional education. We saw too many lost in learning AI, too many courses teaching tools but ignoring thinking. We decided to make a change.'
     },
     ceo: {
@@ -336,7 +336,7 @@ export const homeContent = {
     },
     info: {
       address: { ZH: '地址', EN: 'Address' },
-      addressValue: { ZH: '中国·北京', EN: 'Beijing, China' },
+      addressValue: { ZH: '新西兰 | 澳大利亚 | 美国 | 中国', EN: 'NZ | AU | US | CN' },
       email: { ZH: '邮箱', EN: 'Email' },
       emailIntern: 'internprogram@beebee.ai',
       emailBusiness: 'brinny@beebee.ai'
@@ -359,7 +359,7 @@ export const homeContent = {
       platform: { ZH: '学习平台', EN: 'Learning Platform' }
     },
     contactInfo: {
-      address: { ZH: '中国·北京市朝阳区', EN: 'Beijing, China' }
+      address: { ZH: '新西兰 | 澳大利亚 | 美国 | 中国', EN: 'NZ | AU | US | CN' }
     },
     copyright: {
       ZH: '© 2025 BEEBEE AI 学习力平台. All rights reserved.',
