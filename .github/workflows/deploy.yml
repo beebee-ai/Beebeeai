@@ -1,0 +1,70 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Get repository name
+        id: repo
+        run: |
+          REPO_NAME=$(echo "${{ github.repository }}" | awk -F '/' '{print $2}')
+          echo "name=$REPO_NAME" >> $GITHUB_OUTPUT
+          echo "Repository name: $REPO_NAME"
+
+      - name: Update vite.config.ts outDir
+        run: |
+          sed -i "s/outDir: 'build'/outDir: 'dist'/g" vite.config.ts
+
+      - name: Build
+        env:
+          BASE_PATH: /${{ steps.repo.outputs.name }}/
+        run: npm run build
+
+      - name: List build files
+        run: ls -la dist || echo "Build directory check"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
