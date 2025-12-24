@@ -83,18 +83,21 @@ function ProjectCard({ project, language, index }: any) {
     return () => clearInterval(interval);
   }, [images.length]);
 
-  // Use orange theme for all grid cards
+  // Use orange theme for grid cards
   const theme = { 
-    border: 'border-orange-500/30 hover:border-orange-500/60', 
-    badge: 'bg-orange-500/90', 
-    shadow: 'hover:shadow-orange-500/20', 
-    text: 'text-orange-400', 
-    button: 'bg-orange-500 hover:bg-orange-600' 
+    border: 'border-[#ff6900]/30 hover:border-[#ff6900]', 
+    badge: 'bg-[#ff6900]/90', 
+    shadow: 'hover:shadow-[#ff6900]/20', 
+    text: 'text-[#ff6900]', 
+    button: 'bg-[#ff6900] hover:bg-[#ff6900]' 
   };
   
   return (
-    <div 
-      className={`group relative rounded-2xl overflow-hidden border ${theme.border} transition-all duration-500 bg-gradient-to-br from-black/80 to-black/40 backdrop-blur-sm hover:shadow-2xl ${theme.shadow} flex flex-col h-full`}
+    <a 
+      href={project.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`group relative rounded-2xl overflow-hidden border ${theme.border} transition-all duration-500 bg-gradient-to-br from-black/80 to-black/40 backdrop-blur-sm hover:shadow-2xl ${theme.shadow} flex flex-col h-full cursor-pointer block`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -109,6 +112,16 @@ function ProjectCard({ project, language, index }: any) {
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
+        {/* Hover Overlay with Icon */}
+        <div className="absolute inset-0 bg-transparent group-hover:bg-gray-900/40 transition-all duration-300 flex items-center justify-center">
+          <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100 flex flex-col items-center gap-2">
+            <ExternalLink className="w-8 h-8 text-white drop-shadow-lg" />
+            <span className="text-white text-xs font-medium drop-shadow-lg">
+              {language === 'ZH' ? '查看项目' : 'View Project'}
+            </span>
+          </div>
+        </div>
+
         {/* Image Navigation Dots - Only show if multiple images */}
         {images.length > 1 && (
           <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-20">
@@ -117,7 +130,7 @@ function ProjectCard({ project, language, index }: any) {
                 key={idx}
                 className={`h-1 rounded-full transition-all duration-300 ${
                   idx === currentImg 
-                    ? 'w-4 bg-orange-400' 
+                    ? 'w-4 bg-[#ff6900]' 
                     : 'w-1 bg-white/40'
                 }`}
               />
@@ -149,22 +162,11 @@ function ProjectCard({ project, language, index }: any) {
         </div>
 
         {/* Description */}
-        <p className="text-sm text-gray-300 leading-relaxed mb-5 flex-1">
+        <p className="text-sm text-gray-300 leading-relaxed">
           {t(project.description, language)}
         </p>
-
-        {/* CTA Button */}
-        <a 
-          href={project.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl ${theme.button} text-white transition-all duration-300 group/btn shadow-lg hover:shadow-xl`}
-        >
-          <span>{t(project.cta, language)}</span>
-          <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-        </a>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -302,7 +304,12 @@ function CarouselCard({ project, language }: any) {
   }, [images.length]);
 
   return (
-    <div className="group relative rounded-xl overflow-hidden border border-cyan-500/30 hover:border-cyan-500/60 transition-all duration-300 bg-black/70 backdrop-blur-sm hover:shadow-xl hover:shadow-cyan-500/20 flex flex-col h-full">
+    <a 
+      href={project.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative rounded-xl overflow-hidden border border-cyan-500/30 hover:border-cyan-500/60 transition-all duration-300 bg-black/70 backdrop-blur-sm hover:shadow-xl hover:shadow-cyan-500/20 flex flex-col h-full cursor-pointer block"
+    >
       {/* Image */}
       <div className="relative h-48 overflow-hidden bg-black">
         <img 
@@ -311,6 +318,16 @@ function CarouselCard({ project, language }: any) {
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+        
+        {/* Hover Overlay with Icon */}
+        <div className="absolute inset-0 bg-transparent group-hover:bg-gray-900/40 transition-all duration-300 flex items-center justify-center">
+          <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100 flex flex-col items-center gap-2">
+            <ExternalLink className="w-8 h-8 text-white drop-shadow-lg" />
+            <span className="text-white text-xs font-medium drop-shadow-lg">
+              {language === 'ZH' ? '查看项目' : 'View Project'}
+            </span>
+          </div>
+        </div>
         
         {/* Image indicators - Only show if multiple images */}
         {images.length > 1 && (
@@ -338,29 +355,19 @@ function CarouselCard({ project, language }: any) {
           <p className="text-xs text-gray-400">{t(project.team, language)}</p>
         </div>
 
-        <p className="text-xs text-gray-300 leading-relaxed mb-4 line-clamp-2 flex-1">
+        <p className="text-xs text-gray-300 leading-relaxed line-clamp-3 flex-1">
           {t(project.description, language)}
         </p>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-1.5 mb-4">
+        <div className="flex flex-wrap gap-1.5 mt-4">
           {Object.values(project.tags).slice(0, 3).map((tag: any, idx) => (
             <span key={idx} className="text-[10px] px-2 py-1 rounded-full bg-white/10 text-white/70 border border-white/20">
               {t(tag, language)}
             </span>
           ))}
         </div>
-
-        <a 
-          href={project.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-sm border border-cyan-500/40 transition-all group/btn w-full justify-center"
-        >
-          <span>{t(project.cta, language)}</span>
-          <ExternalLink className="w-3 h-3 group-hover/btn:translate-x-0.5 transition-transform" />
-        </a>
       </div>
-    </div>
+    </a>
   );
 }
