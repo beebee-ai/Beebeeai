@@ -141,62 +141,250 @@ export const homeContent = {
     title: { ZH: '学员作品', EN: 'Student Works' },
     subtitle: { ZH: '真实项目，真实成长', EN: 'Real projects, real growth' },
     viewAll: { ZH: '查看所有作品', EN: 'View All Works' },
-    projects: {
-      project1: {
-        title: { ZH: '智能学习助手', EN: 'AI Learning Assistant' },
-        description: { ZH: '基于GPT-4开发的个性化学习辅导系统，能够根据学生学习进度自动调整教学策略，提供针对性练习。', EN: 'Personalized learning tutoring system based on GPT-4, automatically adjusting teaching strategies and providing targeted exercises based on student progress.' },
-        tags: {
-          tag1: { ZH: 'AI应用', EN: 'AI Application' },
-          tag2: { ZH: '教育科技', EN: 'EdTech' }
+    featured: [
+      {
+        badge: { ZH: 'BETA 无界营（Infinity）', EN: 'BETA Infinity Camp' },
+        title: { ZH: 'Hobbi - 心灵冥想日记', EN: 'Hobbi - Mindful Meditation Journal' },
+        team: { ZH: '小组作品，四人协作完成', EN: 'Team Project, 4-member Collaboration' },
+        teamDetails: { ZH: '物理博士 | 金融硕士 | CS本科生 | 工程经验', EN: 'Physics PhD | Finance Master | CS Undergrad | Engineering Experience' },
+        description: { 
+          ZH: '在冥想的夜空下，用语音记录心灵笔记。Hobbi 利用你上传的照片，为你打造沉浸式的冥想空间，并与之互动，共同创作心灵日记。Hobbi 会耐心倾听，不加评判，从不打断，并在恰当的时机抛出恰到好处的玩笑或讽刺回应。100% 私密，随时可用，完全免费，无需预约。', 
+          EN: 'Record your thoughts through voice in a meditative starry night. Hobbi creates an immersive meditation space using your uploaded photos, interacting with you to co-create a mindful journal. Hobbi listens patiently without judgment, never interrupts, and responds with well-timed humor or wit. 100% private, always available, completely free, no appointment needed.' 
         },
-        author: { ZH: '张晨曦 · 高二学员', EN: 'Zhang Chenxi · Grade 11 Student' }
+        url: 'https://www.voiceto.me/',
+        cta: { ZH: '访问项目', EN: 'Visit Project' },
+        images: {
+          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/hobbi_1.PNG',
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/hobbi_2.PNG',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/hobbi_3.PNG'
+        },
+        tags: {
+          tag1: { ZH: 'AI语音交互', EN: 'AI Voice Interaction' },
+          tag2: { ZH: '冥想 & 心理健康', EN: 'Meditation & Mental Health' },
+          tag3: { ZH: '3D可视化', EN: '3D Visualization' }
+        }
       },
-      project2: {
-        title: { ZH: '少儿编程互动平台', EN: 'Kids Coding Interactive Platform' },
-        description: { ZH: '采用游戏化设计的编程学习网站，支持Scratch、Python等多种语言，已服务200+学员。', EN: 'Gamified coding learning website supporting Scratch, Python and more, serving 200+ students.' },
-        tags: {
-          tag1: { ZH: 'Web开发', EN: 'Web Development' },
-          tag2: { ZH: '互动平台', EN: 'Interactive Platform' }
+      {
+        badge: { ZH: 'BETA 无界营（Infinity）', EN: 'BETA Infinity Camp' },
+        title: { ZH: 'YummyYummy - AI美食助手', EN: 'YummyYummy - AI Food Assistant' },
+        team: { ZH: '小组作品，四人协作完成', EN: 'Team Project, 4-member Collaboration' },
+        teamDetails: { ZH: '物理博士 | 金融数学硕士 | 运筹/电气工程双硕士 | 工程经验', EN: 'Physics PhD | Financial Math Master | Operations/EE Dual Master | Engineering Experience' },
+        description: { 
+          ZH: 'YummyYummy 是您友好的 AI 美食助手，随时随地帮助您快速自信地做出美食选择。它会即时显示每道菜品，并提供简洁明了的描述，还会精选真实的菜品照片，帮助您更好地想象美食的模样。', 
+          EN: 'YummyYummy is your friendly AI food assistant, helping you make food choices quickly and confidently anytime, anywhere. It instantly displays each dish with clear descriptions and curated real photos to help you better visualize the food.' 
         },
-        author: { ZH: '李思远 · 初三学员', EN: 'Li Siyuan · Grade 9 Student' }
+        url: 'https://yum.9top.org/',
+        cta: { ZH: '访问项目', EN: 'Visit Project' },
+        images: {
+          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/yum_1.jpg',
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/yum_2.jpg',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/yum_1.jpg'
+        },
+        tags: {
+          tag1: { ZH: 'AI图像识别', EN: 'AI Image Recognition' },
+          tag2: { ZH: '餐饮 & 生活', EN: 'Food & Lifestyle' },
+          tag3: { ZH: '多语言翻译', EN: 'Multi-language Translation' }
+        }
       },
-      project3: {
-        title: { ZH: 'AI对话机器人', EN: 'AI Chatbot' },
-        description: { ZH: '结合语音识别和自然语言处理技术，开发的智能陪伴机器人，可进行多轮对话和情感交互。', EN: 'Intelligent companion robot combining voice recognition and NLP, capable of multi-turn dialogue and emotional interaction.' },
-        tags: {
-          tag1: { ZH: '机器人', EN: 'Robotics' },
-          tag2: { ZH: '物联网', EN: 'IoT' }
+      {
+        badge: { ZH: 'BETA 深空营（Cosmos）', EN: 'BETA Cosmos Camp' },
+        title: { ZH: 'Climate Intelligence Hub - 气候智能中心', EN: 'Climate Intelligence Hub' },
+        team: { ZH: '学员：K同学', EN: 'Student: K' },
+        teamDetails: { ZH: '18岁，大一 | 多项数学/编程金牌得主', EN: '18 years old, Freshman | Multiple Math/Programming Gold Medalist' },
+        description: { 
+          ZH: '提供个性化的气候变化预测和解释。它能生成美国本地化预测，根据你的所在地、职业和目标给出行动建议，并提供一个能回答问题、帮助你降低排放的 AI 助手。', 
+          EN: 'Provides personalized climate change predictions and explanations. It generates US localized forecasts, offers action recommendations based on your location, profession and goals, and includes an AI assistant to answer questions and help reduce emissions.' 
         },
-        author: { ZH: '王诗涵 · 高一学员', EN: 'Wang Shihan · Grade 10 Student' }
+        url: 'https://climate-intelligence-hub.org/',
+        cta: { ZH: '访问项目', EN: 'Visit Project' },
+        images: {
+          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/Climate_Intelligence_Hub_1.png',
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/Climate_Intelligence_Hub_2.png',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/Climate_Intelligence_Hub_1.png'
+        },
+        tags: {
+          tag1: { ZH: '气候数据分析', EN: 'Climate Data Analysis' },
+          tag2: { ZH: 'AI预测模型', EN: 'AI Prediction Model' },
+          tag3: { ZH: '个性化推荐', EN: 'Personalized Insights' }
+        }
       },
-      project4: {
-        title: { ZH: '城市环境数据看板', EN: 'Urban Environment Data Dashboard' },
-        description: { ZH: '采集本地空气质量、温度、湿度等数据，构建实时监测和可视化系统，参加科技竞赛获省一等奖。', EN: 'Real-time monitoring and visualization system collecting local air quality, temperature, and humidity data. Won first prize in provincial technology competition.' },
-        tags: {
-          tag1: { ZH: '数据分析', EN: 'Data Analysis' },
-          tag2: { ZH: '可视化', EN: 'Visualization' }
+      {
+        badge: { ZH: 'ALPHA—ZERO启航营（Genesis）', EN: 'ALPHA ZERO Genesis Camp' },
+        title: { ZH: 'PropertyAI NZ - 新西兰AI房产平台', EN: 'PropertyAI NZ - AI Property Platform' },
+        team: { ZH: '学员：H同学', EN: 'Student: H' },
+        teamDetails: { ZH: '房产经纪 | 0工程经验', EN: 'Real Estate Agent | Zero Coding Experience' },
+        description: { 
+          ZH: '新西兰首个AI驱动房产交易平台。提供专业买家代理、暗盘独家房源和24/7智能服务，让房产交易更高效、更透明。通过AI技术帮助用户找到理想房源，提供个性化推荐和专业咨询。', 
+          EN: 'New Zealand\'s first AI-driven property transaction platform. Offers professional buyer representation, exclusive off-market listings, and 24/7 intelligent service, making property transactions more efficient and transparent. Uses AI to help users find ideal properties with personalized recommendations and professional consultation.' 
         },
-        author: { ZH: '陈梓豪 · 初二学员', EN: 'Chen Zihao · Grade 8 Student' }
+        url: 'https://aipropertyagent.netlify.app/',
+        cta: { ZH: '访问项目', EN: 'Visit Project' },
+        images: {
+          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/PropertyAI_NZ_1.png',
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/PropertyAI_NZ_1.png',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/PropertyAI_NZ_1.png'
+        },
+        tags: {
+          tag1: { ZH: 'AI智能推荐', EN: 'AI Smart Recommendation' },
+          tag2: { ZH: '房产科技', EN: 'PropTech' },
+          tag3: { ZH: '对话式交互', EN: 'Conversational UI' }
+        }
       },
-      project5: {
-        title: { ZH: '智能作文批改系统', EN: 'AI Essay Grading System' },
-        description: { ZH: '利用自然语言处理技术，自动分析作文结构、语法和论点，提供详细的改进建议和评分，帮助提升写作能力。', EN: 'Using NLP to automatically analyze essay structure, grammar and arguments, providing detailed improvement suggestions and grading to enhance writing skills.' },
-        tags: {
-          tag1: { ZH: 'NLP', EN: 'NLP' },
-          tag2: { ZH: '文本分析', EN: 'Text Analysis' }
+      {
+        badge: { ZH: 'ALPHA—ZERO启航营（Genesis）', EN: 'ALPHA ZERO Genesis Camp' },
+        title: { ZH: 'Relab SEO - AI内容营销工具', EN: 'Relab SEO - AI Content Marketing Tool' },
+        team: { ZH: '学员：K同学', EN: 'Student: K' },
+        teamDetails: { ZH: '房地产大数据公司CEO | 销售市场 | 0工程经验', EN: 'Real Estate Data Company CEO | Sales & Marketing | Zero Coding Experience' },
+        description: { 
+          ZH: '内容集群和AI工具平台，提供内容聚类可视化、AI内容生成和由Claude提供支持的SEO评分。帮助营销人员快速构建内容策略，优化搜索引擎排名，提升内容营销效率。', 
+          EN: 'Content clusters and AI tools platform, offering content cluster visualization, AI content generation, and Claude-powered SEO scoring. Helps marketers quickly build content strategies, optimize search rankings, and improve content marketing efficiency.' 
         },
-        author: { ZH: '刘雨桐 · 高三学员', EN: 'Liu Yutong · Grade 12 Student' }
+        url: 'https://relabai.netlify.app',
+        cta: { ZH: '访问项目', EN: 'Visit Project' },
+        images: {
+          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/Relab_SEO_1.png',
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/Relab_SEO_1.png',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/Relab_SEO_1.png'
+        },
+        tags: {
+          tag1: { ZH: '内容聚类', EN: 'Content Clustering' },
+          tag2: { ZH: 'AI内容生成', EN: 'AI Content Generation' },
+          tag3: { ZH: 'SEO优化', EN: 'SEO Optimization' }
+        }
       },
-      project6: {
-        title: { ZH: '校园导航AR应用', EN: 'Campus Navigation AR App' },
-        description: { ZH: '基于增强现实技术的校园导航应用，新生通过手机摄像头就能看到虚拟箭头指引，快速找到目的地。', EN: 'AR-based campus navigation app. New students can see virtual arrow guidance through phone camera to quickly find destinations.' },
-        tags: {
-          tag1: { ZH: 'AR/VR', EN: 'AR/VR' },
-          tag2: { ZH: '移动应用', EN: 'Mobile App' }
+      {
+        badge: { ZH: 'ALPHA—ZERO启航营（Genesis）', EN: 'ALPHA ZERO Genesis Camp' },
+        title: { ZH: '纯素甄选 - 素食生活方式平台', EN: 'PD Selection - Plant-Based Lifestyle Platform' },
+        team: { ZH: '学员：A同学', EN: 'Student: A' },
+        teamDetails: { ZH: '天维网联合创始人 | 杜威基金会发起人 | 投资 | 0工程经验', EN: 'Skykiwi Co-founder | Dewei Foundation Initiator | Investment | Zero Coding Experience' },
+        description: { 
+          ZH: '发现精选素食生活方式，经过严格筛选的餐厅、食谱、产品与生活灵感。通过AI技术精准推荐优质素食资源，让您的素食之旅更单、更健康、更有品质。', 
+          EN: 'Discover curated plant-based lifestyle with carefully selected restaurants, recipes, products and lifestyle inspiration. Uses AI to precisely recommend quality vegan resources, making your plant-based journey simpler, healthier, and more refined.' 
         },
-        author: { ZH: '赵子墨 · 高一学员', EN: 'Zhao Zimo · Grade 10 Student' }
+        url: 'https://www.pdselection.com',
+        cta: { ZH: '访问项目', EN: 'Visit Project' },
+        images: {
+          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/pdselection.png',
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/pdselection.png',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/pdselection.png'
+        },
+        tags: {
+          tag1: { ZH: '生活方式', EN: 'Lifestyle' },
+          tag2: { ZH: 'AI内容推荐', EN: 'AI Content Recommendation' },
+          tag3: { ZH: '社区平台', EN: 'Community Platform' }
+        }
+      },
+      {
+        badge: { ZH: 'ALPHA—ZERO启航营（Genesis）', EN: 'ALPHA ZERO Genesis Camp' },
+        title: { ZH: '字在午餐 Word Snack - 海外中文学习助手', EN: 'Word Snack - Chinese Learning Assistant for Overseas Kids' },
+        team: { ZH: '学员：T同学', EN: 'Student: T' },
+        teamDetails: { ZH: '自由职业者 | 0工程经验', EN: 'Freelancer | Zero Coding Experience' },
+        description: { 
+          ZH: '海外孩子的课后中文复习助手。通过趣味互动和AI技术，帮助海外华人家庭的孩子轻松复习中文，追踪学习进度，让中文学习变得简单有趣。配有可爱的卡通形象，营造温馨的学习氛围。', 
+          EN: 'After-school Chinese review assistant for overseas children. Uses engaging interactions and AI technology to help children from Chinese families abroad easily review Chinese, track learning progress, and make Chinese learning simple and fun. Features adorable cartoon characters creating a warm learning atmosphere.' 
+        },
+        url: 'https://chinesewordsnack.netlify.app/',
+        cta: { ZH: '访问项目', EN: 'Visit Project' },
+        images: {
+          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/Word_Snack_1.png',
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/Word_Snack_2.png',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/Word_Snack_1.png'
+        },
+        tags: {
+          tag1: { ZH: '教育科技', EN: 'EdTech' },
+          tag2: { ZH: '中文学习', EN: 'Chinese Learning' },
+          tag3: { ZH: '儿童教育', EN: 'Kids Education' }
+        }
+      },
+      {
+        badge: { ZH: 'ALPHA 远航营（Odyssey）', EN: 'ALPHA Odyssey Camp' },
+        title: { ZH: 'PROJECT:Echo - 游戏化目标管理系统', EN: 'PROJECT:Echo - Gamified Goal Management System' },
+        team: { ZH: '学员：J同学', EN: 'Student: J' },
+        teamDetails: { ZH: '13岁 | 2年Python经验', EN: '13 years old | 2 years Python experience' },
+        description: { 
+          ZH: '将目标管理游戏化的创新应用。通过虚拟花园、任务系统和奖励机制,帮助用户建立健康习惯、追踪专注度和达成个人目标。用户完成任务即可获得金币,种植虚拟植物,让自律变得有趣。支持数据同步和个性化成功计划。', 
+          EN: 'Innovative gamified goal management app. Through virtual gardens, task systems and reward mechanisms, helps users build healthy habits, track focus and achieve personal goals. Complete tasks to earn coins, grow virtual plants, making discipline fun. Features data sync and personalized success plans.' 
+        },
+        url: 'https://changepr0jectecho.uk/',
+        cta: { ZH: '访问项目', EN: 'Visit Project' },
+        images: {
+          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/PROJECT_Echo_1.png',
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/PROJECT_Echo_2.png',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/PROJECT_Echo_1.png'
+        },
+        tags: {
+          tag1: { ZH: '游戏化设计', EN: 'Gamification' },
+          tag2: { ZH: '目标管理', EN: 'Goal Management' },
+          tag3: { ZH: '习惯养成', EN: 'Habit Building' }
+        }
+      },
+      {
+        badge: { ZH: 'ALPHA 远航营（Odyssey）', EN: 'ALPHA Odyssey Camp' },
+        title: { ZH: 'RowingPro - AI划船训练平台', EN: 'RowingPro - AI Rowing Training Platform' },
+        team: { ZH: '学员：V同学', EN: 'Student: V' },
+        teamDetails: { ZH: '16岁，美国 | 多项数学/编程金牌得主', EN: '16 years old, USA | Multiple Math/Programming Gold Medalist' },
+        description: { 
+          ZH: '掌握你的划船技术：追踪进度、分析动作,并与划船社区交流。通过AI洞察帮助你把表现提升到更高水平。提供训练计划、视频分析、社区互动、营养指导和健康追踪等全方位功能,是专业划船运动员的智能训练助手。', 
+          EN: 'Master your rowing technique: track progress, analyze movements, and connect with the rowing community. Use AI insights to elevate your performance to the next level. Offers comprehensive features including training plans, video analysis, community interaction, nutrition guidance and health tracking - an intelligent training assistant for professional rowers.' 
+        },
+        url: 'https://crew-trainer.com',
+        cta: { ZH: '访问项目', EN: 'Visit Project' },
+        images: {
+          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/RowingPro_1.png',
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/RowingPro_2.png',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/RowingPro_1.png'
+        },
+        tags: {
+          tag1: { ZH: '运动科技', EN: 'Sports Tech' },
+          tag2: { ZH: 'AI动作分析', EN: 'AI Motion Analysis' },
+          tag3: { ZH: '社区平台', EN: 'Community Platform' }
+        }
+      },
+      {
+        badge: { ZH: 'ALPHA 远航营（Odyssey）', EN: 'ALPHA Odyssey Camp' },
+        title: { ZH: '智能健康饮食助手 - AI营养管理专家', EN: 'Smart Healthy Eating Assistant - AI Nutrition Expert' },
+        team: { ZH: '学员：Y同学', EN: 'Student: Y' },
+        teamDetails: { ZH: '17岁，泰国 | 0代码基础', EN: '17 years old, Thailand | Zero Coding Experience' },
+        description: { 
+          ZH: '您的专属营养管理专家，AI驱动的健康生活。提供每日饮食记录、卡路里追踪、营养成分分析、BMI健康监测和AI健康顾问。通过智能算法帮助用户制定个性化饮食计划，养成健康饮食习惯，实现科学营养管理。', 
+          EN: 'Your personal nutrition management expert, AI-driven healthy living. Offers daily food logging, calorie tracking, nutritional analysis, BMI health monitoring and AI health consultant. Uses intelligent algorithms to help users create personalized meal plans, develop healthy eating habits, and achieve scientific nutrition management.' 
+        },
+        url: 'https://healthyeating365.netlify.app/',
+        cta: { ZH: '访问项目', EN: 'Visit Project' },
+        images: {
+          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/health_1.png',
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/health_2.png',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/health_1.png'
+        },
+        tags: {
+          tag1: { ZH: '健康科技', EN: 'Health Tech' },
+          tag2: { ZH: 'AI营养分析', EN: 'AI Nutrition Analysis' },
+          tag3: { ZH: '个性化推荐', EN: 'Personalized Recommendation' }
+        }
+      },
+      {
+        badge: { ZH: 'ALPHA 远航营（Odyssey）', EN: 'ALPHA Odyssey Camp' },
+        title: { ZH: '生活日历与知识盒 - 个人成长生态系统', EN: 'Life Calendar & Knowledge Box - Personal Growth Ecosystem' },
+        team: { ZH: '学员：Y同学', EN: 'Student: Y' },
+        teamDetails: { ZH: '15岁，泰国 | 0代码基础', EN: '15 years old, Thailand | Zero Coding Experience' },
+        description: { 
+          ZH: '集日记记录、学习管理、专属宠物于一体的个人成长生态系统。提供智能日历、知识管理、专属宠物和AI助手四大核心功能，帮助用户记录生活点滴、管理学习任务、培养习惯，通过游戏化机制让成长变得有趣。', 
+          EN: 'Personal growth ecosystem integrating journal recording, learning management, and virtual pets. Features smart calendar, knowledge management, exclusive pets and AI assistant - four core functions helping users record daily life, manage learning tasks, build habits, making growth fun through gamification.' 
+        },
+        url: 'https://studycalender.netlify.app/',
+        cta: { ZH: '访问项目', EN: 'Visit Project' },
+        images: {
+          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/studycalender_1.png',
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/studycalender_2.png',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/studycalender_1.png'
+        },
+        tags: {
+          tag1: { ZH: '学管理', EN: 'Learning Management' },
+          tag2: { ZH: '日记记录', EN: 'Journal Tracking' },
+          tag3: { ZH: '游戏化设计', EN: 'Gamification' }
+        }
       }
-    }
+    ]
   },
 
   // Philosophy Section
@@ -310,7 +498,7 @@ export const homeContent = {
       },
       quote: {
         text: {
-          ZH: '让每一位对AI充满热情的年轻人，都能在这里找到属于自己的成长方向，成为推动人工智能发展的中坚力量。',
+          ZH: '让每一位对AI充满热情的年轻人，都能在这里找到属于自己的成长方向，成为动人工智能发展的中坚力量。',
           EN: 'Let every young person passionate about AI find their own growth direction here and become a backbone force driving AI development.'
         },
         author: { ZH: '— 周品', EN: '— Zhou Pin' }
