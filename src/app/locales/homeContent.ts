@@ -525,8 +525,8 @@ export const homeContent = {
     info: {
       address: { ZH: '地址', EN: 'Address' },
       addressValue: { 
-        ZH: '成都|中国(四川)成都高新孵化园1号楼A座\n新西兰|B:Hive, 74 Taharoto Road, Smales Farm, Takapuna, AKL 0622', 
-        EN: 'New Zealand|B:Hive, 74 Taharoto Road, Smales Farm, Takapuna, AKL 0622\nChengdu|Building A, No.1 Chengdu High-tech Incubation Park, Sichuan, China' 
+        ZH: '中国四川省成都市高新区成都高新孵化园 1 号楼 A 座\nB:Hive, 74 Taharoto Road, Smales Farm, Takapuna, Auckland, New Zealand', 
+        EN: 'B:Hive, 74 Taharoto Road, Smales Farm, Takapuna, Auckland, New Zealand\nBuilding A, No.1 Chengdu High-tech Incubation Park, High-tech Zone, Chengdu, Sichuan, China' 
       },
       email: { ZH: '邮箱', EN: 'Email' },
       emailIntern: 'internprogram@beebee.ai',
@@ -551,8 +551,8 @@ export const homeContent = {
     },
     contactInfo: {
       address: { 
-        ZH: '成都|中国(四川)成都高新孵化园1号楼A座\n新西兰|B:Hive, 74 Taharoto Road, Smales Farm, Takapuna, AKL 0622', 
-        EN: 'New Zealand|B:Hive, 74 Taharoto Road, Smales Farm, Takapuna, AKL 0622\nChengdu|Building A, No.1 Chengdu High-tech Incubation Park, Sichuan, China' 
+        ZH: '中国四川省成都市高新区成都高新孵化园 1 号楼 A 座\nB:Hive, 74 Taharoto Road, Smales Farm, Takapuna, Auckland, New Zealand', 
+        EN: 'B:Hive, 74 Taharoto Road, Smales Farm, Takapuna, Auckland, New Zealand\nBuilding A, No.1 Chengdu High-tech Incubation Park, High-tech Zone, Chengdu, Sichuan, China' 
       }
     },
     copyright: {

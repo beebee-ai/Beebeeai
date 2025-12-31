@@ -496,13 +496,17 @@ function HomePage() {
                     </div>
                   </div>
                   
-                  <button 
-                    className="px-8 py-3 rounded-lg transition-all duration-300"
+                  <a 
+                    href="https://learn.beebee.ai/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-8 py-3 rounded-lg transition-all duration-300"
                     style={{
                       backgroundColor: 'transparent',
                       border: '1.5px solid #A855F7',
                       color: '#A855F7',
-                      fontWeight: 600
+                      fontWeight: 600,
+                      textDecoration: 'none'
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.backgroundColor = 'rgba(168, 85, 247, 0.15)';
@@ -514,7 +518,7 @@ function HomePage() {
                     }}
                   >
                     {t(homeContent.platform.learningPlatform.cta, language)}
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -970,7 +974,17 @@ function HomePage() {
             <div className="space-y-6">
               <div>
                 <h3 className="mb-2">{t(homeContent.contact.info.address, language)}</h3>
-                <p className="text-gray-400 whitespace-pre-line">{t(homeContent.contact.info.addressValue, language)}</p>
+                <div className="space-y-3">
+                  {t(homeContent.contact.info.addressValue, language).split('\n').map((addr, idx) => (
+                    <div key={idx} className="flex items-start gap-2">
+                      <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <span className="text-gray-400">{addr}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
               <div>
                 <h3 className="mb-2">{t(homeContent.contact.info.email, language)}</h3>
@@ -1102,12 +1116,18 @@ function HomePage() {
                     {homeContent.contact.info.emailBusiness}
                   </a>
                 </li>
-                <li className="flex items-start gap-2">
-                  <svg className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: 'var(--orange-primary)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <span style={{ color: 'var(--text-secondary)', fontSize: '14px' }} className="whitespace-pre-line">{t(homeContent.footer.contactInfo.address, language)}</span>
+                <li>
+                  <div className="space-y-1.5">
+                    {t(homeContent.footer.contactInfo.address, language).split('\n').map((addr, idx) => (
+                      <div key={idx} className="flex items-start gap-2">
+                        <svg className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: 'var(--orange-primary)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>{addr}</span>
+                      </div>
+                    ))}
+                  </div>
                 </li>
               </ul>
             </div>
