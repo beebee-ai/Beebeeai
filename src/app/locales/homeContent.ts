@@ -556,8 +556,8 @@ export const homeContent = {
       }
     },
     copyright: {
-      ZH: '© 2025 BEEBEE AI 学习力平台. All rights reserved.',
-      EN: '© 2025 BEEBEE AI Learning Platform. All rights reserved.'
+      ZH: '© 2026 BEEBEE AI 学习力平台. All rights reserved.',
+      EN: '© 2026 BEEBEE AI Learning Platform. All rights reserved.'
     }
   },
 
