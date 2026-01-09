@@ -1122,13 +1122,6 @@ function HomePage() {
                   </a>
                 </li>
                 <li>
-                  <a href="#system" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
-                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
-                     onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
-                    {t(homeContent.nav.system, language)}
-                  </a>
-                </li>
-                <li>
                   <a href="#philosophy" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
                      onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>

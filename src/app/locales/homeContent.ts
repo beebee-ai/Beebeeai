@@ -170,7 +170,7 @@ export const homeContent = {
         team: { ZH: '组作品，四人协作完成', EN: 'Team Project, 4-member Collaboration' },
         teamDetails: { ZH: '物理博士 | 金融数学硕士 | 运筹/电气工程双硕士 | 工程经验', EN: 'Physics PhD | Financial Math Master | Operations/EE Dual Master | Engineering Experience' },
         description: { 
-          ZH: 'YummyYummy 是您友好的 AI 美食助手，随时随地帮助您快速自信地做出美食选择。它会即时显示每道菜品，并提供简洁明了的描述，还会精选真实的菜品照片，帮助您更好地想象美食的模样。', 
+          ZH: 'YummyYummy 是您友好的 AI 美食助手，可以随时随地帮助您快速自信地做出美食选择。它会即时显示每道菜品，并提供简洁明了的描述，还会精选真实的菜品照片，帮助您更好地想象美食的模样。', 
           EN: 'YummyYummy is your friendly AI food assistant, helping you make food choices quickly and confidently anytime, anywhere. It instantly displays each dish with clear descriptions and curated real photos to help you better visualize the food.' 
         },
         url: 'https://yum.9top.org/',
