@@ -78,34 +78,38 @@ export function ContactForm() {
 
   return (
     <form className="space-y-4" onSubmit={handleSubmit}>
-      {/* 同学姓名 */}
-      <div>
-        <label className="block mb-2 text-sm" style={{ color: 'var(--text-primary)' }}>
-          {t(homeContent.contact.form.studentName, language)} <span style={{ color: 'var(--orange-primary)' }}>*</span>
-        </label>
-        <input
-          type="text"
-          required
-          value={formData.studentName}
-          onChange={(e) => setFormData({ ...formData, studentName: e.target.value })}
-          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 transition-colors"
-        />
+      {/* 姓名和年龄 - 移动端两列，PC端改为全宽单独一行 */}
+      <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
+        {/* 同学姓名 */}
+        <div className="md:col-span-1">
+          <label className="block mb-2 text-sm" style={{ color: 'var(--text-primary)' }}>
+            {t(homeContent.contact.form.studentName, language)} <span style={{ color: 'var(--orange-primary)' }}>*</span>
+          </label>
+          <input
+            type="text"
+            required
+            value={formData.studentName}
+            onChange={(e) => setFormData({ ...formData, studentName: e.target.value })}
+            className="w-full px-4 py-2 md:py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 transition-colors"
+          />
+        </div>
+        
+        {/* 同学年龄（选填）*/}
+        <div className="md:col-span-1">
+          <label className="block mb-2 text-sm" style={{ color: 'var(--text-primary)' }}>
+            {t(homeContent.contact.form.studentAge, language)}
+          </label>
+          <input
+            type="text"
+            value={formData.studentAge}
+            onChange={(e) => setFormData({ ...formData, studentAge: e.target.value })}
+            className="w-full px-4 py-2 md:py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 transition-colors"
+          />
+        </div>
       </div>
       
-      {/* 同学年龄（选填）*/}
-      <div>
-        <label className="block mb-2 text-sm" style={{ color: 'var(--text-primary)' }}>
-          {t(homeContent.contact.form.studentAge, language)}
-        </label>
-        <input
-          type="text"
-          value={formData.studentAge}
-          onChange={(e) => setFormData({ ...formData, studentAge: e.target.value })}
-          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 transition-colors"
-        />
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {/* 国家和邮箱 - 移动端和PC端都是两列 */}
+      <div className="grid grid-cols-2 gap-4">
         {/* 所在国家 */}
         <div>
           <label className="block mb-2 text-sm" style={{ color: 'var(--text-primary)' }}>
@@ -116,7 +120,7 @@ export function ContactForm() {
             required
             value={formData.country}
             onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 transition-colors"
+            className="w-full px-4 py-2 md:py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 transition-colors"
           />
         </div>
         
@@ -131,7 +135,7 @@ export function ContactForm() {
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             placeholder={t(homeContent.contact.form.emailPlaceholder, language)}
-            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 transition-colors"
+            className="w-full px-4 py-2 md:py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 transition-colors"
           />
         </div>
       </div>
@@ -147,7 +151,7 @@ export function ContactForm() {
           onChange={(e) => setFormData({ ...formData, inquiry: e.target.value })}
           placeholder={t(homeContent.contact.form.inquiryPlaceholder, language)}
           rows={4}
-          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 transition-colors resize-none"
+          className="w-full px-4 py-2 md:py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 transition-colors resize-none"
         ></textarea>
       </div>
       

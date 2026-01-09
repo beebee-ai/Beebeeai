@@ -105,8 +105,8 @@ function HomePage() {
           </svg>
         </div>
         <div className="max-w-7xl mx-auto text-center w-full relative z-10" style={{ marginTop: '-8vh' }}>
-          <h1 className="mb-0" style={{ 
-            fontSize: '70px', 
+          <h1 className="mb-0 px-4" style={{ 
+            fontSize: 'clamp(32px, 8vw, 70px)', 
             fontWeight: 600, 
             lineHeight: 1.25,
             letterSpacing: '0.5px',
@@ -127,7 +127,7 @@ function HomePage() {
                       left: '50%',
                       transform: 'translateX(-50%)',
                       width: '100%',
-                      height: '12px',
+                      height: 'clamp(8px, 1.5vw, 12px)',
                       overflow: 'visible'
                     }}
                     viewBox="0 0 100 12"
@@ -158,7 +158,7 @@ function HomePage() {
                       left: '50%',
                       transform: 'translateX(-50%)',
                       width: '100%',
-                      height: '12px',
+                      height: 'clamp(8px, 1.5vw, 12px)',
                       overflow: 'visible'
                     }}
                     viewBox="0 0 100 12"
@@ -176,34 +176,36 @@ function HomePage() {
               </>
             )}
           </h1>
-          <p className="mx-auto" style={{
-            fontSize: '22px',
+          <p className="mx-auto px-4" style={{
+            fontSize: 'clamp(16px, 3vw, 22px)',
             lineHeight: 1.75,
             color: 'var(--text-secondary)',
             maxWidth: '680px',
-            marginTop: '32px',
-            marginBottom: '80px'
+            marginTop: 'clamp(24px, 4vw, 32px)',
+            marginBottom: 'clamp(48px, 8vw, 80px)'
           }}>
             {t(homeContent.hero.subtitle, language)}
           </p>
           <a 
             href="#platform"
-            className="inline-flex items-center gap-3 px-8 transition-all"
+            className="inline-flex items-center gap-3 transition-all"
             style={{
-              height: '52px',
-              lineHeight: '52px',
+              height: 'clamp(48px, 7vw, 52px)',
+              lineHeight: 'clamp(48px, 7vw, 52px)',
+              paddingLeft: 'clamp(24px, 4vw, 32px)',
+              paddingRight: 'clamp(24px, 4vw, 32px)',
               backgroundColor: '#FFFFFF',
               color: '#FF6900',
-              borderRadius: '26px',
+              borderRadius: 'clamp(24px, 3.5vw, 26px)',
               textDecoration: 'none',
               fontWeight: 600,
-              fontSize: '16px'
+              fontSize: 'clamp(14px, 2.5vw, 16px)'
             }}
           >
             {t(homeContent.hero.cta, language)}
             <div style={{
-                width: '24px',
-                height: '24px',
+                width: 'clamp(20px, 3.5vw, 24px)',
+                height: 'clamp(20px, 3.5vw, 24px)',
                 borderRadius: '50%',
                 backgroundColor: '#FF6900',
                 display: 'flex',
@@ -232,11 +234,11 @@ function HomePage() {
           </p>
           
           {/* Stats Section */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-20">
             {/* Stat 1 */}
-            <div className="text-center p-6 rounded-lg border border-white/5 bg-white/[0.02] hover:border-cyan-500/30 hover:bg-white/[0.04] transition-all duration-300">
-              <div className="mb-3" style={{ 
-                fontSize: '48px', 
+            <div className="text-center rounded-lg border border-white/5 bg-white/[0.02] hover:border-cyan-500/30 hover:bg-white/[0.04] transition-all duration-300" style={{ padding: 'clamp(16px, 3vw, 24px)' }}>
+              <div style={{ 
+                fontSize: 'clamp(32px, 6vw, 48px)', 
                 fontWeight: 700,
                 background: 'linear-gradient(135deg, #06B6D4 0%, #22D3EE 100%)',
                 backgroundClip: 'text',
@@ -244,17 +246,18 @@ function HomePage() {
                 color: 'transparent',
                 WebkitTextFillColor: 'transparent',
                 lineHeight: 1,
-                display: 'inline-block'
+                display: 'inline-block',
+                marginBottom: 'clamp(8px, 1.5vw, 12px)'
               }}>
                 {t(homeContent.platform.stats.students.number, language)}
               </div>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '15px' }}>{t(homeContent.platform.stats.students.label, language)}</p>
+              <p style={{ color: 'var(--text-secondary)', fontSize: 'clamp(13px, 2vw, 15px)', lineHeight: 1.4 }}>{t(homeContent.platform.stats.students.label, language)}</p>
             </div>
 
             {/* Stat 2 */}
-            <div className="text-center p-6 rounded-lg border border-white/5 bg-white/[0.02] hover:border-blue-500/30 hover:bg-white/[0.04] transition-all duration-300">
-              <div className="mb-3" style={{ 
-                fontSize: '48px', 
+            <div className="text-center rounded-lg border border-white/5 bg-white/[0.02] hover:border-blue-500/30 hover:bg-white/[0.04] transition-all duration-300" style={{ padding: 'clamp(16px, 3vw, 24px)' }}>
+              <div style={{ 
+                fontSize: 'clamp(32px, 6vw, 48px)', 
                 fontWeight: 700,
                 background: 'linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%)',
                 backgroundClip: 'text',
@@ -262,17 +265,18 @@ function HomePage() {
                 color: 'transparent',
                 WebkitTextFillColor: 'transparent',
                 lineHeight: 1,
-                display: 'inline-block'
+                display: 'inline-block',
+                marginBottom: 'clamp(8px, 1.5vw, 12px)'
               }}>
                 {t(homeContent.platform.stats.projects.number, language)}
               </div>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '15px' }}>{t(homeContent.platform.stats.projects.label, language)}</p>
+              <p style={{ color: 'var(--text-secondary)', fontSize: 'clamp(13px, 2vw, 15px)', lineHeight: 1.4 }}>{t(homeContent.platform.stats.projects.label, language)}</p>
             </div>
 
             {/* Stat 3 */}
-            <div className="text-center p-6 rounded-lg border border-white/5 bg-white/[0.02] hover:border-purple-500/30 hover:bg-white/[0.04] transition-all duration-300">
-              <div className="mb-3" style={{ 
-                fontSize: '48px', 
+            <div className="text-center rounded-lg border border-white/5 bg-white/[0.02] hover:border-purple-500/30 hover:bg-white/[0.04] transition-all duration-300" style={{ padding: 'clamp(16px, 3vw, 24px)' }}>
+              <div style={{ 
+                fontSize: 'clamp(32px, 6vw, 48px)', 
                 fontWeight: 700,
                 background: 'linear-gradient(135deg, #A855F7 0%, #C084FC 100%)',
                 backgroundClip: 'text',
@@ -280,17 +284,18 @@ function HomePage() {
                 color: 'transparent',
                 WebkitTextFillColor: 'transparent',
                 lineHeight: 1,
-                display: 'inline-block'
+                display: 'inline-block',
+                marginBottom: 'clamp(8px, 1.5vw, 12px)'
               }}>
                 {t(homeContent.platform.stats.satisfaction.number, language)}
               </div>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '15px' }}>{t(homeContent.platform.stats.satisfaction.label, language)}</p>
+              <p style={{ color: 'var(--text-secondary)', fontSize: 'clamp(13px, 2vw, 15px)', lineHeight: 1.4 }}>{t(homeContent.platform.stats.satisfaction.label, language)}</p>
             </div>
 
             {/* Stat 4 */}
-            <div className="text-center p-6 rounded-lg border border-white/5 bg-white/[0.02] hover:border-orange-500/30 hover:bg-white/[0.04] transition-all duration-300">
-              <div className="mb-3" style={{ 
-                fontSize: '48px', 
+            <div className="text-center rounded-lg border border-white/5 bg-white/[0.02] hover:border-orange-500/30 hover:bg-white/[0.04] transition-all duration-300" style={{ padding: 'clamp(16px, 3vw, 24px)' }}>
+              <div style={{ 
+                fontSize: 'clamp(32px, 6vw, 48px)', 
                 fontWeight: 700,
                 background: 'linear-gradient(135deg, var(--orange-primary) 0%, #ff8c42 100%)',
                 backgroundClip: 'text',
@@ -298,11 +303,12 @@ function HomePage() {
                 color: 'transparent',
                 WebkitTextFillColor: 'transparent',
                 lineHeight: 1,
-                display: 'inline-block'
+                display: 'inline-block',
+                marginBottom: 'clamp(8px, 1.5vw, 12px)'
               }}>
                 {t(homeContent.platform.stats.support.number, language)}
               </div>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '15px' }}>{t(homeContent.platform.stats.support.label, language)}</p>
+              <p style={{ color: 'var(--text-secondary)', fontSize: 'clamp(13px, 2vw, 15px)', lineHeight: 1.4 }}>{t(homeContent.platform.stats.support.label, language)}</p>
             </div>
           </div>
           
@@ -823,9 +829,7 @@ function HomePage() {
           
           {/* Company Introduction */}
           <div className="mb-20">
-            <h3 className="mb-8 text-center">{t(homeContent.about.companyTitle, language)}</h3>
             <div className="max-w-5xl mx-auto mb-12">
-              <h4 className="text-orange-500 mb-6">{t(homeContent.about.officeTitle, language)}</h4>
               <div className="space-y-6 text-gray-300" style={{ lineHeight: '2' }}>
                 <p>
                   {t(homeContent.about.intro.p1, language)}
@@ -840,35 +844,35 @@ function HomePage() {
             </div>
 
             {/* Company Highlights */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <div className="p-6 border border-white/10 rounded-lg hover:border-cyan-500/50 transition-colors">
-                <div className="w-12 h-12 rounded-full bg-cyan-500/10 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-5xl mx-auto">
+              <div className="border border-white/10 rounded-lg hover:border-cyan-500/50 transition-colors" style={{ padding: 'clamp(12px, 3vw, 24px)' }}>
+                <div className="rounded-full bg-cyan-500/10 flex items-center justify-center mx-auto" style={{ width: 'clamp(32px, 6vw, 48px)', height: 'clamp(32px, 6vw, 48px)', marginBottom: 'clamp(8px, 2vw, 16px)' }}>
+                  <svg className="text-cyan-400" style={{ width: 'clamp(16px, 3vw, 24px)', height: 'clamp(16px, 3vw, 24px)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h4 className="mb-2">{t(homeContent.about.highlights.globalTeam.title, language)}</h4>
-                <p className="text-gray-400">{t(homeContent.about.highlights.globalTeam.desc, language)}</p>
+                <h4 className="text-center" style={{ fontSize: 'clamp(14px, 2.5vw, 18px)', marginBottom: 'clamp(6px, 1.5vw, 8px)' }}>{t(homeContent.about.highlights.globalTeam.title, language)}</h4>
+                <p className="text-gray-400 text-center" style={{ fontSize: 'clamp(11px, 2vw, 14px)', lineHeight: 1.5 }}>{t(homeContent.about.highlights.globalTeam.desc, language)}</p>
               </div>
 
-              <div className="p-6 border border-white/10 rounded-lg hover:border-purple-500/50 transition-colors">
-                <div className="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="border border-white/10 rounded-lg hover:border-purple-500/50 transition-colors" style={{ padding: 'clamp(12px, 3vw, 24px)' }}>
+                <div className="rounded-full bg-purple-500/10 flex items-center justify-center mx-auto" style={{ width: 'clamp(32px, 6vw, 48px)', height: 'clamp(32px, 6vw, 48px)', marginBottom: 'clamp(8px, 2vw, 16px)' }}>
+                  <svg className="text-purple-400" style={{ width: 'clamp(16px, 3vw, 24px)', height: 'clamp(16px, 3vw, 24px)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                   </svg>
                 </div>
-                <h4 className="mb-2">{t(homeContent.about.highlights.deepExperience.title, language)}</h4>
-                <p className="text-gray-400">{t(homeContent.about.highlights.deepExperience.desc, language)}</p>
+                <h4 className="text-center" style={{ fontSize: 'clamp(14px, 2.5vw, 18px)', marginBottom: 'clamp(6px, 1.5vw, 8px)' }}>{t(homeContent.about.highlights.deepExperience.title, language)}</h4>
+                <p className="text-gray-400 text-center" style={{ fontSize: 'clamp(11px, 2vw, 14px)', lineHeight: 1.5 }}>{t(homeContent.about.highlights.deepExperience.desc, language)}</p>
               </div>
 
-              <div className="p-6 border border-white/10 rounded-lg hover:border-blue-500/50 transition-colors">
-                <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="border border-white/10 rounded-lg hover:border-blue-500/50 transition-colors" style={{ padding: 'clamp(12px, 3vw, 24px)' }}>
+                <div className="rounded-full bg-blue-500/10 flex items-center justify-center mx-auto" style={{ width: 'clamp(32px, 6vw, 48px)', height: 'clamp(32px, 6vw, 48px)', marginBottom: 'clamp(8px, 2vw, 16px)' }}>
+                  <svg className="text-blue-400" style={{ width: 'clamp(16px, 3vw, 24px)', height: 'clamp(16px, 3vw, 24px)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                 </div>
-                <h4 className="mb-2">{t(homeContent.about.highlights.enterprise.title, language)}</h4>
-                <p className="text-gray-400">{t(homeContent.about.highlights.enterprise.desc, language)}</p>
+                <h4 className="text-center" style={{ fontSize: 'clamp(14px, 2.5vw, 18px)', marginBottom: 'clamp(6px, 1.5vw, 8px)' }}>{t(homeContent.about.highlights.enterprise.title, language)}</h4>
+                <p className="text-gray-400 text-center" style={{ fontSize: 'clamp(11px, 2vw, 14px)', lineHeight: 1.5 }}>{t(homeContent.about.highlights.enterprise.desc, language)}</p>
               </div>
             </div>
           </div>
@@ -877,30 +881,96 @@ function HomePage() {
           <div className="border-t border-white/10 pt-20">
             <h3 className="mb-12 text-center">{t(homeContent.about.founderSection, language)}</h3>
             <div className="max-w-5xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
-                {/* Founder Photo & Title */}
-                <div className="lg:col-span-1">
-                  <div className="aspect-[3/4] rounded-lg mb-4 overflow-hidden border border-white/10">
-                    <img 
-                      src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/pacer/pin.png" 
-                      alt="周品 - BEEBEE AI 创始人 & CEO" 
-                      className="w-full h-full object-cover"
-                    />
+              <div className="space-y-6" style={{ lineHeight: '2' }}>
+                {/* Founder Photo & Bio - Responsive layout */}
+                <div className="mb-8">
+                  {/* Mobile: Small circular avatar with floating layout (original design) */}
+                  <div className="md:hidden">
+                    <div className="float-left mr-8 mb-4">
+                      <div className="w-32 h-32 rounded-full overflow-hidden border border-white/10">
+                        <img 
+                          src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/pacer/pin.png" 
+                          alt="周品 - BEEBEE AI 创始人 & CEO" 
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="text-center mt-3 w-32">
+                        <h4 className="mb-1 text-base">{t(homeContent.about.ceo.name, language)}</h4>
+                        <p className="text-gray-400 text-sm">{t(homeContent.about.ceo.title, language)}</p>
+                      </div>
+                    </div>
+                    <p className="text-gray-300">
+                      {t(homeContent.about.ceo.bio, language)}
+                    </p>
                   </div>
-                  <div className="text-center">
-                    <h4 className="mb-1">{t(homeContent.about.ceo.name, language)}</h4>
-                    <p className="text-gray-400">{t(homeContent.about.ceo.title, language)}</p>
+
+                  {/* Desktop: Large image on left side */}
+                  <div className="hidden md:flex gap-12 items-start">
+                    <div className="flex-shrink-0" style={{ width: '280px' }}>
+                      <div className="rounded-lg overflow-hidden border border-white/10 mb-6">
+                        <img 
+                          src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/pacer/pin.png" 
+                          alt="周品 - BEEBEE AI 创始人 & CEO" 
+                          className="w-full h-auto object-cover"
+                        />
+                      </div>
+                      <div className="text-center">
+                        <h4 className="mb-1">{t(homeContent.about.ceo.name, language)}</h4>
+                        <p className="text-gray-400 text-sm">{t(homeContent.about.ceo.title, language)}</p>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-300 mb-8">
+                        {t(homeContent.about.ceo.bio, language)}
+                      </p>
+                      
+                      {/* Career History - Desktop version inside right column */}
+                      <div>
+                        <h4 className="mb-4 text-orange-500">{t(homeContent.about.ceo.careerTitle, language)}</h4>
+                        <div className="space-y-4">
+                          <div className="flex gap-3">
+                            <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
+                            <div>
+                              <p className="text-white mb-1">{t(homeContent.about.ceo.career.beebee.title, language)}</p>
+                              <p className="text-gray-400">{t(homeContent.about.ceo.career.beebee.desc, language)}</p>
+                            </div>
+                          </div>
+                          <div className="flex gap-3">
+                            <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
+                            <div>
+                              <p className="text-white mb-1">{t(homeContent.about.ceo.career.quwan.title, language)}</p>
+                              <p className="text-gray-400">{t(homeContent.about.ceo.career.quwan.desc, language)}</p>
+                            </div>
+                          </div>
+                          <div className="flex gap-3">
+                            <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
+                            <div>
+                              <p className="text-white mb-1">{t(homeContent.about.ceo.career.cheetah.title, language)}</p>
+                              <p className="text-gray-400">{t(homeContent.about.ceo.career.cheetah.desc, language)}</p>
+                            </div>
+                          </div>
+                          <div className="flex gap-3">
+                            <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
+                            <div>
+                              <p className="text-white mb-1">{t(homeContent.about.ceo.career.baidu.title, language)}</p>
+                              <p className="text-gray-400">{t(homeContent.about.ceo.career.baidu.desc, language)}</p>
+                            </div>
+                          </div>
+                          <div className="flex gap-3">
+                            <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
+                            <div>
+                              <p className="text-white mb-1">{t(homeContent.about.ceo.career.early.title, language)}</p>
+                              <p className="text-gray-400">{t(homeContent.about.ceo.career.early.desc, language)}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                {/* Founder Description */}
-                <div className="lg:col-span-2 space-y-6" style={{ lineHeight: '2' }}>
-                  <p className="text-gray-300">
-                    {t(homeContent.about.ceo.bio, language)}
-                  </p>
-
-                  {/* Career History */}
-                  <div>
+                {/* Career History - Mobile version */}
+                <div className="md:hidden clear-both">
                     <h4 className="mb-4 text-orange-500">{t(homeContent.about.ceo.careerTitle, language)}</h4>
                     <div className="space-y-4">
                       <div className="flex gap-3">
@@ -941,18 +1011,17 @@ function HomePage() {
                     </div>
                   </div>
 
-                  {/* Philosophy */}
-                  <div>
-                    <h4 className="mb-4 text-orange-500">{t(homeContent.about.ceo.philosophyTitle, language)}</h4>
-                    <p className="text-gray-300 mb-6">
-                      {t(homeContent.about.ceo.philosophy, language)}
+                {/* Philosophy */}
+                <div>
+                  <h4 className="mb-4 text-orange-500">{t(homeContent.about.ceo.philosophyTitle, language)}</h4>
+                  <p className="text-gray-300 mb-6">
+                    {t(homeContent.about.ceo.philosophy, language)}
+                  </p>
+                  <div className="border-l-4 border-orange-500 pl-6 pr-6 py-4 bg-white/5">
+                    <p className="text-gray-300 italic mb-2">
+                      "{t(homeContent.about.ceo.quote.text, language)}"
                     </p>
-                    <div className="border-l-4 border-orange-500 pl-6 pr-6 py-4 bg-white/5">
-                      <p className="text-gray-300 italic mb-2">
-                        "{t(homeContent.about.ceo.quote.text, language)}"
-                      </p>
-                      <p className="text-gray-500 text-right">{t(homeContent.about.ceo.quote.author, language)}</p>
-                    </div>
+                    <p className="text-gray-500 text-right">{t(homeContent.about.ceo.quote.author, language)}</p>
                   </div>
                 </div>
               </div>
@@ -970,13 +1039,38 @@ function HomePage() {
             letterSpacing: '1px',
             lineHeight: 1.3
           }}>{t(homeContent.contact.title, language)}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            <div className="space-y-6 order-2 md:order-1">
+              {/* Image above address - PC端全宽但固定高度 */}
+              <div className="mb-6">
+                <img 
+                  src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/b_hive.jpg" 
+                  alt="BEEBEE AI Location" 
+                  className="w-full rounded-lg md:mb-8 md:h-84 md:object-cover"
+                />
+              </div>
+              
+              {/* Email section - moved above address */}
               <div>
-                <h3 className="mb-2">{t(homeContent.contact.info.address, language)}</h3>
+                <h3 className="mb-3 text-lg">{t(homeContent.contact.info.email, language)}</h3>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <p className="text-gray-400">
+                    <a href={`mailto:${homeContent.contact.info.emailBusiness}`} className="hover:text-orange-500 transition-colors">
+                      {homeContent.contact.info.emailBusiness}
+                    </a>
+                  </p>
+                </div>
+              </div>
+              
+              {/* Address section */}
+              <div>
+                <h3 className="mb-3 text-lg">{t(homeContent.contact.info.address, language)}</h3>
                 <div className="space-y-3">
                   {t(homeContent.contact.info.addressValue, language).split('\n').map((addr, idx) => (
-                    <div key={idx} className="flex items-start gap-2">
+                    <div key={idx} className="flex items-start gap-3">
                       <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -986,24 +1080,9 @@ function HomePage() {
                   ))}
                 </div>
               </div>
-              <div>
-                <h3 className="mb-2">{t(homeContent.contact.info.email, language)}</h3>
-                <div className="space-y-2">
-                  <p className="text-gray-400">
-                    <a href={`mailto:${homeContent.contact.info.emailIntern}`} className="hover:text-orange-500 transition-colors">
-                      {homeContent.contact.info.emailIntern}
-                    </a>
-                  </p>
-                  <p className="text-gray-400">
-                    <a href={`mailto:${homeContent.contact.info.emailBusiness}`} className="hover:text-orange-500 transition-colors">
-                      {homeContent.contact.info.emailBusiness}
-                    </a>
-                  </p>
-                </div>
-              </div>
             </div>
-            <div>
-              <h3 className="mb-6">{t(homeContent.contact.formTitle, language)}</h3>
+            <div className="order-1 md:order-2">
+              <h3 className="mb-6 text-lg">{t(homeContent.contact.formTitle, language)}</h3>
               <ContactForm />
             </div>
           </div>
@@ -1013,9 +1092,9 @@ function HomePage() {
       {/* Footer */}
       <footer className="border-t border-white/10 px-4" style={{ backgroundColor: 'var(--bg-deep)' }}>
         <div className="max-w-7xl mx-auto pt-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12">
             {/* Brand Column */}
-            <div className="lg:col-span-1">
+            <div className="lg:col-span-1 col-span-2">
               <div className="mb-4">
                 <img src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/beebee_ico.png" alt="BEEBEE Logo" className="w-10 h-10 mb-3" />
                 <p className="mb-3" style={{ color: 'var(--orange-primary)', fontSize: '15px' }}>{t(homeContent.footer.tagline, language)}</p>
@@ -1064,9 +1143,9 @@ function HomePage() {
               </ul>
             </div>
 
-            {/* Learning Platform Links */}
+            {/* Training Camps Links */}
             <div>
-              <h4 className="mb-4" style={{ color: 'var(--text-primary)' }}>{t(homeContent.nav.platform, language)}</h4>
+              <h4 className="mb-4" style={{ color: 'var(--text-primary)' }}>{t(homeContent.footer.trainingCamps, language)}</h4>
               <ul className="space-y-3">
                 <li>
                   <a href="#platform" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: '14px' }}
@@ -1082,30 +1161,13 @@ function HomePage() {
                     {t(homeContent.footer.platformLinks.beta, language)}
                   </a>
                 </li>
-                <li>
-                  <a href="#platform" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: '14px' }}
-                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
-                     onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
-                    {t(homeContent.footer.platformLinks.platform, language)}
-                  </a>
-                </li>
               </ul>
             </div>
 
             {/* Contact Information */}
-            <div>
+            <div className="col-span-2 md:col-span-1">
               <h4 className="mb-4" style={{ color: 'var(--text-primary)' }}>{t(homeContent.nav.contact, language)}</h4>
               <ul className="space-y-3">
-                <li className="flex items-start gap-2">
-                  <svg className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: 'var(--orange-primary)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <a href={`mailto:${homeContent.contact.info.emailIntern}`} className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: '14px' }}
-                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
-                     onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
-                    {homeContent.contact.info.emailIntern}
-                  </a>
-                </li>
                 <li className="flex items-start gap-2">
                   <svg className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: 'var(--orange-primary)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -1136,7 +1198,7 @@ function HomePage() {
           {/* Copyright */}
           <div className="pt-6 pb-4 border-t border-white/10 text-center">
             <p style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>
-              {t(homeContent.footer.copyright, language)}
+              © {new Date().getFullYear()} BEEBEE AI {language === 'ZH' ? '学习力平台' : 'Learning Platform'}. All rights reserved.
             </p>
           </div>
         </div>

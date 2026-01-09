@@ -48,13 +48,14 @@ export const differentiationContent = {
     card1: {
       title: { ZH: '独创的"道法术器"全维认知体系', EN: 'Original "Dao-Fa-Shu-Qi" Full-Dimension Cognitive System' },
       subtitle: { ZH: '不仅是工具，更是思维', EN: 'Not just tools, but thinking' },
-      content: { ZH: '市面上的 AI 培训多停留在"术"的层面（教你用工具），而 BEEBEE 构建了"道法术器"四层完整架构。我们不只教授 AI 绘图或克隆声音等工具（术中之术），更通过灵魂（道中之道）与系统（道中之术）层面的引导，帮助你解决"为什么要用 AI"以及"如何保持初心做到极致"的根本问题，实现从"操作工"到"驾驭者"的认知升维。', EN: 'Most AI training stays at the "technique" level (teaching you to use tools), while BEEBEE builds a complete four-layer architecture of "Dao-Fa-Shu-Qi". We not only teach tools like AI drawing or voice cloning (technique in technique), but also guide you through the soul (Dao in Dao) and system (technique in Dao) levels to solve fundamental questions like "why use AI" and "how to maintain original intention and achieve excellence", realizing cognitive升维 from "operator" to "master".' }
+      content: { ZH: '市面上的 AI 培训，大多停留在「术」的层面，只教你如何使用工具。\nBEEBEE 构建的是一套完整的 「道 · 法 · 术 · 器」四层体系。\n\n我们不只教授 AI 绘图、语音克隆等具体工具，而是从更底层出发：\n在「道」层，帮助你想清楚 为什么使用 AI，以及你想成为什么样的人；\n在「法」层，建立可持续演进的方法与系统能力；\n在此之上，再学习具体工具，并把它们真正用好。\n\n我们的目标不是培养更高效的操作工，\n而是帮助你成为能够 长期驾驭 AI、持续进化的人。', EN: 'Most AI training programs focus only on tools — teaching you how to use the latest features and workflows.\nBEEBEE takes a different approach.\n\nWe build a complete four-layer framework: Purpose, Method, Skill, and Tool.\n\nInstead of starting with tools, we begin at a deeper level.\nWe help you clarify why you use AI and who you want to become with it.\nFrom there, we develop transferable methods and systems that can evolve over time.\nOnly then do we focus on specific tools — and how to use them effectively.\n\nOur goal is not to turn you into a faster operator,\nbut into someone who can truly direct AI and grow with it over the long term.' }
     }
   },
 
   // Learning Formula Section
   learningFormula: {
     sectionTitle: { ZH: 'Learning Formula', EN: 'Learning Formula' },
+    subtitle: { ZH: '量化学习效果，科学提升能力', EN: 'Quantify learning outcomes, scientifically enhance capabilities' },
     divider: { ZH: '知行合一 · 学以致用', EN: 'Unity of Knowledge and Action · Learning for Application' },
     
     q2: {
@@ -75,13 +76,14 @@ export const differentiationContent = {
     card2: {
       title: { ZH: '颠覆性的"学习力公式"与提问思维', EN: 'Disruptive "Learning Formula" and Questioning Mindset' },
       subtitle: { ZH: '不仅是答案，更是提问', EN: 'Not just answers, but questions' },
-      content: { ZH: '我们提出了核心公式（学习力 = 提问力平方 × 产品力）。在 AI 时代，答案廉价而问题珍贵。BEEBEE 通过构建 AI Master 专家系统，重点打磨用户的"提问力（Q）"，利用指数级的提问效能撬动产品力，帮助用户在人机协同中实现"1+1>2"的效能，而非简单的加法。', EN: 'We propose the core formula (Learning Capability = Questioning Power² × Product Power). In the AI era, answers are cheap while questions are precious. BEEBEE builds an AI Master expert system to focus on polishing users\' "questioning power (Q)", leveraging exponential questioning effectiveness to drive product power, helping users achieve "1+1>2" synergy in human-AI collaboration, not simple addition.' }
+      content: { ZH: '我们提出一个核心公式：\n学习力 = 提问力² × 产品力。\n\n在 AI 时代，答案正在变得廉价，真正稀缺的是高质量的问题。\nBEEBEE 通过构建 AI Master 专家系统，重点打磨用户的「提问力（Q）」——\n不是多问，而是问对、问深、问到本质。\n\n当提问力以指数级方式放大时，\n它会直接撬动产品力，让人与 AI 的协作产生 1 + 1 > 2 的效果，\n而不只是更快地完成同样的事情。', EN: 'We propose a core formula:\n\nLearning Power = Questioning Ability² × Product Capability.\n\nIn the age of AI, answers are becoming cheap.\nWhat truly matters is the ability to ask the right questions.\n\nThrough our AI Master expert system, BEEBEE focuses on developing strong questioning skills —\nnot asking more questions, but asking better ones:\nquestions that go deeper, clarify intent, and reach the core of the problem.\n\nWhen questioning ability compounds,\nit amplifies product capability and enables true human–AI collaboration —\nwhere 1 + 1 is greater than 2, not just faster execution.' }
     }
   },
 
   // Three Dimensions Section
   threeDimensions: {
     title: { ZH: '三维能力模型', EN: 'Three-Dimensional Capability Model' },
+    subtitle: { ZH: '全面发展', EN: 'Comprehensive Development' },
     description: { ZH: '在 AI 时代，单纯的技能堆砌已不足以应对变化。我们需要构建一个立体的能力模型，协同进化，全面发展。', EN: 'In the AI era, simple skill accumulation is no longer sufficient to deal with changes. We need to build a three-dimensional capability model for collaborative evolution and comprehensive development.' },
     divider: { ZH: '协同进化 · 全面发展', EN: 'Collaborative Evolution · Comprehensive Development' },
     
@@ -113,7 +115,7 @@ export const differentiationContent = {
     card3: {
       title: { ZH: '"三维一体"的复合型人才模型', EN: '"Three-in-One" Composite Talent Model' },
       subtitle: { ZH: '不仅是技能，更是格局', EN: 'Not just skills, but vision' },
-      content: { ZH: '我们拒绝单一的技能培训，致力于培养具备终身学习力的新一代人才。通过 10% AI 创造力 + 60% AI 竞争力 + 30% AI 领导力的科学配比，全方位覆盖从青少年（创造力）、在职人士（竞争力）到企业家（领导力）的需求，让人类在 AI 接管生产的同时，专注于创造与意义，重塑核心价值。', EN: 'We reject single-skill training and are committed to cultivating a new generation of talents with lifelong learning capability. Through the scientific ratio of 10% AI Creativity + 60% AI Competitiveness + 30% AI Leadership, we comprehensively cover the needs from youth (creativity), working professionals (competitiveness) to entrepreneurs (leadership), allowing humans to focus on creation and meaning while AI takes over production, reshaping core values.' }
+      content: { ZH: '我们拒绝单一的技能培训，致力于培养具备终身学习力的新一代人才。通过 10% AI 创造力 + 60% AI 竞争力 + 30% AI 领导力 的科学能力结构，帮助个体在不同人生阶段各有侧重：青少年阶段夯实创造力，在职阶段强化竞争力，迈向企业家与管理者阶段发展领导力。在 AI 接管生产的同时，让人类专注于创造与意义，重塑自身的核心价值。', EN: 'We reject single-skill training and are committed to cultivating a new generation of talents with lifelong learning capability. Through the scientific capability structure of 10% AI Creativity + 60% AI Competitiveness + 30% AI Leadership, we help individuals focus differently at different life stages: solidifying creativity in youth, strengthening competitiveness in career, and developing leadership as they advance to entrepreneurs and managers. While AI takes over production, we enable humans to focus on creation and meaning, reshaping their core values.' }
     }
   },
 
@@ -150,7 +152,7 @@ export const differentiationContent = {
     card4: {
       title: { ZH: '"引蜂人"生态与蜂群智慧理念', EN: '"Bee Keeper" Ecosystem and Swarm Intelligence Philosophy' },
       subtitle: { ZH: '不仅是上课，更是进化', EN: 'Not just classes, but evolution' },
-      content: { ZH: '不同于传统灌输式教育，我们倡导"学习将取代教育"的革新理念，采用独特的"采集-精炼-酿造-协作"引蜂人学习法。通过模拟蜂群智慧的精密协作，打造"轻量化、数量级、定制化"的实战路径，让学员在项目中实现从知识获取到价值创造的完整闭环，从单纯的"人力密集"转型为"知识+AI 密集"。', EN: 'Different from traditional indoctrination education, we advocate the revolutionary concept of "learning will replace education", adopting the unique "Collect-Refine-Brew-Collaborate" Bee Keeper learning method. By simulating the precision collaboration of swarm intelligence, we create "lightweight, scalable, customized" practical paths, enabling students to achieve a complete loop from knowledge acquisition to value creation in projects, transforming from simple "labor-intensive" to "knowledge + AI intensive".' }
+      content: { ZH: '不同于传统的灌输式教育，BEEBEE 提出「学习将取代教育」的核心理念。\n我们采用独特的 「采集 · 精炼 · 酿造 · 协作」引蜂人学习法，\n通过模拟蜂群的协作机制，把学习从被动吸收，转变为持续产出。\n\n在真实项目中，学员以轻量化的方式快速行动，通过高频协作与 AI 放大效能，\n形成 可规模化、可定制的实战路径，\n完成从知识获取到价值创造的完整闭环。\n\n最终，让个体从单纯的「人力密集」模式，\n转向真正的 「知识 + AI 密集」协作方式。', EN: 'Unlike traditional education based on one-way instruction,\nBEEBEE advocates a simple but radical idea: learning should replace education.\n\nWe introduce the Beekeeper Learning Model —\nCollect, Refine, Brew, and Collaborate —\ninspired by how bee colonies transform scattered input into real value through coordination.\n\nInstead of passive consumption, learners work on real projects,\nmoving fast with lightweight execution, high-frequency collaboration, and AI amplification.\nThis creates a scalable and customizable path from knowledge acquisition to value creation.\n\nThe result is a shift\nfrom labor-intensive work\nto a knowledge-and-AI–intensive way of building.' }
     }
   },
 

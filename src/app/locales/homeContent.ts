@@ -167,7 +167,7 @@ export const homeContent = {
       {
         badge: { ZH: 'BETA 无界营（Infinity）', EN: 'BETA Infinity Camp' },
         title: { ZH: 'YummyYummy - AI美食助手', EN: 'YummyYummy - AI Food Assistant' },
-        team: { ZH: '小组作品，四人协作完成', EN: 'Team Project, 4-member Collaboration' },
+        team: { ZH: '组作品，四人协作完成', EN: 'Team Project, 4-member Collaboration' },
         teamDetails: { ZH: '物理博士 | 金融数学硕士 | 运筹/电气工程双硕士 | 工程经验', EN: 'Physics PhD | Financial Math Master | Operations/EE Dual Master | Engineering Experience' },
         description: { 
           ZH: 'YummyYummy 是您友好的 AI 美食助手，随时随地帮助您快速自信地做出美食选择。它会即时显示每道菜品，并提供简洁明了的描述，还会精选真实的菜品照片，帮助您更好地想象美食的模样。', 
@@ -236,7 +236,7 @@ export const homeContent = {
         team: { ZH: '学员：K同学', EN: 'Student: K' },
         teamDetails: { ZH: '房地产大数据公司CEO | 销售市场 | 0工程经验', EN: 'Real Estate Data Company CEO | Sales & Marketing | Zero Coding Experience' },
         description: { 
-          ZH: '内容集群和AI工具平台，提供内容聚类可视化、AI内容生成和由Claude提供支持的SEO评分。帮助营销人员快速构建内容策略，优化搜索引擎排名，提升内容营销效率。', 
+          ZH: '内容集群和AI工具平台,提供内容聚类可视化、AI内容生成和由Claude提供支持的SEO评分。帮助营销人员快速构建内容策略,优化搜索引擎排名,提升内容营销效率。', 
           EN: 'Content clusters and AI tools platform, offering content cluster visualization, AI content generation, and Claude-powered SEO scoring. Helps marketers quickly build content strategies, optimize search rankings, and improve content marketing efficiency.' 
         },
         url: 'https://relabai.netlify.app',
@@ -280,7 +280,7 @@ export const homeContent = {
         team: { ZH: '学员：T同学', EN: 'Student: T' },
         teamDetails: { ZH: '自由职业者 | 0工程经验', EN: 'Freelancer | Zero Coding Experience' },
         description: { 
-          ZH: '海外孩子的课后中文复习助手。通过趣味互动和AI技术，帮助海外华人家庭的孩子轻松复习中文，追踪学习进度，让中文学习变得简单有趣。配有可爱的卡通形象，营造温馨的学习氛围。', 
+          ZH: '海外孩子的课后中文复习助手。通过趣味互动和AI技术，帮助海外华人家庭的孩子轻松复习中文，追踪学习进度，中文学习变得简单有趣。配有可爱的卡通形象，营造温馨的学习氛围。', 
           EN: 'After-school Chinese review assistant for overseas children. Uses engaging interactions and AI technology to help children from Chinese families abroad easily review Chinese, track learning progress, and make Chinese learning simple and fun. Features adorable cartoon characters creating a warm learning atmosphere.' 
         },
         url: 'https://chinesewordsnack.netlify.app/',
@@ -430,7 +430,7 @@ export const homeContent = {
     officeTitle: { ZH: 'BEEBEE AI Office', EN: 'BEEBEE AI Office' },
     intro: {
       p1: {
-        ZH: 'BEEBEE AI LTD是一家总部位于新西兰的国际科技公司，团队分布在新西兰、英国、加拿大、美国、泰国、中国。公司专注于GenAI智能产品研发，由具有20年以上互联网/IT经验及8年AI全模态应用开发经验的资深人士于2022年创立。',
+        ZH: 'BEEBEE AI LTD是一家总部位于新西兰的国际科技公司，团队分布在新西兰、英国、加拿大、美国泰国、中国。公司专注于GenAI智能产品研发，由具有20年以上互联网/IT经验及8年AI全模态应用开发经验的资深人士于2022年创立。',
         EN: 'BEEBEE AI LTD is an international technology company headquartered in New Zealand, with teams distributed across New Zealand, UK, Canada, USA, Thailand, and China. The company focuses on GenAI product development, founded in 2022 by veterans with 20+ years of Internet/IT experience and 8 years of AI multimodal application development experience.'
       },
       p2: {
@@ -462,11 +462,11 @@ export const homeContent = {
       EN: 'BEEBEE was born from reflection on traditional education. We saw too many lost in learning AI, too many courses teaching tools but ignoring thinking. We decided to make a change.'
     },
     ceo: {
-      name: { ZH: '周品', EN: 'Zhou Pin' },
+      name: { ZH: '周品', EN: 'Pin Zhou' },
       title: { ZH: '创始人 & CEO', EN: 'Founder & CEO' },
       bio: {
-        ZH: '周品先生是一位拥有超过20年IT和互联网产品运营创业经验的资深创业者，作为全球第一批GPT时代的创业者，他在人工智能领域拥有8年的相关经验，始终保持着对新技术的强烈好奇心。',
-        EN: 'Mr. Zhou Pin is a seasoned entrepreneur with over 20 years of IT and internet product operations experience. As one of the first global entrepreneurs in the GPT era, he has 8 years of AI experience and maintains a strong curiosity for new technologies.'
+        ZH: '周品先生是一位拥有超过20年IT和互联网产品运营创业经验的资深创业者，作为全球第一批GPT时代的创业者，他在人工智能领域拥有8年的相关经验,始终保持着对新技术的强烈好奇心。',
+        EN: 'Mr. Pin Zhou is a seasoned entrepreneur with over 20 years of IT and internet product operations experience. As one of the first global entrepreneurs in the GPT era, he has 8 years of AI experience and maintains a strong curiosity for new technologies.'
       },
       careerTitle: { ZH: '职业经历', EN: 'Career History' },
       career: {
@@ -493,15 +493,15 @@ export const homeContent = {
       },
       philosophyTitle: { ZH: '创业理念', EN: 'Entrepreneurial Philosophy' },
       philosophy: {
-        ZH: '作为一位充满好奇心的连续创业者，周品先生不断探索技术与商业的边界。同时，他也是一位愿意分享AI教育实践的父亲，致力于将自己在人工智能领域的经验和见解传递给下一代，在技术创新与教育实践之间找到了完美的平衡点。',
-        EN: 'As a curious serial entrepreneur, Mr. Zhou continuously explores the boundaries of technology and business. As a father willing to share AI education practices, he is committed to passing his AI experience and insights to the next generation, finding the perfect balance between technological innovation and educational practice.'
+        ZH: '作为一位充满好奇心的连续创业者，周品先生不断探索技术与商业的边界。同时,他也是一位愿意分享AI教育实践的父亲，致力于将自己在人工智能领域的经验和见解传递给下一代，在技术创新与教育实践之间找到了完美的平衡点。',
+        EN: 'As a curious serial entrepreneur, Mr. Pin Zhou continuously explores the boundaries of technology and business. As a father willing to share AI education practices, he is committed to passing his AI experience and insights to the next generation, finding the perfect balance between technological innovation and educational practice.'
       },
       quote: {
         text: {
           ZH: '让每一位对AI充满热情的年轻人，都能在这里找到属于自己的成长方向，成为动人工智能发展的中坚力量。',
           EN: 'Let every young person passionate about AI find their own growth direction here and become a backbone force driving AI development.'
         },
-        author: { ZH: '— 周品', EN: '— Zhou Pin' }
+        author: { ZH: '— 周品', EN: '— Pin Zhou' }
       }
     }
   },
@@ -544,9 +544,13 @@ export const homeContent = {
       ZH: '快速导航',
       EN: 'Quick Navigation'
     },
+    trainingCamps: {
+      ZH: '实训营',
+      EN: 'Training Camps'
+    },
     platformLinks: {
-      alpha: { ZH: 'Alpha实训营', EN: 'Alpha Training Camp' },
-      beta: { ZH: 'Beta实训营', EN: 'Beta Training Camp' },
+      alpha: { ZH: 'Alpha 实训营', EN: 'Alpha Training Camp' },
+      beta: { ZH: 'Beta 实训营', EN: 'Beta Training Camp' },
       platform: { ZH: '学习平台', EN: 'Learning Platform' }
     },
     contactInfo: {
@@ -556,8 +560,8 @@ export const homeContent = {
       }
     },
     copyright: {
-      ZH: '© 2026 BEEBEE AI 学习力平台. All rights reserved.',
-      EN: '© 2026 BEEBEE AI Learning Platform. All rights reserved.'
+      ZH: '© 2025 BEEBEE AI 学习力平台. All rights reserved.',
+      EN: '© 2025 BEEBEE AI Learning Platform. All rights reserved.'
     }
   },
 
@@ -565,9 +569,9 @@ export const homeContent = {
   nav: {
     home: { ZH: '首页', EN: 'Home' },
     platform: { ZH: '学习力平台', EN: 'Learning Platform' },
-    system: { ZH: '学习体系', EN: 'Learning System' },
+    system: { ZH: '学习体系', EN: 'Curriculum' },
     works: { ZH: '学员作品', EN: 'Student Works' },
-    philosophy: { ZH: '品牌理念', EN: 'Brand Philosophy' },
+    philosophy: { ZH: '品牌理念', EN: 'Philosophy' },
     about: { ZH: '关于我们', EN: 'About Us' },
     contact: { ZH: '联系我们', EN: 'Contact Us' }
   }
