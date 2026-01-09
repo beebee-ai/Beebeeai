@@ -114,7 +114,7 @@ function HomePage() {
           }}>
             {language === 'ZH' ? (
               <>
-                BEEBEE<span className="block md:inline">用 <span style={{ 
+                BEEBEE<span className="hidden md:inline">, </span><span className="block md:inline">用 <span style={{ 
                   color: 'var(--orange-primary)',
                   position: 'relative',
                   display: 'inline-block'
@@ -177,7 +177,7 @@ function HomePage() {
             )}
           </h1>
           <p className="mx-auto px-4" style={{
-            fontSize: 'clamp(16px, 3vw, 22px)',
+            fontSize: 'clamp(18px, 3.5vw, 24px)',
             lineHeight: 1.75,
             color: 'var(--text-secondary)',
             maxWidth: '680px',
@@ -548,7 +548,7 @@ function HomePage() {
             {/* Item 01 - Left aligned */}
             <div className="relative grid md:grid-cols-12 gap-8 items-center">
               <div className="md:col-span-7 group">
-                <div className="relative p-10 border border-white/10 rounded-2xl hover:border-cyan-500/30 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] transition-all duration-500 overflow-hidden bg-gradient-to-br from-cyan-500/[0.03] to-transparent">
+                <div className="relative p-6 md:p-8 border border-white/10 rounded-2xl hover:border-cyan-500/30 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] transition-all duration-500 overflow-hidden bg-gradient-to-br from-cyan-500/[0.03] to-transparent">
                   {/* Icon - Background positioned at top right */}
                   <div className="absolute -top-4 -right-4 w-24 h-24 flex items-center justify-center rounded-2xl bg-cyan-500/5 border border-cyan-500/10 group-hover:bg-cyan-500/10 transition-all duration-300 rotate-12 group-hover:rotate-6">
                     <Lightbulb className="w-12 h-12 text-cyan-400/40" />
@@ -583,7 +583,7 @@ function HomePage() {
               </div>
               
               <div className="md:col-span-7 group order-2 md:order-none">
-                <div className="relative p-10 border border-white/10 rounded-2xl hover:border-blue-500/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500 overflow-hidden bg-gradient-to-br from-blue-500/[0.03] to-transparent">
+                <div className="relative p-6 md:p-8 border border-white/10 rounded-2xl hover:border-blue-500/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500 overflow-hidden bg-gradient-to-br from-blue-500/[0.03] to-transparent">
                   {/* Icon - Background positioned at top right */}
                   <div className="absolute -top-4 -right-4 w-24 h-24 flex items-center justify-center rounded-2xl bg-blue-500/5 border border-blue-500/10 group-hover:bg-blue-500/10 transition-all duration-300 rotate-12 group-hover:rotate-6">
                     <Target className="w-12 h-12 text-blue-400/40" />
@@ -604,7 +604,7 @@ function HomePage() {
             {/* Item 03 - Left aligned */}
             <div className="relative grid md:grid-cols-12 gap-8 items-center">
               <div className="md:col-span-7 group">
-                <div className="relative p-10 border border-white/10 rounded-2xl hover:border-purple-500/30 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-all duration-500 overflow-hidden bg-gradient-to-br from-purple-500/[0.03] to-transparent">
+                <div className="relative p-6 md:p-8 border border-white/10 rounded-2xl hover:border-purple-500/30 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-all duration-500 overflow-hidden bg-gradient-to-br from-purple-500/[0.03] to-transparent">
                   {/* Icon - Background positioned at top right */}
                   <div className="absolute -top-4 -right-4 w-24 h-24 flex items-center justify-center rounded-2xl bg-purple-500/5 border border-purple-500/10 group-hover:bg-purple-500/10 transition-all duration-300 rotate-12 group-hover:rotate-6">
                     <Layers className="w-12 h-12 text-purple-400/40" />
@@ -639,7 +639,7 @@ function HomePage() {
               </div>
               
               <div className="md:col-span-7 group order-2 md:order-none">
-                <div className="relative p-10 border border-white/10 rounded-2xl hover:border-orange-500/30 hover:shadow-[0_0_30px_rgba(255,105,0,0.15)] transition-all duration-500 overflow-hidden bg-gradient-to-br from-orange-500/[0.03] to-transparent">
+                <div className="relative p-6 md:p-8 border border-white/10 rounded-2xl hover:border-orange-500/30 hover:shadow-[0_0_30px_rgba(255,105,0,0.15)] transition-all duration-500 overflow-hidden bg-gradient-to-br from-orange-500/[0.03] to-transparent">
                   {/* Icon - Background positioned at top right */}
                   <div className="absolute -top-4 -right-4 w-24 h-24 flex items-center justify-center rounded-2xl bg-orange-500/5 border border-orange-500/10 group-hover:bg-orange-500/10 transition-all duration-300 rotate-12 group-hover:rotate-6">
                     <Sparkles className="w-12 h-12 text-orange-500/40" />
@@ -895,12 +895,12 @@ function HomePage() {
                         />
                       </div>
                       <div className="text-center mt-2 w-32">
-                        <h4 className="mb-1" style={{ fontSize: 'clamp(12px, 2.5vw, 14px)' }}>{t(homeContent.about.ceo.name, language)}</h4>
-                        <p className="text-gray-400" style={{ fontSize: 'clamp(10px, 2vw, 12px)' }}>{t(homeContent.about.ceo.title, language)}</p>
+                        <h4 className="mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.about.ceo.name, language)}</h4>
+                        <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2vw, 14px)' }}>{t(homeContent.about.ceo.title, language)}</p>
                       </div>
                     </div>
                     <div className="flex-1">
-                      <p className="text-gray-300" style={{ fontSize: 'clamp(13px, 2.5vw, 15px)', lineHeight: 1.8 }}>
+                      <p className="text-gray-300" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)', lineHeight: 1.8 }}>
                         {t(homeContent.about.ceo.bio, language)}
                       </p>
                     </div>
@@ -918,7 +918,7 @@ function HomePage() {
                       </div>
                       <div className="text-center">
                         <h4 className="mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.about.ceo.name, language)}</h4>
-                        <p className="text-gray-400" style={{ fontSize: 'clamp(12px, 2vw, 14px)' }}>{t(homeContent.about.ceo.title, language)}</p>
+                        <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2vw, 14px)' }}>{t(homeContent.about.ceo.title, language)}</p>
                       </div>
                     </div>
                     <div className="flex-1">
@@ -934,35 +934,35 @@ function HomePage() {
                             <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                             <div>
                               <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.beebee.title, language)}</p>
-                              <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.beebee.desc, language)}</p>
+                              <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.beebee.desc, language)}</p>
                             </div>
                           </div>
                           <div className="flex gap-3">
                             <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                             <div>
                               <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.quwan.title, language)}</p>
-                              <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.quwan.desc, language)}</p>
+                              <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.quwan.desc, language)}</p>
                             </div>
                           </div>
                           <div className="flex gap-3">
                             <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                             <div>
                               <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.cheetah.title, language)}</p>
-                              <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.cheetah.desc, language)}</p>
+                              <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.cheetah.desc, language)}</p>
                             </div>
                           </div>
                           <div className="flex gap-3">
                             <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                             <div>
                               <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.baidu.title, language)}</p>
-                              <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.baidu.desc, language)}</p>
+                              <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.baidu.desc, language)}</p>
                             </div>
                           </div>
                           <div className="flex gap-3">
                             <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                             <div>
                               <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.early.title, language)}</p>
-                              <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.early.desc, language)}</p>
+                              <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.early.desc, language)}</p>
                             </div>
                           </div>
                         </div>
@@ -979,35 +979,35 @@ function HomePage() {
                         <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                         <div>
                           <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.beebee.title, language)}</p>
-                          <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.beebee.desc, language)}</p>
+                          <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.beebee.desc, language)}</p>
                         </div>
                       </div>
                       <div className="flex gap-3">
                         <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                         <div>
                           <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.quwan.title, language)}</p>
-                          <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.quwan.desc, language)}</p>
+                          <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.quwan.desc, language)}</p>
                         </div>
                       </div>
                       <div className="flex gap-3">
                         <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                         <div>
                           <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.cheetah.title, language)}</p>
-                          <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.cheetah.desc, language)}</p>
+                          <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.cheetah.desc, language)}</p>
                         </div>
                       </div>
                       <div className="flex gap-3">
                         <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                         <div>
                           <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.baidu.title, language)}</p>
-                          <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.baidu.desc, language)}</p>
+                          <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.baidu.desc, language)}</p>
                         </div>
                       </div>
                       <div className="flex gap-3">
                         <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                         <div>
                           <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.early.title, language)}</p>
-                          <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.early.desc, language)}</p>
+                          <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.early.desc, language)}</p>
                         </div>
                       </div>
                     </div>

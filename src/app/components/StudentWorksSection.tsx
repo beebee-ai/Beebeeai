@@ -303,6 +303,13 @@ function CarouselCard({ project, language }: any) {
     return () => clearInterval(interval);
   }, [images.length]);
 
+  // Get title without subtitle (remove " - " and everything after)
+  const getShortTitle = (titleObj: any) => {
+    const fullTitle = t(titleObj, language);
+    const dashIndex = fullTitle.indexOf(' - ');
+    return dashIndex !== -1 ? fullTitle.substring(0, dashIndex) : fullTitle;
+  };
+
   return (
     <a 
       href={project.url}
@@ -348,7 +355,7 @@ function CarouselCard({ project, language }: any) {
 
       {/* Content */}
       <div className="p-5 flex flex-col flex-1">
-        <h4 className="text-cyan-400 mb-2 leading-tight text-base">{t(project.title, language)}</h4>
+        <h4 className="text-cyan-400 mb-2 leading-tight text-base">{getShortTitle(project.title)}</h4>
         
         <div className="flex items-center gap-2 mb-3">
           <Users className="w-3 h-3 text-gray-400" />

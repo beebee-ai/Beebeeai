@@ -105,8 +105,8 @@ export const homeContent = {
       title: { ZH: '理念革新', EN: 'Innovative Philosophy' },
       subtitle: { ZH: '拒绝填鸭教育，掌握AI提问力', EN: 'Reject rote learning, master AI questioning' },
       description: {
-        ZH: '不仅是学知识，更是训练驾驭AI的思维。我们相信，在AI时代，提出好问题比记住标准答案更重要。',
-        EN: 'Not just learning knowledge, but training AI-driven thinking. We believe asking good questions is more important than memorizing answers in the AI era.'
+        ZH: '不仅是学知识，更是训练驾驭AI的思维。我们相信，在AI时代，提出好问题比记住答案更重要。',
+        EN: 'Not just learning knowledge, but training AI-driven thinking. We believe asking good questions is more important than remembering answers in the AI era.'
       }
     },
     item2: {
@@ -286,9 +286,9 @@ export const homeContent = {
         url: 'https://chinesewordsnack.netlify.app/',
         cta: { ZH: '访问项目', EN: 'Visit Project' },
         images: {
-          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/Word_Snack_1.png',
-          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/Word_Snack_2.png',
-          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/Word_Snack_1.png'
+          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/wordSnack_1.png',
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/wordSnack_2.png',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/wordSnack_3.png'
         },
         tags: {
           tag1: { ZH: '教育科技', EN: 'EdTech' },
@@ -308,9 +308,9 @@ export const homeContent = {
         url: 'https://changepr0jectecho.uk/',
         cta: { ZH: '访问项目', EN: 'Visit Project' },
         images: {
-          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/PROJECT_Echo_1.png',
-          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/PROJECT_Echo_2.png',
-          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/PROJECT_Echo_1.png'
+          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/jaxsen_1.png',
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/jaxsen_2.png',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/jaxsen_1.png'
         },
         tags: {
           tag1: { ZH: '游戏化设计', EN: 'Gamification' },
@@ -330,9 +330,9 @@ export const homeContent = {
         url: 'https://crew-trainer.com',
         cta: { ZH: '访问项目', EN: 'Visit Project' },
         images: {
-          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/RowingPro_1.png',
-          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/RowingPro_2.png',
-          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/RowingPro_1.png'
+          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/rowingPro_1.png',
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/rowingPro_2.png',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/rowingPro_3.png'
         },
         tags: {
           tag1: { ZH: '运动科技', EN: 'Sports Tech' },
@@ -352,9 +352,9 @@ export const homeContent = {
         url: 'https://healthyeating365.netlify.app/',
         cta: { ZH: '访问项目', EN: 'Visit Project' },
         images: {
-          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/health_1.png',
-          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/health_2.png',
-          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/health_1.png'
+          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/healthyEating_1.png',
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/healthyEating_2.png',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/healthyEating_1.png'
         },
         tags: {
           tag1: { ZH: '健康科技', EN: 'Health Tech' },
