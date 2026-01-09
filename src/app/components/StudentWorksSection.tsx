@@ -103,10 +103,18 @@ function ProjectCard({ project, language, index }: any) {
     >
       {/* Image Section */}
       <div className="relative aspect-video overflow-hidden bg-black">
+        {/* Blurred Background */}
+        <img 
+          src={images[currentImg]}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-60"
+          aria-hidden="true"
+        />
+        {/* Main Image */}
         <img 
           src={images[currentImg]}
           alt={t(project.title, language)}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+          className="relative w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 z-10"
         />
         
         {/* Gradient Overlay */}
@@ -319,10 +327,18 @@ function CarouselCard({ project, language }: any) {
     >
       {/* Image */}
       <div className="relative h-48 overflow-hidden bg-black">
+        {/* Blurred Background */}
+        <img 
+          src={images[currentImg]}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-60"
+          aria-hidden="true"
+        />
+        {/* Main Image */}
         <img 
           src={images[currentImg]}
           alt={t(project.title, language)}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          className="relative w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 z-10"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
         
