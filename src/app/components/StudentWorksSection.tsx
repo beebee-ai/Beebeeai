@@ -14,18 +14,18 @@ export function StudentWorksSection() {
   const carouselProjects = projects.slice(6);
 
   return (
-    <section id="works" className="px-4 border-t border-white/10 py-20" style={{ backgroundColor: 'var(--bg-surface)' }}>
+    <section id="works" className="px-4 border-t border-white/10 pt-8 md:pt-20 pb-8 md:pb-20" style={{ backgroundColor: 'var(--bg-surface)' }}>
       <div className="max-w-7xl mx-auto w-full">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-16">
           <h2 className="mb-4" style={{ 
             color: 'var(--text-primary)',
-            fontSize: '42px',
+            fontSize: 'clamp(24px, 5vw, 42px)',
             fontWeight: 600,
             letterSpacing: '1px',
             lineHeight: 1.3
           }}>{t(homeContent.works.title, language)}</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">{t(homeContent.works.subtitle, language)}</p>
+          <p className="text-gray-400 max-w-2xl mx-auto" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.works.subtitle, language)}</p>
         </div>
 
         {/* Grid Layout - 2 rows × 3 cols */}
@@ -141,28 +141,28 @@ function ProjectCard({ project, language, index }: any) {
 
       {/* Content Section */}
       <div className="p-6 flex flex-col flex-1">
-        <h3 className={`mb-3 ${theme.text} leading-tight text-lg`}>{t(project.title, language)}</h3>
+        <h3 className={`mb-3 ${theme.text} leading-tight`} style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(project.title, language)}</h3>
         
         {/* Team Info */}
         <div className="mb-4 flex items-start gap-2">
           <Users className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0" />
           <div>
-            <p className="text-sm text-gray-300">{t(project.team, language)}</p>
-            <p className="text-xs text-gray-500 mt-1">{t(project.teamDetails, language)}</p>
+            <p style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }} className="text-gray-300">{t(project.team, language)}</p>
+            <p style={{ fontSize: 'clamp(11px, 2vw, 12px)' }} className="text-gray-500 mt-1">{t(project.teamDetails, language)}</p>
           </div>
         </div>
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-4">
           {Object.values(project.tags).map((tag: any, idx) => (
-            <span key={idx} className="text-xs px-2.5 py-1 rounded-full bg-white/10 text-white/80 border border-white/20 backdrop-blur-sm">
+            <span key={idx} className="px-2.5 py-1 rounded-full bg-white/10 text-white/80 border border-white/20 backdrop-blur-sm" style={{ fontSize: 'clamp(11px, 2vw, 12px)' }}>
               {t(tag, language)}
             </span>
           ))}
         </div>
 
         {/* Description */}
-        <p className="text-sm text-gray-300 leading-relaxed">
+        <p className="text-gray-300 leading-relaxed" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
           {t(project.description, language)}
         </p>
       </div>

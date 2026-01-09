@@ -65,7 +65,7 @@ function HomePage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section id="home" className="flex items-start px-4 relative overflow-hidden" style={{ paddingTop: '20vh', paddingBottom: '10vh' }}>
+      <section id="home" className="flex items-start px-4 relative overflow-hidden pb-8 md:pb-[10vh]" style={{ paddingTop: '20vh' }}>
         {/* Honeycomb Background Pattern */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -114,7 +114,7 @@ function HomePage() {
           }}>
             {language === 'ZH' ? (
               <>
-                BEEBEE，用 <span style={{ 
+                BEEBEE<span className="block md:inline">用 <span style={{ 
                   color: 'var(--orange-primary)',
                   position: 'relative',
                   display: 'inline-block'
@@ -141,11 +141,11 @@ function HomePage() {
                       strokeLinecap="round"
                     />
                   </svg>
-                </span> 进化学习力
+                </span> 进化学习力</span>
               </>
             ) : (
               <>
-                BEEBEE, Evolve Learning with <span style={{ 
+                BEEBEE<span className="block md:inline"> Evolve Learning with <span style={{ 
                   color: 'var(--orange-primary)',
                   position: 'relative',
                   display: 'inline-block'
@@ -172,7 +172,7 @@ function HomePage() {
                       strokeLinecap="round"
                     />
                   </svg>
-                </span>
+                </span></span>
               </>
             )}
           </h1>
@@ -219,22 +219,22 @@ function HomePage() {
       </section>
 
       {/* Learning Power Platform Section (includes both bootcamps and learning platform) */}
-      <section id="platform" className="px-4 border-t border-white/10 py-20" style={{ backgroundColor: 'var(--bg-surface)' }}>
+      <section id="platform" className="px-4 border-t border-white/10 pt-8 md:pt-20 pb-8 md:pb-20" style={{ backgroundColor: 'var(--bg-surface)' }}>
         <div className="max-w-7xl mx-auto w-full">
           {/* Learning Power Platform - Bootcamps */}
           <h2 className="mb-4 text-center" style={{ 
             color: 'var(--text-primary)',
-            fontSize: '42px',
+            fontSize: 'clamp(24px, 5vw, 42px)',
             fontWeight: 600,
             letterSpacing: '1px',
             lineHeight: 1.3
           }}>{t(homeContent.platform.title, language)}</h2>
-          <p className="text-center mb-16" style={{ color: 'var(--text-secondary)' }}>
+          <p className="text-center mb-8 md:mb-16" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
             {t(homeContent.platform.subtitle, language)}
           </p>
           
           {/* Stats Section */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-20">
             {/* Stat 1 */}
             <div className="text-center rounded-lg border border-white/5 bg-white/[0.02] hover:border-cyan-500/30 hover:bg-white/[0.04] transition-all duration-300" style={{ padding: 'clamp(16px, 3vw, 24px)' }}>
               <div style={{ 
@@ -313,16 +313,16 @@ function HomePage() {
           </div>
           
           <div className="max-w-[1154px] mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 md:mb-16">
               {/* Alpha 实战营 */}
             <div className="group p-8 border border-white/10 rounded-lg hover:border-orange-500/50 hover:bg-white/[0.02] transition-all duration-300 relative overflow-hidden">
               {/* Background Gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/0 to-orange-500/0 group-hover:from-orange-500/5 group-hover:to-orange-500/0 transition-all duration-300"></div>
               
               <div className="relative z-10">
-                <h3 className="mb-2" style={{ color: 'var(--orange-primary)', fontSize: '30px', fontWeight: 700 }}>{t(homeContent.platform.alpha.title, language)}</h3>
-                <p className="mb-6" style={{ color: '#9CA3AF', fontSize: '16px' }}>{t(homeContent.platform.alpha.subtitle, language)}</p>
-                <p className="mb-6" style={{ fontSize: '16px', lineHeight: '1.75', color: '#9CA3AF' }}>
+                <h3 className="mb-2" style={{ color: 'var(--orange-primary)', fontSize: 'clamp(20px, 4vw, 30px)', fontWeight: 700 }}>{t(homeContent.platform.alpha.title, language)}</h3>
+                <p className="mb-6" style={{ color: '#9CA3AF', fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.platform.alpha.subtitle, language)}</p>
+                <p className="mb-6" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#9CA3AF' }}>
                   {t(homeContent.platform.alpha.description, language)}
                 </p>
                 <ul className="space-y-3 mb-8">
@@ -330,25 +330,25 @@ function HomePage() {
                     <div className="w-5 h-5 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div>
                     </div>
-                    <span style={{ fontSize: '16px', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.alpha.features.feature1, language)}</span>
+                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.alpha.features.feature1, language)}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div>
                     </div>
-                    <span style={{ fontSize: '16px', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.alpha.features.feature2, language)}</span>
+                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.alpha.features.feature2, language)}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div>
                     </div>
-                    <span style={{ fontSize: '16px', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.alpha.features.feature3, language)}</span>
+                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.alpha.features.feature3, language)}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div>
                     </div>
-                    <span style={{ fontSize: '16px', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.alpha.features.feature4, language)}</span>
+                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.alpha.features.feature4, language)}</span>
                   </li>
                 </ul>
                 <div className="flex justify-center">
@@ -386,9 +386,9 @@ function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 to-cyan-500/0 group-hover:from-cyan-500/5 group-hover:to-cyan-500/0 transition-all duration-300"></div>
               
               <div className="relative z-10">
-                <h3 className="mb-2" style={{ color: '#06B6D4', fontSize: '30px', fontWeight: 700 }}>{t(homeContent.platform.beta.title, language)}</h3>
-                <p className="mb-6" style={{ color: '#9CA3AF', fontSize: '16px' }}>{t(homeContent.platform.beta.subtitle, language)}</p>
-                <p className="mb-6" style={{ fontSize: '16px', lineHeight: '1.75', color: '#9CA3AF' }}>
+                <h3 className="mb-2" style={{ color: '#06B6D4', fontSize: 'clamp(20px, 4vw, 30px)', fontWeight: 700 }}>{t(homeContent.platform.beta.title, language)}</h3>
+                <p className="mb-6" style={{ color: '#9CA3AF', fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.platform.beta.subtitle, language)}</p>
+                <p className="mb-6" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#9CA3AF' }}>
                   {t(homeContent.platform.beta.description, language)}
                 </p>
                 <ul className="space-y-3 mb-8">
@@ -396,25 +396,25 @@ function HomePage() {
                     <div className="w-5 h-5 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
                     </div>
-                    <span style={{ fontSize: '16px', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.beta.features.feature1, language)}</span>
+                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.beta.features.feature1, language)}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
                     </div>
-                    <span style={{ fontSize: '16px', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.beta.features.feature2, language)}</span>
+                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.beta.features.feature2, language)}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
                     </div>
-                    <span style={{ fontSize: '16px', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.beta.features.feature3, language)}</span>
+                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.beta.features.feature3, language)}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
                     </div>
-                    <span style={{ fontSize: '16px', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.beta.features.feature4, language)}</span>
+                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.beta.features.feature4, language)}</span>
                   </li>
                 </ul>
                 <div className="flex justify-center">
@@ -468,37 +468,37 @@ function HomePage() {
 
                 {/* Right - Content Area */}
                 <div>
-                  <h3 className="mb-2" style={{ color: '#A855F7', fontSize: '30px', fontWeight: 700 }}>{t(homeContent.platform.learningPlatform.title, language)}</h3>
-                  <p className="mb-6" style={{ color: 'var(--text-secondary)', fontSize: '16px' }}>{t(homeContent.platform.learningPlatform.subtitle, language)}</p>
-                  <p className="mb-10" style={{ fontSize: '16px', lineHeight: '1.75', color: '#D1D5DB' }}>
+                  <h3 className="mb-2" style={{ color: '#A855F7', fontSize: 'clamp(20px, 4vw, 30px)', fontWeight: 700 }}>{t(homeContent.platform.learningPlatform.title, language)}</h3>
+                  <p className="mb-6" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.platform.learningPlatform.subtitle, language)}</p>
+                  <p className="mb-10" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>
                     {t(homeContent.platform.learningPlatform.description, language)}
                   </p>
                   
-                  <h4 className="mb-6" style={{ color: '#A855F7', fontSize: '18px' }}>{t(homeContent.platform.learningPlatform.featuresTitle, language)}</h4>
+                  <h4 className="mb-6" style={{ color: '#A855F7', fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.platform.learningPlatform.featuresTitle, language)}</h4>
                   <div className="space-y-4 mb-10">
                     <div className="flex items-center gap-3">
                       <svg className="w-5 h-5 text-purple-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.learningPlatform.features.feature1, language)}</p>
+                      <p style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.learningPlatform.features.feature1, language)}</p>
                     </div>
                     <div className="flex items-center gap-3">
                       <svg className="w-5 h-5 text-purple-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.learningPlatform.features.feature2, language)}</p>
+                      <p style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.learningPlatform.features.feature2, language)}</p>
                     </div>
                     <div className="flex items-center gap-3">
                       <svg className="w-5 h-5 text-purple-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.learningPlatform.features.feature3, language)}</p>
+                      <p style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.learningPlatform.features.feature3, language)}</p>
                     </div>
                     <div className="flex items-center gap-3">
                       <svg className="w-5 h-5 text-purple-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.learningPlatform.features.feature4, language)}</p>
+                      <p style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.learningPlatform.features.feature4, language)}</p>
                     </div>
                   </div>
                   
@@ -533,18 +533,18 @@ function HomePage() {
       </section>
 
       {/* Learning Curriculum Section - 我们的差异化 */}
-      <section id="system" className="px-4 border-t border-white/10 py-20 bg-black">
+      <section id="system" className="px-4 border-t border-white/10 pt-8 md:pt-20 pb-8 md:pb-20 bg-black">
         <div className="max-w-7xl mx-auto w-full">
           <h2 className="mb-4 text-center" style={{ 
-            fontSize: '42px',
+            fontSize: 'clamp(24px, 5vw, 42px)',
             fontWeight: 600,
             letterSpacing: '1px',
             lineHeight: 1.3
           }}>{t(homeContent.differentiation.title, language)}</h2>
-          <p className="text-center text-gray-400 mb-20">{t(homeContent.differentiation.subtitle, language)}</p>
+          <p className="text-center text-gray-400 mb-8 md:mb-20" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.differentiation.subtitle, language)}</p>
           
           {/* Staggered Layout */}
-          <div className="max-w-6xl mx-auto space-y-24">
+          <div className="max-w-6xl mx-auto space-y-8 md:space-y-24">
             {/* Item 01 - Left aligned */}
             <div className="relative grid md:grid-cols-12 gap-8 items-center">
               <div className="md:col-span-7 group">
@@ -554,9 +554,9 @@ function HomePage() {
                     <Lightbulb className="w-12 h-12 text-cyan-400/40" />
                   </div>
                   
-                  <h3 className="mb-4 relative text-2xl font-semibold">{t(homeContent.differentiation.item1.title, language)}</h3>
-                  <p className="text-cyan-400 mb-6 text-xl relative font-medium leading-snug">{t(homeContent.differentiation.item1.subtitle, language)}</p>
-                  <p className="text-gray-400 leading-relaxed relative text-base">
+                  <h3 className="mb-4 relative font-semibold" style={{ fontSize: 'clamp(18px, 3.5vw, 24px)' }}>{t(homeContent.differentiation.item1.title, language)}</h3>
+                  <p className="text-cyan-400 mb-6 relative font-medium leading-snug" style={{ fontSize: 'clamp(16px, 3vw, 20px)' }}>{t(homeContent.differentiation.item1.subtitle, language)}</p>
+                  <p className="text-gray-400 leading-relaxed relative" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
                     {t(homeContent.differentiation.item1.description, language)}
                   </p>
                   
@@ -589,9 +589,9 @@ function HomePage() {
                     <Target className="w-12 h-12 text-blue-400/40" />
                   </div>
                   
-                  <h3 className="mb-4 relative text-2xl font-semibold">{t(homeContent.differentiation.item2.title, language)}</h3>
-                  <p className="text-blue-400 mb-6 text-xl relative font-medium leading-snug">{t(homeContent.differentiation.item2.subtitle, language)}</p>
-                  <p className="text-gray-400 leading-relaxed relative text-base">
+                  <h3 className="mb-4 relative font-semibold" style={{ fontSize: 'clamp(18px, 3.5vw, 24px)' }}>{t(homeContent.differentiation.item2.title, language)}</h3>
+                  <p className="text-blue-400 mb-6 relative font-medium leading-snug" style={{ fontSize: 'clamp(16px, 3vw, 20px)' }}>{t(homeContent.differentiation.item2.subtitle, language)}</p>
+                  <p className="text-gray-400 leading-relaxed relative" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
                     {t(homeContent.differentiation.item2.description, language)}
                   </p>
                   
@@ -610,9 +610,9 @@ function HomePage() {
                     <Layers className="w-12 h-12 text-purple-400/40" />
                   </div>
                   
-                  <h3 className="mb-4 relative text-2xl font-semibold">{t(homeContent.differentiation.item3.title, language)}</h3>
-                  <p className="text-purple-400 mb-6 text-xl relative font-medium leading-snug">{t(homeContent.differentiation.item3.subtitle, language)}</p>
-                  <p className="text-gray-400 leading-relaxed relative text-base">
+                  <h3 className="mb-4 relative font-semibold" style={{ fontSize: 'clamp(18px, 3.5vw, 24px)' }}>{t(homeContent.differentiation.item3.title, language)}</h3>
+                  <p className="text-purple-400 mb-6 relative font-medium leading-snug" style={{ fontSize: 'clamp(16px, 3vw, 20px)' }}>{t(homeContent.differentiation.item3.subtitle, language)}</p>
+                  <p className="text-gray-400 leading-relaxed relative" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
                     {t(homeContent.differentiation.item3.description, language)}
                   </p>
                   
@@ -645,9 +645,9 @@ function HomePage() {
                     <Sparkles className="w-12 h-12 text-orange-500/40" />
                   </div>
                   
-                  <h3 className="mb-4 relative text-2xl font-semibold">{t(homeContent.differentiation.item4.title, language)}</h3>
-                  <p className="text-orange-500 mb-6 text-xl relative font-medium leading-snug">{t(homeContent.differentiation.item4.subtitle, language)}</p>
-                  <p className="text-gray-400 leading-relaxed relative text-base">
+                  <h3 className="mb-4 relative font-semibold" style={{ fontSize: 'clamp(18px, 3.5vw, 24px)' }}>{t(homeContent.differentiation.item4.title, language)}</h3>
+                  <p className="text-orange-500 mb-6 relative font-medium leading-snug" style={{ fontSize: 'clamp(16px, 3vw, 20px)' }}>{t(homeContent.differentiation.item4.subtitle, language)}</p>
+                  <p className="text-gray-400 leading-relaxed relative" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
                     {t(homeContent.differentiation.item4.description, language)}
                   </p>
                   
@@ -677,15 +677,15 @@ function HomePage() {
       <StudentWorksSection />
 
       {/* Brand Philosophy Section */}
-      <section id="philosophy" className="px-4 border-t border-white/10 py-20 bg-black">
+      <section id="philosophy" className="px-4 border-t border-white/10 pt-8 md:pt-20 pb-8 md:pb-20 bg-black">
         <div className="max-w-7xl mx-auto w-full">
           <h2 className="mb-4 text-center" style={{ 
-            fontSize: '42px',
+            fontSize: 'clamp(24px, 5vw, 42px)',
             fontWeight: 600,
             letterSpacing: '1px',
             lineHeight: 1.3
           }}>{t(homeContent.philosophy.title, language)}</h2>
-          <p className="text-center text-gray-400 mb-16">{t(homeContent.philosophy.subtitle, language)}</p>
+          <p className="text-center text-gray-400 mb-8 md:mb-16" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.philosophy.subtitle, language)}</p>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Left Column - Vision and Core Concepts */}
@@ -698,8 +698,8 @@ function HomePage() {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h3 className="mb-2">{t(homeContent.philosophy.visionMission.title, language)}</h3>
-                  <p className="text-gray-400 mb-1">
+                  <h3 className="mb-2" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)', fontWeight: 600 }}>{t(homeContent.philosophy.visionMission.title, language)}</h3>
+                  <p className="text-gray-400 mb-1" style={{ fontSize: 'clamp(13px, 2.2vw, 15px)', lineHeight: 1.6 }}>
                     {t(homeContent.philosophy.visionMission.content, language)}
                   </p>
                 </div>
@@ -713,8 +713,8 @@ function HomePage() {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h3 className="mb-2">{t(homeContent.philosophy.aiEra.title, language)}</h3>
-                  <p className="text-gray-400">
+                  <h3 className="mb-2" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)', fontWeight: 600 }}>{t(homeContent.philosophy.aiEra.title, language)}</h3>
+                  <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 15px)', lineHeight: 1.6 }}>
                     {t(homeContent.philosophy.aiEra.content, language)}
                   </p>
                 </div>
@@ -728,8 +728,8 @@ function HomePage() {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h3 className="mb-2">{t(homeContent.philosophy.system.title, language)}</h3>
-                  <p className="text-gray-400">
+                  <h3 className="mb-2" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)', fontWeight: 600 }}>{t(homeContent.philosophy.system.title, language)}</h3>
+                  <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 15px)', lineHeight: 1.6 }}>
                     {t(homeContent.philosophy.system.content, language)}
                   </p>
                 </div>
@@ -743,8 +743,8 @@ function HomePage() {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h3 className="mb-2">{t(homeContent.philosophy.humanAI.title, language)}</h3>
-                  <p className="text-gray-400">
+                  <h3 className="mb-2" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)', fontWeight: 600 }}>{t(homeContent.philosophy.humanAI.title, language)}</h3>
+                  <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 15px)', lineHeight: 1.6 }}>
                     {t(homeContent.philosophy.humanAI.content, language)}
                   </p>
                 </div>
@@ -758,8 +758,8 @@ function HomePage() {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h3 className="mb-2">{t(homeContent.philosophy.lifelongLearning.title, language)}</h3>
-                  <p className="text-gray-400">
+                  <h3 className="mb-2" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)', fontWeight: 600 }}>{t(homeContent.philosophy.lifelongLearning.title, language)}</h3>
+                  <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 15px)', lineHeight: 1.6 }}>
                     {t(homeContent.philosophy.lifelongLearning.content, language)}
                   </p>
                 </div>
@@ -769,9 +769,9 @@ function HomePage() {
             {/* Right Column - Core Values */}
             <div>
               <div className="mb-8">
-                <p className="text-white mb-2">{t(homeContent.philosophy.coreValues.label, language)}</p>
-                <h2 className="mb-4 text-orange-500">{t(homeContent.philosophy.coreValues.title, language)}</h2>
-                <p className="text-gray-400">{t(homeContent.philosophy.coreValues.subtitle, language)}</p>
+                <p className="text-white mb-2" style={{ fontSize: 'clamp(12px, 2vw, 14px)' }}>{t(homeContent.philosophy.coreValues.label, language)}</p>
+                <h2 className="mb-4 text-orange-500" style={{ fontSize: 'clamp(20px, 4vw, 32px)', fontWeight: 600 }}>{t(homeContent.philosophy.coreValues.title, language)}</h2>
+                <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 15px)', lineHeight: 1.6 }}>{t(homeContent.philosophy.coreValues.subtitle, language)}</p>
               </div>
 
               <div className="grid grid-cols-2 gap-6">
@@ -781,7 +781,7 @@ function HomePage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
                     </svg>
                   </div>
-                  <p className="text-white">{t(homeContent.philosophy.coreValues.value1, language)}</p>
+                  <p className="text-white" style={{ fontSize: 'clamp(13px, 2.2vw, 15px)', lineHeight: 1.6 }}>{t(homeContent.philosophy.coreValues.value1, language)}</p>
                 </div>
 
                 <div className="p-8 bg-white/5 border border-white/10 rounded-lg hover:border-orange-500/50 transition-colors">
@@ -790,7 +790,7 @@ function HomePage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                     </svg>
                   </div>
-                  <p className="text-white">{t(homeContent.philosophy.coreValues.value2, language)}</p>
+                  <p className="text-white" style={{ fontSize: 'clamp(13px, 2.2vw, 15px)', lineHeight: 1.6 }}>{t(homeContent.philosophy.coreValues.value2, language)}</p>
                 </div>
 
                 <div className="p-8 bg-white/5 border border-white/10 rounded-lg hover:border-orange-500/50 transition-colors">
@@ -800,7 +800,7 @@ function HomePage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
-                  <p className="text-white">{t(homeContent.philosophy.coreValues.value3, language)}</p>
+                  <p className="text-white" style={{ fontSize: 'clamp(13px, 2.2vw, 15px)', lineHeight: 1.6 }}>{t(homeContent.philosophy.coreValues.value3, language)}</p>
                 </div>
 
                 <div className="p-8 bg-white/5 border border-white/10 rounded-lg hover:border-orange-500/50 transition-colors">
@@ -809,7 +809,7 @@ function HomePage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <p className="text-white">{t(homeContent.philosophy.coreValues.value4, language)}</p>
+                  <p className="text-white" style={{ fontSize: 'clamp(13px, 2.2vw, 15px)', lineHeight: 1.6 }}>{t(homeContent.philosophy.coreValues.value4, language)}</p>
                 </div>
               </div>
             </div>
@@ -818,19 +818,19 @@ function HomePage() {
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="px-4 border-t border-white/10 py-20 bg-white/[0.08]">
+      <section id="about" className="px-4 border-t border-white/10 pt-8 md:pt-20 pb-8 md:pb-20 bg-white/[0.08]">
         <div className="max-w-7xl mx-auto w-full">
-          <h2 className="mb-16 text-center" style={{ 
-            fontSize: '42px',
+          <h2 className="mb-8 md:mb-16 text-center" style={{ 
+            fontSize: 'clamp(24px, 5vw, 42px)',
             fontWeight: 600,
             letterSpacing: '1px',
             lineHeight: 1.3
           }}>{t(homeContent.about.title, language)}</h2>
           
           {/* Company Introduction */}
-          <div className="mb-20">
+          <div className="mb-8 md:mb-20">
             <div className="max-w-5xl mx-auto mb-12">
-              <div className="space-y-6 text-gray-300" style={{ lineHeight: '2' }}>
+              <div className="space-y-6 text-gray-300" style={{ lineHeight: '2', fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
                 <p>
                   {t(homeContent.about.intro.p1, language)}
                 </p>
@@ -878,15 +878,15 @@ function HomePage() {
           </div>
 
           {/* Founder Section */}
-          <div className="border-t border-white/10 pt-20">
-            <h3 className="mb-12 text-center">{t(homeContent.about.founderSection, language)}</h3>
+          <div className="border-t border-white/10 pt-8 md:pt-20">
+            <h3 className="mb-12 text-center" style={{ fontSize: 'clamp(20px, 4vw, 32px)', fontWeight: 600 }}>{t(homeContent.about.founderSection, language)}</h3>
             <div className="max-w-5xl mx-auto">
               <div className="space-y-6" style={{ lineHeight: '2' }}>
                 {/* Founder Photo & Bio - Responsive layout */}
                 <div className="mb-8">
-                  {/* Mobile: Small circular avatar with floating layout (original design) */}
-                  <div className="md:hidden">
-                    <div className="float-left mr-8 mb-4">
+                  {/* Mobile: Left-right layout with avatar on left */}
+                  <div className="md:hidden flex gap-4 items-start mb-6">
+                    <div className="flex-shrink-0">
                       <div className="w-32 h-32 rounded-full overflow-hidden border border-white/10">
                         <img 
                           src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/pacer/pin.png" 
@@ -894,14 +894,16 @@ function HomePage() {
                           className="w-full h-full object-cover"
                         />
                       </div>
-                      <div className="text-center mt-3 w-32">
-                        <h4 className="mb-1 text-base">{t(homeContent.about.ceo.name, language)}</h4>
-                        <p className="text-gray-400 text-sm">{t(homeContent.about.ceo.title, language)}</p>
+                      <div className="text-center mt-2 w-32">
+                        <h4 className="mb-1" style={{ fontSize: 'clamp(12px, 2.5vw, 14px)' }}>{t(homeContent.about.ceo.name, language)}</h4>
+                        <p className="text-gray-400" style={{ fontSize: 'clamp(10px, 2vw, 12px)' }}>{t(homeContent.about.ceo.title, language)}</p>
                       </div>
                     </div>
-                    <p className="text-gray-300">
-                      {t(homeContent.about.ceo.bio, language)}
-                    </p>
+                    <div className="flex-1">
+                      <p className="text-gray-300" style={{ fontSize: 'clamp(13px, 2.5vw, 15px)', lineHeight: 1.8 }}>
+                        {t(homeContent.about.ceo.bio, language)}
+                      </p>
+                    </div>
                   </div>
 
                   {/* Desktop: Large image on left side */}
@@ -915,52 +917,52 @@ function HomePage() {
                         />
                       </div>
                       <div className="text-center">
-                        <h4 className="mb-1">{t(homeContent.about.ceo.name, language)}</h4>
-                        <p className="text-gray-400 text-sm">{t(homeContent.about.ceo.title, language)}</p>
+                        <h4 className="mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.about.ceo.name, language)}</h4>
+                        <p className="text-gray-400" style={{ fontSize: 'clamp(12px, 2vw, 14px)' }}>{t(homeContent.about.ceo.title, language)}</p>
                       </div>
                     </div>
                     <div className="flex-1">
-                      <p className="text-gray-300 mb-8">
+                      <p className="text-gray-300 mb-8" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)', lineHeight: 1.8 }}>
                         {t(homeContent.about.ceo.bio, language)}
                       </p>
                       
                       {/* Career History - Desktop version inside right column */}
                       <div>
-                        <h4 className="mb-4 text-orange-500">{t(homeContent.about.ceo.careerTitle, language)}</h4>
+                        <h4 className="mb-4 text-orange-500" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.about.ceo.careerTitle, language)}</h4>
                         <div className="space-y-4">
                           <div className="flex gap-3">
                             <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                             <div>
-                              <p className="text-white mb-1">{t(homeContent.about.ceo.career.beebee.title, language)}</p>
-                              <p className="text-gray-400">{t(homeContent.about.ceo.career.beebee.desc, language)}</p>
+                              <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.beebee.title, language)}</p>
+                              <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.beebee.desc, language)}</p>
                             </div>
                           </div>
                           <div className="flex gap-3">
                             <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                             <div>
-                              <p className="text-white mb-1">{t(homeContent.about.ceo.career.quwan.title, language)}</p>
-                              <p className="text-gray-400">{t(homeContent.about.ceo.career.quwan.desc, language)}</p>
+                              <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.quwan.title, language)}</p>
+                              <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.quwan.desc, language)}</p>
                             </div>
                           </div>
                           <div className="flex gap-3">
                             <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                             <div>
-                              <p className="text-white mb-1">{t(homeContent.about.ceo.career.cheetah.title, language)}</p>
-                              <p className="text-gray-400">{t(homeContent.about.ceo.career.cheetah.desc, language)}</p>
+                              <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.cheetah.title, language)}</p>
+                              <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.cheetah.desc, language)}</p>
                             </div>
                           </div>
                           <div className="flex gap-3">
                             <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                             <div>
-                              <p className="text-white mb-1">{t(homeContent.about.ceo.career.baidu.title, language)}</p>
-                              <p className="text-gray-400">{t(homeContent.about.ceo.career.baidu.desc, language)}</p>
+                              <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.baidu.title, language)}</p>
+                              <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.baidu.desc, language)}</p>
                             </div>
                           </div>
                           <div className="flex gap-3">
                             <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                             <div>
-                              <p className="text-white mb-1">{t(homeContent.about.ceo.career.early.title, language)}</p>
-                              <p className="text-gray-400">{t(homeContent.about.ceo.career.early.desc, language)}</p>
+                              <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.early.title, language)}</p>
+                              <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.early.desc, language)}</p>
                             </div>
                           </div>
                         </div>
@@ -971,41 +973,41 @@ function HomePage() {
 
                 {/* Career History - Mobile version */}
                 <div className="md:hidden clear-both">
-                    <h4 className="mb-4 text-orange-500">{t(homeContent.about.ceo.careerTitle, language)}</h4>
+                    <h4 className="mb-4 text-orange-500" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.about.ceo.careerTitle, language)}</h4>
                     <div className="space-y-4">
                       <div className="flex gap-3">
                         <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                         <div>
-                          <p className="text-white mb-1">{t(homeContent.about.ceo.career.beebee.title, language)}</p>
-                          <p className="text-gray-400">{t(homeContent.about.ceo.career.beebee.desc, language)}</p>
+                          <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.beebee.title, language)}</p>
+                          <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.beebee.desc, language)}</p>
                         </div>
                       </div>
                       <div className="flex gap-3">
                         <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                         <div>
-                          <p className="text-white mb-1">{t(homeContent.about.ceo.career.quwan.title, language)}</p>
-                          <p className="text-gray-400">{t(homeContent.about.ceo.career.quwan.desc, language)}</p>
+                          <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.quwan.title, language)}</p>
+                          <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.quwan.desc, language)}</p>
                         </div>
                       </div>
                       <div className="flex gap-3">
                         <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                         <div>
-                          <p className="text-white mb-1">{t(homeContent.about.ceo.career.cheetah.title, language)}</p>
-                          <p className="text-gray-400">{t(homeContent.about.ceo.career.cheetah.desc, language)}</p>
+                          <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.cheetah.title, language)}</p>
+                          <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.cheetah.desc, language)}</p>
                         </div>
                       </div>
                       <div className="flex gap-3">
                         <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                         <div>
-                          <p className="text-white mb-1">{t(homeContent.about.ceo.career.baidu.title, language)}</p>
-                          <p className="text-gray-400">{t(homeContent.about.ceo.career.baidu.desc, language)}</p>
+                          <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.baidu.title, language)}</p>
+                          <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.baidu.desc, language)}</p>
                         </div>
                       </div>
                       <div className="flex gap-3">
                         <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
                         <div>
-                          <p className="text-white mb-1">{t(homeContent.about.ceo.career.early.title, language)}</p>
-                          <p className="text-gray-400">{t(homeContent.about.ceo.career.early.desc, language)}</p>
+                          <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.early.title, language)}</p>
+                          <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.early.desc, language)}</p>
                         </div>
                       </div>
                     </div>
@@ -1013,15 +1015,15 @@ function HomePage() {
 
                 {/* Philosophy */}
                 <div>
-                  <h4 className="mb-4 text-orange-500">{t(homeContent.about.ceo.philosophyTitle, language)}</h4>
-                  <p className="text-gray-300 mb-6">
+                  <h4 className="mb-4 text-orange-500" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.about.ceo.philosophyTitle, language)}</h4>
+                  <p className="text-gray-300 mb-6" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)', lineHeight: 1.8 }}>
                     {t(homeContent.about.ceo.philosophy, language)}
                   </p>
                   <div className="border-l-4 border-orange-500 pl-6 pr-6 py-4 bg-white/5">
-                    <p className="text-gray-300 italic mb-2">
+                    <p className="text-gray-300 italic mb-2" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)', lineHeight: 1.8 }}>
                       "{t(homeContent.about.ceo.quote.text, language)}"
                     </p>
-                    <p className="text-gray-500 text-right">{t(homeContent.about.ceo.quote.author, language)}</p>
+                    <p className="text-gray-500 text-right" style={{ fontSize: 'clamp(12px, 2vw, 13px)' }}>{t(homeContent.about.ceo.quote.author, language)}</p>
                   </div>
                 </div>
               </div>
@@ -1031,10 +1033,10 @@ function HomePage() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="px-4 border-t border-white/10 py-20 bg-black">
+      <section id="contact" className="px-4 border-t border-white/10 pt-8 md:pt-20 pb-8 md:pb-20 bg-black">
         <div className="max-w-7xl mx-auto w-full">
           <h2 className="mb-12 text-center" style={{ 
-            fontSize: '42px',
+            fontSize: 'clamp(24px, 5vw, 42px)',
             fontWeight: 600,
             letterSpacing: '1px',
             lineHeight: 1.3
@@ -1052,12 +1054,12 @@ function HomePage() {
               
               {/* Email section - moved above address */}
               <div>
-                <h3 className="mb-3 text-lg">{t(homeContent.contact.info.email, language)}</h3>
+                <h3 className="mb-3" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.contact.info.email, language)}</h3>
                 <div className="flex items-start gap-3">
                   <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  <p className="text-gray-400">
+                  <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>
                     <a href={`mailto:${homeContent.contact.info.emailBusiness}`} className="hover:text-orange-500 transition-colors">
                       {homeContent.contact.info.emailBusiness}
                     </a>
@@ -1067,7 +1069,7 @@ function HomePage() {
               
               {/* Address section */}
               <div>
-                <h3 className="mb-3 text-lg">{t(homeContent.contact.info.address, language)}</h3>
+                <h3 className="mb-3" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.contact.info.address, language)}</h3>
                 <div className="space-y-3">
                   {t(homeContent.contact.info.addressValue, language).split('\n').map((addr, idx) => (
                     <div key={idx} className="flex items-start gap-3">
@@ -1075,14 +1077,14 @@ function HomePage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
-                      <span className="text-gray-400">{addr}</span>
+                      <span className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{addr}</span>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
             <div className="order-1 md:order-2">
-              <h3 className="mb-6 text-lg">{t(homeContent.contact.formTitle, language)}</h3>
+              <h3 className="mb-6" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.contact.formTitle, language)}</h3>
               <ContactForm />
             </div>
           </div>
@@ -1091,50 +1093,50 @@ function HomePage() {
 
       {/* Footer */}
       <footer className="border-t border-white/10 px-4" style={{ backgroundColor: 'var(--bg-deep)' }}>
-        <div className="max-w-7xl mx-auto pt-16">
+        <div className="max-w-7xl mx-auto pt-8 md:pt-20">
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12">
             {/* Brand Column */}
             <div className="lg:col-span-1 col-span-2">
               <div className="mb-4">
                 <img src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/beebee_ico.png" alt="BEEBEE Logo" className="w-10 h-10 mb-3" />
-                <p className="mb-3" style={{ color: 'var(--orange-primary)', fontSize: '15px' }}>{t(homeContent.footer.tagline, language)}</p>
+                <p className="mb-3" style={{ color: 'var(--orange-primary)', fontSize: 'clamp(13px, 2.2vw, 15px)' }}>{t(homeContent.footer.tagline, language)}</p>
               </div>
             </div>
 
             {/* Quick Navigation */}
             <div>
-              <h4 className="mb-4" style={{ color: 'var(--text-primary)' }}>{t(homeContent.footer.quickNav, language)}</h4>
+              <h4 className="mb-4" style={{ color: 'var(--text-primary)', fontSize: 'clamp(15px, 2.5vw, 16px)' }}>{t(homeContent.footer.quickNav, language)}</h4>
               <ul className="space-y-3">
                 <li>
-                  <a href="#home" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: '14px' }}
+                  <a href="#home" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
                      onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
                     {t(homeContent.nav.home, language)}
                   </a>
                 </li>
                 <li>
-                  <a href="#platform" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: '14px' }}
+                  <a href="#platform" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
                      onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
                     {t(homeContent.nav.platform, language)}
                   </a>
                 </li>
                 <li>
-                  <a href="#system" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: '14px' }}
+                  <a href="#system" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
                      onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
                     {t(homeContent.nav.system, language)}
                   </a>
                 </li>
                 <li>
-                  <a href="#philosophy" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: '14px' }}
+                  <a href="#philosophy" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
                      onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
                     {t(homeContent.nav.philosophy, language)}
                   </a>
                 </li>
                 <li>
-                  <a href="#about" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: '14px' }}
+                  <a href="#about" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
                      onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
                     {t(homeContent.nav.about, language)}
@@ -1145,17 +1147,17 @@ function HomePage() {
 
             {/* Training Camps Links */}
             <div>
-              <h4 className="mb-4" style={{ color: 'var(--text-primary)' }}>{t(homeContent.footer.trainingCamps, language)}</h4>
+              <h4 className="mb-4" style={{ color: 'var(--text-primary)', fontSize: 'clamp(15px, 2.5vw, 16px)' }}>{t(homeContent.footer.trainingCamps, language)}</h4>
               <ul className="space-y-3">
                 <li>
-                  <a href="#platform" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: '14px' }}
+                  <a href="#platform" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
                      onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
                     {t(homeContent.footer.platformLinks.alpha, language)}
                   </a>
                 </li>
                 <li>
-                  <a href="#platform" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: '14px' }}
+                  <a href="#platform" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
                      onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
                     {t(homeContent.footer.platformLinks.beta, language)}
@@ -1166,13 +1168,13 @@ function HomePage() {
 
             {/* Contact Information */}
             <div className="col-span-2 md:col-span-1">
-              <h4 className="mb-4" style={{ color: 'var(--text-primary)' }}>{t(homeContent.nav.contact, language)}</h4>
+              <h4 className="mb-4" style={{ color: 'var(--text-primary)', fontSize: 'clamp(15px, 2.5vw, 16px)' }}>{t(homeContent.nav.contact, language)}</h4>
               <ul className="space-y-3">
                 <li className="flex items-start gap-2">
                   <svg className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: 'var(--orange-primary)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  <a href={`mailto:${homeContent.contact.info.emailBusiness}`} className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: '14px' }}
+                  <a href={`mailto:${homeContent.contact.info.emailBusiness}`} className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
                      onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
                     {homeContent.contact.info.emailBusiness}
@@ -1186,7 +1188,7 @@ function HomePage() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
-                        <span style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>{addr}</span>
+                        <span style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>{addr}</span>
                       </div>
                     ))}
                   </div>
@@ -1197,7 +1199,7 @@ function HomePage() {
 
           {/* Copyright */}
           <div className="pt-6 pb-4 border-t border-white/10 text-center">
-            <p style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>
               © {new Date().getFullYear()} BEEBEE AI {language === 'ZH' ? '学习力平台' : 'Learning Platform'}. All rights reserved.
             </p>
           </div>

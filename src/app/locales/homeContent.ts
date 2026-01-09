@@ -12,8 +12,8 @@ export const homeContent = {
       EN: 'BEEBEE, Evolve Learning with AI'
     },
     subtitle: {
-      ZH: '聚焦 AI 核心能力，把理念转化为可实践的学习方式',
-      EN: 'Focus on AI core capabilities, transform concepts into practical learning methods'
+      ZH: '让理念真正落地到实践中',
+      EN: 'Turning concepts into real-world practice'
     },
     cta: {
       ZH: '开始探索',
@@ -509,7 +509,7 @@ export const homeContent = {
   // Contact Section
   contact: {
     title: { ZH: '联系我们', EN: 'Contact Us' },
-    subtitle: { ZH: '准备好开始你的学习之旅了吗？', EN: 'Ready to start your learning journey?' },
+    subtitle: { ZH: '准备好开始你的 AI 学习之旅了吗？', EN: 'Ready to start your AI learning journey?' },
     formTitle: { ZH: '咨询表单', EN: 'Inquiry Form' },
     form: {
       studentName: { ZH: '同学姓名', EN: 'Student Name' },

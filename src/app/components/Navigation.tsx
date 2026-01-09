@@ -14,7 +14,6 @@ export function Navigation() {
   const navItems = [
     { labelKey: 'home', href: '#home' },
     { labelKey: 'platform', href: '#platform' },
-    { labelKey: 'system', href: '#system' },
     { labelKey: 'works', href: '#works' },
     { labelKey: 'philosophy', href: '#philosophy' },
     { labelKey: 'about', href: '#about' },

@@ -28,7 +28,7 @@ export function DifferentiationDetail() {
           </Link>
           
           <h1 className="mb-6" style={{ 
-            fontSize: '48px', 
+            fontSize: 'clamp(28px, 6vw, 48px)', 
             fontWeight: 600, 
             lineHeight: 1.25,
             letterSpacing: '0.5px',
@@ -37,7 +37,7 @@ export function DifferentiationDetail() {
             {t(differentiationContent.hero.title, language)}
           </h1>
           <p style={{
-            fontSize: '20px',
+            fontSize: 'clamp(16px, 3vw, 20px)',
             lineHeight: 1.75,
             color: 'var(--text-secondary)',
             maxWidth: '800px',
@@ -53,7 +53,7 @@ export function DifferentiationDetail() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* ========== 板块1: 道法术器 ========== */}
-          <div className="bg-[#0d0f14] border border-white/10 rounded-3xl p-8 md:p-12 mb-12">
+          <div className="bg-[#0d0f14] border border-white/10 rounded-3xl px-8 md:px-12 pb-8 md:pb-12 pt-4 md:pt-12 mb-12">
             {/* 板块标题 */}
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-3 mb-4">
@@ -61,10 +61,10 @@ export function DifferentiationDetail() {
                 <span className="text-orange-500 text-sm font-mono tracking-[0.3em] uppercase">01</span>
                 <div className="h-px w-8 bg-gradient-to-l from-transparent to-orange-500"></div>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+              <h2 className="font-bold text-white mb-3" style={{ fontSize: 'clamp(24px, 5vw, 36px)' }}>
                 {t(differentiationContent.learningSystem.title, language)}
               </h2>
-              <p className="text-gray-400 text-base max-w-2xl mx-auto">
+              <p className="text-gray-400 max-w-2xl mx-auto" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
                 {t(differentiationContent.learningSystem.subtitle, language)}
               </p>
             </div>
@@ -79,7 +79,7 @@ export function DifferentiationDetail() {
                     <Brain className="w-5 h-5 md:w-6 md:h-6" />
                   </div>
                   <div className="mb-3 md:mb-4">
-                    <h3 className="text-xl md:text-2xl font-bold text-white font-serif mb-2">
+                    <h3 className="font-bold text-white font-serif mb-2" style={{ fontSize: 'clamp(18px, 3.5vw, 24px)' }}>
                       {t(differentiationContent.learningSystem.modules.dao.title, language)}
                     </h3>
                     <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-gray-300 tracking-wider uppercase border border-white/5 group-hover:border-orange-500/30 group-hover:text-orange-500 transition-colors">
@@ -87,7 +87,7 @@ export function DifferentiationDetail() {
                     </span>
                   </div>
                   <div className="h-0.5 w-16 bg-gradient-to-r from-gray-600 to-gray-700 my-4 md:my-5 group-hover:w-full group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-orange-400 transition-all duration-500 shadow-sm"></div>
-                  <p className="text-gray-400 text-sm leading-relaxed">
+                  <p className="text-gray-400 leading-relaxed" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
                     {t(differentiationContent.learningSystem.modules.dao.description, language)}
                   </p>
                 </div>
@@ -105,7 +105,7 @@ export function DifferentiationDetail() {
                     </svg>
                   </div>
                   <div className="mb-3 md:mb-4">
-                    <h3 className="text-xl md:text-2xl font-bold text-white font-serif mb-2">
+                    <h3 className="font-bold text-white font-serif mb-2" style={{ fontSize: 'clamp(18px, 3.5vw, 24px)' }}>
                       {t(differentiationContent.learningSystem.modules.fa.title, language)}
                     </h3>
                     <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-gray-300 tracking-wider uppercase border border-white/5 group-hover:border-orange-500/30 group-hover:text-orange-500 transition-colors">
@@ -113,7 +113,7 @@ export function DifferentiationDetail() {
                     </span>
                   </div>
                   <div className="h-0.5 w-16 bg-gradient-to-r from-gray-600 to-gray-700 my-4 md:my-5 group-hover:w-full group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-orange-400 transition-all duration-500 shadow-sm"></div>
-                  <p className="text-gray-400 text-sm leading-relaxed">
+                  <p className="text-gray-400 leading-relaxed" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
                     {t(differentiationContent.learningSystem.modules.fa.description, language)}
                   </p>
                 </div>
@@ -131,7 +131,7 @@ export function DifferentiationDetail() {
                     </svg>
                   </div>
                   <div className="mb-3 md:mb-4">
-                    <h3 className="text-xl md:text-2xl font-bold text-white font-serif mb-2">
+                    <h3 className="font-bold text-white font-serif mb-2" style={{ fontSize: 'clamp(18px, 3.5vw, 24px)' }}>
                       {t(differentiationContent.learningSystem.modules.shu.title, language)}
                     </h3>
                     <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-gray-300 tracking-wider uppercase border border-white/5 group-hover:border-orange-500/30 group-hover:text-orange-500 transition-colors">
@@ -139,7 +139,7 @@ export function DifferentiationDetail() {
                     </span>
                   </div>
                   <div className="h-0.5 w-16 bg-gradient-to-r from-gray-600 to-gray-700 my-4 md:my-5 group-hover:w-full group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-orange-400 transition-all duration-500 shadow-sm"></div>
-                  <p className="text-gray-400 text-sm leading-relaxed">
+                  <p className="text-gray-400 leading-relaxed" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
                     {t(differentiationContent.learningSystem.modules.shu.description, language)}
                   </p>
                 </div>
@@ -155,7 +155,7 @@ export function DifferentiationDetail() {
                     </svg>
                   </div>
                   <div className="mb-3 md:mb-4">
-                    <h3 className="text-xl md:text-2xl font-bold text-white font-serif mb-2">
+                    <h3 className="font-bold text-white font-serif mb-2" style={{ fontSize: 'clamp(18px, 3.5vw, 24px)' }}>
                       {t(differentiationContent.learningSystem.modules.qi.title, language)}
                     </h3>
                     <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-gray-300 tracking-wider uppercase border border-white/5 group-hover:border-orange-500/30 group-hover:text-orange-500 transition-colors">
@@ -163,7 +163,7 @@ export function DifferentiationDetail() {
                     </span>
                   </div>
                   <div className="h-0.5 w-16 bg-gradient-to-r from-gray-600 to-gray-700 my-4 md:my-5 group-hover:w-full group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-orange-400 transition-all duration-500 shadow-sm"></div>
-                  <p className="text-gray-400 text-sm leading-relaxed">
+                  <p className="text-gray-400 leading-relaxed" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
                     {t(differentiationContent.learningSystem.modules.qi.description, language)}
                   </p>
                 </div>
@@ -184,14 +184,14 @@ export function DifferentiationDetail() {
                 </div>
               </div>
               <div>
-                <h4 className="text-lg md:text-xl font-bold text-white mb-2 flex flex-col md:flex-row md:items-center gap-2">
+                <h4 className="font-bold text-white mb-2 flex flex-col md:flex-row md:items-center gap-2" style={{ fontSize: 'clamp(16px, 3vw, 20px)' }}>
                   {t(differentiationContent.learningSystem.card1.title, language)}
                   <span className="hidden md:inline w-1 h-1 rounded-full bg-gray-600"></span>
-                  <span className="text-orange-500 text-sm font-medium tracking-wide uppercase opacity-90">
+                  <span className="text-orange-500 font-medium tracking-wide uppercase opacity-90" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
                     {t(differentiationContent.learningSystem.card1.subtitle, language)}
                   </span>
                 </h4>
-                <p className="text-gray-300 text-sm md:text-base leading-relaxed">
+                <p className="text-gray-300 leading-relaxed" style={{ fontSize: 'clamp(13px, 2.2vw, 16px)' }}>
                   {t(differentiationContent.learningSystem.card1.content, language)}
                 </p>
               </div>
@@ -199,7 +199,7 @@ export function DifferentiationDetail() {
           </div>
 
           {/* ========== 板块2: 学习力公式 ========== */}
-          <div id="learning-formula" className="bg-[#0d0f14] border border-white/10 rounded-3xl p-8 md:p-12 mb-12">
+          <div id="learning-formula" className="bg-[#0d0f14] border border-white/10 rounded-3xl px-8 md:px-12 pb-8 md:pb-12 pt-4 md:pt-12 mb-12">
             {/* 板块标题 */}
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-3 mb-4">
@@ -207,10 +207,10 @@ export function DifferentiationDetail() {
                 <span className="text-orange-500 text-sm font-mono tracking-[0.3em] uppercase">02</span>
                 <div className="h-px w-8 bg-gradient-to-l from-transparent to-orange-500"></div>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+              <h2 className="font-bold text-white mb-3" style={{ fontSize: 'clamp(24px, 5vw, 36px)' }}>
                 {t(differentiationContent.learningFormula.sectionTitle, language)}
               </h2>
-              <p className="text-gray-400 text-base max-w-2xl mx-auto">
+              <p className="text-gray-400 max-w-2xl mx-auto" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
                 {t(differentiationContent.learningFormula.subtitle, language)}
               </p>
             </div>
@@ -222,35 +222,35 @@ export function DifferentiationDetail() {
                 <div className="flex flex-col xl:flex-row items-center gap-8 xl:gap-16">
                   {/* Q² 卡片 */}
                   <div className="bg-[#0d0f14] border border-orange-500/20 rounded-xl p-4 flex flex-col items-center w-64 transform hover:scale-105 transition-transform duration-300">
-                    <span className="text-4xl font-bold text-orange-500 mb-1 font-mono">
+                    <span className="font-bold text-orange-500 mb-1 font-mono" style={{ fontSize: 'clamp(28px, 5vw, 36px)' }}>
                       {t(differentiationContent.learningFormula.q2.title, language)}
                     </span>
-                    <span className="text-xs text-gray-400 uppercase tracking-widest mb-2">
+                    <span className="text-gray-400 uppercase tracking-widest mb-2" style={{ fontSize: 'clamp(10px, 1.8vw, 12px)' }}>
                       {t(differentiationContent.learningFormula.q2.label, language)}
                     </span>
-                    <p className="text-sm text-gray-300">{t(differentiationContent.learningFormula.q2.name, language)}</p>
-                    <p className="text-[10px] text-gray-500 mt-2">{t(differentiationContent.learningFormula.q2.note, language)}</p>
+                    <p className="text-gray-300" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>{t(differentiationContent.learningFormula.q2.name, language)}</p>
+                    <p className="text-gray-500 mt-2" style={{ fontSize: 'clamp(9px, 1.5vw, 10px)' }}>{t(differentiationContent.learningFormula.q2.note, language)}</p>
                   </div>
 
                   {/* 公式 */}
                   <div className="flex items-center gap-4 md:gap-8 font-mono font-bold text-white tracking-tighter">
-                    <span className="text-gray-500 text-5xl md:text-6xl">L</span>
-                    <span className="text-gray-700 text-3xl md:text-4xl">=</span>
-                    <span className="text-orange-500 text-6xl md:text-8xl">Q²</span>
-                    <span className="text-gray-700 text-3xl md:text-4xl">×</span>
-                    <span className="text-blue-400 text-6xl md:text-8xl">P</span>
+                    <span className="text-gray-500" style={{ fontSize: 'clamp(40px, 8vw, 60px)' }}>L</span>
+                    <span className="text-gray-700" style={{ fontSize: 'clamp(24px, 5vw, 36px)' }}>=</span>
+                    <span className="text-orange-500" style={{ fontSize: 'clamp(48px, 10vw, 80px)' }}>Q²</span>
+                    <span className="text-gray-700" style={{ fontSize: 'clamp(24px, 5vw, 36px)' }}>×</span>
+                    <span className="text-blue-400" style={{ fontSize: 'clamp(48px, 10vw, 80px)' }}>P</span>
                   </div>
 
                   {/* P 卡片 */}
                   <div className="bg-[#0d0f14] border border-blue-500/20 rounded-xl p-4 flex flex-col items-center w-64 transform hover:scale-105 transition-transform duration-300">
-                    <span className="text-4xl font-bold text-blue-400 mb-1 font-mono">
+                    <span className="font-bold text-blue-400 mb-1 font-mono" style={{ fontSize: 'clamp(28px, 5vw, 36px)' }}>
                       {t(differentiationContent.learningFormula.p.title, language)}
                     </span>
-                    <span className="text-xs text-gray-400 uppercase tracking-widest mb-2">
+                    <span className="text-gray-400 uppercase tracking-widest mb-2" style={{ fontSize: 'clamp(10px, 1.8vw, 12px)' }}>
                       {t(differentiationContent.learningFormula.p.label, language)}
                     </span>
-                    <p className="text-sm text-gray-300">{t(differentiationContent.learningFormula.p.name, language)}</p>
-                    <p className="text-[10px] text-gray-500 mt-2">{t(differentiationContent.learningFormula.p.note, language)}</p>
+                    <p className="text-gray-300" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>{t(differentiationContent.learningFormula.p.name, language)}</p>
+                    <p className="text-gray-500 mt-2" style={{ fontSize: 'clamp(9px, 1.5vw, 10px)' }}>{t(differentiationContent.learningFormula.p.note, language)}</p>
                   </div>
                 </div>
               </div>
@@ -270,14 +270,14 @@ export function DifferentiationDetail() {
                 </div>
               </div>
               <div>
-                <h4 className="text-lg md:text-xl font-bold text-white mb-2 flex flex-col md:flex-row md:items-center gap-2">
+                <h4 className="font-bold text-white mb-2 flex flex-col md:flex-row md:items-center gap-2" style={{ fontSize: 'clamp(16px, 3vw, 20px)' }}>
                   {t(differentiationContent.learningFormula.card2.title, language)}
                   <span className="hidden md:inline w-1 h-1 rounded-full bg-gray-600"></span>
-                  <span className="text-orange-500 text-sm font-medium tracking-wide uppercase opacity-90">
+                  <span className="text-orange-500 font-medium tracking-wide uppercase opacity-90" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
                     {t(differentiationContent.learningFormula.card2.subtitle, language)}
                   </span>
                 </h4>
-                <p className="text-gray-300 text-sm md:text-base leading-relaxed">
+                <p className="text-gray-300 leading-relaxed" style={{ fontSize: 'clamp(13px, 2.2vw, 16px)' }}>
                   {t(differentiationContent.learningFormula.card2.content, language)}
                 </p>
               </div>
@@ -285,7 +285,7 @@ export function DifferentiationDetail() {
           </div>
 
           {/* ========== 板块3: 三维能力模型 ========== */}
-          <div id="three-dimensions" className="bg-[#0d0f14] border border-white/10 rounded-3xl p-8 md:p-12 mb-12">
+          <div id="three-dimensions" className="bg-[#0d0f14] border border-white/10 rounded-3xl px-8 md:px-12 pb-8 md:pb-12 pt-4 md:pt-12 mb-12">
             {/* 板块标题 */}
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-3 mb-4">
@@ -293,10 +293,10 @@ export function DifferentiationDetail() {
                 <span className="text-orange-500 text-sm font-mono tracking-[0.3em] uppercase">03</span>
                 <div className="h-px w-8 bg-gradient-to-l from-transparent to-orange-500"></div>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+              <h2 className="font-bold text-white mb-3" style={{ fontSize: 'clamp(24px, 5vw, 36px)' }}>
                 {t(differentiationContent.threeDimensions.title, language)}
               </h2>
-              <p className="text-gray-400 text-base max-w-2xl mx-auto">
+              <p className="text-gray-400 max-w-2xl mx-auto" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
                 {t(differentiationContent.threeDimensions.subtitle, language)}
               </p>
             </div>
@@ -305,7 +305,7 @@ export function DifferentiationDetail() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-8">
               <div className="lg:col-span-5">
                 <div className="w-12 h-1 bg-orange-500 rounded-full mb-6"></div>
-                <p className="text-gray-300 text-lg leading-relaxed">
+                <p className="text-gray-300 leading-relaxed" style={{ fontSize: 'clamp(15px, 2.8vw, 18px)' }}>
                   {t(differentiationContent.threeDimensions.description, language)}
                 </p>
               </div>
@@ -314,39 +314,39 @@ export function DifferentiationDetail() {
               <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {/* AI 创造力 10% */}
                 <div className="relative rounded-2xl p-6 border bg-[#111318] border-white/5 opacity-80 hover:opacity-100 flex flex-col items-center text-center group transition-all duration-300">
-                  <div className="text-4xl font-black bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent mb-4">
+                  <div className="font-black bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent mb-4" style={{ fontSize: 'clamp(28px, 5vw, 36px)' }}>
                     {t(differentiationContent.threeDimensions.cards.creativity.percentage, language)}
                   </div>
-                  <h4 className="text-lg font-bold text-white mb-2">
+                  <h4 className="font-bold text-white mb-2" style={{ fontSize: 'clamp(15px, 2.8vw, 18px)' }}>
                     {t(differentiationContent.threeDimensions.cards.creativity.title, language)}
                   </h4>
-                  <p className="text-xs text-gray-400 leading-normal">
+                  <p className="text-gray-400 leading-normal" style={{ fontSize: 'clamp(11px, 2vw, 12px)' }}>
                     {t(differentiationContent.threeDimensions.cards.creativity.description, language)}
                   </p>
                 </div>
 
                 {/* AI 竞争力 60% - 中间高亮 */}
                 <div className="relative rounded-2xl p-6 border bg-[#1a1c23] border-orange-500/50 ring-1 ring-orange-500/20 shadow-[0_0_30px_-10px_rgba(255,107,0,0.3)] scale-105 z-10 flex flex-col items-center text-center group transition-all duration-300">
-                  <div className="text-4xl font-black bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent mb-4">
+                  <div className="font-black bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent mb-4" style={{ fontSize: 'clamp(28px, 5vw, 36px)' }}>
                     {t(differentiationContent.threeDimensions.cards.competitiveness.percentage, language)}
                   </div>
-                  <h4 className="text-lg font-bold text-white mb-2">
+                  <h4 className="font-bold text-white mb-2" style={{ fontSize: 'clamp(15px, 2.8vw, 18px)' }}>
                     {t(differentiationContent.threeDimensions.cards.competitiveness.title, language)}
                   </h4>
-                  <p className="text-xs text-gray-400 leading-normal">
+                  <p className="text-gray-400 leading-normal" style={{ fontSize: 'clamp(11px, 2vw, 12px)' }}>
                     {t(differentiationContent.threeDimensions.cards.competitiveness.description, language)}
                   </p>
                 </div>
 
                 {/* AI 领导力 30% */}
                 <div className="relative rounded-2xl p-6 border bg-[#111318] border-white/5 opacity-80 hover:opacity-100 flex flex-col items-center text-center group transition-all duration-300">
-                  <div className="text-4xl font-black bg-gradient-to-r from-purple-500 to-pink-400 bg-clip-text text-transparent mb-4">
+                  <div className="font-black bg-gradient-to-r from-purple-500 to-pink-400 bg-clip-text text-transparent mb-4" style={{ fontSize: 'clamp(28px, 5vw, 36px)' }}>
                     {t(differentiationContent.threeDimensions.cards.leadership.percentage, language)}
                   </div>
-                  <h4 className="text-lg font-bold text-white mb-2">
+                  <h4 className="font-bold text-white mb-2" style={{ fontSize: 'clamp(15px, 2.8vw, 18px)' }}>
                     {t(differentiationContent.threeDimensions.cards.leadership.title, language)}
                   </h4>
-                  <p className="text-xs text-gray-400 leading-normal">
+                  <p className="text-gray-400 leading-normal" style={{ fontSize: 'clamp(11px, 2vw, 12px)' }}>
                     {t(differentiationContent.threeDimensions.cards.leadership.description, language)}
                   </p>
                 </div>
@@ -367,14 +367,14 @@ export function DifferentiationDetail() {
                 </div>
               </div>
               <div>
-                <h4 className="text-lg md:text-xl font-bold text-white mb-2 flex flex-col md:flex-row md:items-center gap-2">
+                <h4 className="font-bold text-white mb-2 flex flex-col md:flex-row md:items-center gap-2" style={{ fontSize: 'clamp(16px, 3vw, 20px)' }}>
                   {t(differentiationContent.threeDimensions.card3.title, language)}
                   <span className="hidden md:inline w-1 h-1 rounded-full bg-gray-600"></span>
-                  <span className="text-orange-500 text-sm font-medium tracking-wide uppercase opacity-90">
+                  <span className="text-orange-500 font-medium tracking-wide uppercase opacity-90" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
                     {t(differentiationContent.threeDimensions.card3.subtitle, language)}
                   </span>
                 </h4>
-                <p className="text-gray-300 text-sm md:text-base leading-relaxed">
+                <p className="text-gray-300 leading-relaxed" style={{ fontSize: 'clamp(13px, 2.2vw, 16px)' }}>
                   {t(differentiationContent.threeDimensions.card3.content, language)}
                 </p>
               </div>
@@ -382,7 +382,7 @@ export function DifferentiationDetail() {
           </div>
 
           {/* ========== 板块4: 蜂道四式 ========== */}
-          <div id="bee-method" className="bg-[#0d0f14] border border-white/10 rounded-3xl p-8 md:p-12">
+          <div id="bee-method" className="bg-[#0d0f14] border border-white/10 rounded-3xl px-8 md:px-12 pb-8 md:pb-12 pt-4 md:pt-12">
             {/* 板块标题 */}
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-3 mb-4">
@@ -390,10 +390,10 @@ export function DifferentiationDetail() {
                 <span className="text-orange-500 text-sm font-mono tracking-[0.3em] uppercase">04</span>
                 <div className="h-px w-8 bg-gradient-to-l from-transparent to-orange-500"></div>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+              <h2 className="font-bold text-white mb-3" style={{ fontSize: 'clamp(24px, 5vw, 36px)' }}>
                 {t(differentiationContent.beeMethod.title, language)}
               </h2>
-              <p className="text-gray-400 text-base max-w-2xl mx-auto">
+              <p className="text-gray-400 max-w-2xl mx-auto" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
                 {t(differentiationContent.beeMethod.subtitle, language)}
               </p>
             </div>
@@ -548,8 +548,8 @@ export function DifferentiationDetail() {
       {/* CTA Section */}
       <section className="px-4 py-20 border-t border-white/10" style={{ backgroundColor: 'var(--bg-deep)' }}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="mb-6">{t(differentiationContent.cta.title, language)}</h2>
-          <p className="mb-8" style={{ fontSize: '18px', color: 'var(--text-secondary)' }}>
+          <h2 className="mb-6" style={{ fontSize: 'clamp(18px, 3.5vw, 28px)' }}>{t(differentiationContent.cta.title, language)}</h2>
+          <p className="mb-8" style={{ fontSize: 'clamp(15px, 2.8vw, 18px)', color: 'var(--text-secondary)' }}>
             {t(differentiationContent.cta.subtitle, language)}
           </p>
           <div className="flex gap-4 justify-center">

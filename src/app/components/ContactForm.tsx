@@ -82,7 +82,7 @@ export function ContactForm() {
       <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
         {/* 同学姓名 */}
         <div className="md:col-span-1">
-          <label className="block mb-2 text-sm" style={{ color: 'var(--text-primary)' }}>
+          <label className="block mb-2" style={{ color: 'var(--text-primary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>
             {t(homeContent.contact.form.studentName, language)} <span style={{ color: 'var(--orange-primary)' }}>*</span>
           </label>
           <input
@@ -91,12 +91,13 @@ export function ContactForm() {
             value={formData.studentName}
             onChange={(e) => setFormData({ ...formData, studentName: e.target.value })}
             className="w-full px-4 py-2 md:py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 transition-colors"
+            style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}
           />
         </div>
         
         {/* 同学年龄（选填）*/}
         <div className="md:col-span-1">
-          <label className="block mb-2 text-sm" style={{ color: 'var(--text-primary)' }}>
+          <label className="block mb-2" style={{ color: 'var(--text-primary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>
             {t(homeContent.contact.form.studentAge, language)}
           </label>
           <input
@@ -104,6 +105,7 @@ export function ContactForm() {
             value={formData.studentAge}
             onChange={(e) => setFormData({ ...formData, studentAge: e.target.value })}
             className="w-full px-4 py-2 md:py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 transition-colors"
+            style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}
           />
         </div>
       </div>
@@ -112,7 +114,7 @@ export function ContactForm() {
       <div className="grid grid-cols-2 gap-4">
         {/* 所在国家 */}
         <div>
-          <label className="block mb-2 text-sm" style={{ color: 'var(--text-primary)' }}>
+          <label className="block mb-2" style={{ color: 'var(--text-primary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>
             {t(homeContent.contact.form.country, language)} <span style={{ color: 'var(--orange-primary)' }}>*</span>
           </label>
           <input
@@ -121,12 +123,13 @@ export function ContactForm() {
             value={formData.country}
             onChange={(e) => setFormData({ ...formData, country: e.target.value })}
             className="w-full px-4 py-2 md:py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 transition-colors"
+            style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}
           />
         </div>
         
         {/* 电子邮件 */}
         <div>
-          <label className="block mb-2 text-sm" style={{ color: 'var(--text-primary)' }}>
+          <label className="block mb-2" style={{ color: 'var(--text-primary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>
             {t(homeContent.contact.form.email, language)} <span style={{ color: 'var(--orange-primary)' }}>*</span>
           </label>
           <input
@@ -136,13 +139,14 @@ export function ContactForm() {
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             placeholder={t(homeContent.contact.form.emailPlaceholder, language)}
             className="w-full px-4 py-2 md:py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 transition-colors"
+            style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}
           />
         </div>
       </div>
       
       {/* 咨询说明 */}
       <div>
-        <label className="block mb-2 text-sm" style={{ color: 'var(--text-primary)' }}>
+        <label className="block mb-2" style={{ color: 'var(--text-primary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>
           {t(homeContent.contact.form.inquiry, language)} <span style={{ color: 'var(--orange-primary)' }}>*</span>
         </label>
         <textarea
@@ -152,6 +156,7 @@ export function ContactForm() {
           placeholder={t(homeContent.contact.form.inquiryPlaceholder, language)}
           rows={4}
           className="w-full px-4 py-2 md:py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 transition-colors resize-none"
+          style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}
         ></textarea>
       </div>
       
@@ -164,7 +169,8 @@ export function ContactForm() {
           className="px-6 py-3 rounded-lg transition-colors border border-white/20 hover:border-white/40 disabled:opacity-50 disabled:cursor-not-allowed"
           style={{
             backgroundColor: 'transparent',
-            color: 'var(--text-secondary)'
+            color: 'var(--text-secondary)',
+            fontSize: 'clamp(13px, 2.2vw, 14px)'
           }}
           onMouseEnter={(e) => !isSubmitting && (e.currentTarget.style.color = 'var(--text-primary)')}
           onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
@@ -178,7 +184,8 @@ export function ContactForm() {
           style={{
             backgroundColor: 'var(--orange-primary)',
             color: '#ffffff',
-            fontWeight: 600
+            fontWeight: 600,
+            fontSize: 'clamp(13px, 2.2vw, 14px)'
           }}
           onMouseEnter={(e) => !isSubmitting && (e.currentTarget.style.backgroundColor = '#ff8c42')}
           onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--orange-primary)')}

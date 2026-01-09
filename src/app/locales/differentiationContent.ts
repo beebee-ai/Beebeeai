@@ -54,20 +54,20 @@ export const differentiationContent = {
 
   // Learning Formula Section
   learningFormula: {
-    sectionTitle: { ZH: 'Learning Formula', EN: 'Learning Formula' },
+    sectionTitle: { ZH: '学习力公式', EN: 'Learning Formula' },
     subtitle: { ZH: '量化学习效果，科学提升能力', EN: 'Quantify learning outcomes, scientifically enhance capabilities' },
     divider: { ZH: '知行合一 · 学以致用', EN: 'Unity of Knowledge and Action · Learning for Application' },
     
     q2: {
       title: { ZH: 'Q²', EN: 'Q²' },
-      label: { ZH: 'Questioning', EN: 'Questioning' },
+      label: { ZH: '提问力', EN: 'Questioning' },
       name: { ZH: '提问力', EN: 'Questioning Power' },
       note: { ZH: '平方级杠杆 · 核心变量', EN: 'Quadratic Leverage · Core Variable' }
     },
     
     p: {
       title: { ZH: 'P', EN: 'P' },
-      label: { ZH: 'Product', EN: 'Product' },
+      label: { ZH: '产品力', EN: 'Product' },
       name: { ZH: '产品力', EN: 'Product Power' },
       note: { ZH: '最终交付 · 价值载体', EN: 'Final Delivery · Value Carrier' }
     },
@@ -183,8 +183,8 @@ export const differentiationContent = {
 
   // CTA Section
   cta: {
-    title: { ZH: '准备好开始你的AI学习之旅了吗？', EN: 'Ready to Start Your AI Learning Journey?' },
-    subtitle: { ZH: '加入BEEBEE AI，和我们一起重新定义学习', EN: 'Join BEEBEE AI and redefine learning together' },
+    title: { ZH: '准备好开始你的 AI 学习之旅了吗？', EN: 'Ready to Start Your AI Learning Journey?' },
+    subtitle: { ZH: '加入 BEEBEE AI，和我们一起重新定义学习', EN: 'Join BEEBEE AI and redefine learning together' },
     button1: { ZH: '联系我们', EN: 'Contact Us' },
     button2: { ZH: '返回首页', EN: 'Back to Home' }
   }
