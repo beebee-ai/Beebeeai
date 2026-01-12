@@ -50,7 +50,7 @@ export const homeContent = {
       }
     },
     alpha: {
-      title: { ZH: 'Alpha 实训营', EN: 'Alpha Training Camp' },
+      title: { ZH: 'ALPHA 实训营', EN: 'ALPHA Training Camp' },
       subtitle: { ZH: '无代码经验 · 快速落地', EN: 'No Coding · Quick Results' },
       description: {
         ZH: '以终为始，不问细节只求落地。重术轻道，快速掌握AI产品能力。',
@@ -65,7 +65,7 @@ export const homeContent = {
       cta: { ZH: '了解详情', EN: 'Learn More' }
     },
     beta: {
-      title: { ZH: 'Beta 实训营', EN: 'Beta Training Camp' },
+      title: { ZH: 'BETA 实训营', EN: 'BETA Training Camp' },
       subtitle: { ZH: '有编程经验 · 深度掌控', EN: 'Coding Experience · Deep Control' },
       description: {
         ZH: '以始为终，既探本质更求实用。道术并重，全面打造AI开发能力。',
@@ -232,6 +232,28 @@ export const homeContent = {
       },
       {
         badge: { ZH: 'ALPHA—ZERO启航营（Genesis）', EN: 'ALPHA ZERO Genesis Camp' },
+        title: { ZH: '字在午餐 Word Snack - 海外中文学习助手', EN: 'Word Snack - Chinese Learning Assistant for Overseas Kids' },
+        team: { ZH: '学员：T同学', EN: 'Student: T' },
+        teamDetails: { ZH: '自由职业者 | 0工程经验', EN: 'Freelancer | Zero Coding Experience' },
+        description: { 
+          ZH: '海外孩子的中文课后复习助手。通过趣味互动和 AI，帮助轻松复习中文、追踪进度，让学习更简单有趣，并用可爱的卡通形象营造温馨的学习氛围。', 
+          EN: 'Chinese after-school review assistant for overseas kids. Uses engaging interactions and AI to help easily review Chinese, track progress, making learning simpler and more fun, with adorable cartoon characters creating a warm learning atmosphere.' 
+        },
+        url: 'https://chinesewordsnack.netlify.app/',
+        cta: { ZH: '访问项目', EN: 'Visit Project' },
+        images: {
+          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/wordSnack_1.png',
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/wordSnack_2.png',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/wordSnack_3.png'
+        },
+        tags: {
+          tag1: { ZH: '教育科技', EN: 'EdTech' },
+          tag2: { ZH: '中文学习', EN: 'Chinese Learning' },
+          tag3: { ZH: '儿童教育', EN: 'Kids Education' }
+        }
+      },
+      {
+        badge: { ZH: 'ALPHA—ZERO启航营（Genesis）', EN: 'ALPHA ZERO Genesis Camp' },
         title: { ZH: 'Relab SEO - AI内容营销工具', EN: 'Relab SEO - AI Content Marketing Tool' },
         team: { ZH: '学员：K同学', EN: 'Student: K' },
         teamDetails: { ZH: '房地产大数据公司CEO | 销售市场 | 0工程经验', EN: 'Real Estate Data Company CEO | Sales & Marketing | Zero Coding Experience' },
@@ -320,24 +342,24 @@ export const homeContent = {
       },
       {
         badge: { ZH: 'ALPHA—ZERO启航营（Genesis）', EN: 'ALPHA ZERO Genesis Camp' },
-        title: { ZH: '字在午餐 Word Snack - 海外中文学习助手', EN: 'Word Snack - Chinese Learning Assistant for Overseas Kids' },
-        team: { ZH: '学员：T同学', EN: 'Student: T' },
-        teamDetails: { ZH: '自由职业者 | 0工程经验', EN: 'Freelancer | Zero Coding Experience' },
+        title: { ZH: 'PROJECT:Echo - 游戏化目标管理系统', EN: 'PROJECT:Echo - Gamified Goal Management System' },
+        team: { ZH: '学员：J同学', EN: 'Student: J' },
+        teamDetails: { ZH: '13岁 | 2年Python经验', EN: '13 years old | 2 years Python experience' },
         description: { 
-          ZH: '海外孩子的课后中文复习助手。通过趣味互动和AI技术，帮助海外华人家庭的孩子轻松复习中文，追踪学习进度，中文学习变得简单有趣。配有可爱的卡通形象，营造温馨的学习氛围。', 
-          EN: 'After-school Chinese review assistant for overseas children. Uses engaging interactions and AI technology to help children from Chinese families abroad easily review Chinese, track learning progress, and make Chinese learning simple and fun. Features adorable cartoon characters creating a warm learning atmosphere.' 
+          ZH: '将目标管理游戏化的创新应用。通过虚拟花园、任务系统和奖励机制,帮助用户建立健康习惯、追踪专注度和达成个人目标。用户完成任务即可获得金币,种植虚拟植物,让自律变得有趣。支持数据同步和个性化成功计划。', 
+          EN: 'Innovative gamified goal management app. Through virtual gardens, task systems and reward mechanisms, helps users build healthy habits, track focus and achieve personal goals. Complete tasks to earn coins, grow virtual plants, making discipline fun. Features data sync and personalized success plans.' 
         },
-        url: 'https://chinesewordsnack.netlify.app/',
+        url: 'https://changepr0jectecho.uk/',
         cta: { ZH: '访问项目', EN: 'Visit Project' },
         images: {
-          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/wordSnack_1.png',
-          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/wordSnack_2.png',
-          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/wordSnack_3.png'
+          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/jaxsen_1.png',
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/jaxsen_2.png',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/jaxsen_1.png'
         },
         tags: {
-          tag1: { ZH: '教育科技', EN: 'EdTech' },
-          tag2: { ZH: '中文学习', EN: 'Chinese Learning' },
-          tag3: { ZH: '儿童教育', EN: 'Kids Education' }
+          tag1: { ZH: '游戏化设计', EN: 'Gamification' },
+          tag2: { ZH: '目标管理', EN: 'Goal Management' },
+          tag3: { ZH: '习惯养成', EN: 'Habit Building' }
         }
       },
       {
@@ -404,7 +426,7 @@ export const homeContent = {
       content: { ZH: '通过完整体系，重塑人类在AI时代的核心价值', EN: 'Reshape human core value in AI era through complete system' }
     },
     humanAI: {
-      title: { ZH: '人机共���未来', EN: 'Human-AI Co-creation' },
+      title: { ZH: '人机共未来', EN: 'Human-AI Co-creation' },
       content: { ZH: '实现"人想+AI做"的产业智能化，让每个人发挥最大价值', EN: 'Achieve "human thinks + AI does" industry intelligence, maximize everyone\'s value' }
     },
     lifelongLearning: {
@@ -549,8 +571,8 @@ export const homeContent = {
       EN: 'Training Camps'
     },
     platformLinks: {
-      alpha: { ZH: 'Alpha 实训营', EN: 'Alpha Training Camp' },
-      beta: { ZH: 'Beta 实训营', EN: 'Beta Training Camp' },
+      alpha: { ZH: 'ALPHA 实训营', EN: 'ALPHA Training Camp' },
+      beta: { ZH: 'BETA 实训营', EN: 'BETA Training Camp' },
       platform: { ZH: '学习平台', EN: 'Learning Platform' }
     },
     contactInfo: {
