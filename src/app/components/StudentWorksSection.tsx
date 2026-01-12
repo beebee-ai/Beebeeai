@@ -92,6 +92,10 @@ function ProjectCard({ project, language, index }: any) {
     button: 'bg-[#ff6900] hover:bg-[#ff6900]' 
   };
   
+  // 检查是否是 RowingPro - 需要使用 object-cover 填充满容器
+  const projectTitle = t(project.title, language);
+  const isRowingPro = projectTitle.includes('RowingPro');
+  
   return (
     <a 
       href={project.url}
@@ -103,18 +107,20 @@ function ProjectCard({ project, language, index }: any) {
     >
       {/* Image Section */}
       <div className="relative aspect-video overflow-hidden bg-black">
-        {/* Blurred Background */}
-        <img 
-          src={images[currentImg]}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-60"
-          aria-hidden="true"
-        />
+        {/* Blurred Background - 只在非 RowingPro 项目中显示 */}
+        {!isRowingPro && (
+          <img 
+            src={images[currentImg]}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-60"
+            aria-hidden="true"
+          />
+        )}
         {/* Main Image */}
         <img 
           src={images[currentImg]}
           alt={t(project.title, language)}
-          className="relative w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 z-10"
+          className={`relative w-full h-full ${isRowingPro ? 'object-cover' : 'object-contain'} group-hover:scale-105 transition-transform duration-700 z-10`}
         />
         
         {/* Gradient Overlay */}
@@ -320,7 +326,7 @@ function CarouselCard({ project, language }: any) {
 
   // 检查是否是需要填充满的项目
   const projectTitle = t(project.title, language);
-  const shouldCoverImage = projectTitle.includes('PROJECT:Echo') || projectTitle.includes('PropertyAI NZ');
+  const shouldCoverImage = projectTitle.includes('PROJECT:Echo') || projectTitle.includes('PropertyAI NZ') || projectTitle.includes('RowingPro');
   const imageObjectFit = shouldCoverImage ? 'object-cover' : 'object-contain';
 
   return (
