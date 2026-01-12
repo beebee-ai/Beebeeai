@@ -1046,7 +1046,7 @@ function HomePage() {
               {/* Image above address - PC端全宽但固定高度 */}
               <div className="mb-6">
                 <img 
-                  src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/b_hive.jpg" 
+                  src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/b_hive.png" 
                   alt="BEEBEE AI Location" 
                   className="w-full rounded-lg md:mb-8 md:h-84 md:object-cover"
                 />

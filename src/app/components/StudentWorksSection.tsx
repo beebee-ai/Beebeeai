@@ -318,6 +318,11 @@ function CarouselCard({ project, language }: any) {
     return dashIndex !== -1 ? fullTitle.substring(0, dashIndex) : fullTitle;
   };
 
+  // 检查是否是需要填充满的项目
+  const projectTitle = t(project.title, language);
+  const shouldCoverImage = projectTitle.includes('PROJECT:Echo') || projectTitle.includes('PropertyAI NZ');
+  const imageObjectFit = shouldCoverImage ? 'object-cover' : 'object-contain';
+
   return (
     <a 
       href={project.url}
@@ -338,7 +343,7 @@ function CarouselCard({ project, language }: any) {
         <img 
           src={images[currentImg]}
           alt={t(project.title, language)}
-          className="relative w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 z-10"
+          className={`relative w-full h-full ${imageObjectFit} group-hover:scale-105 transition-transform duration-500 z-10`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
         

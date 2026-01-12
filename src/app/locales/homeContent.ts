@@ -148,8 +148,8 @@ export const homeContent = {
         team: { ZH: '小组作品，四人协作完成', EN: 'Team Project, 4-member Collaboration' },
         teamDetails: { ZH: '物理博士 | 金融硕士 | CS本科生 | 工程经验', EN: 'Physics PhD | Finance Master | CS Undergrad | Engineering Experience' },
         description: { 
-          ZH: '在冥想的夜空下，用语音记录心灵笔记。Hobbi 利用你上传的照片，为你打造沉浸式的冥想空间，并与之互动，共同创作心灵日记。Hobbi 会耐心倾听，不加评判，从不打断，并在恰当的时机抛出恰到好处的玩笑或讽刺回应。100% 私密，随时可用，完全免费，无需预约。', 
-          EN: 'Record your thoughts through voice in a meditative starry night. Hobbi creates an immersive meditation space using your uploaded photos, interacting with you to co-create a mindful journal. Hobbi listens patiently without judgment, never interrupts, and responds with well-timed humor or wit. 100% private, always available, completely free, no appointment needed.' 
+          ZH: '在冥想空间中，用语音记录你的心灵笔记。Hobbi 会基于你上传的照片生成沉浸式场景，与你互动，共同写下心灵日记。完全私密，随时可用，免费无需预约。', 
+          EN: 'In a meditation space, record your mindful thoughts through voice. Hobbi generates immersive scenes based on your uploaded photos, interacts with you to co-create a mindful journal. Completely private, always available, free with no appointment needed.' 
         },
         url: 'https://www.voiceto.me/',
         cta: { ZH: '访问项目', EN: 'Visit Project' },
@@ -170,8 +170,8 @@ export const homeContent = {
         team: { ZH: '组作品，四人协作完成', EN: 'Team Project, 4-member Collaboration' },
         teamDetails: { ZH: '物理博士 | 金融数学硕士 | 运筹/电气工程双硕士 | 工程经验', EN: 'Physics PhD | Financial Math Master | Operations/EE Dual Master | Engineering Experience' },
         description: { 
-          ZH: 'YummyYummy 是您友好的 AI 美食助手，可以随时随地帮助您快速自信地做出美食选择。它会即时显示每道菜品，并提供简洁明了的描述，还会精选真实的菜品照片，帮助您更好地想象美食的模样。', 
-          EN: 'YummyYummy is your friendly AI food assistant, helping you make food choices quickly and confidently anytime, anywhere. It instantly displays each dish with clear descriptions and curated real photos to help you better visualize the food.' 
+          ZH: 'YummyYummy 是你的 AI 美食助手，随时帮你快速做出靠谱的美食选择。清晰展示菜品信息，配上简明介绍和真实照片，让你一眼就懂、放心点。', 
+          EN: 'YummyYummy is your AI food assistant, helping you make reliable food choices quickly anytime. Clear dish information with concise descriptions and real photos, making it easy to understand and order with confidence.' 
         },
         url: 'https://yum.9top.org/',
         cta: { ZH: '访问项目', EN: 'Visit Project' },
@@ -209,25 +209,25 @@ export const homeContent = {
         }
       },
       {
-        badge: { ZH: 'ALPHA—ZERO启航营（Genesis）', EN: 'ALPHA ZERO Genesis Camp' },
-        title: { ZH: 'PropertyAI NZ - 新西兰AI房产平台', EN: 'PropertyAI NZ - AI Property Platform' },
-        team: { ZH: '学员：H同学', EN: 'Student: H' },
-        teamDetails: { ZH: '房产经纪 | 0工程经验', EN: 'Real Estate Agent | Zero Coding Experience' },
+        badge: { ZH: 'ALPHA 远航营（Odyssey）', EN: 'ALPHA Odyssey Camp' },
+        title: { ZH: 'RowingPro - AI划船训练平台', EN: 'RowingPro - AI Rowing Training Platform' },
+        team: { ZH: '学员：V同学', EN: 'Student: V' },
+        teamDetails: { ZH: '16岁，美国 | 多项数学/编程金牌得主', EN: '16 years old, USA | Multiple Math/Programming Gold Medalist' },
         description: { 
-          ZH: '新西兰首个AI驱动房产交易平台。提供专业买家代理、暗盘独家房源和24/7智能服务，让房产交易更高效、更透明。通过AI技术帮助用户找到理想房源，提供个性化推荐和专业咨询。', 
-          EN: 'New Zealand\'s first AI-driven property transaction platform. Offers professional buyer representation, exclusive off-market listings, and 24/7 intelligent service, making property transactions more efficient and transparent. Uses AI to help users find ideal properties with personalized recommendations and professional consultation.' 
+          ZH: '追踪你的划船训练进度，分析每一次动作，并与同样热爱划船的人交流。AI 提供清晰的改进建议，结合训练计划、视频分析和健康管理，帮助你稳步提升整体表现。', 
+          EN: 'Track your rowing training progress, analyze every movement, and connect with fellow rowing enthusiasts. AI provides clear improvement suggestions, combining training plans, video analysis, and health management to help you steadily improve overall performance.' 
         },
-        url: 'https://aipropertyagent.netlify.app/',
+        url: 'https://crew-trainer.com',
         cta: { ZH: '访问项目', EN: 'Visit Project' },
         images: {
-          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/PropertyAI_NZ_1.png',
-          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/PropertyAI_NZ_1.png',
-          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/PropertyAI_NZ_1.png'
+          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/rowingPro_1.png',
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/rowingPro_2.png',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/rowingPro_3.png'
         },
         tags: {
-          tag1: { ZH: 'AI智能推荐', EN: 'AI Smart Recommendation' },
-          tag2: { ZH: '房产科技', EN: 'PropTech' },
-          tag3: { ZH: '对话式交互', EN: 'Conversational UI' }
+          tag1: { ZH: '运动科技', EN: 'Sports Tech' },
+          tag2: { ZH: 'AI动作分析', EN: 'AI Motion Analysis' },
+          tag3: { ZH: '社区平台', EN: 'Community Platform' }
         }
       },
       {
@@ -276,28 +276,6 @@ export const homeContent = {
       },
       {
         badge: { ZH: 'ALPHA—ZERO启航营（Genesis）', EN: 'ALPHA ZERO Genesis Camp' },
-        title: { ZH: '字在午餐 Word Snack - 海外中文学习助手', EN: 'Word Snack - Chinese Learning Assistant for Overseas Kids' },
-        team: { ZH: '学员：T同学', EN: 'Student: T' },
-        teamDetails: { ZH: '自由职业者 | 0工程经验', EN: 'Freelancer | Zero Coding Experience' },
-        description: { 
-          ZH: '海外孩子的课后中文复习助手。通过趣味互动和AI技术，帮助海外华人家庭的孩子轻松复习中文，追踪学习进度，中文学习变得简单有趣。配有可爱的卡通形象，营造温馨的学习氛围。', 
-          EN: 'After-school Chinese review assistant for overseas children. Uses engaging interactions and AI technology to help children from Chinese families abroad easily review Chinese, track learning progress, and make Chinese learning simple and fun. Features adorable cartoon characters creating a warm learning atmosphere.' 
-        },
-        url: 'https://chinesewordsnack.netlify.app/',
-        cta: { ZH: '访问项目', EN: 'Visit Project' },
-        images: {
-          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/wordSnack_1.png',
-          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/wordSnack_2.png',
-          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/wordSnack_3.png'
-        },
-        tags: {
-          tag1: { ZH: '教育科技', EN: 'EdTech' },
-          tag2: { ZH: '中文学习', EN: 'Chinese Learning' },
-          tag3: { ZH: '儿童教育', EN: 'Kids Education' }
-        }
-      },
-      {
-        badge: { ZH: 'ALPHA 远航营（Odyssey）', EN: 'ALPHA Odyssey Camp' },
         title: { ZH: 'PROJECT:Echo - 游戏化目标管理系统', EN: 'PROJECT:Echo - Gamified Goal Management System' },
         team: { ZH: '学员：J同学', EN: 'Student: J' },
         teamDetails: { ZH: '13岁 | 2年Python经验', EN: '13 years old | 2 years Python experience' },
@@ -319,25 +297,47 @@ export const homeContent = {
         }
       },
       {
-        badge: { ZH: 'ALPHA 远航营（Odyssey）', EN: 'ALPHA Odyssey Camp' },
-        title: { ZH: 'RowingPro - AI划船训练平台', EN: 'RowingPro - AI Rowing Training Platform' },
-        team: { ZH: '学员：V同学', EN: 'Student: V' },
-        teamDetails: { ZH: '16岁，美国 | 多项数学/编程金牌得主', EN: '16 years old, USA | Multiple Math/Programming Gold Medalist' },
+        badge: { ZH: 'ALPHA—ZERO启航营（Genesis）', EN: 'ALPHA ZERO Genesis Camp' },
+        title: { ZH: 'PropertyAI NZ - 新西兰AI房产平台', EN: 'PropertyAI NZ - AI Property Platform' },
+        team: { ZH: '学员：H同学', EN: 'Student: H' },
+        teamDetails: { ZH: '房产经纪 | 0工程经验', EN: 'Real Estate Agent | Zero Coding Experience' },
         description: { 
-          ZH: '掌握你的划船技术：追踪进度、分析动作,并与划船社区交流。通过AI洞察帮助你把表现提升到更高水平。提供训练计划、视频分析、社区互动、营养指导和健康追踪等全方位功能,是专业划船运动员的智能训练助手。', 
-          EN: 'Master your rowing technique: track progress, analyze movements, and connect with the rowing community. Use AI insights to elevate your performance to the next level. Offers comprehensive features including training plans, video analysis, community interaction, nutrition guidance and health tracking - an intelligent training assistant for professional rowers.' 
+          ZH: '新西兰首个AI驱动房产交易平台。提供专业买家代理、暗盘独家房源和24/7智能服务，让房产交易更高效、更透明。通过AI技术帮助用户找到理想房源，提供个性化推荐和专业咨询。', 
+          EN: 'New Zealand\'s first AI-driven property transaction platform. Offers professional buyer representation, exclusive off-market listings, and 24/7 intelligent service, making property transactions more efficient and transparent. Uses AI to help users find ideal properties with personalized recommendations and professional consultation.' 
         },
-        url: 'https://crew-trainer.com',
+        url: 'https://aipropertyagent.netlify.app/',
         cta: { ZH: '访问项目', EN: 'Visit Project' },
         images: {
-          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/rowingPro_1.png',
-          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/rowingPro_2.png',
-          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/rowingPro_3.png'
+          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/PropertyAI_NZ_1.png',
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/PropertyAI_NZ_1.png',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/PropertyAI_NZ_1.png'
         },
         tags: {
-          tag1: { ZH: '运动科技', EN: 'Sports Tech' },
-          tag2: { ZH: 'AI动作分析', EN: 'AI Motion Analysis' },
-          tag3: { ZH: '社区平台', EN: 'Community Platform' }
+          tag1: { ZH: 'AI智能推荐', EN: 'AI Smart Recommendation' },
+          tag2: { ZH: '房产科技', EN: 'PropTech' },
+          tag3: { ZH: '对话式交互', EN: 'Conversational UI' }
+        }
+      },
+      {
+        badge: { ZH: 'ALPHA—ZERO启航营（Genesis）', EN: 'ALPHA ZERO Genesis Camp' },
+        title: { ZH: '字在午餐 Word Snack - 海外中文学习助手', EN: 'Word Snack - Chinese Learning Assistant for Overseas Kids' },
+        team: { ZH: '学员：T同学', EN: 'Student: T' },
+        teamDetails: { ZH: '自由职业者 | 0工程经验', EN: 'Freelancer | Zero Coding Experience' },
+        description: { 
+          ZH: '海外孩子的课后中文复习助手。通过趣味互动和AI技术，帮助海外华人家庭的孩子轻松复习中文，追踪学习进度，中文学习变得简单有趣。配有可爱的卡通形象，营造温馨的学习氛围。', 
+          EN: 'After-school Chinese review assistant for overseas children. Uses engaging interactions and AI technology to help children from Chinese families abroad easily review Chinese, track learning progress, and make Chinese learning simple and fun. Features adorable cartoon characters creating a warm learning atmosphere.' 
+        },
+        url: 'https://chinesewordsnack.netlify.app/',
+        cta: { ZH: '访问项目', EN: 'Visit Project' },
+        images: {
+          main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/wordSnack_1.png',
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/wordSnack_2.png',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/wordSnack_3.png'
+        },
+        tags: {
+          tag1: { ZH: '教育科技', EN: 'EdTech' },
+          tag2: { ZH: '中文学习', EN: 'Chinese Learning' },
+          tag3: { ZH: '儿童教育', EN: 'Kids Education' }
         }
       },
       {
@@ -404,7 +404,7 @@ export const homeContent = {
       content: { ZH: '通过完整体系，重塑人类在AI时代的核心价值', EN: 'Reshape human core value in AI era through complete system' }
     },
     humanAI: {
-      title: { ZH: '人机共创未来', EN: 'Human-AI Co-creation' },
+      title: { ZH: '人机共���未来', EN: 'Human-AI Co-creation' },
       content: { ZH: '实现"人想+AI做"的产业智能化，让每个人发挥最大价值', EN: 'Achieve "human thinks + AI does" industry intelligence, maximize everyone\'s value' }
     },
     lifelongLearning: {
@@ -472,7 +472,7 @@ export const homeContent = {
       career: {
         beebee: {
           title: { ZH: 'BEEBEE AI - 2022年创立', EN: 'BEEBEE AI - Founded 2022' },
-          desc: { ZH: '总部新西兰，团队分布于新西兰、英国、加拿大、美国、泰国和中国，聚焦人工智能与知识管理产品研发', EN: 'Headquartered in New Zealand, teams across NZ, UK, Canada, USA, Thailand, and China, focused on AI and knowledge management product development' }
+          desc: { ZH: '总部新西兰，团队分布于新西兰、英国、加拿大美国、泰国和中国，聚焦人工智能与知识管理产品研发', EN: 'Headquartered in New Zealand, teams across NZ, UK, Canada, USA, Thailand, and China, focused on AI and knowledge management product development' }
         },
         quwan: {
           title: { ZH: '趣玩网 - 创始人', EN: 'QuWan.com - Founder' },
