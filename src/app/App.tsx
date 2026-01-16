@@ -9,27 +9,13 @@ import { homeContent, t } from './locales/homeContent';
 import { ContactForm } from './components/ContactForm';
 import { Toaster } from 'sonner';
 import { StudentWorksSection } from './components/StudentWorksSection';
+import { HelmetProvider, Helmet } from 'react-helmet-async';
 
 function ScrollManager() {
   const location = useLocation();
   const prevPathnameRef = useRef(location.pathname);
 
   useEffect(() => {
-    // Set page title
-    document.title = 'BEEBEE AI';
-    
-    // Set favicon
-    const setFavicon = () => {
-      let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
-      if (!link) {
-        link = document.createElement('link');
-        link.rel = 'icon';
-        document.head.appendChild(link);
-      }
-      link.href = 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/beebee_ico.png';
-    };
-    setFavicon();
-    
     const isPageChange = prevPathnameRef.current !== location.pathname;
     
     // 如果有 hash，滚动到对应的锚点
@@ -62,6 +48,20 @@ function HomePage() {
   
   return (
     <div className="min-h-screen text-white" style={{ backgroundColor: 'var(--bg-deep)' }}>
+      <Helmet>
+        <title>BEEBEE AI - 用 AI 进化学习力</title>
+        <meta name="description" content="BEEBEE AI 是 AI学习力平台，致力于培养具备终身学习力的新一代人才，提出&quot;学习将取代教育&quot;的理念，强调个性化与项目化学习，服务青少年学生、在职人士与企业家群体，分别聚焦创造力、竞争力与领导力的系统提升。" />
+        <meta name="keywords" content="AI学习力, 终身学习力, 人工智能学习平台, 个性化学习, 项目化学习, 青少年AI学习, 职场AI能力, 企业家学习力, AI创造力, AI竞争力, AI领导力, BEEBEE AI" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://beebee.ai" />
+        
+        {/* Favicons */}
+        <link rel="icon" type="image/x-icon" href="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/beebee-ai/icons/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/beebee-ai/icons/favicon.svg" />
+        <link rel="icon" type="image/png" sizes="96x96" href="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/beebee-ai/icons/favicon-96x96.png" />
+        <link rel="apple-touch-icon" href="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/beebee-ai/icons/apple-touch-icon.png" />
+        <link rel="manifest" href="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/beebee-ai/icons/web-app-manifest-512x512.png" />
+      </Helmet>
       <Navigation />
       
       {/* Hero Section */}
@@ -1204,16 +1204,18 @@ function HomePage() {
 
 export default function App() {
   return (
-    <LanguageProvider>
-      <BrowserRouter>
-        <ScrollManager />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/differentiation" element={<DifferentiationDetail />} />
-        </Routes>
-        {/* Toast notifications */}
-        <Toaster position="top-center" richColors />
-      </BrowserRouter>
-    </LanguageProvider>
+    <HelmetProvider>
+      <LanguageProvider>
+        <BrowserRouter>
+          <ScrollManager />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/differentiation" element={<DifferentiationDetail />} />
+          </Routes>
+          {/* Toast notifications */}
+          <Toaster position="top-center" richColors />
+        </BrowserRouter>
+      </LanguageProvider>
+    </HelmetProvider>
   );
 }
