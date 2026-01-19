@@ -177,8 +177,8 @@ export const homeContent = {
         cta: { ZH: '访问项目', EN: 'Visit Project' },
         images: {
           main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/yum_1.jpg',
-          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/yum_2.jpg',
-          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/yum_1.jpg'
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/yum_3.png',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/yum_4.png'
         },
         tags: {
           tag1: { ZH: 'AI图像识别', EN: 'AI Image Recognition' },
@@ -243,8 +243,8 @@ export const homeContent = {
         cta: { ZH: '访问项目', EN: 'Visit Project' },
         images: {
           main: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/wordSnack_1.png',
-          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/wordSnack_2.png',
-          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/wordSnack_3.png'
+          screenshot1: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/wordSnack_4.png',
+          screenshot2: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/wordSnack_5.png'
         },
         tags: {
           tag1: { ZH: '教育科技', EN: 'EdTech' },
