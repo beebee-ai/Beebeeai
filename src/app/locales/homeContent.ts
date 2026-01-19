@@ -552,7 +552,7 @@ export const homeContent = {
       },
       email: { ZH: '邮箱', EN: 'Email' },
       emailIntern: 'internprogram@beebee.ai',
-      emailBusiness: 'brinny@beebee.ai'
+      emailBusiness: 'service@beebee.ai'
     }
   },
 
