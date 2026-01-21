@@ -6,6 +6,7 @@ import { ArrowRight } from 'react-feather';
 import { Anchor, Layers, Target, Zap, Lightbulb, Database, Funnel, FlaskConical, Share2, Sparkles } from 'lucide-react';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { homeContent, t } from './locales/homeContent';
+import { seoData } from "./locales/seo";
 import { ContactForm } from './components/ContactForm';
 import { Toaster } from 'sonner';
 import { StudentWorksSection } from './components/StudentWorksSection';
@@ -17,7 +18,7 @@ function ScrollManager() {
 
   useEffect(() => {
     const isPageChange = prevPathnameRef.current !== location.pathname;
-    
+
     // 如果有 hash，滚动到对应的锚点
     if (location.hash) {
       setTimeout(() => {
@@ -25,8 +26,8 @@ function ScrollManager() {
         if (element) {
           const top = element.getBoundingClientRect().top + window.pageYOffset;
           // 跨页面跳转用 instant，页面内跳转用 smooth
-          window.scrollTo({ 
-            top, 
+          window.scrollTo({
+            top,
             behavior: isPageChange ? ('instant' as ScrollBehavior) : 'smooth'
           });
         }
@@ -45,16 +46,20 @@ function ScrollManager() {
 
 function HomePage() {
   const { language } = useLanguage();
-  
+
   return (
     <div className="min-h-screen text-white" style={{ backgroundColor: 'var(--bg-deep)' }}>
       <Helmet>
-        <title>BEEBEE AI - 用 AI 进化学习力</title>
-        <meta name="description" content="BEEBEE AI 是 AI学习力平台，致力于培养具备终身学习力的新一代人才，提出&quot;学习将取代教育&quot;的理念，强调个性化与项目化学习，服务青少年学生、在职人士与企业家群体，分别聚焦创造力、竞争力与领导力的系统提升。" />
-        <meta name="keywords" content="AI学习力, 终身学习力, 人工智能学习平台, 个性化学习, 项目化学习, 青少年AI学习, 职场AI能力, 企业家学习力, AI创造力, AI竞争力, AI领导力, BEEBEE AI" />
+        <title>{t(seoData.home.title, language)}</title>
+        <meta name="description" content={t(seoData.home.description, language)} />
+        <meta name="keywords" content={t(seoData.home.keywords, language)} />
+        <meta property="og:title" content={t(seoData.home.title, language)} />
+        <meta property="og:description" content={t(seoData.home.description, language)} />
+        <meta property="twitter:title" content={t(seoData.home.title, language)} />
+        <meta property="twitter:description" content={t(seoData.home.description, language)} />
       </Helmet>
       <Navigation />
-      
+
       {/* Hero Section */}
       <section id="home" className="flex items-start px-4 relative overflow-hidden pb-8 md:pb-[10vh]" style={{ paddingTop: '20vh' }}>
         {/* Honeycomb Background Pattern */}
@@ -64,54 +69,54 @@ function HomePage() {
               {/* Standard honeycomb pattern - flat-top hexagons */}
               <pattern id="honeycomb" x="0" y="0" width="90" height="52" patternUnits="userSpaceOnUse">
                 {/* Row 1 - Left hexagon */}
-                <path d="M15,0 L45,0 L60,26 L45,52 L15,52 L0,26 Z" 
-                  fill="none" 
-                  stroke="#FF6900" 
+                <path d="M15,0 L45,0 L60,26 L45,52 L15,52 L0,26 Z"
+                  fill="none"
+                  stroke="#FF6900"
                   strokeWidth="1.5"
-                  opacity="0.3"/>
+                  opacity="0.3" />
                 {/* Row 2 - Right hexagon (offset) */}
-                <path d="M60,26 L90,26 L105,52 L90,78 L60,78 L45,52 Z" 
-                  fill="none" 
-                  stroke="#FF6900" 
+                <path d="M60,26 L90,26 L105,52 L90,78 L60,78 L45,52 Z"
+                  fill="none"
+                  stroke="#FF6900"
                   strokeWidth="1.5"
-                  opacity="0.3"/>
+                  opacity="0.3" />
               </pattern>
-              
+
               {/* Radial gradient mask for center fade-out effect */}
               <radialGradient id="centerFade">
-                <stop offset="0%" stopColor="#FFB380" stopOpacity="0"/>
-                <stop offset="30%" stopColor="#FFB380" stopOpacity="0.3"/>
-                <stop offset="50%" stopColor="#FFA366" stopOpacity="0.5"/>
-                <stop offset="70%" stopColor="#FFB380" stopOpacity="0.3"/>
-                <stop offset="100%" stopColor="#FFB380" stopOpacity="0"/>
+                <stop offset="0%" stopColor="#FFB380" stopOpacity="0" />
+                <stop offset="30%" stopColor="#FFB380" stopOpacity="0.3" />
+                <stop offset="50%" stopColor="#FFA366" stopOpacity="0.5" />
+                <stop offset="70%" stopColor="#FFB380" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="#FFB380" stopOpacity="0" />
               </radialGradient>
-              
+
               <mask id="honeycombMask">
-                <rect width="100%" height="100%" fill="url(#centerFade)"/>
+                <rect width="100%" height="100%" fill="url(#centerFade)" />
               </mask>
             </defs>
-            
+
             {/* Honeycomb grid with mask */}
             <rect width="100%" height="100%" fill="url(#honeycomb)" mask="url(#honeycombMask)" />
           </svg>
         </div>
         <div className="relative z-10 mx-auto w-full max-w-7xl text-center" style={{ marginTop: '-8vh' }}>
-          <h1 className="px-4 mb-0" style={{ 
-            fontSize: 'clamp(32px, 8vw, 70px)', 
-            fontWeight: 600, 
+          <h1 className="px-4 mb-0" style={{
+            fontSize: 'clamp(32px, 8vw, 70px)',
+            fontWeight: 600,
             lineHeight: 1.25,
             letterSpacing: '0.5px',
             color: '#fffffe'
           }}>
             {language === 'ZH' ? (
               <>
-                用 <span style={{ 
+                用 <span style={{
                   color: 'var(--orange-primary)',
                   position: 'relative',
                   display: 'inline-block'
                 }}>
                   AI
-                  <svg 
+                  <svg
                     style={{
                       position: 'absolute',
                       bottom: '-4px',
@@ -136,13 +141,13 @@ function HomePage() {
               </>
             ) : (
               <>
-                Evolve Learning with <span style={{ 
+                Evolve Learning with <span style={{
                   color: 'var(--orange-primary)',
                   position: 'relative',
                   display: 'inline-block'
                 }}>
                   AI
-                  <svg 
+                  <svg
                     style={{
                       position: 'absolute',
                       bottom: '-4px',
@@ -177,7 +182,7 @@ function HomePage() {
           }}>
             {t(homeContent.hero.subtitle, language)}
           </p>
-          <a 
+          <a
             href="#platform"
             className="inline-flex gap-3 items-center transition-all"
             style={{
@@ -195,14 +200,14 @@ function HomePage() {
           >
             {t(homeContent.hero.cta, language)}
             <div style={{
-                width: 'clamp(20px, 3.5vw, 24px)',
-                height: 'clamp(20px, 3.5vw, 24px)',
-                borderRadius: '50%',
-                backgroundColor: '#FF6900',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}>
+              width: 'clamp(20px, 3.5vw, 24px)',
+              height: 'clamp(20px, 3.5vw, 24px)',
+              borderRadius: '50%',
+              backgroundColor: '#FF6900',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
               <ArrowRight size={14} color="#FFFFFF" strokeWidth={2.5} />
             </div>
           </a>
@@ -213,7 +218,7 @@ function HomePage() {
       <section id="platform" className="px-4 pt-8 pb-8 border-t border-white/10 md:pt-20 md:pb-20" style={{ backgroundColor: 'var(--bg-surface)' }}>
         <div className="mx-auto w-full max-w-7xl">
           {/* Learning Power Platform - Bootcamps */}
-          <h2 className="mb-4 text-center" style={{ 
+          <h2 className="mb-4 text-center" style={{
             color: 'var(--text-primary)',
             fontSize: 'clamp(24px, 5vw, 42px)',
             fontWeight: 600,
@@ -223,13 +228,13 @@ function HomePage() {
           <p className="mb-8 text-center md:mb-16" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
             {t(homeContent.platform.subtitle, language)}
           </p>
-          
+
           {/* Stats Section */}
           <div className="grid grid-cols-2 gap-4 mb-8 md:grid-cols-4 md:gap-6 md:mb-20">
             {/* Stat 1 */}
             <div className="text-center rounded-lg border border-white/5 bg-white/[0.02] hover:border-cyan-500/30 hover:bg-white/[0.04] transition-all duration-300" style={{ padding: 'clamp(16px, 3vw, 24px)' }}>
-              <div style={{ 
-                fontSize: 'clamp(32px, 6vw, 48px)', 
+              <div style={{
+                fontSize: 'clamp(32px, 6vw, 48px)',
                 fontWeight: 700,
                 background: 'linear-gradient(135deg, #06B6D4 0%, #22D3EE 100%)',
                 backgroundClip: 'text',
@@ -247,8 +252,8 @@ function HomePage() {
 
             {/* Stat 2 */}
             <div className="text-center rounded-lg border border-white/5 bg-white/[0.02] hover:border-blue-500/30 hover:bg-white/[0.04] transition-all duration-300" style={{ padding: 'clamp(16px, 3vw, 24px)' }}>
-              <div style={{ 
-                fontSize: 'clamp(32px, 6vw, 48px)', 
+              <div style={{
+                fontSize: 'clamp(32px, 6vw, 48px)',
                 fontWeight: 700,
                 background: 'linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%)',
                 backgroundClip: 'text',
@@ -266,8 +271,8 @@ function HomePage() {
 
             {/* Stat 3 */}
             <div className="text-center rounded-lg border border-white/5 bg-white/[0.02] hover:border-purple-500/30 hover:bg-white/[0.04] transition-all duration-300" style={{ padding: 'clamp(16px, 3vw, 24px)' }}>
-              <div style={{ 
-                fontSize: 'clamp(32px, 6vw, 48px)', 
+              <div style={{
+                fontSize: 'clamp(32px, 6vw, 48px)',
                 fontWeight: 700,
                 background: 'linear-gradient(135deg, #A855F7 0%, #C084FC 100%)',
                 backgroundClip: 'text',
@@ -285,8 +290,8 @@ function HomePage() {
 
             {/* Stat 4 */}
             <div className="text-center rounded-lg border border-white/5 bg-white/[0.02] hover:border-orange-500/30 hover:bg-white/[0.04] transition-all duration-300" style={{ padding: 'clamp(16px, 3vw, 24px)' }}>
-              <div style={{ 
-                fontSize: 'clamp(32px, 6vw, 48px)', 
+              <div style={{
+                fontSize: 'clamp(32px, 6vw, 48px)',
                 fontWeight: 700,
                 background: 'linear-gradient(135deg, var(--orange-primary) 0%, #ff8c42 100%)',
                 backgroundClip: 'text',
@@ -302,143 +307,143 @@ function HomePage() {
               <p style={{ color: 'var(--text-secondary)', fontSize: 'clamp(13px, 2vw, 15px)', lineHeight: 1.4 }}>{t(homeContent.platform.stats.support.label, language)}</p>
             </div>
           </div>
-          
+
           <div className="max-w-[1154px] mx-auto">
             <div className="grid grid-cols-1 gap-8 mb-8 md:grid-cols-2 md:mb-16">
               {/* Alpha 实战营 */}
-            <div className="group p-8 border border-white/10 rounded-lg hover:border-orange-500/50 hover:bg-white/[0.02] transition-all duration-300 relative overflow-hidden">
-              {/* Background Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br transition-all duration-300 from-orange-500/0 to-orange-500/0 group-hover:from-orange-500/5 group-hover:to-orange-500/0"></div>
-              
-              <div className="relative z-10">
-                <h3 className="mb-2" style={{ color: 'var(--orange-primary)', fontSize: 'clamp(20px, 4vw, 30px)', fontWeight: 700 }}>{t(homeContent.platform.alpha.title, language)}</h3>
-                <p className="mb-6" style={{ color: '#9CA3AF', fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.platform.alpha.subtitle, language)}</p>
-                <p className="mb-6" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#9CA3AF' }}>
-                  {t(homeContent.platform.alpha.description, language)}
-                </p>
-                <ul className="mb-8 space-y-3">
-                  <li className="flex gap-3 items-start">
-                    <div className="w-5 h-5 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div>
-                    </div>
-                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.alpha.features.feature1, language)}</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <div className="w-5 h-5 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div>
-                    </div>
-                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.alpha.features.feature2, language)}</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <div className="w-5 h-5 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div>
-                    </div>
-                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.alpha.features.feature3, language)}</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <div className="w-5 h-5 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div>
-                    </div>
-                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.alpha.features.feature4, language)}</span>
-                  </li>
-                </ul>
-                <div className="flex justify-center">
-                  <a 
-                    href="https://bee-alpha.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-8 py-3 rounded-lg transition-all duration-300"
-                    style={{
-                      backgroundColor: 'transparent',
-                      border: '1.5px solid var(--orange-primary)',
-                      color: 'var(--orange-primary)',
-                      fontWeight: 600,
-                      textDecoration: 'none',
-                      display: 'inline-block'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = 'rgba(255, 105, 0, 0.15)';
-                      e.currentTarget.style.borderColor = 'var(--orange-primary)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = 'transparent';
-                      e.currentTarget.style.borderColor = 'var(--orange-primary)';
-                    }}
-                  >
-                    {t(homeContent.platform.alpha.cta, language)}
-                  </a>
-                </div>
-              </div>
-            </div>
+              <div className="group p-8 border border-white/10 rounded-lg hover:border-orange-500/50 hover:bg-white/[0.02] transition-all duration-300 relative overflow-hidden">
+                {/* Background Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br transition-all duration-300 from-orange-500/0 to-orange-500/0 group-hover:from-orange-500/5 group-hover:to-orange-500/0"></div>
 
-            {/* Beta 实战营 */}
-            <div className="group p-8 border border-white/10 rounded-lg hover:border-cyan-500/50 hover:bg-white/[0.02] transition-all duration-300 relative overflow-hidden">
-              {/* Background Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br transition-all duration-300 from-cyan-500/0 to-cyan-500/0 group-hover:from-cyan-500/5 group-hover:to-cyan-500/0"></div>
-              
-              <div className="relative z-10">
-                <h3 className="mb-2" style={{ color: '#06B6D4', fontSize: 'clamp(20px, 4vw, 30px)', fontWeight: 700 }}>{t(homeContent.platform.beta.title, language)}</h3>
-                <p className="mb-6" style={{ color: '#9CA3AF', fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.platform.beta.subtitle, language)}</p>
-                <p className="mb-6" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#9CA3AF' }}>
-                  {t(homeContent.platform.beta.description, language)}
-                </p>
-                <ul className="mb-8 space-y-3">
-                  <li className="flex gap-3 items-start">
-                    <div className="w-5 h-5 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
-                    </div>
-                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.beta.features.feature1, language)}</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <div className="w-5 h-5 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
-                    </div>
-                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.beta.features.feature2, language)}</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <div className="w-5 h-5 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
-                    </div>
-                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.beta.features.feature3, language)}</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <div className="w-5 h-5 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
-                    </div>
-                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.beta.features.feature4, language)}</span>
-                  </li>
-                </ul>
-                <div className="flex justify-center">
-                  <a 
-                    href="https://bee-beta.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-8 py-3 rounded-lg transition-all duration-300"
-                    style={{
-                      backgroundColor: 'transparent',
-                      border: '1.5px solid #06B6D4',
-                      color: '#06B6D4',
-                      fontWeight: 600,
-                      textDecoration: 'none',
-                      display: 'inline-block'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = 'rgba(6, 182, 212, 0.15)';
-                      e.currentTarget.style.borderColor = '#06B6D4';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = 'transparent';
-                      e.currentTarget.style.borderColor = '#06B6D4';
-                    }}
-                  >
-                    {t(homeContent.platform.beta.cta, language)}
-                  </a>
+                <div className="relative z-10">
+                  <h3 className="mb-2" style={{ color: 'var(--orange-primary)', fontSize: 'clamp(20px, 4vw, 30px)', fontWeight: 700 }}>{t(homeContent.platform.alpha.title, language)}</h3>
+                  <p className="mb-6" style={{ color: '#9CA3AF', fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.platform.alpha.subtitle, language)}</p>
+                  <p className="mb-6" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#9CA3AF' }}>
+                    {t(homeContent.platform.alpha.description, language)}
+                  </p>
+                  <ul className="mb-8 space-y-3">
+                    <li className="flex gap-3 items-start">
+                      <div className="w-5 h-5 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div>
+                      </div>
+                      <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.alpha.features.feature1, language)}</span>
+                    </li>
+                    <li className="flex gap-3 items-start">
+                      <div className="w-5 h-5 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div>
+                      </div>
+                      <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.alpha.features.feature2, language)}</span>
+                    </li>
+                    <li className="flex gap-3 items-start">
+                      <div className="w-5 h-5 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div>
+                      </div>
+                      <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.alpha.features.feature3, language)}</span>
+                    </li>
+                    <li className="flex gap-3 items-start">
+                      <div className="w-5 h-5 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div>
+                      </div>
+                      <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.alpha.features.feature4, language)}</span>
+                    </li>
+                  </ul>
+                  <div className="flex justify-center">
+                    <a
+                      href="https://bee-alpha.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-8 py-3 rounded-lg transition-all duration-300"
+                      style={{
+                        backgroundColor: 'transparent',
+                        border: '1.5px solid var(--orange-primary)',
+                        color: 'var(--orange-primary)',
+                        fontWeight: 600,
+                        textDecoration: 'none',
+                        display: 'inline-block'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = 'rgba(255, 105, 0, 0.15)';
+                        e.currentTarget.style.borderColor = 'var(--orange-primary)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = 'transparent';
+                        e.currentTarget.style.borderColor = 'var(--orange-primary)';
+                      }}
+                    >
+                      {t(homeContent.platform.alpha.cta, language)}
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
+
+              {/* Beta 实战营 */}
+              <div className="group p-8 border border-white/10 rounded-lg hover:border-cyan-500/50 hover:bg-white/[0.02] transition-all duration-300 relative overflow-hidden">
+                {/* Background Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br transition-all duration-300 from-cyan-500/0 to-cyan-500/0 group-hover:from-cyan-500/5 group-hover:to-cyan-500/0"></div>
+
+                <div className="relative z-10">
+                  <h3 className="mb-2" style={{ color: '#06B6D4', fontSize: 'clamp(20px, 4vw, 30px)', fontWeight: 700 }}>{t(homeContent.platform.beta.title, language)}</h3>
+                  <p className="mb-6" style={{ color: '#9CA3AF', fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.platform.beta.subtitle, language)}</p>
+                  <p className="mb-6" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#9CA3AF' }}>
+                    {t(homeContent.platform.beta.description, language)}
+                  </p>
+                  <ul className="mb-8 space-y-3">
+                    <li className="flex gap-3 items-start">
+                      <div className="w-5 h-5 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
+                      </div>
+                      <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.beta.features.feature1, language)}</span>
+                    </li>
+                    <li className="flex gap-3 items-start">
+                      <div className="w-5 h-5 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
+                      </div>
+                      <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.beta.features.feature2, language)}</span>
+                    </li>
+                    <li className="flex gap-3 items-start">
+                      <div className="w-5 h-5 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
+                      </div>
+                      <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.beta.features.feature3, language)}</span>
+                    </li>
+                    <li className="flex gap-3 items-start">
+                      <div className="w-5 h-5 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
+                      </div>
+                      <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.beta.features.feature4, language)}</span>
+                    </li>
+                  </ul>
+                  <div className="flex justify-center">
+                    <a
+                      href="https://bee-beta.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-8 py-3 rounded-lg transition-all duration-300"
+                      style={{
+                        backgroundColor: 'transparent',
+                        border: '1.5px solid #06B6D4',
+                        color: '#06B6D4',
+                        fontWeight: 600,
+                        textDecoration: 'none',
+                        display: 'inline-block'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = 'rgba(6, 182, 212, 0.15)';
+                        e.currentTarget.style.borderColor = '#06B6D4';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = 'transparent';
+                        e.currentTarget.style.borderColor = '#06B6D4';
+                      }}
+                    >
+                      {t(homeContent.platform.beta.cta, language)}
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          
+
           {/* Learning Platform App - Part of the same section */}
           <div>
             <div className="p-8 rounded-lg border transition-colors border-white/10 hover:border-purple-500/30">
@@ -447,7 +452,7 @@ function HomePage() {
                 <div className="relative">
                   <div className="aspect-[4/3] bg-gradient-to-br from-white/5 to-white/[0.02] rounded-lg border border-white/10 overflow-hidden relative group">
                     {/* Real Image */}
-                    <img 
+                    <img
                       src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/beebee_edu.jpg"
                       alt="学习平台界面"
                       className="object-cover w-full h-full"
@@ -464,7 +469,7 @@ function HomePage() {
                   <p className="mb-10" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>
                     {t(homeContent.platform.learningPlatform.description, language)}
                   </p>
-                  
+
                   <h4 className="mb-6" style={{ color: '#A855F7', fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.platform.learningPlatform.featuresTitle, language)}</h4>
                   <div className="mb-10 space-y-4">
                     <div className="flex gap-3 items-center">
@@ -492,8 +497,8 @@ function HomePage() {
                       <p style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.learningPlatform.features.feature4, language)}</p>
                     </div>
                   </div>
-                  
-                  <a 
+
+                  <a
                     href="https://learn.beebee.ai/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -526,14 +531,14 @@ function HomePage() {
       {/* Learning Curriculum Section - 我们的差异化 */}
       <section id="system" className="px-4 pt-8 pb-8 bg-black border-t border-white/10 md:pt-20 md:pb-20">
         <div className="mx-auto w-full max-w-7xl">
-          <h2 className="mb-4 text-center" style={{ 
+          <h2 className="mb-4 text-center" style={{
             fontSize: 'clamp(24px, 5vw, 42px)',
             fontWeight: 600,
             letterSpacing: '1px',
             lineHeight: 1.3
           }}>{t(homeContent.differentiation.title, language)}</h2>
           <p className="mb-8 text-center text-gray-400 md:mb-20" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.differentiation.subtitle, language)}</p>
-          
+
           {/* Staggered Layout */}
           <div className="mx-auto space-y-8 max-w-6xl md:space-y-24">
             {/* Item 01 - Left aligned */}
@@ -544,18 +549,18 @@ function HomePage() {
                   <div className="flex absolute -top-4 -right-4 justify-center items-center w-24 h-24 rounded-2xl border transition-all duration-300 rotate-12 bg-cyan-500/5 border-cyan-500/10 group-hover:bg-cyan-500/10 group-hover:rotate-6">
                     <Lightbulb className="w-12 h-12 text-cyan-400/40" />
                   </div>
-                  
+
                   <h3 className="relative mb-4 font-semibold" style={{ fontSize: 'clamp(18px, 3.5vw, 24px)' }}>{t(homeContent.differentiation.item1.title, language)}</h3>
                   <p className="relative mb-6 font-medium leading-snug text-cyan-400" style={{ fontSize: 'clamp(16px, 3vw, 20px)' }}>{t(homeContent.differentiation.item1.subtitle, language)}</p>
                   <p className="relative leading-relaxed text-gray-400" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
                     {t(homeContent.differentiation.item1.description, language)}
                   </p>
-                  
+
                   {/* Accent line */}
                   <div className="absolute right-0 bottom-0 left-0 h-1 bg-gradient-to-r to-transparent from-cyan-500/50 via-cyan-500/20"></div>
                 </div>
               </div>
-              
+
               {/* Right side - decorative number */}
               <div className="hidden justify-center items-center md:flex md:col-span-5">
                 <div className="text-[160px] font-bold text-transparent bg-clip-text bg-gradient-to-br from-cyan-400/50 to-cyan-600/20 select-none" style={{ lineHeight: 1 }}>
@@ -572,20 +577,20 @@ function HomePage() {
                   02
                 </div>
               </div>
-              
+
               <div className="order-2 md:col-span-7 group md:order-none">
                 <div className="relative p-6 md:p-8 border border-white/10 rounded-2xl hover:border-blue-500/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500 overflow-hidden bg-gradient-to-br from-blue-500/[0.03] to-transparent">
                   {/* Icon - Background positioned at top right */}
                   <div className="flex absolute -top-4 -right-4 justify-center items-center w-24 h-24 rounded-2xl border transition-all duration-300 rotate-12 bg-blue-500/5 border-blue-500/10 group-hover:bg-blue-500/10 group-hover:rotate-6">
                     <Target className="w-12 h-12 text-blue-400/40" />
                   </div>
-                  
+
                   <h3 className="relative mb-4 font-semibold" style={{ fontSize: 'clamp(18px, 3.5vw, 24px)' }}>{t(homeContent.differentiation.item2.title, language)}</h3>
                   <p className="relative mb-6 font-medium leading-snug text-blue-400" style={{ fontSize: 'clamp(16px, 3vw, 20px)' }}>{t(homeContent.differentiation.item2.subtitle, language)}</p>
                   <p className="relative leading-relaxed text-gray-400" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
                     {t(homeContent.differentiation.item2.description, language)}
                   </p>
-                  
+
                   {/* Accent line */}
                   <div className="absolute right-0 bottom-0 left-0 h-1 bg-gradient-to-r from-transparent via-blue-500/20 to-blue-500/50"></div>
                 </div>
@@ -600,18 +605,18 @@ function HomePage() {
                   <div className="flex absolute -top-4 -right-4 justify-center items-center w-24 h-24 rounded-2xl border transition-all duration-300 rotate-12 bg-purple-500/5 border-purple-500/10 group-hover:bg-purple-500/10 group-hover:rotate-6">
                     <Layers className="w-12 h-12 text-purple-400/40" />
                   </div>
-                  
+
                   <h3 className="relative mb-4 font-semibold" style={{ fontSize: 'clamp(18px, 3.5vw, 24px)' }}>{t(homeContent.differentiation.item3.title, language)}</h3>
                   <p className="relative mb-6 font-medium leading-snug text-purple-400" style={{ fontSize: 'clamp(16px, 3vw, 20px)' }}>{t(homeContent.differentiation.item3.subtitle, language)}</p>
                   <p className="relative leading-relaxed text-gray-400" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
                     {t(homeContent.differentiation.item3.description, language)}
                   </p>
-                  
+
                   {/* Accent line */}
                   <div className="absolute right-0 bottom-0 left-0 h-1 bg-gradient-to-r to-transparent from-purple-500/50 via-purple-500/20"></div>
                 </div>
               </div>
-              
+
               {/* Right side - decorative number */}
               <div className="hidden justify-center items-center md:flex md:col-span-5">
                 <div className="text-[160px] font-bold text-transparent bg-clip-text bg-gradient-to-br from-purple-400/50 to-purple-600/20 select-none" style={{ lineHeight: 1 }}>
@@ -628,20 +633,20 @@ function HomePage() {
                   04
                 </div>
               </div>
-              
+
               <div className="order-2 md:col-span-7 group md:order-none">
                 <div className="relative p-6 md:p-8 border border-white/10 rounded-2xl hover:border-orange-500/30 hover:shadow-[0_0_30px_rgba(255,105,0,0.15)] transition-all duration-500 overflow-hidden bg-gradient-to-br from-orange-500/[0.03] to-transparent">
                   {/* Icon - Background positioned at top right */}
                   <div className="flex absolute -top-4 -right-4 justify-center items-center w-24 h-24 rounded-2xl border transition-all duration-300 rotate-12 bg-orange-500/5 border-orange-500/10 group-hover:bg-orange-500/10 group-hover:rotate-6">
                     <Sparkles className="w-12 h-12 text-orange-500/40" />
                   </div>
-                  
+
                   <h3 className="relative mb-4 font-semibold" style={{ fontSize: 'clamp(18px, 3.5vw, 24px)' }}>{t(homeContent.differentiation.item4.title, language)}</h3>
                   <p className="relative mb-6 font-medium leading-snug text-orange-500" style={{ fontSize: 'clamp(16px, 3vw, 20px)' }}>{t(homeContent.differentiation.item4.subtitle, language)}</p>
                   <p className="relative leading-relaxed text-gray-400" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
                     {t(homeContent.differentiation.item4.description, language)}
                   </p>
-                  
+
                   {/* Accent line */}
                   <div className="absolute right-0 bottom-0 left-0 h-1 bg-gradient-to-r from-transparent via-orange-500/20 to-orange-500/50"></div>
                 </div>
@@ -650,7 +655,7 @@ function HomePage() {
           </div>
 
           <div className="mt-16 text-center">
-            <Link 
+            <Link
               to="/differentiation"
               className="inline-flex gap-2 items-center px-8 py-3 text-white rounded-lg border-2 transition-all duration-300 group border-orange-500/50 hover:bg-orange-500/10 hover:border-orange-500"
               style={{ textDecoration: 'none' }}
@@ -670,14 +675,14 @@ function HomePage() {
       {/* Brand Philosophy Section */}
       <section id="philosophy" className="px-4 pt-8 pb-8 bg-black border-t border-white/10 md:pt-20 md:pb-20">
         <div className="mx-auto w-full max-w-7xl">
-          <h2 className="mb-4 text-center" style={{ 
+          <h2 className="mb-4 text-center" style={{
             fontSize: 'clamp(24px, 5vw, 42px)',
             fontWeight: 600,
             letterSpacing: '1px',
             lineHeight: 1.3
           }}>{t(homeContent.philosophy.title, language)}</h2>
           <p className="mb-8 text-center text-gray-400 md:mb-16" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.philosophy.subtitle, language)}</p>
-          
+
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
             {/* Left Column - Vision and Core Concepts */}
             <div className="space-y-10">
@@ -811,13 +816,13 @@ function HomePage() {
       {/* About Us Section */}
       <section id="about" className="px-4 border-t border-white/10 pt-8 md:pt-20 pb-8 md:pb-20 bg-white/[0.08]">
         <div className="mx-auto w-full max-w-7xl">
-          <h2 className="mb-8 text-center md:mb-16" style={{ 
+          <h2 className="mb-8 text-center md:mb-16" style={{
             fontSize: 'clamp(24px, 5vw, 42px)',
             fontWeight: 600,
             letterSpacing: '1px',
             lineHeight: 1.3
           }}>{t(homeContent.about.title, language)}</h2>
-          
+
           {/* Company Introduction */}
           <div className="mb-8 md:mb-20">
             <div className="mx-auto mb-12 max-w-5xl">
@@ -879,9 +884,9 @@ function HomePage() {
                   <div className="flex gap-4 items-start mb-6 md:hidden">
                     <div className="flex-shrink-0">
                       <div className="overflow-hidden w-32 h-32 rounded-full border border-white/10">
-                        <img 
-                          src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/pacer/pin.png" 
-                          alt="周品 - BEEBEE AI 创始人 & CEO" 
+                        <img
+                          src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/pacer/pin.png"
+                          alt="周品 - BEEBEE AI 创始人 & CEO"
                           className="object-cover w-full h-full"
                         />
                       </div>
@@ -901,9 +906,9 @@ function HomePage() {
                   <div className="hidden gap-12 items-start md:flex">
                     <div className="flex-shrink-0" style={{ width: '280px' }}>
                       <div className="overflow-hidden mb-6 rounded-lg border border-white/10">
-                        <img 
-                          src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/pacer/pin.png" 
-                          alt="周品 - BEEBEE AI 创始人 & CEO" 
+                        <img
+                          src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/pacer/pin.png"
+                          alt="周品 - BEEBEE AI 创始人 & CEO"
                           className="object-cover w-full h-auto"
                         />
                       </div>
@@ -916,7 +921,7 @@ function HomePage() {
                       <p className="mb-8 text-gray-300" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)', lineHeight: 1.8 }}>
                         {t(homeContent.about.ceo.bio, language)}
                       </p>
-                      
+
                       {/* Career History - Desktop version inside right column */}
                       <div>
                         <h4 className="mb-4 text-orange-500" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.about.ceo.careerTitle, language)}</h4>
@@ -964,45 +969,45 @@ function HomePage() {
 
                 {/* Career History - Mobile version */}
                 <div className="clear-both md:hidden">
-                    <h4 className="mb-4 text-orange-500" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.about.ceo.careerTitle, language)}</h4>
-                    <div className="space-y-4">
-                      <div className="flex gap-3">
-                        <div className="flex-shrink-0 mt-2 w-2 h-2 bg-orange-500 rounded-full"></div>
-                        <div>
-                          <p className="mb-1 text-white" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.beebee.title, language)}</p>
-                          <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.beebee.desc, language)}</p>
-                        </div>
+                  <h4 className="mb-4 text-orange-500" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.about.ceo.careerTitle, language)}</h4>
+                  <div className="space-y-4">
+                    <div className="flex gap-3">
+                      <div className="flex-shrink-0 mt-2 w-2 h-2 bg-orange-500 rounded-full"></div>
+                      <div>
+                        <p className="mb-1 text-white" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.beebee.title, language)}</p>
+                        <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.beebee.desc, language)}</p>
                       </div>
-                      <div className="flex gap-3">
-                        <div className="flex-shrink-0 mt-2 w-2 h-2 bg-orange-500 rounded-full"></div>
-                        <div>
-                          <p className="mb-1 text-white" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.quwan.title, language)}</p>
-                          <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.quwan.desc, language)}</p>
-                        </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <div className="flex-shrink-0 mt-2 w-2 h-2 bg-orange-500 rounded-full"></div>
+                      <div>
+                        <p className="mb-1 text-white" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.quwan.title, language)}</p>
+                        <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.quwan.desc, language)}</p>
                       </div>
-                      <div className="flex gap-3">
-                        <div className="flex-shrink-0 mt-2 w-2 h-2 bg-orange-500 rounded-full"></div>
-                        <div>
-                          <p className="mb-1 text-white" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.cheetah.title, language)}</p>
-                          <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.cheetah.desc, language)}</p>
-                        </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <div className="flex-shrink-0 mt-2 w-2 h-2 bg-orange-500 rounded-full"></div>
+                      <div>
+                        <p className="mb-1 text-white" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.cheetah.title, language)}</p>
+                        <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.cheetah.desc, language)}</p>
                       </div>
-                      <div className="flex gap-3">
-                        <div className="flex-shrink-0 mt-2 w-2 h-2 bg-orange-500 rounded-full"></div>
-                        <div>
-                          <p className="mb-1 text-white" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.baidu.title, language)}</p>
-                          <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.baidu.desc, language)}</p>
-                        </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <div className="flex-shrink-0 mt-2 w-2 h-2 bg-orange-500 rounded-full"></div>
+                      <div>
+                        <p className="mb-1 text-white" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.baidu.title, language)}</p>
+                        <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.baidu.desc, language)}</p>
                       </div>
-                      <div className="flex gap-3">
-                        <div className="flex-shrink-0 mt-2 w-2 h-2 bg-orange-500 rounded-full"></div>
-                        <div>
-                          <p className="mb-1 text-white" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.early.title, language)}</p>
-                          <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.early.desc, language)}</p>
-                        </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <div className="flex-shrink-0 mt-2 w-2 h-2 bg-orange-500 rounded-full"></div>
+                      <div>
+                        <p className="mb-1 text-white" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.early.title, language)}</p>
+                        <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.early.desc, language)}</p>
                       </div>
                     </div>
                   </div>
+                </div>
 
                 {/* Philosophy */}
                 <div>
@@ -1026,7 +1031,7 @@ function HomePage() {
       {/* Contact Section */}
       <section id="contact" className="px-4 pt-8 pb-8 bg-black border-t border-white/10 md:pt-20 md:pb-20">
         <div className="mx-auto w-full max-w-7xl">
-          <h2 className="mb-12 text-center" style={{ 
+          <h2 className="mb-12 text-center" style={{
             fontSize: 'clamp(24px, 5vw, 42px)',
             fontWeight: 600,
             letterSpacing: '1px',
@@ -1036,13 +1041,13 @@ function HomePage() {
             <div className="order-2 space-y-6 md:order-1">
               {/* Image above address - PC端全宽但固定高度 */}
               <div className="mb-6">
-                <img 
-                  src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/b_hive.png" 
-                  alt="BEEBEE AI Location" 
+                <img
+                  src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/b_hive.png"
+                  alt="BEEBEE AI Location"
                   className="w-full rounded-lg md:mb-8 md:h-84 md:object-cover"
                 />
               </div>
-              
+
               {/* Email section - moved above address */}
               <div>
                 <h3 className="mb-3" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.contact.info.email, language)}</h3>
@@ -1057,7 +1062,7 @@ function HomePage() {
                   </p>
                 </div>
               </div>
-              
+
               {/* Address section */}
               <div>
                 <h3 className="mb-3" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.contact.info.address, language)}</h3>
@@ -1100,29 +1105,29 @@ function HomePage() {
               <ul className="space-y-3">
                 <li>
                   <a href="#home" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
-                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
-                     onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
+                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
                     {t(homeContent.nav.home, language)}
                   </a>
                 </li>
                 <li>
                   <a href="#platform" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
-                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
-                     onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
+                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
                     {t(homeContent.nav.platform, language)}
                   </a>
                 </li>
                 <li>
                   <a href="#philosophy" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
-                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
-                     onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
+                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
                     {t(homeContent.nav.philosophy, language)}
                   </a>
                 </li>
                 <li>
                   <a href="#about" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
-                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
-                     onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
+                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
                     {t(homeContent.nav.about, language)}
                   </a>
                 </li>
@@ -1135,15 +1140,15 @@ function HomePage() {
               <ul className="space-y-3">
                 <li>
                   <a href="#platform" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
-                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
-                     onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
+                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
                     {t(homeContent.footer.platformLinks.alpha, language)}
                   </a>
                 </li>
                 <li>
                   <a href="#platform" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
-                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
-                     onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
+                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
                     {t(homeContent.footer.platformLinks.beta, language)}
                   </a>
                 </li>
@@ -1159,8 +1164,8 @@ function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   <a href={`mailto:${homeContent.contact.info.emailBusiness}`} className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
-                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
-                     onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
+                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
                     {homeContent.contact.info.emailBusiness}
                   </a>
                 </li>
