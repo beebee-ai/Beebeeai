@@ -214,6 +214,299 @@ export const homeContent = {
           EN: "BETA Infinity Camp",
         },
         title: {
+          ZH: "SixSeven Jokes",
+          EN: "SixSeven Jokes",
+        },
+        team: {
+          ZH: "小组作品，四人协作完成",
+          EN: "Team Project, 4-member Collaboration",
+        },
+        teamDetails: {
+          ZH: "计算机博士 | 金融博士 | 金融硕士 | 工程经验",
+          EN: "Computer Science PhD | Finance PhD | Finance Master | Engineering Experience",
+        },
+        description: {
+          ZH: "教师和家长需要快速找到安全、适合孩子年龄的笑话——但现有的应用程序要么重复播放内容，要么展示不适宜的内容。SixSeven 只需轻轻一点，即可提供与情境匹配的笑话、带有音效的音频播放，以及随着时间不断改进的体验。",
+          EN: "Teachers and parents need to quickly find safe, age-appropriate jokes - but existing apps either repeat content or display inappropriate content. SixSeven provides context-matched jokes, audio playback with sound effects, and an experience that continuously improves over time with just a single tap.",
+        },
+        url: "https://sixsevenfirebase-663636424984.us-west1.run.app/",
+        cta: { ZH: "访问项目", EN: "Visit Project" },
+        images: {
+          main: "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/sixseven-jokes-01.jpg",
+          screenshot1:
+            "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/sixseven-jokes-02.jpg",
+          screenshot2:
+            "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/sixseven-jokes-03.jpg",
+        },
+        tags: {
+          tag1: {
+            ZH: "笑话生成",
+            EN: "Joke Generation",
+          },
+          tag2: {
+            ZH: "笑话推荐",
+            EN: "Joke Recommendation",
+          },
+          tag3: { ZH: "笑话播放", EN: "Joke Playback" },
+        },
+      },
+      {
+        badge: {
+          ZH: "BETA 无界营（Infinity）",
+          EN: "BETA Infinity Camp",
+        },
+        title: {
+          ZH: "SparkUp",
+          EN: "SparkUp",
+        },
+        team: {
+          ZH: "小组作品，四人协作完成",
+          EN: "Team Project, 4-member Collaboration",
+        },
+        teamDetails: {
+          ZH: "计算机博士 | 金融博士 | 设计硕士 | 工程经验",
+          EN: "Computer Science PhD | Finance PhD | Design Master | Engineering Experience",
+        },
+        description: {
+          ZH: "千篇一律的创业建议毫无用处。SparkUp 会评估您的独特优势，并根据您的个人情况量身定制商业理念。立即将您的个性化创业项目发布到社交媒体，迅速引发早期热议，吸引首批支持者。告别盲目摸索，开启您的创业之旅。",
+          EN: "Generic startup advice is useless. SparkUp assesses your unique strengths and tailors business ideas to your individual circumstances. Immediately post your personalized startup project on social media to quickly generate early buzz and attract your first supporters. Say goodbye to aimless groping and embark on your entrepreneurial journey.",
+        },
+        url: "https://sparkup.deepelevate.com/",
+        cta: { ZH: "访问项目", EN: "Visit Project" },
+        images: {
+          main: "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/spark-up-01.jpg",
+          screenshot1:
+            "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/spark-up-02.jpg",
+          screenshot2:
+            "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/spark-up-03.jpg",
+        },
+        tags: {
+          tag1: {
+            ZH: "创业建议",
+            EN: "Startup Advice",
+          },
+          tag2: {
+            ZH: "创业项目推荐",
+            EN: "Startup Project Recommendation",
+          },
+          tag3: { ZH: "创业项目发布", EN: "Startup Project Publication" },
+        },
+      },
+      {
+        badge: {
+          ZH: "BETA 无界营（Infinity）",
+          EN: "BETA Infinity Camp",
+        },
+        title: {
+          ZH: "Andon — Trust Gate for AI Agents",
+          EN: "Andon — Trust Gate for AI Agents",
+        },
+        team: {
+          ZH: "学员：V同学",
+          EN: "Student: V",
+        },
+        teamDetails: {
+          ZH: "计算机硕士 | 工程经验",
+          EN: "Computer Science Master | Engineering Experience",
+        },
+        description: {
+          ZH: "在代理访问 API、URL 或进行支付之前，Andon 会在约 200 毫秒内返回批准/阻止/人工审核的结果，并由可审计的证据链提供支持（无来源，无输出）。它专为代理支付、采购和工具使用工作流程而设计，在这些流程中，“糟糕”的发生为时已晚。",
+          EN: 'Before the agent accesses an API, URL, or makes a payment, Andon will return the result of approval/blocking/manual review within approximately 200 milliseconds, supported by an auditable chain of evidence (no source, no output). It is designed specifically for workflows such as Payments on behalf of, procurement, and tool usage, where "bad" occurrences are too late.',
+        },
+        url: "https://andon-fullstack.vercel.app/",
+        cta: { ZH: "访问项目", EN: "Visit Project" },
+        images: {
+          main: "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/vivian-andon-01.jpg",
+          screenshot1:
+            "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/vivian-andon-02.jpg"
+        },
+        tags: {
+          tag1: {
+            ZH: "AI代理安全",
+            EN: "AI Agent Security",
+          },
+          tag2: {
+            ZH: "AI代理审计",
+            EN: "AI Agent Auditing",
+          },
+        },
+      },
+      {
+        badge: {
+          ZH: "BETA 无界营（Infinity）",
+          EN: "BETA Infinity Camp",
+        },
+        title: {
+          ZH: "补否",
+          EN: "SuppCheck",
+        },
+        team: {
+          ZH: "小组作品，三人协作完成",
+          EN: "Team Project, 3-member Collaboration",
+        },
+        teamDetails: {
+          ZH: "金融博士 | 金融硕士 | 工程经验",
+          EN: "Finance PhD | Finance Master | Engineering Experience",
+        },
+        description: {
+          ZH: "一款基于科学的营养补充剂决策助手。它以科学为先导，评估各种营养补充剂，突出成分的功效和局限性，并根据个人情况量身定制答案。没有网红炒作，没有利益驱动—只有清晰、有证据支持的推理，让您可以放心选择。",
+          EN: "A science-based nutritional supplement decision assistant. It is science-led, evaluating various nutritional supplements, highlighting the efficacy and limitations of ingredients, and tailoring answers to individual circumstances. There is no influencer hype, no profit-driven motives—only clear, evidence-based reasoning, allowing you to choose with confidence.",
+        },
+        url: "https://supplements-advisor.martianspace.uk/",
+        cta: { ZH: "访问项目", EN: "Visit Project" },
+        images: {
+          main: "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/supp-check-01.jpg",
+          screenshot1:
+            "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/supp-check-02.jpg"
+        },
+        tags: {
+          tag1: {
+            ZH: "营养补充剂决策",
+            EN: "Nutritional Supplement Decision",
+          },
+          tag2: {
+            ZH: "营养补充剂评估",
+            EN: "Nutritional Supplement Evaluation",
+          }
+        },
+      },
+      {
+        badge: {
+          ZH: "ALPHA 启航营（ Genesis ）",
+          EN: "ALPHA Genesis Camp",
+        },
+        title: {
+          ZH: "随机挑战生成器",
+          EN: "Infinite Challenge Generator",
+        },
+        team: {
+          ZH: "学员：N同学",
+          EN: "Student: N",
+        },
+        teamDetails: {
+          ZH: "15岁，新西兰，零代码基础",
+          EN: "15 years old, New Zealand, Zero Coding Experience",
+        },
+        description: {
+          ZH: "这是一款随机挑战生成器游戏，可以帮你摆脱无聊，是消磨时间、对抗沉闷游戏的绝佳替代品。游戏特色丰富，例如在做事情的同时升级，以及尝试新鲜事物。",
+          EN: 'This is a random challenge generator game that can help you break free from boredom and is an excellent alternative for killing time and combating dullness. The game features rich content, such as leveling up while doing things and trying new things. ',
+        },
+        url: "https://challengerandomizer.netlify.app/",
+        cta: { ZH: "访问项目", EN: "Visit Project" },
+        images: {
+          main: "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/nicolas-challenge-randomizer-01.jpg",
+          screenshot1:
+            "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/nicolas-challenge-randomizer-02.jpg",
+          screenshot2:
+            "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/nicolas-challenge-randomizer-03.jpg"
+        },
+        tags: {
+          tag1: {
+            ZH: "随机挑战生成",
+            EN: "Random Challenge Generation",
+          },
+          tag2: {
+            ZH: "游戏娱乐",
+            EN: "Game Entertainment",
+          },
+        },
+      },
+      {
+        badge: {
+          ZH: "ALPHA 启航营（ Genesis ）",
+          EN: "ALPHA Genesis Camp",
+        },
+        title: {
+          ZH: "VoiceAI",
+          EN: "VoiceAI",
+        },
+        team: {
+          ZH: "小组作品，四人协作完成",
+          EN: "Team Project, 4-member Collaboration",
+        },
+        teamDetails: {
+          ZH: "新西兰，12-22岁，零代码基础",
+          EN: "New Zealand, Ages 12-22, Zero Coding Experience",
+        },
+        description: {
+          ZH: "一款基于人工智能的语音克隆和文本转语音平台，提供多种语音、口音和MP3下载功能。利用尖端人工智能技术，创建、克隆和生成语音。用自然流畅的语音让您的内容栩栩如生。",
+          EN: 'An AI-based voice cloning and Text To Speech platform that offers a variety of voices, accents, and MP3 download capabilities. Leveraging cutting-edge AI technology, it creates, clones, and generates voices. Bring your content to life with natural and fluent voices.',
+        },
+        url: "https://stalwart-bavarois-92bfc5.netlify.app/",
+        cta: { ZH: "访问项目", EN: "Visit Project" },
+        images: {
+          main: "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/team-voice-ai-01.jpg",
+          screenshot1:
+            "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/team-voice-ai-02.jpg",
+          screenshot2:
+            "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/team-voice-ai-03.jpg"
+        },
+        tags: {
+          tag1: {
+            ZH: "语音克隆",
+            EN: "Voice Cloning",
+          },
+          tag2: {
+            ZH: "文本转语音",
+            EN: "Text To Speech",
+          },
+          tag3: {
+            ZH: "语音合成",
+            EN: "Voice Synthesis",
+          },
+        },
+      },
+      {
+        badge: {
+          ZH: "ALPHA 启航营（ Genesis ）",
+          EN: "ALPHA Genesis Camp",
+        },
+        title: {
+          ZH: "Lumina Academy",
+          EN: "Lumina Academy",
+        },
+        team: {
+          ZH: "学员：W同学",
+          EN: "Student: W",
+        },
+        teamDetails: {
+          ZH: "新西兰，12岁，零代码基础",
+          EN: "New Zealand, 12 years old, Zero Coding Experience",
+        },
+        description: {
+          ZH: "一个单页的 RPG 风格魔法学院互动体验：玩家通过问答入学，在同一页面内完成养成、探索与任务推进，解锁世界观、道具与称号，构建属于自己的温馨魔法世界。",
+          EN: 'A single-page RPG-style interactive experience at a magic academy: players enroll through Q&A, complete character development, exploration, and mission progression all on the same page, unlock the world view, items, and titles, and build their own warm and cozy magical world.',
+        },
+        url: "https://luminacadamey.netlify.app/",
+        cta: { ZH: "访问项目", EN: "Visit Project" },
+        images: {
+          main: "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/weiya-lumina-academy-01.jpg",
+          screenshot1:
+            "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/weiya-lumina-academy-02.jpg",
+          screenshot2:
+            "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/weiya-lumina-academy-03.jpg"
+        },
+        tags: {
+          tag1: {
+            ZH: "魔法学院",
+            EN: "Magic Academy",
+          },
+          tag2: {
+            ZH: "RPG风格",
+            EN: "RPG Style",
+          },
+          tag3: {
+            ZH: "互动体验",
+            EN: "Interactive Experience",
+          },
+        },
+      },
+      {
+        badge: {
+          ZH: "BETA 无界营（Infinity）",
+          EN: "BETA Infinity Camp",
+        },
+        title: {
           ZH: "Hobbi - 心灵冥想日记",
           EN: "Hobbi - Mindful Meditation Journal",
         },
@@ -364,8 +657,8 @@ export const homeContent = {
       },
       {
         badge: {
-          ZH: "ALPHA—ZERO启航营（Genesis）",
-          EN: "ALPHA ZERO Genesis Camp",
+          ZH: "ZERO 三期",
+          EN: "ZERO Camp Cohort 3",
         },
         title: {
           ZH: "字在午餐 Word Snack - 海外中文学习助手",
@@ -395,8 +688,8 @@ export const homeContent = {
       },
       {
         badge: {
-          ZH: "ALPHA—ZERO启航营（Genesis）",
-          EN: "ALPHA ZERO Genesis Camp",
+          ZH: "ZERO 二期",
+          EN: "ZERO Camp Cohort 2",
         },
         title: {
           ZH: "Relab SEO - AI内容营销工具",
@@ -431,8 +724,8 @@ export const homeContent = {
       },
       {
         badge: {
-          ZH: "ALPHA—ZERO启航营（Genesis）",
-          EN: "ALPHA ZERO Genesis Camp",
+          ZH: "ZERO 三期",
+          EN: "ZERO Camp Cohort 3",
         },
         title: {
           ZH: "纯素甄选 - 素食生活方式平台",
@@ -467,8 +760,8 @@ export const homeContent = {
       },
       {
         badge: {
-          ZH: "ALPHA—ZERO启航营（Genesis）",
-          EN: "ALPHA ZERO Genesis Camp",
+          ZH: "ALPHA远航营（Odyssey）",
+          EN: "Alpha Odyssey Camp",
         },
         title: {
           ZH: "PROJECT:Echo - 游戏化目标管理系统",
@@ -500,8 +793,8 @@ export const homeContent = {
       },
       {
         badge: {
-          ZH: "ALPHA—ZERO启航营（Genesis）",
-          EN: "ALPHA ZERO Genesis Camp",
+          ZH: "ZERO 一期",
+          EN: "ZERO Camp Cohort 1",
         },
         title: {
           ZH: "PropertyAI NZ - 新西兰AI房产平台",
@@ -532,39 +825,6 @@ export const homeContent = {
           },
           tag2: { ZH: "房产科技", EN: "PropTech" },
           tag3: { ZH: "对话式交互", EN: "Conversational UI" },
-        },
-      },
-      {
-        badge: {
-          ZH: "ALPHA—ZERO启航营（Genesis）",
-          EN: "ALPHA ZERO Genesis Camp",
-        },
-        title: {
-          ZH: "PROJECT:Echo - 游戏化目标管理系统",
-          EN: "PROJECT:Echo - Gamified Goal Management System",
-        },
-        team: { ZH: "学员：J同学", EN: "Student: J" },
-        teamDetails: {
-          ZH: "13岁 | 2年Python经验",
-          EN: "13 years old | 2 years Python experience",
-        },
-        description: {
-          ZH: "将目标管理游戏化的创新应用。通过虚拟花园、任务系统和奖励机制,帮助用户建立健康习惯、追踪专注度和达成个人目标。用户完成任务即可获得金币,种植虚拟植物,让自律变得有趣。支持数据同步和个性化成功计划。",
-          EN: "Innovative gamified goal management app. Through virtual gardens, task systems and reward mechanisms, helps users build healthy habits, track focus and achieve personal goals. Complete tasks to earn coins, grow virtual plants, making discipline fun. Features data sync and personalized success plans.",
-        },
-        url: "https://changepr0jectecho.uk/",
-        cta: { ZH: "访问项目", EN: "Visit Project" },
-        images: {
-          main: "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/jaxsen_1.png",
-          screenshot1:
-            "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/jaxsen_2.png",
-          screenshot2:
-            "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/jaxsen_1.png",
-        },
-        tags: {
-          tag1: { ZH: "游戏化设计", EN: "Gamification" },
-          tag2: { ZH: "目标管理", EN: "Goal Management" },
-          tag3: { ZH: "习惯养成", EN: "Habit Building" },
         },
       },
       {

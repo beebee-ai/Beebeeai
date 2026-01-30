@@ -14,10 +14,10 @@ export function StudentWorksSection() {
   const carouselProjects = projects.slice(6);
 
   return (
-    <section id="works" className="px-4 border-t border-white/10 pt-8 md:pt-20 pb-8 md:pb-20" style={{ backgroundColor: 'var(--bg-surface)' }}>
-      <div className="max-w-7xl mx-auto w-full">
+    <section id="works" className="px-4 pt-8 pb-8 border-t border-white/10 md:pt-20 md:pb-20" style={{ backgroundColor: 'var(--bg-surface)' }}>
+      <div className="mx-auto w-full max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-8 md:mb-16">
+        <div className="mb-8 text-center md:mb-16">
           <h2 className="mb-4" style={{ 
             color: 'var(--text-primary)',
             fontSize: 'clamp(24px, 5vw, 42px)',
@@ -25,11 +25,11 @@ export function StudentWorksSection() {
             letterSpacing: '1px',
             lineHeight: 1.3
           }}>{t(homeContent.works.title, language)}</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.works.subtitle, language)}</p>
+          <p className="mx-auto max-w-2xl text-gray-400" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.works.subtitle, language)}</p>
         </div>
 
         {/* Grid Layout - 2 rows × 3 cols */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+        <div className="grid grid-cols-1 gap-6 mb-20 md:grid-cols-2 lg:grid-cols-3">
           {gridProjects.map((project, index) => (
             <ProjectCard key={index} project={project} language={language} index={index} />
           ))}
@@ -38,12 +38,12 @@ export function StudentWorksSection() {
         {/* Carousel Section */}
         {carouselProjects.length > 0 && (
           <div className="mt-16">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-cyan-500/30"></div>
-              <h3 className="text-cyan-400 text-center">
+            <div className="flex gap-4 items-center mb-8">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent to-cyan-500/30"></div>
+              <h3 className="text-center text-cyan-400">
                 {language === 'ZH' ? '更多精彩项目' : 'More Amazing Projects'}
               </h3>
-              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-cyan-500/30"></div>
+              <div className="flex-1 h-px bg-gradient-to-l from-transparent to-cyan-500/30"></div>
             </div>
 
             <CarouselSection projects={carouselProjects} language={language} />
@@ -106,13 +106,13 @@ function ProjectCard({ project, language, index }: any) {
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Image Section */}
-      <div className="relative aspect-video overflow-hidden bg-black">
+      <div className="overflow-hidden relative bg-black aspect-video">
         {/* Blurred Background - 只在非 RowingPro 项目中显示 */}
         {!isRowingPro && (
           <img 
             src={images[currentImg]}
             alt=""
-            className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-60"
+            className="object-cover absolute inset-0 w-full h-full opacity-60 blur-2xl scale-110"
             aria-hidden="true"
           />
         )}
@@ -120,17 +120,17 @@ function ProjectCard({ project, language, index }: any) {
         <img 
           src={images[currentImg]}
           alt={t(project.title, language)}
-          className={`relative w-full h-full ${isRowingPro ? 'object-cover' : 'object-contain'} group-hover:scale-105 transition-transform duration-700 z-10`}
+          className={`object-cover relative z-10 w-full h-full transition-transform duration-700 group-hover:scale-105`}
         />
         
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t via-transparent to-transparent from-black/60"></div>
 
         {/* Hover Overlay with Icon */}
-        <div className="absolute inset-0 bg-transparent group-hover:bg-gray-900/40 transition-all duration-300 flex items-center justify-center">
-          <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100 flex flex-col items-center gap-2">
+        <div className="flex absolute inset-0 justify-center items-center bg-transparent transition-all duration-300 group-hover:bg-gray-900/40">
+          <div className="flex flex-col gap-2 items-center opacity-0 transition-all duration-300 transform scale-75 group-hover:opacity-100 group-hover:scale-100">
             <ExternalLink className="w-8 h-8 text-white drop-shadow-lg" />
-            <span className="text-white text-xs font-medium drop-shadow-lg">
+            <span className="text-xs font-medium text-white drop-shadow-lg">
               {language === 'ZH' ? '查看项目' : 'View Project'}
             </span>
           </div>
@@ -154,15 +154,15 @@ function ProjectCard({ project, language, index }: any) {
       </div>
 
       {/* Content Section */}
-      <div className="p-6 flex flex-col flex-1">
+      <div className="flex flex-col flex-1 p-6">
         <h3 className={`mb-3 ${theme.text} leading-tight`} style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(project.title, language)}</h3>
         
         {/* Team Info */}
-        <div className="mb-4 flex items-start gap-2">
+        <div className="flex gap-2 items-start mb-4">
           <Users className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0" />
           <div>
             <p style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }} className="text-gray-300">{t(project.team, language)}</p>
-            <p style={{ fontSize: 'clamp(11px, 2vw, 12px)' }} className="text-gray-500 mt-1">{t(project.teamDetails, language)}</p>
+            <p style={{ fontSize: 'clamp(11px, 2vw, 12px)' }} className="mt-1 text-gray-500">{t(project.teamDetails, language)}</p>
           </div>
         </div>
 
@@ -176,7 +176,7 @@ function ProjectCard({ project, language, index }: any) {
         </div>
 
         {/* Description */}
-        <p className="text-gray-300 leading-relaxed" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
+        <p className="leading-relaxed text-gray-300" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
           {t(project.description, language)}
         </p>
       </div>
@@ -251,7 +251,7 @@ function CarouselSection({ projects, language }: any) {
           <button
             onClick={scrollPrev}
             disabled={!canScrollPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-14 w-12 h-12 rounded-full bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/40 backdrop-blur-xl text-cyan-400 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-300 hover:scale-110 disabled:hover:scale-100 flex items-center justify-center shadow-xl z-10"
+            className="flex absolute left-0 top-1/2 z-10 justify-center items-center w-12 h-12 text-cyan-400 rounded-full border shadow-xl backdrop-blur-xl transition-all duration-300 -translate-x-4 -translate-y-1/2 lg:-translate-x-14 bg-cyan-500/20 hover:bg-cyan-500/30 border-cyan-500/40 disabled:opacity-30 disabled:cursor-not-allowed hover:scale-110 disabled:hover:scale-100"
             aria-label="Previous slide"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -260,7 +260,7 @@ function CarouselSection({ projects, language }: any) {
           <button
             onClick={scrollNext}
             disabled={!canScrollNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-14 w-12 h-12 rounded-full bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/40 backdrop-blur-xl text-cyan-400 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-300 hover:scale-110 disabled:hover:scale-100 flex items-center justify-center shadow-xl z-10"
+            className="flex absolute right-0 top-1/2 z-10 justify-center items-center w-12 h-12 text-cyan-400 rounded-full border shadow-xl backdrop-blur-xl transition-all duration-300 translate-x-4 -translate-y-1/2 lg:translate-x-14 bg-cyan-500/20 hover:bg-cyan-500/30 border-cyan-500/40 disabled:opacity-30 disabled:cursor-not-allowed hover:scale-110 disabled:hover:scale-100"
             aria-label="Next slide"
           >
             <ChevronRight className="w-6 h-6" />
@@ -270,7 +270,7 @@ function CarouselSection({ projects, language }: any) {
 
       {/* Dots Indicator - 基于实际的滚动快照数量 */}
       {needsNavigation && scrollSnaps.length <= 10 && (
-        <div className="flex justify-center gap-2 mt-8">
+        <div className="flex gap-2 justify-center mt-8">
           {scrollSnaps.map((_, index) => (
             <button
               key={index}
@@ -334,30 +334,30 @@ function CarouselCard({ project, language }: any) {
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative rounded-xl overflow-hidden border border-cyan-500/30 hover:border-cyan-500/60 transition-all duration-300 bg-black/70 backdrop-blur-sm hover:shadow-xl hover:shadow-cyan-500/20 flex flex-col h-full cursor-pointer block"
+      className="block flex overflow-hidden relative flex-col h-full rounded-xl border backdrop-blur-sm transition-all duration-300 cursor-pointer group border-cyan-500/30 hover:border-cyan-500/60 bg-black/70 hover:shadow-xl hover:shadow-cyan-500/20"
     >
       {/* Image */}
-      <div className="relative h-48 overflow-hidden bg-black">
+      <div className="overflow-hidden relative h-48 bg-black">
         {/* Blurred Background */}
         <img 
           src={images[currentImg]}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-60"
+          className="object-cover absolute inset-0 w-full h-full opacity-60 blur-2xl scale-110"
           aria-hidden="true"
         />
         {/* Main Image */}
         <img 
           src={images[currentImg]}
           alt={t(project.title, language)}
-          className={`relative w-full h-full ${imageObjectFit} group-hover:scale-105 transition-transform duration-500 z-10`}
+          className={`relative z-10 w-full h-full transition-transform duration-500 ${imageObjectFit} group-hover:scale-105`}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t to-transparent from-black/80 via-black/40"></div>
         
         {/* Hover Overlay with Icon */}
-        <div className="absolute inset-0 bg-transparent group-hover:bg-gray-900/40 transition-all duration-300 flex items-center justify-center">
-          <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100 flex flex-col items-center gap-2">
+        <div className="flex absolute inset-0 justify-center items-center bg-transparent transition-all duration-300 group-hover:bg-gray-900/40">
+          <div className="flex flex-col gap-2 items-center opacity-0 transition-all duration-300 transform scale-75 group-hover:opacity-100 group-hover:scale-100">
             <ExternalLink className="w-8 h-8 text-white drop-shadow-lg" />
-            <span className="text-white text-xs font-medium drop-shadow-lg">
+            <span className="text-xs font-medium text-white drop-shadow-lg">
               {language === 'ZH' ? '查看项目' : 'View Project'}
             </span>
           </div>
@@ -381,15 +381,15 @@ function CarouselCard({ project, language }: any) {
       </div>
 
       {/* Content */}
-      <div className="p-5 flex flex-col flex-1">
-        <h4 className="text-cyan-400 mb-2 leading-tight text-base">{getShortTitle(project.title)}</h4>
+      <div className="flex flex-col flex-1 p-5">
+        <h4 className="mb-2 text-base leading-tight text-cyan-400">{getShortTitle(project.title)}</h4>
         
-        <div className="flex items-center gap-2 mb-3">
+        <div className="flex gap-2 items-center mb-3">
           <Users className="w-3 h-3 text-gray-400" />
           <p className="text-xs text-gray-400">{t(project.team, language)}</p>
         </div>
 
-        <p className="text-xs text-gray-300 leading-relaxed line-clamp-3 flex-1">
+        <p className="flex-1 text-xs leading-relaxed text-gray-300 line-clamp-3">
           {t(project.description, language)}
         </p>
 
