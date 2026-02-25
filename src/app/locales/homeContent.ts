@@ -201,13 +201,99 @@ export const homeContent = {
 
   // Student Works Section
   works: {
-    title: { ZH: "学员作品", EN: "Student Works" },
+    title: { ZH: "学员产品", EN: "Student Products" },
     subtitle: {
       ZH: "真实项目，真实成长",
       EN: "Real projects, real growth",
     },
     viewAll: { ZH: "查看所有作品", EN: "View All Works" },
     featured: [
+      {
+        badge: {
+          ZH: "BETA 无界营（Infinity）",
+          EN: "BETA Infinity Camp",
+        },
+        title: {
+          ZH: "Morning Edge",
+          EN: "Morning Edge",
+        },
+        team: {
+          ZH: "小组作品，四人协作完成",
+          EN: "Team Project, 4-member Collaboration",
+        },
+        teamDetails: {
+          ZH: "量化思维 | 计算机背景 | AI算法能力 | 产品创业",
+          EN: "Quantitative Thinking | CS Background | AI Algorithm Skills | Product Entrepreneurship",
+        },
+        description: {
+          ZH: "我们帮你把分散的信息聚在一起，AI 再帮你做第一轮筛选，去噪、分类、抓重点，让你少花时间、决策清楚一点。有兴趣可以试试。",
+          EN: "We help you gather scattered information together, then AI helps you do the first round of filtering, denoising, categorizing, and highlighting key points, so you spend less time and make clearer decisions. Feel free to try it.",
+        },
+        url: "https://morning-edge.vercel.app/",
+        cta: { ZH: "访问项目", EN: "Visit Project" },
+        images: {
+          main: "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/MorningEdge1.png",
+          screenshot1: "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/MorningEdge2.png",
+          screenshot2: "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/MorningEdge1.png",
+        },
+        tags: {
+          tag1: {
+            ZH: "量化思维",
+            EN: "Quantitative Thinking",
+          },
+          tag2: {
+            ZH: "AI算法能力",
+            EN: "AI Algorithm Skills",
+          },
+          tag3: {
+            ZH: "产品创业",
+            EN: "Product Entrepreneurship",
+          },
+        },
+      },
+      {
+        badge: {
+          ZH: "BETA 无界营（Infinity）",
+          EN: "BETA Infinity Camp",
+        },
+        title: {
+          ZH: "Sleep Serenity - 你的睡前压力卸载站",
+          EN: "Sleep Serenity - Your Bedtime Stress Relief Station",
+        },
+        team: {
+          ZH: "小组作品，四人协作完成",
+          EN: "Team Project, 4-member Collaboration",
+        },
+        teamDetails: {
+          ZH: "量化金融 | 深度学习",
+          EN: "Quantitative Finance | Deep Learning",
+        },
+        description: {
+          ZH: "这是一款简单直接的\"睡前压力卸载站\"，通过轻松的操作和白噪音，帮你在睡前放下压力、安静下来，让大脑慢慢降速，更自然地进入睡眠状态。",
+          EN: "A simple and direct \"bedtime stress relief station\" that helps you let go of stress and calm down before sleep through easy operations and white noise, letting your mind gradually slow down and naturally enter sleep state.",
+        },
+        url: "https://calm-tonight-plan.lovable.app/",
+        cta: { ZH: "访问项目", EN: "Visit Project" },
+        images: {
+          main: "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/SleepSerenity1.png",
+          screenshot1: "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/SleepSerenity2.png",
+          screenshot2: "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/SleepSerenity3.png",
+        },
+        tags: {
+          tag1: {
+            ZH: "量化金融",
+            EN: "Quantitative Finance",
+          },
+          tag2: {
+            ZH: "深度学习",
+            EN: "Deep Learning",
+          },
+          tag3: {
+            ZH: "心理健康",
+            EN: "Mental Health",
+          },
+        },
+      },
       {
         badge: {
           ZH: "BETA 无界营（Infinity）",
@@ -298,37 +384,36 @@ export const homeContent = {
           EN: "BETA Infinity Camp",
         },
         title: {
-          ZH: "Andon — Trust Gate for AI Agents",
-          EN: "Andon — Trust Gate for AI Agents",
+          ZH: "Glido",
+          EN: "Glido",
         },
         team: {
-          ZH: "学员：V同学",
-          EN: "Student: V",
+          ZH: "小组作品，四人协作完成",
+          EN: "Team Project, 4-member Collaboration",
         },
         teamDetails: {
-          ZH: "计算机硕士 | 工程经验",
-          EN: "Computer Science Master | Engineering Experience",
+          ZH: "名校博士 | 量化金融 | (金融/艺术)AI跨界探索者",
+          EN: "Top University PhD | Quantitative Finance | (Finance/Art) AI Cross-domain Explorer",
         },
         description: {
-          ZH: "在代理访问 API、URL 或进行支付之前，Andon 会在约 200 毫秒内返回批准/阻止/人工审核的结果，并由可审计的证据链提供支持（无来源，无输出）。它专为代理支付、采购和工具使用工作流程而设计，在这些流程中，“糟糕”的发生为时已晚。",
-          EN: 'Before the agent accesses an API, URL, or makes a payment, Andon will return the result of approval/blocking/manual review within approximately 200 milliseconds, supported by an auditable chain of evidence (no source, no output). It is designed specifically for workflows such as Payments on behalf of, procurement, and tool usage, where "bad" occurrences are too late.',
+          ZH: "Glido 是一款 AI 助手，通过分析你当前的浏览器标签页，推荐一个可立即执行的小任务，帮助克服启动困难，快速进入学习或工作状态。",
+          EN: "Glido is an AI assistant that analyzes your current browser tabs and recommends a small, immediately actionable task to help overcome getting started difficulties and quickly get into a learning or work state.",
         },
-        url: "https://andon-fullstack.vercel.app/",
+        url: "https://chromewebstore.google.com/detail/glido-ai-flow-starter/ohbnkeppibpgmjfhjhdpfdcmagjfmcgg",
         cta: { ZH: "访问项目", EN: "Visit Project" },
         images: {
-          main: "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/vivian-andon-01.jpg",
-          screenshot1:
-            "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/vivian-andon-02.jpg"
+          main: "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/Glido.png",
         },
         tags: {
           tag1: {
-            ZH: "AI代理安全",
-            EN: "AI Agent Security",
+            ZH: "AI 助手",
+            EN: "AI Assistant",
           },
           tag2: {
-            ZH: "AI代理审计",
-            EN: "AI Agent Auditing",
+            ZH: "浏览器扩展",
+            EN: "Browser Extension",
           },
+          tag3: { ZH: "启动困难克服", EN: "Getting Started Helper" },
         },
       },
       {
@@ -368,6 +453,45 @@ export const homeContent = {
             ZH: "营养补充剂评估",
             EN: "Nutritional Supplement Evaluation",
           }
+        },
+      },
+      {
+        badge: {
+          ZH: "BETA 无界营（Infinity）",
+          EN: "BETA Infinity Camp",
+        },
+        title: {
+          ZH: "Andon — Trust Gate for AI Agents",
+          EN: "Andon — Trust Gate for AI Agents",
+        },
+        team: {
+          ZH: "学员：V同学",
+          EN: "Student: V",
+        },
+        teamDetails: {
+          ZH: "计算机硕士 | 工程经验",
+          EN: "Computer Science Master | Engineering Experience",
+        },
+        description: {
+          ZH: "在代理访问 API、URL 或进行支付之前，Andon 会在约 200 毫秒内返回批准/阻止/人工审核的结果，并由可审计的证据链提供支持（无来源，无输出）。它专为代理支付、采购和工具使用工作流程而设计，在这些流程中，“糟糕”的发生为时已晚。",
+          EN: 'Before the agent accesses an API, URL, or makes a payment, Andon will return the result of approval/blocking/manual review within approximately 200 milliseconds, supported by an auditable chain of evidence (no source, no output). It is designed specifically for workflows such as Payments on behalf of, procurement, and tool usage, where "bad" occurrences are too late.',
+        },
+        url: "https://andon-fullstack.vercel.app/",
+        cta: { ZH: "访问项目", EN: "Visit Project" },
+        images: {
+          main: "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/vivian-andon-01.jpg",
+          screenshot1:
+            "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/vivian-andon-02.jpg"
+        },
+        tags: {
+          tag1: {
+            ZH: "AI代理安全",
+            EN: "AI Agent Security",
+          },
+          tag2: {
+            ZH: "AI代理审计",
+            EN: "AI Agent Auditing",
+          },
         },
       },
       {
@@ -1181,7 +1305,7 @@ export const homeContent = {
     home: { ZH: "首页", EN: "Home" },
     platform: { ZH: "学习力平台", EN: "Learning Platform" },
     system: { ZH: "学习体系", EN: "Curriculum" },
-    works: { ZH: "学员作品", EN: "Student Works" },
+    works: { ZH: "学员产品", EN: "Student Products" },
     philosophy: { ZH: "品牌理念", EN: "Philosophy" },
     about: { ZH: "关于我们", EN: "About Us" },
     contact: { ZH: "联系我们", EN: "Contact Us" },

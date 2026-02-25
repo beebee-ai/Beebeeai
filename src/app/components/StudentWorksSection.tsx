@@ -175,8 +175,8 @@ function ProjectCard({ project, language, index }: any) {
           ))}
         </div>
 
-        {/* Description */}
-        <p className="leading-relaxed text-gray-300" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
+        {/* Description - 最多显示 3 行 */}
+        <p className="leading-relaxed text-gray-300 line-clamp-3" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
           {t(project.description, language)}
         </p>
       </div>
