@@ -52,7 +52,9 @@ jobs:
           VITE_FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
           VITE_FIREBASE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
         run: npm run build
-        
+
+      - name: Create 404.html for SPA routing
+        run: cp dist/index.html dist/404.html
       - name: List build files
         run: ls -la dist || echo "Build directory check"
 
