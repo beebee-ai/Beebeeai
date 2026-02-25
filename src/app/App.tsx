@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Navigation } from './components/Navigation';
 import { Link, BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { DifferentiationDetail } from './pages/DifferentiationDetail';
+import Certificate from './pages/Certificate';
 import { ArrowRight } from 'react-feather';
 import { Anchor, Layers, Target, Zap, Lightbulb, Database, Funnel, FlaskConical, Share2, Sparkles } from 'lucide-react';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
@@ -10,6 +11,7 @@ import { seoData } from "./locales/seo";
 import { ContactForm } from './components/ContactForm';
 import { Toaster } from 'sonner';
 import { StudentWorksSection } from './components/StudentWorksSection';
+
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 
 function ScrollManager() {
@@ -1207,6 +1209,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/differentiation" element={<DifferentiationDetail />} />
+            <Route path="/certificate" element={<Certificate />} />
           </Routes>
           {/* Toast notifications */}
           <Toaster position="top-center" richColors />
