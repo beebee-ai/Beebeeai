@@ -3,6 +3,8 @@ import { Search, Award, CheckCircle, XCircle } from 'lucide-react';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import CertificateDisplay from './CertificateDisplay';
+import { useLanguage } from '../contexts/LanguageContext';
+import { certificateContent, t } from '../locales/certificateContent';
 
 type Certificate = {
   id: string;
@@ -22,6 +24,7 @@ export default function CertificateQuery() {
   const [results, setResults] = useState<Certificate[]>([]);
   const [hasSearched, setHasSearched] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const { language } = useLanguage();
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,10 +57,9 @@ export default function CertificateQuery() {
         const data = doc.data() as Omit<Certificate, 'id'>;
         return { id: doc.id, ...data };
       });
-      console.log(found);
       setResults(found);
     } catch (err: any) {
-      setError(err.message ?? '查询失败，请稍后重试');
+      setError(err.message ?? t(certificateContent.error.generic, language));
     } finally {
       setHasSearched(true);
       setIsSearching(false);
@@ -73,8 +75,12 @@ export default function CertificateQuery() {
           <div className="inline-flex items-center justify-center p-3 bg-[#ff6900]/10 rounded-2xl mb-6 border border-[#ff6900]/20">
             <Award className="w-8 h-8 text-[#ff6900]" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">证书查询</h1>
-          <p className="text-gray-400 text-lg">输入您的姓名获取官方认证与权威背书</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+            {t(certificateContent.hero.title, language)}
+          </h1>
+          <p className="text-gray-400 text-lg">
+            {t(certificateContent.hero.subtitle, language)}
+          </p>
         </div>
 
         <div className="bg-[#16181d] border border-white/5 rounded-3xl p-8 shadow-2xl mb-12">
@@ -82,28 +88,34 @@ export default function CertificateQuery() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label htmlFor="name" className="block text-sm font-medium text-gray-300">
-                  证书姓名 <span className="text-[#ff6900]">*</span>
+                  {t(certificateContent.form.nameLabel, language)}{' '}
+                  <span className="text-[#ff6900]">
+                    {t(certificateContent.form.nameRequiredMark, language)}
+                  </span>
                 </label>
                 <input
                   type="text"
                   id="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="请输入真实姓名 (例: San Zhang)"
+                  placeholder={t(certificateContent.form.namePlaceholder, language)}
                   className="w-full bg-[#0f1115] border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-[#ff6900] focus:ring-1 focus:ring-[#ff6900] transition-all"
                   required
                 />
               </div>
               <div className="space-y-2">
                 <label htmlFor="courseNumber" className="block text-sm font-medium text-gray-300">
-                  课程编号 <span className="text-gray-500 font-normal ml-1">(选填)</span>
+                  {t(certificateContent.form.courseLabel, language)}
+                  <span className="text-gray-500 font-normal ml-1">
+                    ({t(certificateContent.form.courseOptionalNote, language)})
+                  </span>
                 </label>
                 <input
                   type="text"
                   id="courseNumber"
                   value={courseNumber}
                   onChange={(e) => setCourseNumber(e.target.value)}
-                  placeholder="请输入课程编号 (例: SNBG01-251227)"
+                  placeholder={t(certificateContent.form.coursePlaceholder, language)}
                   className="w-full bg-[#0f1115] border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-[#ff6900] focus:ring-1 focus:ring-[#ff6900] transition-all"
                 />
               </div>
@@ -115,11 +127,14 @@ export default function CertificateQuery() {
               className="w-full bg-[#ff6900] hover:bg-[#ff6900]/90 disabled:bg-[#ff6900]/50 disabled:cursor-not-allowed text-white font-medium py-4 rounded-xl flex items-center justify-center gap-2 transition-all"
             >
               {isSearching ? (
-                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                <>
+                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  <span>{t(certificateContent.form.loading, language)}</span>
+                </>
               ) : (
                 <>
                   <Search className="w-5 h-5" />
-                  立即查询
+                  {t(certificateContent.form.submit, language)}
                 </>
               )}
             </button>
@@ -138,7 +153,12 @@ export default function CertificateQuery() {
               <div className="space-y-12">
                 <div className="flex items-center justify-center gap-2 text-emerald-400 bg-emerald-400/10 py-3 px-6 rounded-full w-fit mx-auto border border-emerald-400/20">
                   <CheckCircle className="w-5 h-5" />
-                  <span className="font-medium">查询成功，为您找到 {results.length} 份有效证书</span>
+                  <span className="font-medium">
+                    {t(certificateContent.result.success, language).replace(
+                      '{count}',
+                      String(results.length),
+                    )}
+                  </span>
                 </div>
                 
                 <div className="space-y-16">
@@ -150,10 +170,13 @@ export default function CertificateQuery() {
             ) : (
               <div className="text-center bg-red-500/10 border border-red-500/20 rounded-2xl p-8 max-w-2xl mx-auto">
                 <XCircle className="w-12 h-12 text-red-400 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-white mb-2">未查询到相关证书</h3>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  {t(certificateContent.result.notFoundTitle, language)}
+                </h3>
                 <p className="text-gray-400">
-                  请核对您输入的「姓名」与「课程编号」是否准确。<br />
-                  如有疑问，请联系助教或客服获取帮助。
+                  {t(certificateContent.result.notFoundLine1, language)}
+                  <br />
+                  {t(certificateContent.result.notFoundLine2, language)}
                 </p>
               </div>
             )}

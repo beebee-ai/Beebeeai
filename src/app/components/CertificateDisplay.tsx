@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Download } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { certificateContent, t } from '../locales/certificateContent';
 
 interface CertificateProps {
   certificate: {
@@ -13,6 +15,7 @@ interface CertificateProps {
 
 export default function CertificateDisplay({ certificate }: CertificateProps) {
   const [isDownloading, setIsDownloading] = useState(false);
+  const { language } = useLanguage();
 
   const handleDownload = async () => {
     const url = certificate.imageUrlOriginal || certificate.imageUrl;
@@ -62,12 +65,12 @@ export default function CertificateDisplay({ certificate }: CertificateProps) {
             {isDownloading ? (
               <>
                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                正在下载...
+                {t(certificateContent.download.loading, language)}
               </>
             ) : (
               <>
                 <Download className="w-5 h-5" />
-                下载高清证书图片
+                {t(certificateContent.download.button, language)}
               </>
             )}
           </button>
@@ -76,12 +79,16 @@ export default function CertificateDisplay({ certificate }: CertificateProps) {
       
       <div className="flex items-center gap-4 text-[#ffdbc0] text-sm bg-[#ff6900]/10 px-6 py-2 rounded-full border border-[#ff6900]/30">
         <span>
-          <span className="mr-1 text-[#ffb380] font-semibold">证书名称</span>
+          <span className="mr-1 text-[#ffb380] font-semibold">
+            {t(certificateContent.certificateInfo.nameLabel, language)}
+          </span>
           <span className="text-white font-mono">{certificate.name}</span>
         </span>
         <span className="w-1 h-1 rounded-full bg-[#ff6900]/60"></span>
         <span>
-          <span className="mr-1 text-[#ffb380] font-semibold">课程编号</span>
+          <span className="mr-1 text-[#ffb380] font-semibold">
+            {t(certificateContent.certificateInfo.courseLabel, language)}
+          </span>
           <span className="text-white font-mono">{certificate.courseNumber}</span>
         </span>
       </div>
