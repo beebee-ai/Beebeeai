@@ -1,0 +1,30 @@
+# llms.txt - LLM / AI usage policy for beebee.ai
+
+version: 1.0
+
+site: https://beebee.ai/
+owner: BeeBee AI
+contact: mailto: service@beebee.ai
+
+# 全局策略（对所有 LLM / AI 服务生效）
+[policy]
+# 是否允许被搜索 / 索引（RAG / 站内搜索等）
+search: yes
+
+# 是否允许用作 LLM 的输入（推理、问答、RAG 检索等）
+ai-input: yes
+
+# 是否允许用作模型训练语料
+ai-train: no
+ai-training: no
+
+# 额外的语义（可选，方便未来解析）
+ai-access: allow
+ai-inference: allow
+ai-caching: allow
+ai-redistribution: allow
+
+# 期望（非强制约束，更多是“友好条款”）
+[preferences]
+attribution: preferred    # 在可行情况下希望标注来源 beebee.ai
+link-back: preferred      # 在可行情况下希望提供返回链接 https://beebee.ai/
