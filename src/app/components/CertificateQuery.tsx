@@ -5,17 +5,41 @@ import { db } from '../../config/firebase';
 import CertificateDisplay from './CertificateDisplay';
 import { useLanguage } from '../contexts/LanguageContext';
 import { certificateContent, t } from '../locales/certificateContent';
+import {
+  compactName,
+  normalizeCourseNumber,
+  normalizeName,
+} from '../utils/certificateNormalization';
 
 type Certificate = {
   id: string;
   name: string;
   nameLower: string;
+  nameNormalized?: string;
+  nameCompact?: string;
   courseNumber?: string;
   courseNumberUpper?: string;
+  courseNumberNormalized?: string;
   campType?: string;
   studentInfo?: string;
   imageUrl: string;
+  imageUrlOriginal?: string;
 };
+
+function matchesCertificate(cert: Certificate, inputName: string, inputCourseNumber: string) {
+  const certificateNameCompact = cert.nameCompact || compactName(cert.name || cert.nameLower);
+  const certificateNameNormalized = cert.nameNormalized || normalizeName(cert.name || cert.nameLower);
+  const certificateCourseNormalized =
+    cert.courseNumberNormalized || normalizeCourseNumber(cert.courseNumberUpper || cert.courseNumber);
+
+  const nameMatches =
+    certificateNameCompact === inputName || certificateNameNormalized === inputName;
+
+  const courseMatches =
+    !inputCourseNumber || certificateCourseNormalized === inputCourseNumber;
+
+  return nameMatches && courseMatches;
+}
 
 export default function CertificateQuery() {
   const [name, setName] = useState('');
@@ -36,28 +60,38 @@ export default function CertificateQuery() {
     setError(null);
 
     try {
-      const nameNorm = name.trim().toLowerCase();
-      const courseNorm = courseNumber.trim().toUpperCase();
+      const inputNameCompact = compactName(name);
+      const inputCourseNormalized = normalizeCourseNumber(courseNumber);
 
       const colRef = collection(db, 'certificates');
+      const nextResults = new Map<string, Certificate>();
 
-      let q;
-      if (courseNorm) {
-        q = query(
-          colRef,
-          where('nameLower', '==', nameNorm),
-          where('courseNumberUpper', '==', courseNorm)
-        );
-      } else {
-        q = query(colRef, where('nameLower', '==', nameNorm));
+      const compactQuery = inputCourseNormalized
+        ? query(
+            colRef,
+            where('nameCompact', '==', inputNameCompact),
+            where('courseNumberNormalized', '==', inputCourseNormalized)
+          )
+        : query(colRef, where('nameCompact', '==', inputNameCompact));
+
+      const compactSnap = await getDocs(compactQuery);
+      compactSnap.docs.forEach((doc) => {
+        const data = doc.data() as Omit<Certificate, 'id'>;
+        nextResults.set(doc.id, { id: doc.id, ...data });
+      });
+
+      if (!nextResults.size) {
+        const fallbackSnap = await getDocs(colRef);
+        fallbackSnap.docs.forEach((doc) => {
+          const data = doc.data() as Omit<Certificate, 'id'>;
+          const certificate = { id: doc.id, ...data };
+          if (matchesCertificate(certificate, inputNameCompact, inputCourseNormalized)) {
+            nextResults.set(doc.id, certificate);
+          }
+        });
       }
 
-      const snap = await getDocs(q);
-      const found: Certificate[] = snap.docs.map((doc) => {
-        const data = doc.data() as Omit<Certificate, 'id'>;
-        return { id: doc.id, ...data };
-      });
-      setResults(found);
+      setResults(Array.from(nextResults.values()));
     } catch (err: any) {
       setError(err.message ?? t(certificateContent.error.generic, language));
     } finally {

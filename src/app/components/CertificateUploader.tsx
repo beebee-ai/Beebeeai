@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, deleteDoc, doc, getDocs, updateDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
+import { buildCertificateSearchFields } from '../utils/certificateNormalization';
 
 type SeedCertificate = {
   name: string;
   courseNumber: string; // 如 SNBG01-251227
   imageUrl: string;     // S3 上的网页展示图 URL
+  imageUrlOriginal?: string;
   studentInfo?: string;
   campType?: string;    // ALPHA / BETA
 };
@@ -387,6 +389,8 @@ const SEED_CERTIFICATES: SeedCertificate[] = [
 
 export function CertificateUploader() {
   const [isUploading, setIsUploading] = useState(false);
+  const [isMigrating, setIsMigrating] = useState(false);
+  const [isDeduplicating, setIsDeduplicating] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
 
   if (!import.meta.env.DEV) {
@@ -409,16 +413,16 @@ export function CertificateUploader() {
       for (const cert of SEED_CERTIFICATES) {
         const name = cert.name.trim();
         const courseNumber = cert.courseNumber.trim();
+        const searchFields = buildCertificateSearchFields(name, courseNumber);
 
         await addDoc(colRef, {
           name,
-          nameLower: name.toLowerCase(),
           courseNumber,
-          courseNumberUpper: courseNumber.toUpperCase(),
+          ...searchFields,
           campType: cert.campType ?? null,
           studentInfo: cert.studentInfo ?? null,
           imageUrl: cert.imageUrl,
-          imageUrlOriginal: cert.imageUrlOriginal||cert.imageUrl,
+          imageUrlOriginal: cert.imageUrlOriginal ?? cert.imageUrl,
           createdAt: new Date().toISOString(),
         });
       }
@@ -431,19 +435,144 @@ export function CertificateUploader() {
     }
   };
 
+  const handleBackfill = async () => {
+    setIsMigrating(true);
+    setMessage(null);
+
+    try {
+      const snap = await getDocs(collection(db, 'certificates'));
+      let updatedCount = 0;
+
+      for (const snapshot of snap.docs) {
+        const data = snapshot.data() as {
+          name?: string;
+          nameLower?: string;
+          courseNumber?: string;
+          courseNumberUpper?: string;
+        };
+
+        const nameSource = data.name || data.nameLower || '';
+        const courseSource = data.courseNumber || data.courseNumberUpper || '';
+        const searchFields = buildCertificateSearchFields(nameSource, courseSource);
+
+        await updateDoc(doc(db, 'certificates', snapshot.id), searchFields);
+        updatedCount += 1;
+      }
+
+      setMessage(`成功补齐 ${updatedCount} 条证书的规范化查询字段。`);
+    } catch (err: any) {
+      setMessage(err.message ?? '补齐失败，请检查控制台。');
+    } finally {
+      setIsMigrating(false);
+    }
+  };
+
+  const handleDeduplicate = async () => {
+    setIsDeduplicating(true);
+    setMessage(null);
+
+    try {
+      const snap = await getDocs(collection(db, 'certificates'));
+      const groups = new Map<
+        string,
+        Array<{
+          id: string;
+          createdAt?: string;
+        }>
+      >();
+
+      snap.docs.forEach((snapshot) => {
+        const data = snapshot.data() as {
+          name?: string;
+          nameCompact?: string;
+          nameLower?: string;
+          courseNumber?: string;
+          courseNumberNormalized?: string;
+          courseNumberUpper?: string;
+          imageUrl?: string;
+          imageUrlOriginal?: string;
+          createdAt?: string;
+        };
+
+        const searchFields = buildCertificateSearchFields(
+          data.name || data.nameLower || '',
+          data.courseNumber || data.courseNumberUpper || ''
+        );
+
+        const dedupeKey = [
+          searchFields.nameCompact,
+          searchFields.courseNumberNormalized,
+          data.imageUrlOriginal || data.imageUrl || '',
+        ].join('::');
+
+        const currentGroup = groups.get(dedupeKey) ?? [];
+        currentGroup.push({
+          id: snapshot.id,
+          createdAt: data.createdAt,
+        });
+        groups.set(dedupeKey, currentGroup);
+      });
+
+      let deletedCount = 0;
+
+      for (const duplicates of groups.values()) {
+        if (duplicates.length < 2) continue;
+
+        duplicates.sort((a, b) => {
+          const aTime = a.createdAt ? Date.parse(a.createdAt) : Number.POSITIVE_INFINITY;
+          const bTime = b.createdAt ? Date.parse(b.createdAt) : Number.POSITIVE_INFINITY;
+          return aTime - bTime;
+        });
+
+        const [, ...toDelete] = duplicates;
+
+        for (const item of toDelete) {
+          await deleteDoc(doc(db, 'certificates', item.id));
+          deletedCount += 1;
+        }
+      }
+
+      if (deletedCount) {
+        setMessage(`成功清理 ${deletedCount} 条重复证书，已为每组重复记录保留 1 条。`);
+      } else {
+        setMessage('未发现重复证书，无需清理。');
+      }
+    } catch (err: any) {
+      setMessage(err.message ?? '清理失败，请检查控制台。');
+    } finally {
+      setIsDeduplicating(false);
+    }
+  };
+
   return (
     <div className="mt-8 border border-yellow-500/40 bg-yellow-500/5 rounded-xl p-4 text-sm text-yellow-200 space-y-2">
-      <div className="font-medium">开发工具：一键上传证书数据到 Firestore</div>
+      <div className="font-medium">开发工具：证书数据维护</div>
       <p className="text-yellow-300/80">
-        仅在开发环境显示。请在代码中填好 <code>SEED_CERTIFICATES</code> 后点击按钮执行一次，导入全部学员数据。
+        仅在开发环境显示。上传按钮会新增文档；补齐和清理按钮会处理现有文档。
       </p>
-      <button
-        onClick={handleUpload}
-        disabled={isUploading}
-        className="mt-2 inline-flex items-center px-3 py-2 rounded bg-yellow-500 text-black font-medium disabled:opacity-60"
-      >
-        {isUploading ? '正在上传...' : '一键上传证书数据'}
-      </button>
+      <div className="flex flex-wrap gap-3">
+        <button
+          onClick={handleUpload}
+          disabled={isUploading || isMigrating || isDeduplicating}
+          className="mt-2 inline-flex items-center px-3 py-2 rounded bg-yellow-500 text-black font-medium disabled:opacity-60"
+        >
+          {isUploading ? '正在上传...' : '一键上传证书数据（新增）'}
+        </button>
+        <button
+          onClick={handleBackfill}
+          disabled={isUploading || isMigrating || isDeduplicating}
+          className="mt-2 inline-flex items-center px-3 py-2 rounded bg-white/90 text-black font-medium disabled:opacity-60"
+        >
+          {isMigrating ? '正在补齐...' : '一键补齐查询字段'}
+        </button>
+        <button
+          onClick={handleDeduplicate}
+          disabled={isUploading || isMigrating || isDeduplicating}
+          className="mt-2 inline-flex items-center px-3 py-2 rounded bg-red-500 text-white font-medium disabled:opacity-60"
+        >
+          {isDeduplicating ? '正在清理...' : '一键清理重复证书'}
+        </button>
+      </div>
       {message && <div className="mt-2">{message}</div>}
     </div>
   );
