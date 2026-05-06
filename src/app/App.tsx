@@ -1133,6 +1133,30 @@ function HomePage() {
                     {t(homeContent.nav.about, language)}
                   </a>
                 </li>
+                <li>
+                  <Link
+                    to="/certificate"
+                    className="transition-colors"
+                    style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}
+                  >
+                    {t(homeContent.nav.certificate, language)}
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bee-sigma.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors"
+                    style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}
+                  >
+                    {t(homeContent.nav.beeSigma, language)}
+                  </a>
+                </li>
               </ul>
             </div>
 

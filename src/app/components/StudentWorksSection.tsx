@@ -251,7 +251,7 @@ function CarouselSection({ projects, language }: any) {
           <button
             onClick={scrollPrev}
             disabled={!canScrollPrev}
-            className="flex absolute left-0 top-1/2 z-10 justify-center items-center w-12 h-12 text-cyan-400 rounded-full border shadow-xl backdrop-blur-xl transition-all duration-300 -translate-x-4 -translate-y-1/2 lg:-translate-x-14 bg-cyan-500/20 hover:bg-cyan-500/30 border-cyan-500/40 disabled:opacity-30 disabled:cursor-not-allowed hover:scale-110 disabled:hover:scale-100"
+            className="flex absolute left-3 top-1/2 z-10 justify-center items-center w-12 h-12 text-cyan-400 rounded-full border shadow-xl backdrop-blur-xl transition-all duration-300 -translate-y-1/2 xl:-translate-x-11 xl:left-0 bg-cyan-500/20 hover:bg-cyan-500/30 border-cyan-500/40 disabled:opacity-30 disabled:cursor-not-allowed hover:scale-110 disabled:hover:scale-100"
             aria-label="Previous slide"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -260,7 +260,7 @@ function CarouselSection({ projects, language }: any) {
           <button
             onClick={scrollNext}
             disabled={!canScrollNext}
-            className="flex absolute right-0 top-1/2 z-10 justify-center items-center w-12 h-12 text-cyan-400 rounded-full border shadow-xl backdrop-blur-xl transition-all duration-300 translate-x-4 -translate-y-1/2 lg:translate-x-14 bg-cyan-500/20 hover:bg-cyan-500/30 border-cyan-500/40 disabled:opacity-30 disabled:cursor-not-allowed hover:scale-110 disabled:hover:scale-100"
+            className="flex absolute right-3 top-1/2 z-10 justify-center items-center w-12 h-12 text-cyan-400 rounded-full border shadow-xl backdrop-blur-xl transition-all duration-300 -translate-y-1/2 xl:translate-x-11 xl:right-0 bg-cyan-500/20 hover:bg-cyan-500/30 border-cyan-500/40 disabled:opacity-30 disabled:cursor-not-allowed hover:scale-110 disabled:hover:scale-100"
             aria-label="Next slide"
           >
             <ChevronRight className="w-6 h-6" />

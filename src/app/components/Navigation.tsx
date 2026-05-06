@@ -25,6 +25,7 @@ export function Navigation() {
     { labelKey: 'about', href: '#about' },
     { labelKey: 'contact', href: '#contact' },
     { labelKey: 'certificate', href: '/certificate' },
+    { labelKey: 'beeSigma', href: 'https://www.bee-sigma.com/', external: true },
   ] as const;
 
   // 判断是否在首页
@@ -57,7 +58,7 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Desktop Navigation - Left aligned */}
-          <div className="hidden md:flex items-center space-x-8 h-full">
+          <div className="hidden xl:flex items-center gap-4 2xl:gap-8 h-full min-w-0">
             <div className="flex-shrink-0">
               <Link to="/">
                 <img src={logoImage} alt="Logo" className="h-8 w-auto" />
@@ -65,11 +66,25 @@ export function Navigation() {
             </div>
             {navItems.map((item) => {
               const active = isActive(item.href);
+              if (item.external) {
+                return (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative flex items-center h-8 text-sm font-medium whitespace-nowrap transition-colors duration-300 text-white hover:text-gray-300"
+                  >
+                    {t(navContent[item.labelKey], language)}
+                  </a>
+                );
+              }
+
               return (
                 <Link
                   key={item.href}
                   to={getLinkPath(item.href)}
-                  className={`relative flex items-center h-8 text-sm font-medium transition-colors duration-300 text-white hover:text-gray-300`}
+                  className="relative flex items-center h-8 text-sm font-medium whitespace-nowrap transition-colors duration-300 text-white hover:text-gray-300"
                 >
                   {t(navContent[item.labelKey], language)}
                   {active && (
@@ -81,14 +96,14 @@ export function Navigation() {
           </div>
 
           {/* Mobile Logo */}
-          <div className="md:hidden flex-shrink-0">
+          <div className="xl:hidden flex-shrink-0">
             <Link to="/">
               <img src={logoImage} alt="Logo" className="h-8 w-auto" />
             </Link>
           </div>
 
           {/* Language Toggle - Right aligned */}
-          <div className="hidden md:block">
+          <div className="hidden xl:block">
             <button
               onClick={toggleLanguage}
               className="text-white hover:text-gray-300 transition-colors border border-white/20 px-3 py-1 rounded"
@@ -98,7 +113,7 @@ export function Navigation() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="xl:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-white hover:text-gray-300 transition-colors"
@@ -111,17 +126,30 @@ export function Navigation() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-black border-t border-white/10">
+        <div className="xl:hidden bg-black border-t border-white/10">
           <div className="px-4 pt-2 pb-4 space-y-3">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                to={getLinkPath(item.href)}
-                className="block text-white hover:text-gray-300 transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t(navContent[item.labelKey], language)}
-              </Link>
+              item.external ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-white hover:text-gray-300 transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {t(navContent[item.labelKey], language)}
+                </a>
+              ) : (
+                <Link
+                  key={item.href}
+                  to={getLinkPath(item.href)}
+                  className="block text-white hover:text-gray-300 transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {t(navContent[item.labelKey], language)}
+                </Link>
+              )
             ))}
             <button
               onClick={toggleLanguage}

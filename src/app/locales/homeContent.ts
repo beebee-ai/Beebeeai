@@ -1309,6 +1309,8 @@ export const homeContent = {
     philosophy: { ZH: "品牌理念", EN: "Philosophy" },
     about: { ZH: "关于我们", EN: "About Us" },
     contact: { ZH: "联系我们", EN: "Contact Us" },
+    certificate: { ZH: "证书查询", EN: "Certificate" },
+    beeSigma: { ZH: "BEE Sigma 企业AI咨询", EN: "BEE Sigma AI Consulting" },
   },
 };
 

@@ -13,6 +13,7 @@ export const navContent = {
   about: { ZH: '关于我们', EN: 'About Us' },
   contact: { ZH: '联系我们', EN: 'Contact' },
   certificate: { ZH: '证书查询', EN: 'Certificate' },
+  beeSigma: { ZH: 'BEE Sigma 企业AI咨询', EN: 'BEE Sigma AI Consulting' },
 };
 
 // 辅助函数：根据语言获取文本
