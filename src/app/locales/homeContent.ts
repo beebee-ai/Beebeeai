@@ -1108,8 +1108,8 @@ export const homeContent = {
     },
     intro: {
       p1: {
-        ZH: "BEEBEE AI LTD是一家总部位于新西兰的国际科技公司，团队分布在新西兰、英国、加拿大、美国泰国、中国。公司专注于GenAI智能产品研发，由具有20年以上互联网/IT经验及8年AI全模态应用开发经验的资深人士于2022年创立。",
-        EN: "BEEBEE AI LTD is an international technology company headquartered in New Zealand, with teams distributed across New Zealand, UK, Canada, USA, Thailand, and China. The company focuses on GenAI product development, founded in 2022 by veterans with 20+ years of Internet/IT experience and 8 years of AI multimodal application development experience.",
+        ZH: "BEEBEE AI LTD是一家总部位于新西兰的国际科技公司，团队分布在新西兰、英国、加拿大、美国泰国、中国。公司专注于GenAI智能产品研发，由具有25年以上互联网/IT经验及8年AI全模态应用开发经验的资深人士于2022年创立。",
+        EN: "BEEBEE AI LTD is an international technology company headquartered in New Zealand, with teams distributed across New Zealand, UK, Canada, USA, Thailand, and China. The company focuses on GenAI product development, founded in 2022 by veterans with 25+ years of Internet/IT experience and 8 years of AI multimodal application development experience.",
       },
       p2: {
         ZH: "公司的使命是通过'AI × 私域知识'提升个人与组织的生产力。其核心产品2Brain（第二大脑）于2024年推出，可以帮企业导入多模态内容（文档、音频/视频、网站、聊天记录）形成私有知识库，并实时可视化为动态知识图谱，几分钟内即可部署基于RAG（检索增强生成）的聊天机器人和各类业务流智能体。",
@@ -1131,8 +1131,8 @@ export const homeContent = {
       deepExperience: {
         title: { ZH: "深厚经验", EN: "Deep Experience" },
         desc: {
-          ZH: "20年以上互联网/IT经验及8年AI全模态应用开发经验",
-          EN: "20+ years of Internet/IT and 8 years of AI multimodal development experience",
+          ZH: "25年以上互联网/IT经验及8年AI全模态应用开发经验",
+          EN: "25+ years of Internet/IT and 8 years of AI multimodal development experience",
         },
       },
       enterprise: {
