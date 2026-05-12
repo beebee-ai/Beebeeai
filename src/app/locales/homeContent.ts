@@ -170,7 +170,7 @@ export const homeContent = {
         EN: '"Human thinks + AI does", instant ROI on learning',
       },
       description: {
-        ZH: "让每一次实战，都转化为可视化的作品。从第一课开始,你就能看到自己创造的价值。",
+        ZH: "让每一次实战，都转化为可视化的作品。从第一课开始，你就能看到自己创造的价值。",
         EN: "Transform every practice into visible work. From day one, you can see the value you create.",
       },
     },
@@ -473,7 +473,7 @@ export const homeContent = {
           EN: "Computer Science Master | Engineering Experience",
         },
         description: {
-          ZH: "在代理访问 API、URL 或进行支付之前，Andon 会在约 200 毫秒内返回批准/阻止/人工审核的结果，并由可审计的证据链提供支持（无来源，无输出）。它专为代理支付、采购和工具使用工作流程而设计，在这些流程中，“糟糕”的发生为时已晚。",
+          ZH: "在代理访问 API、URL 或进行支付之前，Andon 会在约 200 毫秒内返回批准/阻止/人工审核的结果，并由可审计的证据链提供支持（无来源，无输出）。它专为代理支付、采购和工具使用工作流程而设计，在这些流程中，“糟糕”的情况发生为时已晚。",
           EN: 'Before the agent accesses an API, URL, or makes a payment, Andon will return the result of approval/blocking/manual review within approximately 200 milliseconds, supported by an auditable chain of evidence (no source, no output). It is designed specifically for workflows such as Payments on behalf of, procurement, and tool usage, where "bad" occurrences are too late.',
         },
         url: "https://andon-fullstack.vercel.app/",
@@ -1018,7 +1018,7 @@ export const homeContent = {
             "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/works/studycalender_1.png",
         },
         tags: {
-          tag1: { ZH: "学管理", EN: "Learning Management" },
+          tag1: { ZH: "学习管理", EN: "Learning Management" },
           tag2: { ZH: "日记记录", EN: "Journal Tracking" },
           tag3: { ZH: "游戏化设计", EN: "Gamification" },
         },
@@ -1061,7 +1061,7 @@ export const homeContent = {
       },
     },
     humanAI: {
-      title: { ZH: "人机共未来", EN: "Human-AI Co-creation" },
+      title: { ZH: "人机共创未来", EN: "Human-AI Co-creation" },
       content: {
         ZH: '实现"人想+AI做"的产业智能化，让每个人发挥最大价值',
         EN: 'Achieve "human thinks + AI does" industry intelligence, maximize everyone\'s value',
@@ -1108,7 +1108,7 @@ export const homeContent = {
     },
     intro: {
       p1: {
-        ZH: "BEEBEE AI LTD是一家总部位于新西兰的国际科技公司，团队分布在新西兰、英国、加拿大、美国泰国、中国。公司专注于GenAI智能产品研发，由具有25年以上互联网/IT经验及8年AI全模态应用开发经验的资深人士于2022年创立。",
+        ZH: "BEEBEE AI LTD是一家总部位于新西兰的国际科技公司，团队分布在新西兰、英国、加拿大、美国、泰国、中国。公司专注于GenAI智能产品研发，由具有25年以上互联网/IT经验及8年AI全模态应用开发经验的资深人士于2022年创立。",
         EN: "BEEBEE AI LTD is an international technology company headquartered in New Zealand, with teams distributed across New Zealand, UK, Canada, USA, Thailand, and China. The company focuses on GenAI product development, founded in 2022 by veterans with 25+ years of Internet/IT experience and 8 years of AI multimodal application development experience.",
       },
       p2: {
@@ -1148,8 +1148,8 @@ export const homeContent = {
       EN: "Founder Introduction",
     },
     story: {
-      ZH: "BEEBEE 诞生于对传统教育模式的反思。我们看到多人在学习AI的过程中迷失方向，看到太多课程只教工具却忽视思维。我们决定做出改变。",
-      EN: "BEEBEE was born from reflection on traditional education. We saw too many lost in learning AI, too many courses teaching tools but ignoring thinking. We decided to make a change.",
+      ZH: "BEEBEE 诞生于对传统教育模式的反思。我们看到很多人在学习AI的过程中迷失方向，看到太多课程只教工具却忽视思维。我们决定做出改变。",
+      EN: "BEEBEE was born from reflection on traditional education. We saw too many people lost in learning AI, too many courses teaching tools but ignoring thinking. We decided to make a change.",
     },
     ceo: {
       name: { ZH: "周品", EN: "Pin Zhou" },
@@ -1166,7 +1166,7 @@ export const homeContent = {
             EN: "BEEBEE AI - Founded 2022",
           },
           desc: {
-            ZH: "总部新西兰，团队分布于新西兰、英国、加拿大美国、泰国和中国，聚焦人工智能与知识管理产品研发",
+            ZH: "总部新西兰，团队分布于新西兰、英国、加拿大、美国、泰国和中国，聚焦人工智能与知识管理产品研发",
             EN: "Headquartered in New Zealand, teams across NZ, UK, Canada, USA, Thailand, and China, focused on AI and knowledge management product development",
           },
         },
@@ -1216,13 +1216,13 @@ export const homeContent = {
         EN: "Entrepreneurial Philosophy",
       },
       philosophy: {
-        ZH: "作为一位充满好奇心的连续创业者，周品先生不断探索技术与商业的边界。同时,他也是一位愿意分享AI教育实践的父亲，致力于将自己在人工智能领域的经验和见解传递给下一代，在技术创新与教育实践之间找到了完美的平衡点。",
+        ZH: "作为一位充满好奇心的连续创业者，周品先生不断探索技术与商业的边界。同时，他也是一位愿意分享AI教育实践的父亲，致力于将自己在人工智能领域的经验和见解传递给下一代，在技术创新与教育实践之间找到了完美的平衡点。",
         EN: "As a curious serial entrepreneur, Mr. Pin Zhou continuously explores the boundaries of technology and business. As a father willing to share AI education practices, he is committed to passing his AI experience and insights to the next generation, finding the perfect balance between technological innovation and educational practice.",
       },
       quote: {
         text: {
-          ZH: "让每一位对AI充满热情的年轻人，都能在这里找到属于自己的成长方向，成为动人工智能发展的中坚力量。",
-          EN: "Let every young person passionate about AI find their own growth direction here and become a backbone force driving AI development.",
+          ZH: "让每一位对AI充满热情的年轻人，都能在这里找到属于自己的成长方向，成为推动人工智能发展的中坚力量。",
+          EN: "Enable every young person with a passion for AI to find their own path for growth here and become a key force driving the development of AI.",
         },
         author: { ZH: "— 周品", EN: "— Pin Zhou" },
       },
