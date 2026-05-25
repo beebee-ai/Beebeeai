@@ -112,8 +112,14 @@ export function Navigation() {
             </button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="xl:hidden">
+          {/* Mobile Controls */}
+          <div className="xl:hidden flex items-center gap-3">
+            <button
+              onClick={toggleLanguage}
+              className="text-white hover:text-gray-300 transition-colors border border-white/20 px-2.5 py-1 rounded text-sm"
+            >
+              {language}
+            </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-white hover:text-gray-300 transition-colors"
@@ -151,12 +157,6 @@ export function Navigation() {
                 </Link>
               )
             ))}
-            <button
-              onClick={toggleLanguage}
-              className="text-white hover:text-gray-300 transition-colors border border-white/20 px-3 py-1 rounded"
-            >
-              {language}
-            </button>
           </div>
         </div>
       )}
