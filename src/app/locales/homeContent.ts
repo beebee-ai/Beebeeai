@@ -732,8 +732,8 @@ export const homeContent = {
         EN: "The company's mission is to enhance individual and organizational productivity through 'AI × Private Knowledge'. Its core product 2Brain (Second Brain) was launched in 2024, helping enterprises import multimodal content (documents, audio/video, websites, chat logs) to form private knowledge bases, visualized in real-time as dynamic knowledge graphs, and deploy RAG-based chatbots and various business workflow agents within minutes.",
       },
       p3: {
-        ZH: "2Brain已经为全球数十家客户提供企业级应用落地服务，正在从世界500强企业的培训项目到关键客户支持助手等多种场景中，重新定义知识的应用方式。",
-        EN: "2Brain has provided enterprise-level application services to dozens of clients globally, redefining knowledge application across various scenarios from Fortune 500 corporate training projects to critical customer support assistants.",
+        ZH: "在品牌架构中，BEEBEE AI 面向青少年、职场人士与企业团队提供 AI 学习力和项目制实训；2Brain 是企业知识管理与智能体产品；BEE Sigma 是面向企业客户的 AI 咨询与落地服务品牌。2Brain 已为全球数十家客户提供企业级应用落地服务。",
+        EN: "Within the brand architecture, BEEBEE AI provides AI learning and project-based training for young learners, professionals and enterprise teams; 2Brain is the enterprise knowledge-management and agent product; BEE Sigma is the enterprise AI consulting and implementation brand. 2Brain has delivered enterprise applications for dozens of clients globally.",
       },
     },
     highlights: {
