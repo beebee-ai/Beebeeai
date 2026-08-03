@@ -41,8 +41,10 @@ export default function CertificateQuery() {
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#ff6900]/5 blur-[120px] rounded-full pointer-events-none" />
     <div className="max-w-4xl mx-auto relative z-10">
       <div className="text-center mb-8 md:mb-10">
-        <div className="inline-flex items-center justify-center p-3 bg-[#ff6900]/10 rounded-2xl mb-6 border border-[#ff6900]/20"><Award className="w-8 h-8 text-[#ff6900]" /></div>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">证书查询</h1>
+        <div className="flex items-center justify-center gap-3 md:gap-4 mb-4">
+          <span className="inline-flex items-center justify-center p-2.5 md:p-3 bg-[#ff6900]/10 rounded-xl md:rounded-2xl border border-[#ff6900]/20" aria-hidden="true"><Award className="w-7 h-7 md:w-8 md:h-8 text-[#ff6900]" /></span>
+          <h1 className="text-4xl md:text-5xl font-bold text-white">证书查询</h1>
+        </div>
         <p className="text-gray-400 text-lg">输入您的姓名获取官方认证与权威背书</p>
       </div>
       <div className="bg-[#16181d] border border-white/5 rounded-3xl p-6 md:p-8 shadow-2xl mb-6 md:mb-8">
