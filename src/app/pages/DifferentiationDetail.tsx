@@ -15,6 +15,8 @@ export function DifferentiationDetail() {
         title="BEEBEE AI 学习方法｜AI 学习力与项目制实践"
         description="了解 BEEBEE AI 如何通过提问力、项目制学习、道法术器学习体系和三维能力模型，帮助学习者把 AI 理念转化为真实作品。"
         path="/differentiation/"
+        type="article"
+        structuredData={{ '@context': 'https://schema.org', '@type': 'Article', headline: 'BEEBEE AI 的 AI 学习方法与项目制实践', description: '通过提问力、项目制学习、道法术器学习体系和三维能力模型，把 AI 理念转化为真实作品。', author: { '@id': 'https://beebee.ai/#organization' }, publisher: { '@id': 'https://beebee.ai/#organization' }, mainEntityOfPage: 'https://beebee.ai/differentiation/' }}
       />
       <Helmet>
         <meta name="keywords" content="AI学习力, 终身学习力, 人工智能学习平台, 个性化学习, 项目化学习, 青少年AI学习, 职场AI能力, 企业家学习力, AI创造力, AI竞争力, AI领导力, BEEBEE AI" />
@@ -570,7 +572,7 @@ export function DifferentiationDetail() {
           <p className="mb-8" style={{ fontSize: 'clamp(15px, 2.8vw, 18px)', color: 'var(--text-secondary)' }}>
             {t(differentiationContent.cta.subtitle, language)}
           </p>
-          <div className="flex gap-4 justify-center">
+          <div className="flex flex-wrap gap-4 justify-center">
             <Link 
               to="/#contact"
               className="px-8 py-4 rounded-lg transition-colors"
@@ -583,6 +585,12 @@ export function DifferentiationDetail() {
               onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--orange-primary)'}
             >
               {t(differentiationContent.cta.button1, language)}
+            </Link>
+            <Link to="/ai-learning-paths" className="px-8 py-4 border border-orange-500/40 rounded-lg hover:bg-orange-500/10 transition-colors text-white">
+              {language === 'ZH' ? '选择学习路线' : 'Choose a learning path'}
+            </Link>
+            <Link to="/student-projects" className="px-8 py-4 border border-white/30 rounded-lg hover:bg-white/10 transition-colors text-white">
+              {language === 'ZH' ? '查看真实项目' : 'View real projects'}
             </Link>
             <Link 
               to="/"

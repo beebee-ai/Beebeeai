@@ -3,6 +3,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { homeContent, t } from '../locales/homeContent';
 import { ExternalLink, Users, ChevronLeft, ChevronRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
+import { Link } from 'react-router-dom';
 
 export function StudentWorksSection() {
   const { language } = useLanguage();
@@ -49,6 +50,11 @@ export function StudentWorksSection() {
             <CarouselSection projects={carouselProjects} language={language} />
           </div>
         )}
+        <div className="mt-10 text-center">
+          <Link to="/student-projects" className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-orange-500 transition-colors">
+            {language === 'ZH' ? '查看完整项目案例库' : 'Explore the complete project library'} <ExternalLink className="w-4 h-4" />
+          </Link>
+        </div>
       </div>
     </section>
   );
@@ -251,7 +257,7 @@ function CarouselSection({ projects, language }: any) {
           <button
             onClick={scrollPrev}
             disabled={!canScrollPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-14 w-12 h-12 rounded-full bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/40 backdrop-blur-xl text-cyan-400 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-300 hover:scale-110 disabled:hover:scale-100 flex items-center justify-center shadow-xl z-10"
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/40 backdrop-blur-xl text-cyan-400 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-300 hover:scale-110 disabled:hover:scale-100 flex items-center justify-center shadow-xl z-10"
             aria-label="Previous slide"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -260,7 +266,7 @@ function CarouselSection({ projects, language }: any) {
           <button
             onClick={scrollNext}
             disabled={!canScrollNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-14 w-12 h-12 rounded-full bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/40 backdrop-blur-xl text-cyan-400 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-300 hover:scale-110 disabled:hover:scale-100 flex items-center justify-center shadow-xl z-10"
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/40 backdrop-blur-xl text-cyan-400 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-300 hover:scale-110 disabled:hover:scale-100 flex items-center justify-center shadow-xl z-10"
             aria-label="Next slide"
           >
             <ChevronRight className="w-6 h-6" />

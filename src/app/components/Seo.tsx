@@ -9,6 +9,7 @@ type SeoProps = {
 };
 
 const SITE_URL = 'https://beebee.ai';
+const SHARE_IMAGE = 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/beebee-ai/icons/web-app-manifest-512x512.png';
 
 export function Seo({ title, description, path = '/', type = 'website', structuredData }: SeoProps) {
   const canonical = `${SITE_URL}${path === '/' ? '/' : path}`;
@@ -26,11 +27,12 @@ export function Seo({ title, description, path = '/', type = 'website', structur
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
-      <meta property="og:image" content={`${SITE_URL}/logo.png`} />
+      <meta property="og:image" content={SHARE_IMAGE} />
+      <meta property="og:image:alt" content="BEEBEE AI" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={`${SITE_URL}/logo.png`} />
+      <meta name="twitter:image" content={SHARE_IMAGE} />
       {schemas.map((schema, index) => (
         <script type="application/ld+json" key={index}>{JSON.stringify(schema)}</script>
       ))}

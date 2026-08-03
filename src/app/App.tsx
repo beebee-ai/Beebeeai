@@ -12,6 +12,8 @@ import { StudentWorksSection } from './components/StudentWorksSection';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 import { Seo } from './components/Seo';
 import { FaqSection, faqItems } from './components/FaqSection';
+import { LearningPathsPage } from './pages/LearningPathsPage';
+import { StudentProjectsPage } from './pages/StudentProjectsPage';
 const CertificatePage = lazy(() => import('./pages/CertificatePage').then(module => ({ default: module.CertificatePage })));
 
 function ScrollManager() {
@@ -55,7 +57,7 @@ function HomePage() {
         title="BEEBEE AI｜AI 学习力平台与项目制实训营"
         description="BEEBEE AI 提供 AI 学习力训练、ALPHA/BETA 项目制实训营、学习平台与企业 AI 咨询服务，帮助青少年、职场人士和企业团队掌握 AI 协作、产品实践与知识管理能力。"
         structuredData={[
-          { '@context': 'https://schema.org', '@type': 'Organization', '@id': 'https://beebee.ai/#organization', name: 'BEEBEE AI', url: 'https://beebee.ai/', email: 'service@beebee.ai' },
+          { '@context': 'https://schema.org', '@type': 'Organization', '@id': 'https://beebee.ai/#organization', name: 'BEEBEE AI', url: 'https://beebee.ai/', email: 'service@beebee.ai', logo: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/beebee-ai/icons/web-app-manifest-512x512.png', sameAs: ['https://bee-alpha.com/', 'https://bee-beta.com/', 'https://www.bee-sigma.com/'] },
           { '@context': 'https://schema.org', '@type': 'Person', name: '周品', alternateName: 'Pin Zhou', jobTitle: 'BEEBEE AI 创始人 / 创业导师', worksFor: { '@id': 'https://beebee.ai/#organization' }, description: '拥有 20 年以上 IT 与互联网产品运营创业经验和 8 年 AI 实战经验。' },
           { '@context': 'https://schema.org', '@type': 'Person', name: 'Vito Liu', jobTitle: '高级 AI 工程师', worksFor: { '@id': 'https://beebee.ai/#organization' }, alumniOf: { '@type': 'CollegeOrUniversity', name: 'McGill University' }, description: '计算机科学与数学双学位，专注 RAG 系统和 LLM 应用开发。' },
           { '@context': 'https://schema.org', '@type': 'Person', name: 'Fred Chi', alternateName: '池老师', jobTitle: '首席程序员', worksFor: { '@id': 'https://beebee.ai/#organization' }, description: '拥有 25 年技术经验，擅长私有模型部署、分布式系统架构和高性能数据处理。' },
@@ -229,13 +231,12 @@ function HomePage() {
               <ArrowRight size={14} color="#FFFFFF" strokeWidth={2.5} />
             </div>
           </a>
-          <div className="mt-7 flex flex-wrap justify-center items-center gap-x-5 gap-y-2 px-4 text-sm">
-            <a href="https://bee-alpha.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-orange-500 transition-colors">{language === 'ZH' ? '青少年 ALPHA 实训' : 'ALPHA for youth'} ↗</a>
-            <span className="hidden sm:block w-1 h-1 rounded-full bg-white/20" />
-            <a href="https://bee-beta.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-cyan-400 transition-colors">{language === 'ZH' ? '成人 / 工程 BETA 实训' : 'BETA for professionals'} ↗</a>
-            <span className="hidden sm:block w-1 h-1 rounded-full bg-white/20" />
-            <a href="https://www.bee-sigma.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-purple-400 transition-colors">{language === 'ZH' ? '企业 AI 咨询' : 'Enterprise AI consulting'} ↗</a>
+          <div className="mt-7 flex flex-wrap justify-center items-center gap-3 px-4 text-sm">
+            <a href="https://bee-alpha.com/" target="_blank" rel="noopener noreferrer" className="px-4 py-2.5 rounded-full border border-orange-500/30 text-gray-300 hover:text-white hover:border-orange-500 transition-colors">{language === 'ZH' ? '青少年 ALPHA 实训' : 'ALPHA for youth'} ↗</a>
+            <a href="https://bee-beta.com/" target="_blank" rel="noopener noreferrer" className="px-4 py-2.5 rounded-full border border-cyan-400/30 text-gray-300 hover:text-white hover:border-cyan-400 transition-colors">{language === 'ZH' ? '成人 / 工程 BETA 实训' : 'BETA for professionals'} ↗</a>
+            <a href="https://www.bee-sigma.com/" target="_blank" rel="noopener noreferrer" className="px-4 py-2.5 rounded-full border border-purple-400/30 text-gray-300 hover:text-white hover:border-purple-400 transition-colors">{language === 'ZH' ? '企业 AI 咨询' : 'Enterprise AI consulting'} ↗</a>
           </div>
+          <Link to="/ai-learning-paths" className="mt-5 inline-flex items-center gap-2 text-sm text-gray-500 hover:text-orange-500 transition-colors">{language === 'ZH' ? '不确定怎么选？查看学习路线比较' : 'Not sure? Compare learning paths'} <ArrowRight size={15} /></Link>
         </div>
       </section>
 
@@ -1150,6 +1151,16 @@ function HomePage() {
                   </a>
                 </li>
                 <li>
+                  <Link to="/ai-learning-paths" className="transition-colors hover:text-orange-500" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>
+                    {language === 'ZH' ? '学习路线比较' : 'Learning paths'}
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/student-projects" className="transition-colors hover:text-orange-500" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>
+                    {language === 'ZH' ? '学员项目案例' : 'Student projects'}
+                  </Link>
+                </li>
+                <li>
                   <a href="#philosophy" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
                      onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
@@ -1239,6 +1250,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/differentiation" element={<DifferentiationDetail />} />
+            <Route path="/ai-learning-paths" element={<LearningPathsPage />} />
+            <Route path="/student-projects" element={<StudentProjectsPage />} />
             <Route path="/certificate" element={<Suspense fallback={<div className="min-h-screen bg-black" />}><CertificatePage /></Suspense>} />
           </Routes>
           {/* Toast notifications */}
