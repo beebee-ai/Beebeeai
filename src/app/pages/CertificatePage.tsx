@@ -17,8 +17,8 @@ export function CertificatePage() {
       <Navigation />
       <main className="pt-16 pb-24">
         <CertificateQuery />
-        <section className="px-4 mt-8 md:mt-16" aria-labelledby="certificate-meaning">
-          <div className="max-w-6xl mx-auto border-t border-white/10 pt-14 md:pt-20">
+        <section className="px-4 mt-0 md:mt-2" aria-labelledby="certificate-meaning">
+          <div className="max-w-6xl mx-auto border-t border-white/10 pt-10 md:pt-12">
             <div className="grid lg:grid-cols-[1.05fr_.95fr] gap-12 lg:gap-20 items-start">
               <div>
                 <div className="inline-flex items-center gap-2 text-orange-500 font-mono tracking-[0.22em] text-xs mb-7">
