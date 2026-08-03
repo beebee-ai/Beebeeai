@@ -5,8 +5,8 @@ const dist = new URL('../dist/', import.meta.url).pathname;
 const shell = await readFile(join(dist, 'index.html'), 'utf8');
 const pages = [
   {
-    path: '', title: 'BEEBEE AI｜用 AI 进化学习力',
-    description: 'BEEBEE AI 是面向未来人才的 AI 学习力平台，通过 ALPHA / BETA 实训营、项目制学习与真实作品，帮助青少年、职场人士和企业家提升 AI 创造力、竞争力与领导力。',
+    path: '', title: 'BEEBEE AI｜AI 学习力平台与项目制实训营',
+    description: 'BEEBEE AI 提供 AI 学习力训练、ALPHA/BETA 项目制实训营、学习平台与企业 AI 咨询服务，帮助青少年、职场人士和企业团队掌握 AI 协作、产品实践与知识管理能力。',
     body: `<main><h1>BEEBEE AI：用 AI 进化学习力</h1><p>BEEBEE AI 是面向未来人才的 AI 学习力平台，通过实训营、项目实践与学习平台培养提问、创造、协作和产品落地能力。</p><section><h2>两条 AI 学习路线</h2><h3><a href="https://bee-alpha.com/">ALPHA 实训营</a></h3><p>面向青少年的 AI 教育训练营。启航营 Genesis 为 6 周约 18 小时的零基础线上路径；远航营 Odyssey 为 6 周约 27 小时的进阶线上路径，要求一定编程或工程经验。</p><h3><a href="https://bee-beta.com/">BETA 实训营</a></h3><p>面向 18 岁以上大学生、研究生和工程学习者。Galaxy、Cosmos、Infinity 分别为约 15、24、36 小时的线上项目实训，逐步覆盖 AI 产品、全栈工程和市场验证。</p></section><section><h2>真实项目与学习成果</h2><p>公开案例包括 ALPHA 的 Lumina Academy、RowingPro、AI 高尔夫成绩分析，以及 BETA 的 Hobbi、YummyYummy、Climate Intelligence Hub。</p></section><section><h2>核心导师与团队</h2><p>周品是 BEEBEE AI 创始人，拥有 20 年以上 IT 与互联网产品运营创业经验和 8 年 AI 实战经验；Vito Liu 是 BEEBEE AI 核心开发工程师，拥有麦吉尔大学计算机科学与数学双学位，专注 RAG 系统和 LLM 应用开发；池老师（Fred Chi）是蜜蜂时代首席程序员，拥有 25 年技术经验，擅长私有模型部署、分布式系统架构和高性能数据处理。</p></section><section><h2>关于 BEEBEE AI</h2><p>学习路线服务青少年、职场人士、创业者与企业家，分别提升 AI 创造力、竞争力与领导力。</p></section></main>`,
   },
   {

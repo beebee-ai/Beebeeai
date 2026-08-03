@@ -52,8 +52,8 @@ function HomePage() {
   return (
     <div className="min-h-screen text-white" style={{ backgroundColor: 'var(--bg-deep)' }}>
       <Seo
-        title="BEEBEE AI｜用 AI 进化学习力"
-        description="BEEBEE AI 是面向未来人才的 AI 学习力平台，通过 ALPHA / BETA 实训营、项目制学习与真实作品，帮助青少年、职场人士和企业家提升 AI 创造力、竞争力与领导力。"
+        title="BEEBEE AI｜AI 学习力平台与项目制实训营"
+        description="BEEBEE AI 提供 AI 学习力训练、ALPHA/BETA 项目制实训营、学习平台与企业 AI 咨询服务，帮助青少年、职场人士和企业团队掌握 AI 协作、产品实践与知识管理能力。"
         structuredData={[
           { '@context': 'https://schema.org', '@type': 'Organization', '@id': 'https://beebee.ai/#organization', name: 'BEEBEE AI', url: 'https://beebee.ai/', email: 'service@beebee.ai' },
           { '@context': 'https://schema.org', '@type': 'Person', name: '周品', alternateName: 'Pin Zhou', jobTitle: 'BEEBEE AI 创始人 / 创业导师', worksFor: { '@id': 'https://beebee.ai/#organization' }, description: '拥有 20 年以上 IT 与互联网产品运营创业经验和 8 年 AI 实战经验。' },

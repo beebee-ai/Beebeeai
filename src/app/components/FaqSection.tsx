@@ -21,6 +21,18 @@ export const faqItems = [
     zh: ['如何选择适合自己的学习路线？', '可以根据是否具备编程经验、希望解决的问题和目标成果选择路线；如果暂时不确定，可通过官网联系团队获取学习建议。'],
     en: ['How do I choose a learning path?', 'Choose based on your programming experience, the problem you want to solve and your target outcome. Contact the team through the website if you need guidance.'],
   },
+  {
+    zh: ['BEEBEE AI 与普通 AI 工具培训有什么不同？', '普通工具培训通常聚焦功能操作，BEEBEE AI 更强调定义问题、提出好问题、项目协作和真实交付，让学习结果形成可以展示、使用和复盘的作品。'],
+    en: ['How is BEEBEE AI different from AI tool training?', 'Typical tool training focuses on features. BEEBEE AI emphasizes problem framing, better questions, project collaboration and real delivery, producing work that can be demonstrated, used and reviewed.'],
+  },
+  {
+    zh: ['课程如何帮助学习者提升 AI 学习力？', '课程训练学习者拆解真实任务、设计工作流、调用合适的 AI 工具、验证输出并持续复盘，从“会使用工具”逐步走向“能独立解决问题”。'],
+    en: ['How do the courses develop AI learning power?', 'Learners practice breaking down real tasks, designing workflows, choosing AI tools, validating outputs and reflecting—moving from using tools to solving problems independently.'],
+  },
+  {
+    zh: ['如何报名、咨询或核验证书？', '可以通过官网联系表单或 service@beebee.ai 咨询适合的实训营路线。需要核验证书时，请提供证书编号和持证人姓名，由团队核对官方记录。'],
+    en: ['How do I enroll, ask for guidance or verify a certificate?', 'Use the website contact form or email service@beebee.ai for learning-path guidance. For certificate verification, provide the certificate ID and holder name so the team can check the official record.'],
+  },
 ];
 
 export function FaqSection() {
@@ -33,7 +45,7 @@ export function FaqSection() {
           {language === 'ZH' ? '关于 BEEBEE AI' : 'About BEEBEE AI'}
         </h2>
         <p className="text-gray-400 mb-10">
-          {language === 'ZH' ? '快速了解学习路线、适合人群与项目成果。' : 'A quick guide to learning paths, audiences and project outcomes.'}
+          {language === 'ZH' ? '快速了解学习路线、适合人群、项目成果与报名方式。' : 'A quick guide to learning paths, audiences, project outcomes and enrollment.'}
         </p>
         <div className="divide-y divide-white/10 border-y border-white/10">
           {faqItems.map((item, index) => {

@@ -12,8 +12,8 @@ export const homeContent = {
       EN: "BEEBEE, Evolve Learning with AI",
     },
     subtitle: {
-      ZH: "让理念真正落地到实践中",
-      EN: "Turning concepts into real-world practice",
+      ZH: "面向青少年、职场人士与企业团队，通过项目制实训与真实产品开发，把 AI 能力转化为可展示、可复用的成果",
+      EN: "For young learners, professionals and enterprise teams—turn AI skills into demonstrable, reusable outcomes through real projects",
     },
     cta: {
       ZH: "开始探索",
