@@ -471,39 +471,6 @@ export const homeContent = {
           EN: "ALPHA ZERO Genesis Camp",
         },
         title: {
-          ZH: "PROJECT:Echo - 游戏化目标管理系统",
-          EN: "PROJECT:Echo - Gamified Goal Management System",
-        },
-        team: { ZH: "学员：J同学", EN: "Student: J" },
-        teamDetails: {
-          ZH: "13岁 | 2年Python经验",
-          EN: "13 years old | 2 years Python experience",
-        },
-        description: {
-          ZH: "将目标管理游戏化的创新应用。通过虚拟花园、任务系统和奖励机制,帮助用户建立健康习惯、追踪专注度和达成个人目标。用户完成任务即可获得金币,种植虚拟植物,让自律变得有趣。支持数据同步和个性化成功计划。",
-          EN: "Innovative gamified goal management app. Through virtual gardens, task systems and reward mechanisms, helps users build healthy habits, track focus and achieve personal goals. Complete tasks to earn coins, grow virtual plants, making discipline fun. Features data sync and personalized success plans.",
-        },
-        url: "https://changepr0jectecho.uk/",
-        cta: { ZH: "访问项目", EN: "Visit Project" },
-        images: {
-          main: "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/jaxsen_1.png",
-          screenshot1:
-            "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/jaxsen_2.png",
-          screenshot2:
-            "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-alpha/student-works/jaxsen_1.png",
-        },
-        tags: {
-          tag1: { ZH: "游戏化设计", EN: "Gamification" },
-          tag2: { ZH: "目标管理", EN: "Goal Management" },
-          tag3: { ZH: "习惯养成", EN: "Habit Building" },
-        },
-      },
-      {
-        badge: {
-          ZH: "ALPHA—ZERO启航营（Genesis）",
-          EN: "ALPHA ZERO Genesis Camp",
-        },
-        title: {
           ZH: "PropertyAI NZ - 新西兰AI房产平台",
           EN: "PropertyAI NZ - AI Property Platform",
         },
