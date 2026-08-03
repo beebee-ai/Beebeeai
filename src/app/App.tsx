@@ -10,6 +10,9 @@ import { ContactForm } from './components/ContactForm';
 import { Toaster } from 'sonner';
 import { StudentWorksSection } from './components/StudentWorksSection';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
+import { Seo } from './components/Seo';
+import { FaqSection, faqItems } from './components/FaqSection';
+import { CertificatePage } from './pages/CertificatePage';
 
 function ScrollManager() {
   const location = useLocation();
@@ -48,9 +51,20 @@ function HomePage() {
   
   return (
     <div className="min-h-screen text-white" style={{ backgroundColor: 'var(--bg-deep)' }}>
+      <Seo
+        title="BEEBEE AI｜用 AI 进化学习力"
+        description="BEEBEE AI 是面向未来人才的 AI 学习力平台，通过 ALPHA / BETA 实训营、项目制学习与真实作品，帮助青少年、职场人士和企业家提升 AI 创造力、竞争力与领导力。"
+        structuredData={[
+          { '@context': 'https://schema.org', '@type': 'Organization', '@id': 'https://beebee.ai/#organization', name: 'BEEBEE AI', url: 'https://beebee.ai/', email: 'service@beebee.ai' },
+          { '@context': 'https://schema.org', '@type': 'Person', name: '周品', alternateName: 'Pin Zhou', jobTitle: 'BEEBEE AI 创始人 / 创业导师', worksFor: { '@id': 'https://beebee.ai/#organization' }, description: '拥有 20 年以上 IT 与互联网产品运营创业经验和 8 年 AI 实战经验。' },
+          { '@context': 'https://schema.org', '@type': 'Person', name: 'Vito Liu', jobTitle: '高级 AI 工程师', worksFor: { '@id': 'https://beebee.ai/#organization' }, alumniOf: { '@type': 'CollegeOrUniversity', name: 'McGill University' }, description: '计算机科学与数学双学位，专注 RAG 系统和 LLM 应用开发。' },
+          { '@context': 'https://schema.org', '@type': 'Person', name: 'Fred Chi', alternateName: '池老师', jobTitle: '首席程序员', worksFor: { '@id': 'https://beebee.ai/#organization' }, description: '拥有 25 年技术经验，擅长私有模型部署、分布式系统架构和高性能数据处理。' },
+          { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map(item => ({ '@type': 'Question', name: item.zh[0], acceptedAnswer: { '@type': 'Answer', text: item.zh[1] } })) },
+          { '@context': 'https://schema.org', '@type': 'Course', '@id': 'https://bee-alpha.com/#course', name: 'BEEBEE AI ALPHA 实训营', description: '面向青少年的 AI 教育训练营，围绕真实任务、AI 工具与工作流搭建形成可展示成果。', url: 'https://bee-alpha.com/', provider: { '@id': 'https://beebee.ai/#organization' }, audience: { '@type': 'Audience', audienceType: '12–19 岁青少年' }, hasCourseInstance: [{ '@type': 'CourseInstance', name: 'ALPHA 启航营（Genesis）', courseMode: 'Online', timeRequired: 'PT18H' }, { '@type': 'CourseInstance', name: 'ALPHA 远航营（Odyssey）', courseMode: 'Online', timeRequired: 'PT27H' }] },
+          { '@context': 'https://schema.org', '@type': 'Course', '@id': 'https://bee-beta.com/#course', name: 'BEEBEE AI BETA 实训营', description: '通过真实项目训练 AI Native 产品、全栈工程与市场验证能力。', url: 'https://bee-beta.com/', provider: { '@id': 'https://beebee.ai/#organization' }, audience: { '@type': 'Audience', audienceType: '18 岁以上大学生、研究生和工程学习者' }, hasCourseInstance: [{ '@type': 'CourseInstance', name: 'BETA 星空营（Galaxy）', courseMode: 'Online', timeRequired: 'PT15H' }, { '@type': 'CourseInstance', name: 'BETA 深空营（Cosmos）', courseMode: 'Online', timeRequired: 'PT24H' }, { '@type': 'CourseInstance', name: 'BETA 无界营（Infinity）', courseMode: 'Online', timeRequired: 'PT36H' }] },
+        ]}
+      />
       <Helmet>
-        <title>BEEBEE AI - 用 AI 进化学习力</title>
-        <meta name="description" content="BEEBEE AI 是 AI学习力平台，致力于培养具备终身学习力的新一代人才，提出&quot;学习将取代教育&quot;的理念，强调个性化与项目化学习，服务青少年学生、在职人士与企业家群体，分别聚焦创造力、竞争力与领导力的系统提升。" />
         <meta name="keywords" content="AI学习力, 终身学习力, 人工智能学习平台, 个性化学习, 项目化学习, 青少年AI学习, 职场AI能力, 企业家学习力, AI创造力, AI竞争力, AI领导力, BEEBEE AI" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://beebee.ai" />
@@ -353,7 +367,7 @@ function HomePage() {
                 </ul>
                 <div className="flex justify-center">
                   <a 
-                    href="https://bee-alpha.com"
+                    href="https://bee-alpha.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-8 py-3 rounded-lg transition-all duration-300"
@@ -419,7 +433,7 @@ function HomePage() {
                 </ul>
                 <div className="flex justify-center">
                   <a 
-                    href="https://bee-beta.com"
+                    href="https://bee-beta.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-8 py-3 rounded-lg transition-all duration-300"
@@ -1032,6 +1046,8 @@ function HomePage() {
         </div>
       </section>
 
+      <FaqSection />
+
       {/* Contact Section */}
       <section id="contact" className="px-4 border-t border-white/10 pt-8 md:pt-20 pb-8 md:pb-20 bg-black">
         <div className="max-w-7xl mx-auto w-full">
@@ -1211,6 +1227,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/differentiation" element={<DifferentiationDetail />} />
+            <Route path="/certificate" element={<CertificatePage />} />
           </Routes>
           {/* Toast notifications */}
           <Toaster position="top-center" richColors />

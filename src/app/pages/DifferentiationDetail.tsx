@@ -4,18 +4,21 @@ import { Brain } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { differentiationContent, t } from '../locales/differentiationContent';
 import { Helmet } from 'react-helmet-async';
+import { Seo } from '../components/Seo';
 
 export function DifferentiationDetail() {
   const { language } = useLanguage();
   
   return (
     <div className="min-h-screen text-white" style={{ backgroundColor: 'var(--bg-deep)' }}>
+      <Seo
+        title="BEEBEE AI 学习方法｜AI 学习力与项目制实践"
+        description="了解 BEEBEE AI 如何通过提问力、项目制学习、道法术器学习体系和三维能力模型，帮助学习者把 AI 理念转化为真实作品。"
+        path="/differentiation/"
+      />
       <Helmet>
-        <title>BEEBEE AI - 用 AI 进化学习力</title>
-        <meta name="description" content="BEEBEE AI 是 AI学习力平台，致力于培养具备终身学习力的新一代人才，提出&quot;学习将取代教育&quot;的理念，强调个性化与项目化学习，服务青少年学生、在职人士与企业家群体，分别聚焦创造力、竞争力与领导力的系统提升。" />
         <meta name="keywords" content="AI学习力, 终身学习力, 人工智能学习平台, 个性化学习, 项目化学习, 青少年AI学习, 职场AI能力, 企业家学习力, AI创造力, AI竞争力, AI领导力, BEEBEE AI" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://beebee.ai" />
         
         {/* Favicons */}
         <link rel="icon" type="image/x-icon" href="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/beebee-ai/icons/favicon.ico" />
