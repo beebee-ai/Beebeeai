@@ -18,6 +18,8 @@ export function Navigation() {
     { labelKey: 'philosophy', href: '#philosophy' },
     { labelKey: 'about', href: '#about' },
     { labelKey: 'contact', href: '#contact' },
+    { labelKey: 'certificate', href: '/certificate' },
+    { labelKey: 'beeSigma', href: 'https://www.bee-sigma.com/', external: true },
   ] as const;
 
   // 判断是否在首页
@@ -28,18 +30,18 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Desktop Navigation - Left aligned */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-5 lg:gap-6">
             <div className="flex-shrink-0">
               <Link to="/">
                 <img src={logoImage} alt="Logo" className="h-8 w-auto" />
               </Link>
             </div>
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                to={isHomePage ? item.href : `/${item.href}`}
-                className="text-white hover:text-gray-300 transition-colors"
-              >
+            {navItems.map((item) => item.external ? (
+              <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors text-sm whitespace-nowrap">
+                {t(navContent[item.labelKey], language)}
+              </a>
+            ) : (
+              <Link key={item.href} to={item.href.startsWith('/') || isHomePage ? item.href : `/${item.href}`} className="text-white hover:text-gray-300 transition-colors text-sm whitespace-nowrap">
                 {t(navContent[item.labelKey], language)}
               </Link>
             ))}
@@ -78,13 +80,12 @@ export function Navigation() {
       {isMenuOpen && (
         <div className="md:hidden bg-black border-t border-white/10">
           <div className="px-4 pt-2 pb-4 space-y-3">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                to={isHomePage ? item.href : `/${item.href}`}
-                className="block text-white hover:text-gray-300 transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
+            {navItems.map((item) => item.external ? (
+              <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" className="block text-white hover:text-gray-300 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
+                {t(navContent[item.labelKey], language)}
+              </a>
+            ) : (
+              <Link key={item.href} to={item.href.startsWith('/') || isHomePage ? item.href : `/${item.href}`} className="block text-white hover:text-gray-300 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
                 {t(navContent[item.labelKey], language)}
               </Link>
             ))}
