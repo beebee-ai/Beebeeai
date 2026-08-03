@@ -229,6 +229,13 @@ function HomePage() {
               <ArrowRight size={14} color="#FFFFFF" strokeWidth={2.5} />
             </div>
           </a>
+          <div className="mt-7 flex flex-wrap justify-center items-center gap-x-5 gap-y-2 px-4 text-sm">
+            <a href="https://bee-alpha.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-orange-500 transition-colors">{language === 'ZH' ? '青少年 ALPHA 实训' : 'ALPHA for youth'} ↗</a>
+            <span className="hidden sm:block w-1 h-1 rounded-full bg-white/20" />
+            <a href="https://bee-beta.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-cyan-400 transition-colors">{language === 'ZH' ? '成人 / 工程 BETA 实训' : 'BETA for professionals'} ↗</a>
+            <span className="hidden sm:block w-1 h-1 rounded-full bg-white/20" />
+            <a href="https://www.bee-sigma.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-purple-400 transition-colors">{language === 'ZH' ? '企业 AI 咨询' : 'Enterprise AI consulting'} ↗</a>
+          </div>
         </div>
       </section>
 
@@ -854,6 +861,11 @@ function HomePage() {
                 <p>
                   {t(homeContent.about.intro.p3, language)}
                 </p>
+                <div className="border-y border-white/10 py-5 mt-8 grid sm:grid-cols-3 gap-5" aria-label={language === 'ZH' ? '品牌架构' : 'Brand architecture'}>
+                  <div><p className="text-orange-500 font-semibold mb-1">BEEBEE AI</p><p className="text-gray-500 text-sm leading-6">{language === 'ZH' ? 'AI 学习力与项目制实训' : 'AI learning and project training'}</p></div>
+                  <div><p className="text-cyan-400 font-semibold mb-1">2Brain</p><p className="text-gray-500 text-sm leading-6">{language === 'ZH' ? '企业知识管理与智能体产品' : 'Knowledge and agent product'}</p></div>
+                  <div><p className="text-purple-400 font-semibold mb-1">BEE Sigma</p><p className="text-gray-500 text-sm leading-6">{language === 'ZH' ? '企业 AI 咨询与落地服务' : 'Enterprise AI consulting'}</p></div>
+                </div>
               </div>
             </div>
 
