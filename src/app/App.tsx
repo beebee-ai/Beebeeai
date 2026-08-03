@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { lazy, Suspense, useEffect, useRef } from 'react';
 import { Navigation } from './components/Navigation';
 import { Link, BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { DifferentiationDetail } from './pages/DifferentiationDetail';
@@ -12,7 +12,7 @@ import { StudentWorksSection } from './components/StudentWorksSection';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 import { Seo } from './components/Seo';
 import { FaqSection, faqItems } from './components/FaqSection';
-import { CertificatePage } from './pages/CertificatePage';
+const CertificatePage = lazy(() => import('./pages/CertificatePage').then(module => ({ default: module.CertificatePage })));
 
 function ScrollManager() {
   const location = useLocation();
@@ -1227,7 +1227,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/differentiation" element={<DifferentiationDetail />} />
-            <Route path="/certificate" element={<CertificatePage />} />
+            <Route path="/certificate" element={<Suspense fallback={<div className="min-h-screen bg-black" />}><CertificatePage /></Suspense>} />
           </Routes>
           {/* Toast notifications */}
           <Toaster position="top-center" richColors />
