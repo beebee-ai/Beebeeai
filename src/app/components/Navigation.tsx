@@ -9,7 +9,7 @@ import { navContent, t } from '../locales/navContent';
 function BeeSigmaWordmark() {
   return (
     <span className="inline-flex items-baseline tracking-[-0.02em]" aria-hidden="true">
-      <span className="font-bold text-[#f5a400]">BEE</span>
+      <span className="font-bold text-[#ffb028]">BEE</span>
       <span className="font-semibold text-[#b9b9b9]">Sigma</span>
     </span>
   );
