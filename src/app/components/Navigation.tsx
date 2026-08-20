@@ -6,6 +6,15 @@ const logoImage = "https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/ico
 import { useLanguage } from '../contexts/LanguageContext';
 import { navContent, t } from '../locales/navContent';
 
+function BeeSigmaWordmark() {
+  return (
+    <span className="inline-flex items-baseline tracking-[-0.02em]" aria-hidden="true">
+      <span className="font-bold text-[#f5a400]">BEE</span>
+      <span className="font-semibold text-[#b9b9b9]">Sigma</span>
+    </span>
+  );
+}
+
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { language, toggleLanguage } = useLanguage();
@@ -37,8 +46,8 @@ export function Navigation() {
               </Link>
             </div>
             {navItems.map((item) => item.external ? (
-              <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors text-sm whitespace-nowrap">
-                {t(navContent[item.labelKey], language)}
+              <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" aria-label="BEESigma" className="text-white hover:opacity-80 transition-opacity text-base whitespace-nowrap">
+                {item.labelKey === 'beeSigma' ? <BeeSigmaWordmark /> : t(navContent[item.labelKey], language)}
               </a>
             ) : (
               <Link key={item.href} to={item.href.startsWith('/') || isHomePage ? item.href : `/${item.href}`} className="text-white hover:text-gray-300 transition-colors text-sm whitespace-nowrap">
@@ -81,8 +90,8 @@ export function Navigation() {
         <div className="md:hidden bg-black border-t border-white/10">
           <div className="px-4 pt-2 pb-4 space-y-3">
             {navItems.map((item) => item.external ? (
-              <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" className="block text-white hover:text-gray-300 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
-                {t(navContent[item.labelKey], language)}
+              <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" aria-label="BEESigma" className="block text-lg hover:opacity-80 transition-opacity py-2" onClick={() => setIsMenuOpen(false)}>
+                {item.labelKey === 'beeSigma' ? <BeeSigmaWordmark /> : t(navContent[item.labelKey], language)}
               </a>
             ) : (
               <Link key={item.href} to={item.href.startsWith('/') || isHomePage ? item.href : `/${item.href}`} className="block text-white hover:text-gray-300 transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
