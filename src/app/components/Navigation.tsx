@@ -28,7 +28,7 @@ export function Navigation() {
     { labelKey: 'about', href: '#about' },
     { labelKey: 'contact', href: '#contact' },
     { labelKey: 'certificate', href: '/certificate' },
-    { labelKey: 'beeSigma', href: 'https://www.bee-sigma.com/', external: true },
+    { labelKey: 'beeSigma', href: 'https://beesigma.com/', external: true },
   ] as const;
 
   // 判断是否在首页

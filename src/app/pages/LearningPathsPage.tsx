@@ -61,7 +61,7 @@ export function LearningPathsPage() {
           <div><Users className="text-orange-500" /><h2 className="mt-5 text-2xl md:text-3xl font-semibold">{zh ? '还不确定怎么选？' : 'Still deciding?'}</h2></div>
           <div className="space-y-4 text-gray-400 leading-7">
             {[zh ? '12–19 岁且希望建立 AI 项目基础，优先了解 ALPHA。' : 'Ages 12–19: start with ALPHA.', zh ? '18 岁以上并希望完成产品或工程交付，优先了解 BETA。' : 'Ages 18+ with product or engineering goals: explore BETA.', zh ? '企业知识库、Agent 或流程落地需求，请直接进入 BEE Sigma。' : 'For enterprise knowledge, agents and workflows, visit BEE Sigma.'].map(item => <p key={item} className="flex gap-3"><Check className="text-orange-500 shrink-0 mt-1" size={18} />{item}</p>)}
-            <div className="pt-3 flex flex-wrap gap-5"><Link to="/#contact" className="text-white hover:text-orange-500">{zh ? '联系学习顾问' : 'Contact an advisor'} →</Link><a href="https://www.bee-sigma.com/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-orange-500 inline-flex items-center gap-2"><Landmark size={17} />{zh ? '企业 AI 咨询' : 'Enterprise AI'}</a></div>
+            <div className="pt-3 flex flex-wrap gap-5"><Link to="/#contact" className="text-white hover:text-orange-500">{zh ? '联系学习顾问' : 'Contact an advisor'} →</Link><a href="https://beesigma.com/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-orange-500 inline-flex items-center gap-2"><Landmark size={17} />{zh ? '企业 AI 咨询' : 'Enterprise AI'}</a></div>
           </div>
         </div>
       </section>
