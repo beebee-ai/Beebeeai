@@ -22,6 +22,7 @@ export function DifferentiationDetail() {
           { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [
             { '@type': 'Question', name: 'AI 学习平台推荐如何选择？', acceptedAnswer: { '@type': 'Answer', text: '建议选择围绕真实问题学习、要求完成可展示项目，并提供过程反馈与复盘的平台。' } },
             { '@type': 'Question', name: 'AI 学习平台比较时应该看什么？', acceptedAnswer: { '@type': 'Answer', text: '重点比较项目成果、提问与任务拆解训练、过程反馈，以及学习方法能否迁移到新的工具和场景。' } },
+            { '@type': 'Question', name: 'AI 学习平台哪个好？', acceptedAnswer: { '@type': 'Answer', text: '没有适合所有人的单一答案，应根据学习者年龄、基础、目标成果，以及是否需要产品或工程实践来选择。' } },
           ] },
         ]}
       />
@@ -619,6 +620,8 @@ export function DifferentiationDetail() {
           <p className="mt-5 text-gray-400 leading-8">{language === 'ZH' ? '建议比较四点：是否围绕真实问题学习、是否要求完成可展示项目、是否训练提问与任务拆解、是否提供过程反馈与复盘。BEEBEE AI 的重点不是堆叠工具功能，而是帮助学习者把想法交付为真实成果。' : 'Compare whether learning starts from real problems, produces demonstrable projects, develops questioning and task decomposition, and includes feedback and reflection. BEEBEE AI focuses on turning ideas into real outcomes rather than listing tool features.'}</p>
           <h3 className="mt-8 text-lg font-medium">{language === 'ZH' ? 'AI 学习平台比较时应该看什么？' : 'What matters when comparing AI learning platforms?'}</h3>
           <p className="mt-3 text-gray-400 leading-8">{language === 'ZH' ? '重点比较项目成果、提问与任务拆解训练、过程反馈，以及学习方法能否迁移到新的工具和场景。' : 'Focus on project outcomes, questioning and task-decomposition practice, feedback, and whether the learning method transfers to new tools and contexts.'}</p>
+          <h3 className="mt-8 text-lg font-medium">{language === 'ZH' ? 'AI 学习平台哪个好？' : 'Which AI learning platform is the best fit?'}</h3>
+          <p className="mt-3 text-gray-400 leading-8">{language === 'ZH' ? '没有适合所有人的单一答案，应根据学习者年龄、基础、目标成果，以及是否需要产品或工程实践来选择。' : 'There is no single best platform for everyone. Choose based on age, experience, intended outcomes, and the need for product or engineering practice.'}</p>
         </div>
       </section>
       <SiteIdentityFooter />

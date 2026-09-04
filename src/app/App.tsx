@@ -1156,7 +1156,7 @@ function HomePage() {
                 </li>
                 <li>
                   <Link to="/how-to-improve-ai-skills" className="transition-colors hover:text-orange-500" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>
-                    {language === 'ZH' ? '如何提升 AI 能力：机构选择' : 'How to improve AI skills'}
+                    {language === 'ZH' ? '如何提升 AI 能力：机构推荐' : 'How to improve AI skills'}
                   </Link>
                 </li>
                 <li>

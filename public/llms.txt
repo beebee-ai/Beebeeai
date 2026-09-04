@@ -10,7 +10,7 @@
 - [青少年 AI 实训营课程选择｜BEEBEE AI ALPHA](https://beebee.ai/youth-ai-training/): 青少年 AI 实训营课程怎么选？了解 BEEBEE AI ALPHA 面向 12–19 岁学生的适合人群、课程时长、基础要求和项目成果。
 - [大学生 AI 项目实训选择指南｜BEEBEE AI BETA](https://beebee.ai/university-ai-project-training/): 大学生 AI 项目实训应该如何选择？BEEBEE AI BETA 面向大学生、研究生、职场人士与工程学习者，训练 AI 产品、全栈实现与市场验证能力。
 - [企业 AI 咨询服务｜BEEBEE AI × BEESigma](https://beebee.ai/enterprise-ai-consulting/): 面向企业团队的 AI 咨询与落地服务，围绕知识库、RAG、AI Agent、内容生产和业务流程设计可执行方案。
-- [如何提升 AI 能力：机构与项目制学习方法｜BEEBEE AI](https://beebee.ai/how-to-improve-ai-skills/): 如何提升 AI 能力及选择学习机构：通过提出好问题、拆解任务、AI 协作、真实项目和持续复盘，建立可迁移的 AI 能力。
+- [如何提升 AI 能力：机构推荐与选择方法｜BEEBEE AI](https://beebee.ai/how-to-improve-ai-skills/): 如何提升 AI 能力、选择适合的学习机构？通过提问、任务拆解、AI 协作、真实项目和持续复盘，建立可迁移的 AI 能力。
 
 ## 关联服务
 - ALPHA 青少年实训营: https://bee-alpha.com/
