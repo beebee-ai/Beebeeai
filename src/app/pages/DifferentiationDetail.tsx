@@ -586,8 +586,8 @@ export function DifferentiationDetail() {
             >
               {t(differentiationContent.cta.button1, language)}
             </Link>
-            <Link to="/ai-learning-paths" className="px-8 py-4 border border-orange-500/40 rounded-lg hover:bg-orange-500/10 transition-colors text-white">
-              {language === 'ZH' ? '选择学习路线' : 'Choose a learning path'}
+            <Link to="/#platform" className="px-8 py-4 border border-orange-500/40 rounded-lg hover:bg-orange-500/10 transition-colors text-white">
+              {language === 'ZH' ? '查看实训入口' : 'Explore training options'}
             </Link>
             <Link to="/student-projects" className="px-8 py-4 border border-white/30 rounded-lg hover:bg-white/10 transition-colors text-white">
               {language === 'ZH' ? '查看真实项目' : 'View real projects'}

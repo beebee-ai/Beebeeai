@@ -13,6 +13,7 @@ export function CertificatePage() {
         title={zh ? 'BEEBEE AI 证书查询｜学习成果与能力证明' : 'BEEBEE AI Certificate Verification'}
         description={zh ? '查询并了解 BEEBEE AI 实训营学习证书。证书用于记录学习者完成的课程与项目成果，具体信息以证书记录为准。' : 'Verify and learn about BEEBEE AI training certificates and the learning and project outcomes they record.'}
         path="/certificate/"
+        structuredData={{ '@context': 'https://schema.org', '@type': 'EducationalOccupationalCredential', name: 'BEEBEE AI 实训营学习证书', description: '记录学习者参与的实训营、完成的学习阶段与项目成果，并通过证书编号关联官方记录。', credentialCategory: 'Certificate', recognizedBy: { '@id': 'https://beebee.ai/#organization' }, url: 'https://beebee.ai/certificate/' }}
       />
       <Navigation />
       <main className="pt-16 pb-24">

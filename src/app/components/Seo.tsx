@@ -22,6 +22,7 @@ export function Seo({ title, description, path = '/', type = 'website', structur
       <meta name="description" content={description} />
       <meta name="robots" content="index, follow, max-image-preview:large" />
       <link rel="canonical" href={canonical} />
+      <link rel="alternate" type="application/rss+xml" title="BEEBEE AI 内容更新" href={`${SITE_URL}/feed.xml`} />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content="BEEBEE AI" />
       <meta property="og:title" content={title} />
