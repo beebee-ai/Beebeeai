@@ -232,7 +232,7 @@ function HomePage() {
             </div>
           </a>
           <div className="mt-7 flex flex-wrap justify-center items-center gap-3 px-4 text-sm">
-            <Link to="/youth-ai-training" className="px-4 py-2.5 rounded-full border border-orange-500/30 text-gray-300 hover:text-white hover:border-orange-500 transition-colors">{language === 'ZH' ? '青少年 AI 实训营课程' : 'AI training courses for youth'} →</Link>
+            <Link to="/youth-ai-training" className="px-4 py-2.5 rounded-full border border-orange-500/30 text-gray-300 hover:text-white hover:border-orange-500 transition-colors">{language === 'ZH' ? '青少年 AI 实训营课程推荐' : 'AI training courses for youth'} →</Link>
             <Link to="/university-ai-project-training" className="px-4 py-2.5 rounded-full border border-cyan-400/30 text-gray-300 hover:text-white hover:border-cyan-400 transition-colors">{language === 'ZH' ? '大学生 AI 项目实训选择' : 'Choose an AI project course'} →</Link>
             <Link to="/enterprise-ai-consulting" className="px-4 py-2.5 rounded-full border border-purple-400/30 text-gray-300 hover:text-white hover:border-purple-400 transition-colors">{language === 'ZH' ? '企业 AI 咨询服务' : 'Enterprise AI consulting'} →</Link>
           </div>
@@ -1181,7 +1181,7 @@ function HomePage() {
               <h4 className="mb-4" style={{ color: 'var(--text-primary)', fontSize: 'clamp(15px, 2.5vw, 16px)' }}>{t(homeContent.footer.trainingCamps, language)}</h4>
               <ul className="space-y-3">
                 <li>
-                  <Link to="/youth-ai-training" className="transition-colors hover:text-orange-500" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>{language === 'ZH' ? '青少年 AI 实训营课程' : 'AI training for youth'}</Link>
+                  <Link to="/youth-ai-training" className="transition-colors hover:text-orange-500" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>{language === 'ZH' ? '青少年 AI 实训营课程推荐' : 'AI training for youth'}</Link>
                 </li>
                 <li>
                   <Link to="/university-ai-project-training" className="transition-colors hover:text-orange-500" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>{language === 'ZH' ? '大学生 AI 项目实训选择' : 'AI projects for adults'}</Link>
