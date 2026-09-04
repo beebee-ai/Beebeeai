@@ -3,6 +3,7 @@ import { Seo } from '../components/Seo';
 import { useLanguage } from '../contexts/LanguageContext';
 import CertificateQuery from '../components/CertificateQuery';
 import { Award, CheckCircle2, Mail } from 'lucide-react';
+import { SiteIdentityFooter } from '../components/SiteIdentityFooter';
 
 export function CertificatePage() {
   const { language } = useLanguage();
@@ -51,6 +52,7 @@ export function CertificatePage() {
           </div>
         </section>
       </main>
+      <SiteIdentityFooter />
     </div>
   );
 }

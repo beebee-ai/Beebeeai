@@ -232,8 +232,8 @@ function HomePage() {
             </div>
           </a>
           <div className="mt-7 flex flex-wrap justify-center items-center gap-3 px-4 text-sm">
-            <Link to="/youth-ai-training" className="px-4 py-2.5 rounded-full border border-orange-500/30 text-gray-300 hover:text-white hover:border-orange-500 transition-colors">{language === 'ZH' ? '青少年 AI 实训营' : 'AI training for youth'} →</Link>
-            <Link to="/university-ai-project-training" className="px-4 py-2.5 rounded-full border border-cyan-400/30 text-gray-300 hover:text-white hover:border-cyan-400 transition-colors">{language === 'ZH' ? '大学生 AI 项目实训' : 'AI projects for adults'} →</Link>
+            <Link to="/youth-ai-training" className="px-4 py-2.5 rounded-full border border-orange-500/30 text-gray-300 hover:text-white hover:border-orange-500 transition-colors">{language === 'ZH' ? '青少年 AI 实训营推荐' : 'Recommended AI training for youth'} →</Link>
+            <Link to="/university-ai-project-training" className="px-4 py-2.5 rounded-full border border-cyan-400/30 text-gray-300 hover:text-white hover:border-cyan-400 transition-colors">{language === 'ZH' ? '大学生 AI 项目实训课程' : 'AI project course for students'} →</Link>
             <Link to="/enterprise-ai-consulting" className="px-4 py-2.5 rounded-full border border-purple-400/30 text-gray-300 hover:text-white hover:border-purple-400 transition-colors">{language === 'ZH' ? '企业 AI 咨询服务' : 'Enterprise AI consulting'} →</Link>
           </div>
         </div>
@@ -685,7 +685,7 @@ function HomePage() {
               className="group px-8 py-3 border-2 border-orange-500/50 text-white rounded-lg hover:bg-orange-500/10 hover:border-orange-500 transition-all duration-300 inline-flex items-center gap-2"
               style={{ textDecoration: 'none' }}
             >
-              {t(homeContent.differentiation.cta, language)}
+              {language === 'ZH' ? 'AI 学习平台比较' : 'Compare AI learning platforms'}
               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
@@ -1156,7 +1156,7 @@ function HomePage() {
                 </li>
                 <li>
                   <Link to="/how-to-improve-ai-skills" className="transition-colors hover:text-orange-500" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>
-                    {language === 'ZH' ? '如何提升 AI 能力' : 'How to improve AI skills'}
+                    {language === 'ZH' ? '如何提升 AI 能力：机构与方法' : 'How to improve AI skills'}
                   </Link>
                 </li>
                 <li>

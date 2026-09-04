@@ -5,6 +5,7 @@ import { Navigation } from '../components/Navigation';
 import { Seo } from '../components/Seo';
 import { useLanguage } from '../contexts/LanguageContext';
 import { homeContent, t } from '../locales/homeContent';
+import { SiteIdentityFooter } from '../components/SiteIdentityFooter';
 
 type ProjectFilter = 'all' | 'alpha' | 'beta';
 
@@ -86,5 +87,6 @@ export function StudentProjectsPage() {
         </div>
       </section>
     </main>
+    <SiteIdentityFooter />
   </div>;
 }
