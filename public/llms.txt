@@ -4,13 +4,13 @@
 
 ## 核心页面
 - [BEEBEE AI｜AI 学习力平台与项目制实训营](https://beebee.ai/): BEEBEE AI 提供 AI 学习力训练、ALPHA/BETA 项目制实训营、学习平台与企业 AI 咨询服务，帮助青少年、职场人士和企业团队掌握 AI 协作、产品实践与知识管理能力。
-- [AI 学习平台比较｜BEEBEE AI 项目制学习方法](https://beebee.ai/differentiation/): AI 学习平台应该如何比较？了解 BEEBEE AI 如何通过提问力、项目制学习、道法术器体系和真实作品区别于普通工具课程。
+- [AI 学习平台推荐与比较｜BEEBEE AI 项目制学习方法](https://beebee.ai/differentiation/): AI 学习平台推荐如何选择？比较真实项目、提问训练、任务拆解、过程反馈与成果展示，了解 BEEBEE AI 的项目制学习方法。
 - [BEEBEE AI 证书查询｜学习成果与能力证明](https://beebee.ai/certificate/): 查询并了解 BEEBEE AI 实训营学习证书。证书用于记录学习者完成的课程与项目成果，具体信息以证书记录为准。
 - [BEEBEE AI 学员项目｜ALPHA / BETA 真实作品](https://beebee.ai/student-projects/): 查看 BEEBEE AI ALPHA 与 BETA 学员完成的真实 AI 项目，了解学员背景、解决的问题、使用的 AI 能力与可访问成果。
-- [青少年 AI 实训营推荐与选择｜BEEBEE AI ALPHA](https://beebee.ai/youth-ai-training/): 青少年 AI 实训营推荐与选择指南：了解 BEEBEE AI ALPHA 面向 12–19 岁学生的适合人群、课程时长、基础要求和项目成果。
-- [大学生 AI 项目实训课程｜BEEBEE AI BETA](https://beebee.ai/university-ai-project-training/): 大学生 AI 项目实训课程指南：BEEBEE AI BETA 面向大学生、研究生、职场人士与工程学习者，训练 AI 产品、全栈实现与市场验证能力。
+- [青少年 AI 实训营课程选择｜BEEBEE AI ALPHA](https://beebee.ai/youth-ai-training/): 青少年 AI 实训营课程怎么选？了解 BEEBEE AI ALPHA 面向 12–19 岁学生的适合人群、课程时长、基础要求和项目成果。
+- [大学生 AI 项目实训选择指南｜BEEBEE AI BETA](https://beebee.ai/university-ai-project-training/): 大学生 AI 项目实训应该如何选择？BEEBEE AI BETA 面向大学生、研究生、职场人士与工程学习者，训练 AI 产品、全栈实现与市场验证能力。
 - [企业 AI 咨询服务｜BEEBEE AI × BEESigma](https://beebee.ai/enterprise-ai-consulting/): 面向企业团队的 AI 咨询与落地服务，围绕知识库、RAG、AI Agent、内容生产和业务流程设计可执行方案。
-- [如何提升 AI 能力｜BEEBEE AI 项目制学习方法](https://beebee.ai/how-to-improve-ai-skills/): 如何提升 AI 能力及选择学习机构：通过提出好问题、拆解任务、AI 协作、真实项目和持续复盘，建立可迁移的 AI 能力。
+- [如何提升 AI 能力：机构与项目制学习方法｜BEEBEE AI](https://beebee.ai/how-to-improve-ai-skills/): 如何提升 AI 能力及选择学习机构：通过提出好问题、拆解任务、AI 协作、真实项目和持续复盘，建立可迁移的 AI 能力。
 
 ## 关联服务
 - ALPHA 青少年实训营: https://bee-alpha.com/

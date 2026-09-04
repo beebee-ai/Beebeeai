@@ -13,13 +13,13 @@ export function DifferentiationDetail() {
   return (
     <div className="min-h-screen text-white" style={{ backgroundColor: 'var(--bg-deep)' }}>
       <Seo
-        title="AI 学习平台比较｜BEEBEE AI 项目制学习方法"
-        description="AI 学习平台应该如何比较？了解 BEEBEE AI 如何通过提问力、项目制学习、道法术器体系和真实作品区别于普通工具课程。"
+        title="AI 学习平台推荐与比较｜BEEBEE AI 项目制学习方法"
+        description="AI 学习平台推荐如何选择？比较真实项目、提问训练、任务拆解、过程反馈与成果展示，了解 BEEBEE AI 的项目制学习方法。"
         path="/differentiation/"
         type="article"
         structuredData={[
-          { '@context': 'https://schema.org', '@type': 'Article', headline: 'AI 学习平台比较与 BEEBEE AI 项目制学习方法', description: '比较 AI 学习平台的项目成果、提问训练、任务拆解和过程反馈。', author: { '@id': 'https://beebee.ai/#organization' }, publisher: { '@id': 'https://beebee.ai/#organization' }, mainEntityOfPage: 'https://beebee.ai/differentiation/' },
-          { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [{ '@type': 'Question', name: 'AI 学习平台应该如何比较？', acceptedAnswer: { '@type': 'Answer', text: '建议比较是否围绕真实问题学习、是否要求完成可展示项目、是否训练提问与任务拆解，以及是否提供过程反馈与复盘。' } }] },
+          { '@context': 'https://schema.org', '@type': 'Article', headline: 'AI 学习平台推荐与比较：BEEBEE AI 项目制学习方法', description: '比较 AI 学习平台的项目成果、提问训练、任务拆解和过程反馈。', author: { '@id': 'https://beebee.ai/#organization' }, publisher: { '@id': 'https://beebee.ai/#organization' }, mainEntityOfPage: 'https://beebee.ai/differentiation/' },
+          { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [{ '@type': 'Question', name: 'AI 学习平台推荐如何选择？', acceptedAnswer: { '@type': 'Answer', text: '建议比较是否围绕真实问题学习、是否要求完成可展示项目、是否训练提问与任务拆解，以及是否提供过程反馈与复盘。' } }] },
         ]}
       />
       <Helmet>
@@ -612,7 +612,7 @@ export function DifferentiationDetail() {
       <section className="px-4 py-14 border-t border-white/10 bg-[#0d0f14]" aria-labelledby="platform-comparison">
         <div className="max-w-4xl mx-auto">
           <p className="text-xs font-mono tracking-[0.24em] text-orange-500 mb-4">AI LEARNING PLATFORM COMPARISON</p>
-          <h2 id="platform-comparison" className="text-2xl md:text-3xl font-semibold">{language === 'ZH' ? 'AI 学习平台应该如何比较？' : 'How should you compare AI learning platforms?'}</h2>
+          <h2 id="platform-comparison" className="text-2xl md:text-3xl font-semibold">{language === 'ZH' ? 'AI 学习平台推荐如何选择？' : 'How should you compare AI learning platforms?'}</h2>
           <p className="mt-5 text-gray-400 leading-8">{language === 'ZH' ? '建议比较四点：是否围绕真实问题学习、是否要求完成可展示项目、是否训练提问与任务拆解、是否提供过程反馈与复盘。BEEBEE AI 的重点不是堆叠工具功能，而是帮助学习者把想法交付为真实成果。' : 'Compare whether learning starts from real problems, produces demonstrable projects, develops questioning and task decomposition, and includes feedback and reflection. BEEBEE AI focuses on turning ideas into real outcomes rather than listing tool features.'}</p>
         </div>
       </section>
