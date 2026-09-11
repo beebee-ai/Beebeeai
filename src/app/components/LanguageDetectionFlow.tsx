@@ -75,10 +75,10 @@ export function LanguageDetectionFlow() {
         badge: 'bg-purple-500/20 text-purple-400',
       },
       orange: {
-        bg: 'bg-orange-500/10',
-        border: 'border-orange-500/30',
-        text: 'text-orange-400',
-        badge: 'bg-orange-500/20 text-orange-400',
+        bg: 'bg-gold-500/10',
+        border: 'border-gold-500/30',
+        text: 'text-gold-400',
+        badge: 'bg-gold-500/20 text-gold-400',
       },
     };
     return colors[color];
@@ -177,19 +177,19 @@ export function LanguageDetectionFlow() {
         <h3 className="text-lg font-semibold text-white mb-3">💡 关键特性</h3>
         <ul className="space-y-2 text-gray-300">
           <li className="flex items-start gap-2">
-            <span className="text-orange-500">•</span>
+            <span className="text-gold-500">•</span>
             <span><strong>短路逻辑：</strong>一旦找到有效值立即返回，不继续检测</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-orange-500">•</span>
+            <span className="text-gold-500">•</span>
             <span><strong>用户优先：</strong>用户手动选择的语言优先级最高</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-orange-500">•</span>
+            <span className="text-gold-500">•</span>
             <span><strong>优雅降级：</strong>即使所有检测失败也有默认语言兜底</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-orange-500">•</span>
+            <span className="text-gold-500">•</span>
             <span><strong>持久化：</strong>用户选择保存在 localStorage，下次访问自动应用</span>
           </li>
         </ul>

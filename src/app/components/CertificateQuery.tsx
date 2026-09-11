@@ -38,11 +38,11 @@ export default function CertificateQuery() {
   };
 
   return <div className="pt-10 md:pt-12 pb-4 md:pb-5 px-4 relative overflow-hidden mx-auto">
-    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#ff6900]/5 blur-[120px] rounded-full pointer-events-none" />
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#ffb028]/5 blur-[120px] rounded-full pointer-events-none" />
     <div className="max-w-4xl mx-auto relative z-10">
       <div className="text-center mb-8 md:mb-10">
         <div className="flex items-center justify-center gap-3 md:gap-4 mb-4">
-          <span className="inline-flex items-center justify-center p-2.5 md:p-3 bg-[#ff6900]/10 rounded-xl md:rounded-2xl border border-[#ff6900]/20" aria-hidden="true"><Award className="w-7 h-7 md:w-8 md:h-8 text-[#ff6900]" /></span>
+          <span className="inline-flex items-center justify-center p-2.5 md:p-3 bg-[#ffb028]/10 rounded-xl md:rounded-2xl border border-[#ffb028]/20" aria-hidden="true"><Award className="w-7 h-7 md:w-8 md:h-8 text-[#ffb028]" /></span>
           <h1 className="text-4xl md:text-5xl font-bold text-white">证书查询</h1>
         </div>
         <p className="text-gray-400 text-lg">输入您的姓名获取官方认证与权威背书</p>
@@ -50,10 +50,10 @@ export default function CertificateQuery() {
       <div className="bg-[#16181d] border border-white/5 rounded-3xl p-6 md:p-8 shadow-2xl mb-6 md:mb-8">
         <form onSubmit={handleSearch} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-2"><label htmlFor="certificate-name" className="block text-sm font-medium text-gray-300">证书姓名 <span className="text-[#ff6900]">*</span></label><input id="certificate-name" value={name} onChange={event => setName(event.target.value)} placeholder="请输入真实姓名（例：San Zhang）" className="w-full bg-[#0f1115] border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-[#ff6900] focus:ring-1 focus:ring-[#ff6900]" required /></div>
-            <div className="space-y-2"><label htmlFor="course-number" className="block text-sm font-medium text-gray-300">课程编号 <span className="text-gray-500 font-normal ml-1">（选填）</span></label><input id="course-number" value={courseNumber} onChange={event => setCourseNumber(event.target.value)} placeholder="请输入课程编号（例：SNBG01-251227）" className="w-full bg-[#0f1115] border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-[#ff6900] focus:ring-1 focus:ring-[#ff6900]" /></div>
+            <div className="space-y-2"><label htmlFor="certificate-name" className="block text-sm font-medium text-gray-300">证书姓名 <span className="text-[#ffb028]">*</span></label><input id="certificate-name" value={name} onChange={event => setName(event.target.value)} placeholder="请输入真实姓名（例：San Zhang）" className="field" required /></div>
+            <div className="space-y-2"><label htmlFor="course-number" className="block text-sm font-medium text-gray-300">课程编号 <span className="text-gray-500 font-normal ml-1">（选填）</span></label><input id="course-number" value={courseNumber} onChange={event => setCourseNumber(event.target.value)} placeholder="请输入课程编号（例：SNBG01-251227）" className="field" /></div>
           </div>
-          <button type="submit" disabled={isSearching || !name.trim()} className="w-full bg-[#ff6900] hover:bg-[#ff6900]/90 disabled:bg-[#ff6900]/50 disabled:cursor-not-allowed text-white font-medium py-4 rounded-xl flex items-center justify-center gap-2 transition-all">
+          <button type="submit" disabled={isSearching || !name.trim()} className="w-full bg-[#ffb028] hover:bg-[#ffb028]/90 disabled:bg-[#ffb028]/50 disabled:cursor-not-allowed text-white font-medium py-4 rounded-xl flex items-center justify-center gap-2 transition-all">
             {isSearching ? <><span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />正在查询...</> : <><Search className="w-5 h-5" />立即查询</>}
           </button>
         </form>

@@ -12,10 +12,10 @@ export function SiteIdentityFooter() {
     <div className="max-w-6xl mx-auto grid md:grid-cols-[.6fr_1.4fr] gap-7 md:gap-12 text-sm">
       <div>
         <p className="font-semibold text-white">BEEBEE AI</p>
-        <a href="mailto:service@beebee.ai" className="mt-3 inline-flex items-center gap-2 text-gray-400 hover:text-orange-500 transition-colors"><Mail size={15} />service@beebee.ai</a>
+        <a href="mailto:service@beebee.ai" className="mt-3 inline-flex items-center gap-2 text-gray-400 hover:text-gold-500 transition-colors"><Mail size={15} />service@beebee.ai</a>
       </div>
       <div className="grid sm:grid-cols-2 gap-4 text-gray-500 leading-6">
-        {addresses[language].map(address => <p key={address} className="flex items-start gap-2"><MapPin size={15} className="shrink-0 mt-1 text-orange-500" /><span>{address}</span></p>)}
+        {addresses[language].map(address => <p key={address} className="flex items-start gap-2"><MapPin size={15} className="shrink-0 mt-1 text-gold-500" /><span>{address}</span></p>)}
       </div>
     </div>
   </footer>;

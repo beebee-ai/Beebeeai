@@ -1,9 +1,8 @@
 import { lazy, Suspense, useEffect, useRef } from 'react';
 import { Navigation } from './components/Navigation';
-import { Link, BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { Link, BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { DifferentiationDetail } from './pages/DifferentiationDetail';
-import { ArrowRight } from 'react-feather';
-import { Anchor, Layers, Target, Zap, Lightbulb, Database, Funnel, FlaskConical, Share2, Sparkles } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { homeContent, t } from './locales/homeContent';
 import { ContactForm } from './components/ContactForm';
@@ -12,6 +11,11 @@ import { StudentWorksSection } from './components/StudentWorksSection';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 import { Seo } from './components/Seo';
 import { FaqSection, faqItems } from './components/FaqSection';
+import { GrowthPathSection } from './components/GrowthPathSection';
+import { SigmaCasesSection } from './components/SigmaCasesSection';
+import { Reveal } from './components/Reveal';
+import { Hero } from './components/Hero';
+import { SectionHeader } from './components/SectionHeader';
 import { StudentProjectsPage } from './pages/StudentProjectsPage';
 import { IntentLandingPage } from './pages/IntentLandingPage';
 const CertificatePage = lazy(() => import('./pages/CertificatePage').then(module => ({ default: module.CertificatePage })));
@@ -52,868 +56,100 @@ function HomePage() {
   const { language } = useLanguage();
   
   return (
-    <div className="min-h-screen text-white" style={{ backgroundColor: 'var(--bg-deep)' }}>
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--bg)', color: 'var(--txt)' }}>
       <Seo
-        title="BEEBEE AI｜AI 学习力平台与项目制实训营"
-        description="BEEBEE AI 提供 AI 学习力训练、ALPHA/BETA 项目制实训营、学习平台与企业 AI 咨询服务，帮助青少年、职场人士和企业团队掌握 AI 协作、产品实践与知识管理能力。"
+        title="BEEBEE AI｜企业 AI 陪跑专家"
+        description="BEEBEE AI 是企业 AI 陪跑专家：AI Native、可管理的企业 Agent 平台，连接企业现有系统，持续构建、运营和优化 AI Agent，从第一个 Agent 上线到 AI 真正进入企业日常业务。"
         structuredData={[
-          { '@context': 'https://schema.org', '@type': 'Organization', '@id': 'https://beebee.ai/#organization', name: 'BEEBEE AI', url: 'https://beebee.ai/', email: 'service@beebee.ai', logo: 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/beebee-ai/icons/web-app-manifest-512x512.png', sameAs: ['https://bee-alpha.com/', 'https://bee-beta.com/', 'https://beesigma.com/'], contactPoint: { '@type': 'ContactPoint', contactType: 'customer service', email: 'service@beebee.ai', availableLanguage: ['Chinese', 'English'] }, knowsAbout: ['AI 学习力', '青少年 AI 实训', 'AI 项目制学习', 'AI 产品开发', 'RAG', 'AI Agent', '企业知识管理'], address: [{ '@type': 'PostalAddress', streetAddress: 'B:Hive, 74 Taharoto Road, Smales Farm, Takapuna', addressLocality: 'Auckland', addressCountry: 'NZ' }, { '@type': 'PostalAddress', streetAddress: '成都高新孵化园 1 号楼 A 座', addressLocality: '成都', addressRegion: '四川', addressCountry: 'CN' }] },
-          { '@context': 'https://schema.org', '@type': 'Person', name: '周品', alternateName: 'Pin Zhou', jobTitle: 'BEEBEE AI 创始人 / 创业导师', worksFor: { '@id': 'https://beebee.ai/#organization' }, description: '拥有 20 年以上 IT 与互联网产品运营创业经验和 8 年 AI 实战经验。' },
+          { '@context': 'https://schema.org', '@type': 'Organization', '@id': 'https://beebee.ai/#organization', name: 'BEEBEE AI', url: 'https://beebee.ai/', email: 'service@beebee.ai', logo: 'https://beebee.ai/brand/icon-512.png', sameAs: ['https://bee-alpha.com/', 'https://bee-beta.com/', 'https://beesigma.com/'], contactPoint: { '@type': 'ContactPoint', contactType: 'customer service', email: 'service@beebee.ai', availableLanguage: ['Chinese', 'English'] }, knowsAbout: ['企业 AI 陪跑', 'AI Agent', '企业 Agent 平台', '业务流程自动化', 'RAG', 'AI 项目制实训', 'AI 人才培养'], address: [{ '@type': 'PostalAddress', streetAddress: 'B:Hive, 74 Taharoto Road, Smales Farm, Takapuna', addressLocality: 'Auckland', addressCountry: 'NZ' }, { '@type': 'PostalAddress', streetAddress: '成都高新孵化园 1 号楼 A 座', addressLocality: '成都', addressRegion: '四川', addressCountry: 'CN' }] },
+          { '@context': 'https://schema.org', '@type': 'Person', name: '周品', alternateName: 'Pin Zhou', jobTitle: 'BEEBEE AI 创始人 / 创业导师', worksFor: { '@id': 'https://beebee.ai/#organization' }, description: '拥有 25 年以上 IT 与互联网产品运营创业经验和 8 年 AI 实战经验。' },
           { '@context': 'https://schema.org', '@type': 'Person', name: 'Vito Liu', jobTitle: '高级 AI 工程师', worksFor: { '@id': 'https://beebee.ai/#organization' }, alumniOf: { '@type': 'CollegeOrUniversity', name: 'McGill University' }, description: '计算机科学与数学双学位，专注 RAG 系统和 LLM 应用开发。' },
           { '@context': 'https://schema.org', '@type': 'Person', name: 'Fred Chi', alternateName: '池老师', jobTitle: '首席程序员', worksFor: { '@id': 'https://beebee.ai/#organization' }, description: '拥有 25 年技术经验，擅长私有模型部署、分布式系统架构和高性能数据处理。' },
           { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map(item => ({ '@type': 'Question', name: item.zh[0], acceptedAnswer: { '@type': 'Answer', text: item.zh[1] } })) },
-          { '@context': 'https://schema.org', '@type': 'Course', '@id': 'https://bee-alpha.com/#course', name: 'BEEBEE AI ALPHA 实训营', description: '面向青少年的 AI 教育训练营，围绕真实任务、AI 工具与工作流搭建形成可展示成果。', url: 'https://bee-alpha.com/', provider: { '@id': 'https://beebee.ai/#organization' }, audience: { '@type': 'Audience', audienceType: '12–19 岁青少年' }, hasCourseInstance: [{ '@type': 'CourseInstance', name: 'ALPHA 启航营（Genesis）', courseMode: 'Online', timeRequired: 'PT18H' }, { '@type': 'CourseInstance', name: 'ALPHA 远航营（Odyssey）', courseMode: 'Online', timeRequired: 'PT27H' }] },
-          { '@context': 'https://schema.org', '@type': 'Course', '@id': 'https://bee-beta.com/#course', name: 'BEEBEE AI BETA 实训营', description: '通过真实项目训练 AI Native 产品、全栈工程与市场验证能力。', url: 'https://bee-beta.com/', provider: { '@id': 'https://beebee.ai/#organization' }, audience: { '@type': 'Audience', audienceType: '18 岁以上大学生、研究生和工程学习者' }, hasCourseInstance: [{ '@type': 'CourseInstance', name: 'BETA 星空营（Galaxy）', courseMode: 'Online', timeRequired: 'PT15H' }, { '@type': 'CourseInstance', name: 'BETA 深空营（Cosmos）', courseMode: 'Online', timeRequired: 'PT24H' }, { '@type': 'CourseInstance', name: 'BETA 无界营（Infinity）', courseMode: 'Online', timeRequired: 'PT36H' }] },
+          { '@context': 'https://schema.org', '@type': 'Course', '@id': 'https://bee-alpha.com/#course', name: 'BEEBEE AI Alpha 实训营', description: '面向青少年的 AI 教育训练营，围绕真实任务、AI 工具与工作流搭建形成可展示成果。', url: 'https://bee-alpha.com/', provider: { '@id': 'https://beebee.ai/#organization' }, audience: { '@type': 'Audience', audienceType: '12–19 岁青少年' }, hasCourseInstance: [{ '@type': 'CourseInstance', name: 'Alpha 启航营（Genesis）', courseMode: 'Online', timeRequired: 'PT18H' }, { '@type': 'CourseInstance', name: 'Alpha 远航营（Odyssey）', courseMode: 'Online', timeRequired: 'PT27H' }] },
+          { '@context': 'https://schema.org', '@type': 'Course', '@id': 'https://bee-beta.com/#course', name: 'BEEBEE AI Beta 实训营', description: '通过真实项目训练 AI Native 产品、全栈工程与市场验证能力。', url: 'https://bee-beta.com/', provider: { '@id': 'https://beebee.ai/#organization' }, audience: { '@type': 'Audience', audienceType: '18 岁以上大学生、研究生、在职工程师与创业者' }, hasCourseInstance: [{ '@type': 'CourseInstance', name: 'Beta 星空营（Galaxy）', courseMode: 'Online', timeRequired: 'P6W' }, { '@type': 'CourseInstance', name: 'Beta 深空营（Cosmos）', courseMode: 'Online', timeRequired: 'P8W' }, { '@type': 'CourseInstance', name: 'Beta 无界营（Infinity）', courseMode: 'Online', timeRequired: 'P12W' }] },
         ]}
       />
       <Helmet>
-        <meta name="keywords" content="AI学习力, 终身学习力, 人工智能学习平台, 个性化学习, 项目化学习, 青少年AI学习, 职场AI能力, 企业家学习力, AI创造力, AI竞争力, AI领导力, BEEBEE AI" />
+        <meta name="keywords" content="企业 AI 陪跑, 企业 Agent 平台, AI Agent 落地, 企业 AI 咨询, 业务流程自动化, AI Native, 可管理的 Agent, 新西兰 AI 落地, BEEBEE AI, BEE Sigma" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://beebee.ai" />
-        
-        {/* Favicons */}
-        <link rel="icon" type="image/x-icon" href="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/beebee-ai/icons/favicon.ico" />
-        <link rel="icon" type="image/svg+xml" href="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/beebee-ai/icons/favicon.svg" />
-        <link rel="icon" type="image/png" sizes="96x96" href="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/beebee-ai/icons/favicon-96x96.png" />
-        <link rel="apple-touch-icon" href="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/beebee-ai/icons/apple-touch-icon.png" />
-        <link rel="manifest" href="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/beebee-ai/icons/web-app-manifest-512x512.png" />
       </Helmet>
       <Navigation />
       
       {/* Hero Section */}
-      <section id="home" className="flex items-start px-4 relative overflow-hidden pb-8 md:pb-[10vh]" style={{ paddingTop: '20vh' }}>
-        {/* Honeycomb Background Pattern */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              {/* Standard honeycomb pattern - flat-top hexagons */}
-              <pattern id="honeycomb" x="0" y="0" width="90" height="52" patternUnits="userSpaceOnUse">
-                {/* Row 1 - Left hexagon */}
-                <path d="M15,0 L45,0 L60,26 L45,52 L15,52 L0,26 Z" 
-                  fill="none" 
-                  stroke="#FF6900" 
-                  strokeWidth="1.5"
-                  opacity="0.3"/>
-                {/* Row 2 - Right hexagon (offset) */}
-                <path d="M60,26 L90,26 L105,52 L90,78 L60,78 L45,52 Z" 
-                  fill="none" 
-                  stroke="#FF6900" 
-                  strokeWidth="1.5"
-                  opacity="0.3"/>
-              </pattern>
-              
-              {/* Radial gradient mask for center fade-out effect */}
-              <radialGradient id="centerFade">
-                <stop offset="0%" stopColor="#FFB380" stopOpacity="0"/>
-                <stop offset="30%" stopColor="#FFB380" stopOpacity="0.3"/>
-                <stop offset="50%" stopColor="#FFA366" stopOpacity="0.5"/>
-                <stop offset="70%" stopColor="#FFB380" stopOpacity="0.3"/>
-                <stop offset="100%" stopColor="#FFB380" stopOpacity="0"/>
-              </radialGradient>
-              
-              <mask id="honeycombMask">
-                <rect width="100%" height="100%" fill="url(#centerFade)"/>
-              </mask>
-            </defs>
-            
-            {/* Honeycomb grid with mask */}
-            <rect width="100%" height="100%" fill="url(#honeycomb)" mask="url(#honeycombMask)" />
-          </svg>
-        </div>
-        <div className="max-w-7xl mx-auto text-center w-full relative z-10" style={{ marginTop: '-8vh' }}>
-          <h1 className="mb-0 px-4" style={{ 
-            fontSize: 'clamp(32px, 8vw, 70px)', 
-            fontWeight: 600, 
-            lineHeight: 1.25,
-            letterSpacing: '0.5px',
-            color: '#fffffe'
-          }}>
-            {language === 'ZH' ? (
-              <>
-                用 <span style={{ 
-                  color: 'var(--orange-primary)',
-                  position: 'relative',
-                  display: 'inline-block'
-                }}>
-                  AI
-                  <svg 
-                    style={{
-                      position: 'absolute',
-                      bottom: '-4px',
-                      left: '50%',
-                      transform: 'translateX(-50%)',
-                      width: '100%',
-                      height: 'clamp(8px, 1.5vw, 12px)',
-                      overflow: 'visible'
-                    }}
-                    viewBox="0 0 100 12"
-                    preserveAspectRatio="none"
-                  >
-                    <path
-                      d="M 0 2 Q 50 12 100 2"
-                      fill="none"
-                      stroke="var(--orange-primary)"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </span> 进化学习力
-              </>
-            ) : (
-              <>
-                Evolve Learning with <span style={{ 
-                  color: 'var(--orange-primary)',
-                  position: 'relative',
-                  display: 'inline-block'
-                }}>
-                  AI
-                  <svg 
-                    style={{
-                      position: 'absolute',
-                      bottom: '-4px',
-                      left: '50%',
-                      transform: 'translateX(-50%)',
-                      width: '100%',
-                      height: 'clamp(8px, 1.5vw, 12px)',
-                      overflow: 'visible'
-                    }}
-                    viewBox="0 0 100 12"
-                    preserveAspectRatio="none"
-                  >
-                    <path
-                      d="M 0 2 Q 50 12 100 2"
-                      fill="none"
-                      stroke="var(--orange-primary)"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </span>
-              </>
-            )}
-          </h1>
-          <p className="mx-auto px-4" style={{
-            fontSize: 'clamp(18px, 3.5vw, 24px)',
-            lineHeight: 1.75,
-            color: 'var(--text-secondary)',
-            maxWidth: '680px',
-            marginTop: 'clamp(24px, 4vw, 32px)',
-            marginBottom: 'clamp(48px, 8vw, 80px)'
-          }}>
-            {t(homeContent.hero.subtitle, language)}
-          </p>
-          <a 
-            href="#platform"
-            className="inline-flex items-center gap-3 transition-all"
-            style={{
-              height: 'clamp(48px, 7vw, 52px)',
-              lineHeight: 'clamp(48px, 7vw, 52px)',
-              paddingLeft: 'clamp(24px, 4vw, 32px)',
-              paddingRight: 'clamp(24px, 4vw, 32px)',
-              backgroundColor: '#FFFFFF',
-              color: '#FF6900',
-              borderRadius: 'clamp(24px, 3.5vw, 26px)',
-              textDecoration: 'none',
-              fontWeight: 600,
-              fontSize: 'clamp(14px, 2.5vw, 16px)'
-            }}
-          >
-            {t(homeContent.hero.cta, language)}
-            <div style={{
-                width: 'clamp(20px, 3.5vw, 24px)',
-                height: 'clamp(20px, 3.5vw, 24px)',
-                borderRadius: '50%',
-                backgroundColor: '#FF6900',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}>
-              <ArrowRight size={14} color="#FFFFFF" strokeWidth={2.5} />
-            </div>
-          </a>
-          <div className="mt-7 flex flex-wrap justify-center items-center gap-3 px-4 text-sm">
-            <Link to="/youth-ai-training" className="px-4 py-2.5 rounded-full border border-orange-500/30 text-gray-300 hover:text-white hover:border-orange-500 transition-colors">{language === 'ZH' ? '青少年 AI 实训营课程推荐' : 'AI training courses for youth'} →</Link>
-            <Link to="/university-ai-project-training" className="px-4 py-2.5 rounded-full border border-cyan-400/30 text-gray-300 hover:text-white hover:border-cyan-400 transition-colors">{language === 'ZH' ? '大学生 AI 项目实训选择' : 'Choose an AI project course'} →</Link>
-            <Link to="/enterprise-ai-consulting" className="px-4 py-2.5 rounded-full border border-purple-400/30 text-gray-300 hover:text-white hover:border-purple-400 transition-colors">{language === 'ZH' ? '企业 AI 咨询服务' : 'Enterprise AI consulting'} →</Link>
-          </div>
-        </div>
-      </section>
+      <Hero />
 
-      {/* Learning Power Platform Section (includes both bootcamps and learning platform) */}
-      <section id="platform" className="px-4 border-t border-white/10 pt-8 md:pt-20 pb-8 md:pb-20" style={{ backgroundColor: 'var(--bg-surface)' }}>
-        <div className="max-w-7xl mx-auto w-full">
-          {/* Learning Power Platform - Bootcamps */}
-          <h2 className="mb-4 text-center" style={{ 
-            color: 'var(--text-primary)',
-            fontSize: 'clamp(24px, 5vw, 42px)',
-            fontWeight: 600,
-            letterSpacing: '1px',
-            lineHeight: 1.3
-          }}>{t(homeContent.platform.title, language)}</h2>
-          <p className="text-center mb-8 md:mb-16" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
-            {t(homeContent.platform.subtitle, language)}
-          </p>
-          
-          {/* Stats Section */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-20">
-            {/* Stat 1 */}
-            <div className="text-center rounded-lg border border-white/5 bg-white/[0.02] hover:border-cyan-500/30 hover:bg-white/[0.04] transition-all duration-300" style={{ padding: 'clamp(16px, 3vw, 24px)' }}>
-              <div style={{ 
-                fontSize: 'clamp(32px, 6vw, 48px)', 
-                fontWeight: 700,
-                background: 'linear-gradient(135deg, #06B6D4 0%, #22D3EE 100%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                color: 'transparent',
-                WebkitTextFillColor: 'transparent',
-                lineHeight: 1,
-                display: 'inline-block',
-                marginBottom: 'clamp(8px, 1.5vw, 12px)'
-              }}>
-                {t(homeContent.platform.stats.students.number, language)}
-              </div>
-              <p style={{ color: 'var(--text-secondary)', fontSize: 'clamp(13px, 2vw, 15px)', lineHeight: 1.4 }}>{t(homeContent.platform.stats.students.label, language)}</p>
-            </div>
+      {/* Growth Path Section: Alpha → Beta → Sigma (keeps id="platform") */}
+      <GrowthPathSection />
 
-            {/* Stat 2 */}
-            <div className="text-center rounded-lg border border-white/5 bg-white/[0.02] hover:border-blue-500/30 hover:bg-white/[0.04] transition-all duration-300" style={{ padding: 'clamp(16px, 3vw, 24px)' }}>
-              <div style={{ 
-                fontSize: 'clamp(32px, 6vw, 48px)', 
-                fontWeight: 700,
-                background: 'linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                color: 'transparent',
-                WebkitTextFillColor: 'transparent',
-                lineHeight: 1,
-                display: 'inline-block',
-                marginBottom: 'clamp(8px, 1.5vw, 12px)'
-              }}>
-                {t(homeContent.platform.stats.projects.number, language)}
-              </div>
-              <p style={{ color: 'var(--text-secondary)', fontSize: 'clamp(13px, 2vw, 15px)', lineHeight: 1.4 }}>{t(homeContent.platform.stats.projects.label, language)}</p>
-            </div>
-
-            {/* Stat 3 */}
-            <div className="text-center rounded-lg border border-white/5 bg-white/[0.02] hover:border-purple-500/30 hover:bg-white/[0.04] transition-all duration-300" style={{ padding: 'clamp(16px, 3vw, 24px)' }}>
-              <div style={{ 
-                fontSize: 'clamp(32px, 6vw, 48px)', 
-                fontWeight: 700,
-                background: 'linear-gradient(135deg, #A855F7 0%, #C084FC 100%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                color: 'transparent',
-                WebkitTextFillColor: 'transparent',
-                lineHeight: 1,
-                display: 'inline-block',
-                marginBottom: 'clamp(8px, 1.5vw, 12px)'
-              }}>
-                {t(homeContent.platform.stats.satisfaction.number, language)}
-              </div>
-              <p style={{ color: 'var(--text-secondary)', fontSize: 'clamp(13px, 2vw, 15px)', lineHeight: 1.4 }}>{t(homeContent.platform.stats.satisfaction.label, language)}</p>
-            </div>
-
-            {/* Stat 4 */}
-            <div className="text-center rounded-lg border border-white/5 bg-white/[0.02] hover:border-orange-500/30 hover:bg-white/[0.04] transition-all duration-300" style={{ padding: 'clamp(16px, 3vw, 24px)' }}>
-              <div style={{ 
-                fontSize: 'clamp(32px, 6vw, 48px)', 
-                fontWeight: 700,
-                background: 'linear-gradient(135deg, var(--orange-primary) 0%, #ff8c42 100%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                color: 'transparent',
-                WebkitTextFillColor: 'transparent',
-                lineHeight: 1,
-                display: 'inline-block',
-                marginBottom: 'clamp(8px, 1.5vw, 12px)'
-              }}>
-                {t(homeContent.platform.stats.support.number, language)}
-              </div>
-              <p style={{ color: 'var(--text-secondary)', fontSize: 'clamp(13px, 2vw, 15px)', lineHeight: 1.4 }}>{t(homeContent.platform.stats.support.label, language)}</p>
-            </div>
-          </div>
-          
-          <div className="max-w-[1154px] mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 md:mb-16">
-              {/* Alpha 实战营 */}
-            <div className="group p-8 border border-white/10 rounded-lg hover:border-orange-500/50 hover:bg-white/[0.02] transition-all duration-300 relative overflow-hidden">
-              {/* Background Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/0 to-orange-500/0 group-hover:from-orange-500/5 group-hover:to-orange-500/0 transition-all duration-300"></div>
-              
-              <div className="relative z-10">
-                <h3 className="mb-2" style={{ color: 'var(--orange-primary)', fontSize: 'clamp(20px, 4vw, 30px)', fontWeight: 700 }}>{t(homeContent.platform.alpha.title, language)}</h3>
-                <p className="mb-6" style={{ color: '#9CA3AF', fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.platform.alpha.subtitle, language)}</p>
-                <p className="mb-6" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#9CA3AF' }}>
-                  {t(homeContent.platform.alpha.description, language)}
-                </p>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div>
-                    </div>
-                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.alpha.features.feature1, language)}</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div>
-                    </div>
-                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.alpha.features.feature2, language)}</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div>
-                    </div>
-                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.alpha.features.feature3, language)}</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div>
-                    </div>
-                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.alpha.features.feature4, language)}</span>
-                  </li>
-                </ul>
-                <div className="flex justify-center">
-                  <a 
-                    href="https://bee-alpha.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-8 py-3 rounded-lg transition-all duration-300"
-                    style={{
-                      backgroundColor: 'transparent',
-                      border: '1.5px solid var(--orange-primary)',
-                      color: 'var(--orange-primary)',
-                      fontWeight: 600,
-                      textDecoration: 'none',
-                      display: 'inline-block'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = 'rgba(255, 105, 0, 0.15)';
-                      e.currentTarget.style.borderColor = 'var(--orange-primary)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = 'transparent';
-                      e.currentTarget.style.borderColor = 'var(--orange-primary)';
-                    }}
-                  >
-                    {t(homeContent.platform.alpha.cta, language)}
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Beta 实战营 */}
-            <div className="group p-8 border border-white/10 rounded-lg hover:border-cyan-500/50 hover:bg-white/[0.02] transition-all duration-300 relative overflow-hidden">
-              {/* Background Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 to-cyan-500/0 group-hover:from-cyan-500/5 group-hover:to-cyan-500/0 transition-all duration-300"></div>
-              
-              <div className="relative z-10">
-                <h3 className="mb-2" style={{ color: '#06B6D4', fontSize: 'clamp(20px, 4vw, 30px)', fontWeight: 700 }}>{t(homeContent.platform.beta.title, language)}</h3>
-                <p className="mb-6" style={{ color: '#9CA3AF', fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.platform.beta.subtitle, language)}</p>
-                <p className="mb-6" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#9CA3AF' }}>
-                  {t(homeContent.platform.beta.description, language)}
-                </p>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
-                    </div>
-                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.beta.features.feature1, language)}</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
-                    </div>
-                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.beta.features.feature2, language)}</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
-                    </div>
-                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.beta.features.feature3, language)}</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
-                    </div>
-                    <span style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.beta.features.feature4, language)}</span>
-                  </li>
-                </ul>
-                <div className="flex justify-center">
-                  <a 
-                    href="https://bee-beta.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-8 py-3 rounded-lg transition-all duration-300"
-                    style={{
-                      backgroundColor: 'transparent',
-                      border: '1.5px solid #06B6D4',
-                      color: '#06B6D4',
-                      fontWeight: 600,
-                      textDecoration: 'none',
-                      display: 'inline-block'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = 'rgba(6, 182, 212, 0.15)';
-                      e.currentTarget.style.borderColor = '#06B6D4';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = 'transparent';
-                      e.currentTarget.style.borderColor = '#06B6D4';
-                    }}
-                  >
-                    {t(homeContent.platform.beta.cta, language)}
-                  </a>
-                </div>
-              </div>
-            </div>
-            </div>
-          </div>
-          
-          {/* Learning Platform App - Part of the same section */}
-          <div>
-            <div className="p-8 border border-white/10 rounded-lg hover:border-purple-500/30 transition-colors">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {/* Left - Visual/Image Area */}
-                <div className="relative">
-                  <div className="aspect-[4/3] bg-gradient-to-br from-white/5 to-white/[0.02] rounded-lg border border-white/10 overflow-hidden relative group">
-                    {/* Real Image */}
-                    <img 
-                      src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/beebee_edu.jpg"
-                      alt="学习平台界面"
-                      className="w-full h-full object-cover"
-                    />
-                    {/* Dark Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  </div>
-                </div>
-
-                {/* Right - Content Area */}
-                <div>
-                  <h3 className="mb-2" style={{ color: '#A855F7', fontSize: 'clamp(20px, 4vw, 30px)', fontWeight: 700 }}>{t(homeContent.platform.learningPlatform.title, language)}</h3>
-                  <p className="mb-6" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.platform.learningPlatform.subtitle, language)}</p>
-                  <p className="mb-10" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>
-                    {t(homeContent.platform.learningPlatform.description, language)}
-                  </p>
-                  
-                  <h4 className="mb-6" style={{ color: '#A855F7', fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.platform.learningPlatform.featuresTitle, language)}</h4>
-                  <div className="space-y-4 mb-10">
-                    <div className="flex items-center gap-3">
-                      <svg className="w-5 h-5 text-purple-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <p style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.learningPlatform.features.feature1, language)}</p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <svg className="w-5 h-5 text-purple-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <p style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.learningPlatform.features.feature2, language)}</p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <svg className="w-5 h-5 text-purple-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <p style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.learningPlatform.features.feature3, language)}</p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <svg className="w-5 h-5 text-purple-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <p style={{ fontSize: 'clamp(14px, 2.5vw, 16px)', lineHeight: '1.75', color: '#D1D5DB' }}>{t(homeContent.platform.learningPlatform.features.feature4, language)}</p>
-                    </div>
-                  </div>
-                  
-                  <a 
-                    href="https://learn.beebee.ai/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-8 py-3 rounded-lg transition-all duration-300"
-                    style={{
-                      backgroundColor: 'transparent',
-                      border: '1.5px solid #A855F7',
-                      color: '#A855F7',
-                      fontWeight: 600,
-                      textDecoration: 'none'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = 'rgba(168, 85, 247, 0.15)';
-                      e.currentTarget.style.borderColor = '#A855F7';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = 'transparent';
-                      e.currentTarget.style.borderColor = '#A855F7';
-                    }}
-                  >
-                    {t(homeContent.platform.learningPlatform.cta, language)}
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Learning Curriculum Section - 我们的差异化 */}
-      <section id="system" className="px-4 border-t border-white/10 pt-8 md:pt-20 pb-8 md:pb-20 bg-black">
-        <div className="max-w-7xl mx-auto w-full">
-          <h2 className="mb-4 text-center" style={{ 
-            fontSize: 'clamp(24px, 5vw, 42px)',
-            fontWeight: 600,
-            letterSpacing: '1px',
-            lineHeight: 1.3
-          }}>{t(homeContent.differentiation.title, language)}</h2>
-          <p className="text-center text-gray-400 mb-8 md:mb-20" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.differentiation.subtitle, language)}</p>
-          
-          {/* Staggered Layout */}
-          <div className="max-w-6xl mx-auto space-y-8 md:space-y-24">
-            {/* Item 01 - Left aligned */}
-            <div className="relative grid md:grid-cols-12 gap-8 items-center">
-              <div className="md:col-span-7 group">
-                <div className="relative p-6 md:p-8 border border-white/10 rounded-2xl hover:border-cyan-500/30 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] transition-all duration-500 overflow-hidden bg-gradient-to-br from-cyan-500/[0.03] to-transparent">
-                  {/* Icon - Background positioned at top right */}
-                  <div className="absolute -top-4 -right-4 w-24 h-24 flex items-center justify-center rounded-2xl bg-cyan-500/5 border border-cyan-500/10 group-hover:bg-cyan-500/10 transition-all duration-300 rotate-12 group-hover:rotate-6">
-                    <Lightbulb className="w-12 h-12 text-cyan-400/40" />
-                  </div>
-                  
-                  <h3 className="mb-4 relative font-semibold" style={{ fontSize: 'clamp(18px, 3.5vw, 24px)' }}>{t(homeContent.differentiation.item1.title, language)}</h3>
-                  <p className="text-cyan-400 mb-6 relative font-medium leading-snug" style={{ fontSize: 'clamp(16px, 3vw, 20px)' }}>{t(homeContent.differentiation.item1.subtitle, language)}</p>
-                  <p className="text-gray-400 leading-relaxed relative" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
-                    {t(homeContent.differentiation.item1.description, language)}
-                  </p>
-                  
-                  {/* Accent line */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500/50 via-cyan-500/20 to-transparent"></div>
-                </div>
-              </div>
-              
-              {/* Right side - decorative number */}
-              <div className="hidden md:flex md:col-span-5 justify-center items-center">
-                <div className="text-[160px] font-bold text-transparent bg-clip-text bg-gradient-to-br from-cyan-400/50 to-cyan-600/20 select-none" style={{ lineHeight: 1 }}>
-                  01
-                </div>
-              </div>
-            </div>
-
-            {/* Item 02 - Right aligned */}
-            <div className="relative grid md:grid-cols-12 gap-8 items-center">
-              {/* Left side - decorative number */}
-              <div className="hidden md:flex md:col-span-5 justify-center items-center order-1 md:order-none">
-                <div className="text-[160px] font-bold text-transparent bg-clip-text bg-gradient-to-br from-blue-400/50 to-blue-600/20 select-none" style={{ lineHeight: 1 }}>
-                  02
-                </div>
-              </div>
-              
-              <div className="md:col-span-7 group order-2 md:order-none">
-                <div className="relative p-6 md:p-8 border border-white/10 rounded-2xl hover:border-blue-500/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500 overflow-hidden bg-gradient-to-br from-blue-500/[0.03] to-transparent">
-                  {/* Icon - Background positioned at top right */}
-                  <div className="absolute -top-4 -right-4 w-24 h-24 flex items-center justify-center rounded-2xl bg-blue-500/5 border border-blue-500/10 group-hover:bg-blue-500/10 transition-all duration-300 rotate-12 group-hover:rotate-6">
-                    <Target className="w-12 h-12 text-blue-400/40" />
-                  </div>
-                  
-                  <h3 className="mb-4 relative font-semibold" style={{ fontSize: 'clamp(18px, 3.5vw, 24px)' }}>{t(homeContent.differentiation.item2.title, language)}</h3>
-                  <p className="text-blue-400 mb-6 relative font-medium leading-snug" style={{ fontSize: 'clamp(16px, 3vw, 20px)' }}>{t(homeContent.differentiation.item2.subtitle, language)}</p>
-                  <p className="text-gray-400 leading-relaxed relative" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
-                    {t(homeContent.differentiation.item2.description, language)}
-                  </p>
-                  
-                  {/* Accent line */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500/20 to-blue-500/50"></div>
-                </div>
-              </div>
-            </div>
-
-            {/* Item 03 - Left aligned */}
-            <div className="relative grid md:grid-cols-12 gap-8 items-center">
-              <div className="md:col-span-7 group">
-                <div className="relative p-6 md:p-8 border border-white/10 rounded-2xl hover:border-purple-500/30 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-all duration-500 overflow-hidden bg-gradient-to-br from-purple-500/[0.03] to-transparent">
-                  {/* Icon - Background positioned at top right */}
-                  <div className="absolute -top-4 -right-4 w-24 h-24 flex items-center justify-center rounded-2xl bg-purple-500/5 border border-purple-500/10 group-hover:bg-purple-500/10 transition-all duration-300 rotate-12 group-hover:rotate-6">
-                    <Layers className="w-12 h-12 text-purple-400/40" />
-                  </div>
-                  
-                  <h3 className="mb-4 relative font-semibold" style={{ fontSize: 'clamp(18px, 3.5vw, 24px)' }}>{t(homeContent.differentiation.item3.title, language)}</h3>
-                  <p className="text-purple-400 mb-6 relative font-medium leading-snug" style={{ fontSize: 'clamp(16px, 3vw, 20px)' }}>{t(homeContent.differentiation.item3.subtitle, language)}</p>
-                  <p className="text-gray-400 leading-relaxed relative" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
-                    {t(homeContent.differentiation.item3.description, language)}
-                  </p>
-                  
-                  {/* Accent line */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500/50 via-purple-500/20 to-transparent"></div>
-                </div>
-              </div>
-              
-              {/* Right side - decorative number */}
-              <div className="hidden md:flex md:col-span-5 justify-center items-center">
-                <div className="text-[160px] font-bold text-transparent bg-clip-text bg-gradient-to-br from-purple-400/50 to-purple-600/20 select-none" style={{ lineHeight: 1 }}>
-                  03
-                </div>
-              </div>
-            </div>
-
-            {/* Item 04 - Right aligned */}
-            <div className="relative grid md:grid-cols-12 gap-8 items-center">
-              {/* Left side - decorative number */}
-              <div className="hidden md:flex md:col-span-5 justify-center items-center order-1 md:order-none">
-                <div className="text-[160px] font-bold text-transparent bg-clip-text bg-gradient-to-br from-orange-500/50 to-orange-600/20 select-none" style={{ lineHeight: 1 }}>
-                  04
-                </div>
-              </div>
-              
-              <div className="md:col-span-7 group order-2 md:order-none">
-                <div className="relative p-6 md:p-8 border border-white/10 rounded-2xl hover:border-orange-500/30 hover:shadow-[0_0_30px_rgba(255,105,0,0.15)] transition-all duration-500 overflow-hidden bg-gradient-to-br from-orange-500/[0.03] to-transparent">
-                  {/* Icon - Background positioned at top right */}
-                  <div className="absolute -top-4 -right-4 w-24 h-24 flex items-center justify-center rounded-2xl bg-orange-500/5 border border-orange-500/10 group-hover:bg-orange-500/10 transition-all duration-300 rotate-12 group-hover:rotate-6">
-                    <Sparkles className="w-12 h-12 text-orange-500/40" />
-                  </div>
-                  
-                  <h3 className="mb-4 relative font-semibold" style={{ fontSize: 'clamp(18px, 3.5vw, 24px)' }}>{t(homeContent.differentiation.item4.title, language)}</h3>
-                  <p className="text-orange-500 mb-6 relative font-medium leading-snug" style={{ fontSize: 'clamp(16px, 3vw, 20px)' }}>{t(homeContent.differentiation.item4.subtitle, language)}</p>
-                  <p className="text-gray-400 leading-relaxed relative" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
-                    {t(homeContent.differentiation.item4.description, language)}
-                  </p>
-                  
-                  {/* Accent line */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-orange-500/20 to-orange-500/50"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-16">
-            <Link 
-              to="/differentiation"
-              className="group px-8 py-3 border-2 border-orange-500/50 text-white rounded-lg hover:bg-orange-500/10 hover:border-orange-500 transition-all duration-300 inline-flex items-center gap-2"
-              style={{ textDecoration: 'none' }}
-            >
-              {language === 'ZH' ? 'AI 学习平台推荐与比较' : 'Compare AI learning platforms'}
-              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* BEE Sigma cases: three workflows */}
+      <SigmaCasesSection />
 
       {/* Student Works Section */}
-      <StudentWorksSection />
-
-      {/* Brand Philosophy Section */}
-      <section id="philosophy" className="px-4 border-t border-white/10 pt-8 md:pt-20 pb-8 md:pb-20 bg-black">
-        <div className="max-w-7xl mx-auto w-full">
-          <h2 className="mb-4 text-center" style={{ 
-            fontSize: 'clamp(24px, 5vw, 42px)',
-            fontWeight: 600,
-            letterSpacing: '1px',
-            lineHeight: 1.3
-          }}>{t(homeContent.philosophy.title, language)}</h2>
-          <p className="text-center text-gray-400 mb-8 md:mb-16" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.philosophy.subtitle, language)}</p>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Left Column - Vision and Core Concepts */}
-            <div className="space-y-10">
-              {/* Vision and Mission */}
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full border-2 border-cyan-500 flex items-center justify-center text-cyan-400">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div className="flex-1">
-                  <h3 className="mb-2" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)', fontWeight: 600 }}>{t(homeContent.philosophy.visionMission.title, language)}</h3>
-                  <p className="text-gray-400 mb-1" style={{ fontSize: 'clamp(13px, 2.2vw, 15px)', lineHeight: 1.6 }}>
-                    {t(homeContent.philosophy.visionMission.content, language)}
-                  </p>
-                </div>
-              </div>
-
-              {/* AI Era Enterprise */}
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full border-2 border-purple-500 flex items-center justify-center text-purple-400">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <div className="flex-1">
-                  <h3 className="mb-2" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)', fontWeight: 600 }}>{t(homeContent.philosophy.aiEra.title, language)}</h3>
-                  <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 15px)', lineHeight: 1.6 }}>
-                    {t(homeContent.philosophy.aiEra.content, language)}
-                  </p>
-                </div>
-              </div>
-
-              {/* System */}
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full border-2 border-blue-500 flex items-center justify-center text-blue-400">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                </div>
-                <div className="flex-1">
-                  <h3 className="mb-2" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)', fontWeight: 600 }}>{t(homeContent.philosophy.system.title, language)}</h3>
-                  <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 15px)', lineHeight: 1.6 }}>
-                    {t(homeContent.philosophy.system.content, language)}
-                  </p>
-                </div>
-              </div>
-
-              {/* Human-AI Co-creation */}
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full border-2 border-green-500 flex items-center justify-center text-green-400">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                </div>
-                <div className="flex-1">
-                  <h3 className="mb-2" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)', fontWeight: 600 }}>{t(homeContent.philosophy.humanAI.title, language)}</h3>
-                  <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 15px)', lineHeight: 1.6 }}>
-                    {t(homeContent.philosophy.humanAI.content, language)}
-                  </p>
-                </div>
-              </div>
-
-              {/* Lifelong Learning */}
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full border-2 border-orange-500 flex items-center justify-center text-orange-500">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                </div>
-                <div className="flex-1">
-                  <h3 className="mb-2" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)', fontWeight: 600 }}>{t(homeContent.philosophy.lifelongLearning.title, language)}</h3>
-                  <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 15px)', lineHeight: 1.6 }}>
-                    {t(homeContent.philosophy.lifelongLearning.content, language)}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column - Core Values */}
-            <div>
-              <div className="mb-8">
-                <p className="text-white mb-2" style={{ fontSize: 'clamp(12px, 2vw, 14px)' }}>{t(homeContent.philosophy.coreValues.label, language)}</p>
-                <h2 className="mb-4 text-orange-500" style={{ fontSize: 'clamp(20px, 4vw, 32px)', fontWeight: 600 }}>{t(homeContent.philosophy.coreValues.title, language)}</h2>
-                <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 15px)', lineHeight: 1.6 }}>{t(homeContent.philosophy.coreValues.subtitle, language)}</p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-6">
-                <div className="p-8 bg-white/5 border border-white/10 rounded-lg hover:border-orange-500/50 transition-colors">
-                  <div className="w-12 h-12 rounded-full bg-orange-500/10 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                    </svg>
-                  </div>
-                  <p className="text-white" style={{ fontSize: 'clamp(13px, 2.2vw, 15px)', lineHeight: 1.6 }}>{t(homeContent.philosophy.coreValues.value1, language)}</p>
-                </div>
-
-                <div className="p-8 bg-white/5 border border-white/10 rounded-lg hover:border-orange-500/50 transition-colors">
-                  <div className="w-12 h-12 rounded-full bg-orange-500/10 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                    </svg>
-                  </div>
-                  <p className="text-white" style={{ fontSize: 'clamp(13px, 2.2vw, 15px)', lineHeight: 1.6 }}>{t(homeContent.philosophy.coreValues.value2, language)}</p>
-                </div>
-
-                <div className="p-8 bg-white/5 border border-white/10 rounded-lg hover:border-orange-500/50 transition-colors">
-                  <div className="w-12 h-12 rounded-full bg-orange-500/10 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <p className="text-white" style={{ fontSize: 'clamp(13px, 2.2vw, 15px)', lineHeight: 1.6 }}>{t(homeContent.philosophy.coreValues.value3, language)}</p>
-                </div>
-
-                <div className="p-8 bg-white/5 border border-white/10 rounded-lg hover:border-orange-500/50 transition-colors">
-                  <div className="w-12 h-12 rounded-full bg-orange-500/10 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  <p className="text-white" style={{ fontSize: 'clamp(13px, 2.2vw, 15px)', lineHeight: 1.6 }}>{t(homeContent.philosophy.coreValues.value4, language)}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <StudentWorksSection compact />
 
       {/* About Us Section */}
-      <section id="about" className="px-4 border-t border-white/10 pt-8 md:pt-20 pb-8 md:pb-20 bg-white/[0.08]">
-        <div className="max-w-7xl mx-auto w-full">
-          <h2 className="mb-8 md:mb-16 text-center" style={{ 
-            fontSize: 'clamp(24px, 5vw, 42px)',
-            fontWeight: 600,
-            letterSpacing: '1px',
-            lineHeight: 1.3
-          }}>{t(homeContent.about.title, language)}</h2>
-          
-          {/* Company Introduction */}
-          <div className="mb-8 md:mb-20">
-            <div className="max-w-5xl mx-auto mb-12">
-              <div className="space-y-6 text-gray-300" style={{ lineHeight: '2', fontSize: 'clamp(14px, 2.5vw, 16px)' }}>
-                <p>
-                  {t(homeContent.about.intro.p1, language)}
-                </p>
-                <p>
-                  {t(homeContent.about.intro.p2, language)}
-                </p>
-                <p>
-                  {t(homeContent.about.intro.p3, language)}
-                </p>
-                <div className="border-y border-white/10 py-5 mt-8 grid sm:grid-cols-3 gap-5" aria-label={language === 'ZH' ? '品牌架构' : 'Brand architecture'}>
-                  <div><p className="text-orange-500 font-semibold mb-1">BEEBEE AI</p><p className="text-gray-500 text-sm leading-6">{language === 'ZH' ? 'AI 学习力与项目制实训' : 'AI learning and project training'}</p></div>
-                  <div><p className="text-cyan-400 font-semibold mb-1">2Brain</p><p className="text-gray-500 text-sm leading-6">{language === 'ZH' ? '企业知识管理与智能体产品' : 'Knowledge and agent product'}</p></div>
-                  <div><p className="text-purple-400 font-semibold mb-1">BEE Sigma</p><p className="text-gray-500 text-sm leading-6">{language === 'ZH' ? '企业 AI 咨询与落地服务' : 'Enterprise AI consulting'}</p></div>
-                </div>
-              </div>
-            </div>
+      <section id="about" className="pt-[110px] md:pt-[140px] pb-8">
+        <div className="wrap">
+          <SectionHeader eyebrow={language === 'ZH' ? '关于我们 · BEEBEE AI Ltd' : 'About · BEEBEE AI Ltd'} title={t(homeContent.about.title, language)} />
 
-            {/* Company Highlights */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-5xl mx-auto">
-              <div className="border border-white/10 rounded-lg hover:border-cyan-500/50 transition-colors" style={{ padding: 'clamp(12px, 3vw, 24px)' }}>
-                <div className="rounded-full bg-cyan-500/10 flex items-center justify-center mx-auto" style={{ width: 'clamp(32px, 6vw, 48px)', height: 'clamp(32px, 6vw, 48px)', marginBottom: 'clamp(8px, 2vw, 16px)' }}>
-                  <svg className="text-cyan-400" style={{ width: 'clamp(16px, 3vw, 24px)', height: 'clamp(16px, 3vw, 24px)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h4 className="text-center" style={{ fontSize: 'clamp(14px, 2.5vw, 18px)', marginBottom: 'clamp(6px, 1.5vw, 8px)' }}>{t(homeContent.about.highlights.globalTeam.title, language)}</h4>
-                <p className="text-gray-400 text-center" style={{ fontSize: 'clamp(11px, 2vw, 14px)', lineHeight: 1.5 }}>{t(homeContent.about.highlights.globalTeam.desc, language)}</p>
+          <div className="mt-12 grid lg:grid-cols-[1.15fr_.85fr] gap-5">
+            {/* 公司介绍 */}
+            <Reveal className="panel p-7 md:p-10">
+              <div className="space-y-5 lead" style={{ fontSize: '15.5px' }}>
+                <p style={{ fontSize: '15.5px' }}>{t(homeContent.about.intro.p1, language)}</p>
+                <p style={{ fontSize: '15.5px' }}>{t(homeContent.about.intro.p2, language)}</p>
+                <p style={{ fontSize: '15.5px' }}>{t(homeContent.about.intro.p3, language)}</p>
               </div>
+            </Reveal>
 
-              <div className="border border-white/10 rounded-lg hover:border-purple-500/50 transition-colors" style={{ padding: 'clamp(12px, 3vw, 24px)' }}>
-                <div className="rounded-full bg-purple-500/10 flex items-center justify-center mx-auto" style={{ width: 'clamp(32px, 6vw, 48px)', height: 'clamp(32px, 6vw, 48px)', marginBottom: 'clamp(8px, 2vw, 16px)' }}>
-                  <svg className="text-purple-400" style={{ width: 'clamp(16px, 3vw, 24px)', height: 'clamp(16px, 3vw, 24px)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                  </svg>
-                </div>
-                <h4 className="text-center" style={{ fontSize: 'clamp(14px, 2.5vw, 18px)', marginBottom: 'clamp(6px, 1.5vw, 8px)' }}>{t(homeContent.about.highlights.deepExperience.title, language)}</h4>
-                <p className="text-gray-400 text-center" style={{ fontSize: 'clamp(11px, 2vw, 14px)', lineHeight: 1.5 }}>{t(homeContent.about.highlights.deepExperience.desc, language)}</p>
-              </div>
-
-              <div className="border border-white/10 rounded-lg hover:border-blue-500/50 transition-colors" style={{ padding: 'clamp(12px, 3vw, 24px)' }}>
-                <div className="rounded-full bg-blue-500/10 flex items-center justify-center mx-auto" style={{ width: 'clamp(32px, 6vw, 48px)', height: 'clamp(32px, 6vw, 48px)', marginBottom: 'clamp(8px, 2vw, 16px)' }}>
-                  <svg className="text-blue-400" style={{ width: 'clamp(16px, 3vw, 24px)', height: 'clamp(16px, 3vw, 24px)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
-                </div>
-                <h4 className="text-center" style={{ fontSize: 'clamp(14px, 2.5vw, 18px)', marginBottom: 'clamp(6px, 1.5vw, 8px)' }}>{t(homeContent.about.highlights.enterprise.title, language)}</h4>
-                <p className="text-gray-400 text-center" style={{ fontSize: 'clamp(11px, 2vw, 14px)', lineHeight: 1.5 }}>{t(homeContent.about.highlights.enterprise.desc, language)}</p>
-              </div>
+            {/* 两条业务线 */}
+            <div className="grid gap-5" aria-label={language === 'ZH' ? '两条业务线' : 'Two lines of business'}>
+              <Reveal className="panel p-7 md:p-8" delay={0.05}>
+                <p className="kicker" style={{ letterSpacing: '0.22em' }}>Alpha · Beta</p>
+                <h3 className="mt-3" style={{ color: 'var(--txt)' }}>{language === 'ZH' ? '教育培训' : 'Training'}</h3>
+                <p className="mt-2" style={{ color: 'var(--txt-2)' }}>{language === 'ZH' ? '培养能把 AI 用到真实任务里的人：青少年从 Alpha 入门，专业人士在 Beta 进阶为 AI Master。' : 'Developing people who put AI to work on real tasks: teenagers start with Alpha, professionals advance to AI Master through Beta.'}</p>
+              </Reveal>
+              <Reveal className="panel p-7 md:p-8" delay={0.1}>
+                <p className="kicker" style={{ letterSpacing: '0.22em' }}>Sigma</p>
+                <h3 className="mt-3" style={{ color: 'var(--txt)' }}>{language === 'ZH' ? '咨询落地' : 'Consulting & delivery'}</h3>
+                <p className="mt-2" style={{ color: 'var(--txt-2)' }}>{language === 'ZH' ? 'BEE Sigma：AI Native、可管理的企业 Agent 平台，陪企业从第一个 Agent 上线走到 AI 进入日常业务。' : 'BEE Sigma: an AI-native, manageable enterprise agent platform that walks you from the first agent going live to AI in daily operations.'}</p>
+              </Reveal>
             </div>
           </div>
 
+          {/* Company Highlights */}
+          <Reveal className="mt-5 grid md:grid-cols-3 gap-5" delay={0.05}>
+              <div className="panel p-6 md:p-7">
+                <div className="w-10 h-10 rounded-xl inline-flex items-center justify-center mb-5" style={{ background: 'rgba(255,176,40,0.1)', color: 'var(--honey)' }}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" /></svg></div>
+                <h4 style={{ color: 'var(--txt)' }}>{t(homeContent.about.highlights.globalTeam.title, language)}</h4>
+                <p className="mt-2" style={{ color: 'var(--txt-2)' }}>{t(homeContent.about.highlights.globalTeam.desc, language)}</p>
+              </div>
+              <div className="panel p-6 md:p-7">
+                <div className="w-10 h-10 rounded-xl inline-flex items-center justify-center mb-5" style={{ background: 'rgba(255,176,40,0.1)', color: 'var(--honey)' }}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" /><path d="m8.5 14-1.5 7 5-3 5 3-1.5-7" /></svg></div>
+                <h4 style={{ color: 'var(--txt)' }}>{t(homeContent.about.highlights.deepExperience.title, language)}</h4>
+                <p className="mt-2" style={{ color: 'var(--txt-2)' }}>{t(homeContent.about.highlights.deepExperience.desc, language)}</p>
+              </div>
+              <div className="panel p-6 md:p-7">
+                <div className="w-10 h-10 rounded-xl inline-flex items-center justify-center mb-5" style={{ background: 'rgba(255,176,40,0.1)', color: 'var(--honey)' }}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M4 21h16M16 9h3a1 1 0 0 1 1 1v11M9 7h2M9 11h2M9 15h2" /></svg></div>
+                <h4 style={{ color: 'var(--txt)' }}>{t(homeContent.about.highlights.enterprise.title, language)}</h4>
+                <p className="mt-2" style={{ color: 'var(--txt-2)' }}>{t(homeContent.about.highlights.enterprise.desc, language)}</p>
+              </div>
+          </Reveal>
+
+          <Reveal delay={0.05}>
           {/* Founder Section */}
-          <div className="border-t border-white/10 pt-8 md:pt-20">
-            <h3 className="mb-12 text-center" style={{ fontSize: 'clamp(20px, 4vw, 32px)', fontWeight: 600 }}>{t(homeContent.about.founderSection, language)}</h3>
-            <div className="max-w-5xl mx-auto">
+          <div className="panel p-7 md:p-10 mt-5">
+            <p className="kicker">{t(homeContent.about.founderSection, language)}</p>
+            <div className="mt-8">
               <div className="space-y-6" style={{ lineHeight: '2' }}>
                 {/* Founder Photo & Bio - Responsive layout */}
                 <div className="mb-8">
                   {/* Mobile: Left-right layout with avatar on left */}
                   <div className="md:hidden flex gap-4 items-start mb-6">
                     <div className="flex-shrink-0">
-                      <div className="w-32 h-32 rounded-full overflow-hidden border border-white/10">
+                      <div className="w-28 h-28 rounded-[18px] overflow-hidden border">
                         <img 
                           src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/pacer/pin.png" 
                           alt="周品 - BEEBEE AI 创始人 & CEO" 
@@ -935,7 +171,7 @@ function HomePage() {
                   {/* Desktop: Large image on left side */}
                   <div className="hidden md:flex gap-12 items-start">
                     <div className="flex-shrink-0" style={{ width: '280px' }}>
-                      <div className="rounded-lg overflow-hidden border border-white/10 mb-6">
+                      <div className="rounded-[18px] overflow-hidden border mb-6">
                         <img 
                           src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/pacer/pin.png" 
                           alt="周品 - BEEBEE AI 创始人 & CEO" 
@@ -954,38 +190,38 @@ function HomePage() {
                       
                       {/* Career History - Desktop version inside right column */}
                       <div>
-                        <h4 className="mb-4 text-orange-500" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.about.ceo.careerTitle, language)}</h4>
+                        <h4 className="mb-4 text-gold-500" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.about.ceo.careerTitle, language)}</h4>
                         <div className="space-y-4">
                           <div className="flex gap-3">
-                            <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
+                            <div className="flex-shrink-0 w-2 h-2 rounded-full bg-gold-500 mt-2"></div>
                             <div>
                               <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.beebee.title, language)}</p>
                               <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.beebee.desc, language)}</p>
                             </div>
                           </div>
                           <div className="flex gap-3">
-                            <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
+                            <div className="flex-shrink-0 w-2 h-2 rounded-full bg-gold-500 mt-2"></div>
                             <div>
                               <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.quwan.title, language)}</p>
                               <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.quwan.desc, language)}</p>
                             </div>
                           </div>
                           <div className="flex gap-3">
-                            <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
+                            <div className="flex-shrink-0 w-2 h-2 rounded-full bg-gold-500 mt-2"></div>
                             <div>
                               <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.cheetah.title, language)}</p>
                               <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.cheetah.desc, language)}</p>
                             </div>
                           </div>
                           <div className="flex gap-3">
-                            <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
+                            <div className="flex-shrink-0 w-2 h-2 rounded-full bg-gold-500 mt-2"></div>
                             <div>
                               <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.baidu.title, language)}</p>
                               <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.baidu.desc, language)}</p>
                             </div>
                           </div>
                           <div className="flex gap-3">
-                            <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
+                            <div className="flex-shrink-0 w-2 h-2 rounded-full bg-gold-500 mt-2"></div>
                             <div>
                               <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.early.title, language)}</p>
                               <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.early.desc, language)}</p>
@@ -999,38 +235,38 @@ function HomePage() {
 
                 {/* Career History - Mobile version */}
                 <div className="md:hidden clear-both">
-                    <h4 className="mb-4 text-orange-500" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.about.ceo.careerTitle, language)}</h4>
+                    <h4 className="mb-4 text-gold-500" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.about.ceo.careerTitle, language)}</h4>
                     <div className="space-y-4">
                       <div className="flex gap-3">
-                        <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
+                        <div className="flex-shrink-0 w-2 h-2 rounded-full bg-gold-500 mt-2"></div>
                         <div>
                           <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.beebee.title, language)}</p>
                           <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.beebee.desc, language)}</p>
                         </div>
                       </div>
                       <div className="flex gap-3">
-                        <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
+                        <div className="flex-shrink-0 w-2 h-2 rounded-full bg-gold-500 mt-2"></div>
                         <div>
                           <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.quwan.title, language)}</p>
                           <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.quwan.desc, language)}</p>
                         </div>
                       </div>
                       <div className="flex gap-3">
-                        <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
+                        <div className="flex-shrink-0 w-2 h-2 rounded-full bg-gold-500 mt-2"></div>
                         <div>
                           <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.cheetah.title, language)}</p>
                           <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.cheetah.desc, language)}</p>
                         </div>
                       </div>
                       <div className="flex gap-3">
-                        <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
+                        <div className="flex-shrink-0 w-2 h-2 rounded-full bg-gold-500 mt-2"></div>
                         <div>
                           <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.baidu.title, language)}</p>
                           <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.baidu.desc, language)}</p>
                         </div>
                       </div>
                       <div className="flex gap-3">
-                        <div className="flex-shrink-0 w-2 h-2 rounded-full bg-orange-500 mt-2"></div>
+                        <div className="flex-shrink-0 w-2 h-2 rounded-full bg-gold-500 mt-2"></div>
                         <div>
                           <p className="text-white mb-1" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)' }}>{t(homeContent.about.ceo.career.early.title, language)}</p>
                           <p className="text-gray-400" style={{ fontSize: 'clamp(14px, 2.2vw, 14px)' }}>{t(homeContent.about.ceo.career.early.desc, language)}</p>
@@ -1041,11 +277,11 @@ function HomePage() {
 
                 {/* Philosophy */}
                 <div>
-                  <h4 className="mb-4 text-orange-500" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.about.ceo.philosophyTitle, language)}</h4>
+                  <h4 className="mb-4 text-gold-500" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.about.ceo.philosophyTitle, language)}</h4>
                   <p className="text-gray-300 mb-6" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)', lineHeight: 1.8 }}>
                     {t(homeContent.about.ceo.philosophy, language)}
                   </p>
-                  <div className="border-l-4 border-orange-500 pl-6 pr-6 py-4 bg-white/5">
+                  <div className="panel-flat px-6 py-5" style={{ borderLeft: '3px solid var(--honey)' }}>
                     <p className="text-gray-300 italic mb-2" style={{ fontSize: 'clamp(14px, 2.5vw, 15px)', lineHeight: 1.8 }}>
                       "{t(homeContent.about.ceo.quote.text, language)}"
                     </p>
@@ -1055,179 +291,98 @@ function HomePage() {
               </div>
             </div>
           </div>
+          </Reveal>
         </div>
       </section>
 
       <FaqSection />
 
       {/* Contact Section */}
-      <section id="contact" className="px-4 border-t border-white/10 pt-8 md:pt-20 pb-8 md:pb-20 bg-black">
-        <div className="max-w-7xl mx-auto w-full">
-          <h2 className="mb-12 text-center" style={{ 
-            fontSize: 'clamp(24px, 5vw, 42px)',
-            fontWeight: 600,
-            letterSpacing: '1px',
-            lineHeight: 1.3
-          }}>{t(homeContent.contact.title, language)}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-            <div className="space-y-6 order-2 md:order-1">
-              {/* Image above address - PC端全宽但固定高度 */}
-              <div className="mb-6">
-                <img 
-                  src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/b_hive.png" 
-                  alt="BEEBEE AI Location" 
-                  className="w-full rounded-lg md:mb-8 md:h-84 md:object-cover"
-                />
+      <section id="contact" className="pt-[110px] md:pt-[140px] pb-[110px] md:pb-[140px]">
+        <div className="wrap">
+          <SectionHeader eyebrow={language === 'ZH' ? '联系我们 · Contact' : 'Contact'} title={t(homeContent.contact.title, language)} subtitle={t(homeContent.contact.subtitle, language)} />
+          <div className="mt-12 grid lg:grid-cols-[.9fr_1.1fr] gap-5">
+            <Reveal className="panel p-7 md:p-8 flex flex-col">
+              <div className="rounded-[18px] overflow-hidden mb-7" style={{ border: '1px solid var(--bd)' }}>
+                <img src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/b_hive.png" alt="BEEBEE AI Auckland office" loading="lazy" className="w-full h-52 md:h-60 object-cover" />
               </div>
-              
-              {/* Email section - moved above address */}
-              <div>
-                <h3 className="mb-3" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.contact.info.email, language)}</h3>
-                <div className="flex items-start gap-3">
-                  <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>
-                    <a href={`mailto:${homeContent.contact.info.emailBusiness}`} className="hover:text-orange-500 transition-colors">
-                      {homeContent.contact.info.emailBusiness}
-                    </a>
-                  </p>
-                </div>
+              <p className="kicker" style={{ letterSpacing: '0.22em' }}>{t(homeContent.contact.info.email, language)}</p>
+              <a href={`mailto:${homeContent.contact.info.emailBusiness}`} className="mt-2 font-bold transition-colors hover:text-[var(--honey-2)]" style={{ color: 'var(--txt)', fontSize: '17px' }}>{homeContent.contact.info.emailBusiness}</a>
+              <p className="kicker mt-7" style={{ letterSpacing: '0.22em' }}>{t(homeContent.contact.info.address, language)}</p>
+              <div className="mt-2 space-y-2">
+                {t(homeContent.contact.info.addressValue, language).split('\n').map((addr, idx) => (
+                  <p key={idx} className="leading-6" style={{ color: 'var(--txt-2)', fontSize: '14px' }}>{addr}</p>
+                ))}
               </div>
-              
-              {/* Address section */}
-              <div>
-                <h3 className="mb-3" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.contact.info.address, language)}</h3>
-                <div className="space-y-3">
-                  {t(homeContent.contact.info.addressValue, language).split('\n').map((addr, idx) => (
-                    <div key={idx} className="flex items-start gap-3">
-                      <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                      <span className="text-gray-400" style={{ fontSize: 'clamp(13px, 2.2vw, 14px)' }}>{addr}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="order-1 md:order-2">
-              <h3 className="mb-6" style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(homeContent.contact.formTitle, language)}</h3>
+            </Reveal>
+            <Reveal className="panel p-7 md:p-8" delay={0.08}>
+              <h3 className="mb-6" style={{ color: 'var(--txt)' }}>{t(homeContent.contact.formTitle, language)}</h3>
               <ContactForm />
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 px-4" style={{ backgroundColor: 'var(--bg-deep)' }}>
-        <div className="max-w-7xl mx-auto pt-8 md:pt-20">
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12">
-            {/* Brand Column */}
-            <div className="lg:col-span-1 col-span-2">
-              <div className="mb-4">
-                <img src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/beebee_ico.png" alt="BEEBEE Logo" className="w-10 h-10 mb-3" />
-                <p className="mb-3" style={{ color: 'var(--orange-primary)', fontSize: 'clamp(13px, 2.2vw, 15px)' }}>{t(homeContent.footer.tagline, language)}</p>
+      <footer style={{ borderTop: '1px solid var(--bd)', padding: '72px 0 40px', color: 'var(--txt-3)', fontSize: '14px' }}>
+        <div className="wrap">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-[1.5fr_1fr_1fr_1fr] gap-10 md:gap-8">
+            {/* Brand */}
+            <div className="sm:col-span-2 md:col-span-4 lg:col-span-1">
+              <Link to="/" aria-label="BEEBEE AI" className="inline-flex items-center gap-2.5 font-latin-display" style={{ fontSize: '19px' }}>
+                <img src="/brand/beebee-mark.png" alt="" width={29} height={29} className="w-[29px] h-[29px] rounded-[8px]" />
+                <span><b className="font-bold" style={{ color: 'var(--honey)' }}>BEEBEE</b><span className="font-medium ml-1" style={{ color: 'var(--txt-2)' }}>AI</span></span>
+              </Link>
+              <p className="mt-5 max-w-xs leading-7" style={{ color: 'var(--txt-2)', fontSize: '14px' }}>{t(homeContent.footer.tagline, language)} · {language === 'ZH' ? '从第一个 Agent 上线，到 AI 真正进入企业日常业务。' : 'From the first agent going live to AI in daily business.'}</p>
+              <a href={`mailto:${homeContent.contact.info.emailBusiness}`} className="mt-5 inline-block transition-colors hover:text-[var(--honey-2)]" style={{ color: 'var(--txt-2)' }}>{homeContent.contact.info.emailBusiness}</a>
+              <div className="mt-4 space-y-1.5 text-[13px] leading-6">
+                {t(homeContent.footer.contactInfo.address, language).split('\n').map((addr, idx) => <p key={idx} className="text-[13px]">{addr}</p>)}
               </div>
             </div>
 
-            {/* Quick Navigation */}
+            {/* 教育培训 */}
             <div>
-              <h4 className="mb-4" style={{ color: 'var(--text-primary)', fontSize: 'clamp(15px, 2.5vw, 16px)' }}>{t(homeContent.footer.quickNav, language)}</h4>
-              <ul className="space-y-3">
-                <li>
-                  <a href="#home" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
-                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
-                     onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
-                    {t(homeContent.nav.home, language)}
-                  </a>
-                </li>
-                <li>
-                  <a href="#platform" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
-                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
-                     onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
-                    {t(homeContent.nav.platform, language)}
-                  </a>
-                </li>
-                <li>
-                  <Link to="/student-projects" className="transition-colors hover:text-orange-500" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>
-                    {language === 'ZH' ? '学员项目案例' : 'Student projects'}
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/how-to-improve-ai-skills" className="transition-colors hover:text-orange-500" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>
-                    {language === 'ZH' ? '如何提升 AI 能力：机构推荐' : 'How to improve AI skills'}
-                  </Link>
-                </li>
-                <li>
-                  <a href="#philosophy" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
-                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
-                     onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
-                    {t(homeContent.nav.philosophy, language)}
-                  </a>
-                </li>
-                <li>
-                  <a href="#about" className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
-                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
-                     onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
-                    {t(homeContent.nav.about, language)}
-                  </a>
-                </li>
+              <p className="font-mono text-[11px] tracking-[0.22em] mb-5" style={{ color: 'var(--txt-3)' }}>{language === 'ZH' ? '教育培训' : 'Training'}</p>
+              <ul className="space-y-3 cjk-keep">
+                <li><a href="https://bee-alpha.com/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[var(--honey-2)]" style={{ color: 'var(--txt-2)' }}>{language === 'ZH' ? 'Alpha 实训营' : 'Alpha program'} ↗</a></li>
+                <li><a href="https://bee-beta.com/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[var(--honey-2)]" style={{ color: 'var(--txt-2)' }}>{language === 'ZH' ? 'Beta 实训营' : 'Beta program'} ↗</a></li>
+                <li><Link to="/youth-ai-training" className="transition-colors hover:text-[var(--honey-2)]" style={{ color: 'var(--txt-2)' }}>{language === 'ZH' ? '青少年\u00A0AI\u00A0实训营课程推荐' : 'AI training for youth'}</Link></li>
+                <li><Link to="/university-ai-project-training" className="transition-colors hover:text-[var(--honey-2)]" style={{ color: 'var(--txt-2)' }}>{language === 'ZH' ? '大学生\u00A0AI\u00A0项目实训选择' : 'AI project training for adults'}</Link></li>
+                <li><Link to="/how-to-improve-ai-skills" className="transition-colors hover:text-[var(--honey-2)]" style={{ color: 'var(--txt-2)' }}>{language === 'ZH' ? '如何提升\u00A0AI\u00A0能力' : 'How to improve AI skills'}</Link></li>
+                <li><Link to="/student-projects" className="transition-colors hover:text-[var(--honey-2)]" style={{ color: 'var(--txt-2)' }}>{language === 'ZH' ? '学员作品' : 'Student projects'}</Link></li>
+                <li><Link to="/certificate" className="transition-colors hover:text-[var(--honey-2)]" style={{ color: 'var(--txt-2)' }}>{language === 'ZH' ? '证书查询' : 'Certificate lookup'}</Link></li>
               </ul>
             </div>
 
-            {/* Training Camps Links */}
+            {/* 咨询落地 */}
             <div>
-              <h4 className="mb-4" style={{ color: 'var(--text-primary)', fontSize: 'clamp(15px, 2.5vw, 16px)' }}>{t(homeContent.footer.trainingCamps, language)}</h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/youth-ai-training" className="transition-colors hover:text-orange-500" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>{language === 'ZH' ? '青少年 AI 实训营课程推荐' : 'AI training for youth'}</Link>
-                </li>
-                <li>
-                  <Link to="/university-ai-project-training" className="transition-colors hover:text-orange-500" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>{language === 'ZH' ? '大学生 AI 项目实训选择' : 'AI projects for adults'}</Link>
-                </li>
-                <li>
-                  <Link to="/enterprise-ai-consulting" className="transition-colors hover:text-orange-500" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>{language === 'ZH' ? '企业 AI 咨询服务' : 'Enterprise AI consulting'}</Link>
-                </li>
+              <p className="font-mono text-[11px] tracking-[0.22em] mb-5" style={{ color: 'var(--txt-3)' }}>{language === 'ZH' ? '咨询落地' : 'Consulting & Delivery'}</p>
+              <ul className="space-y-3 cjk-keep">
+                <li><a href="https://beesigma.com/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[var(--honey-2)]" style={{ color: 'var(--txt-2)' }}>{language === 'ZH' ? 'BEE\u00A0Sigma 企业\u00A0Agent\u00A0平台' : 'BEE Sigma agent platform'} ↗</a></li>
+                <li><Link to="/enterprise-ai-consulting" className="transition-colors hover:text-[var(--honey-2)]" style={{ color: 'var(--txt-2)' }}>{language === 'ZH' ? '企业\u00A0AI\u00A0陪跑服务' : 'Enterprise AI services'}</Link></li>
+                <li><a href="https://aiv.beesigma.com/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[var(--honey-2)]" style={{ color: 'var(--txt-2)' }}>{language === 'ZH' ? '免费 AIV 诊断' : 'Free AIV diagnosis'} ↗</a></li>
+                <li><a href="https://aim.beesigma.com/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[var(--honey-2)]" style={{ color: 'var(--txt-2)' }}>{language === 'ZH' ? '免费 AIM 评估' : 'Free AIM assessment'} ↗</a></li>
+                <li><a href="https://beesigma.com/cases" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[var(--honey-2)]" style={{ color: 'var(--txt-2)' }}>{language === 'ZH' ? '脱敏案例' : 'Case studies'} ↗</a></li>
               </ul>
             </div>
 
-            {/* Contact Information */}
-            <div className="col-span-2 md:col-span-1">
-              <h4 className="mb-4" style={{ color: 'var(--text-primary)', fontSize: 'clamp(15px, 2.5vw, 16px)' }}>{t(homeContent.nav.contact, language)}</h4>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-2">
-                  <svg className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: 'var(--orange-primary)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <a href={`mailto:${homeContent.contact.info.emailBusiness}`} className="transition-colors" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}
-                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
-                     onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
-                    {homeContent.contact.info.emailBusiness}
-                  </a>
-                </li>
-                <li>
-                  <div className="space-y-1.5">
-                    {t(homeContent.footer.contactInfo.address, language).split('\n').map((addr, idx) => (
-                      <div key={idx} className="flex items-start gap-2">
-                        <svg className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: 'var(--orange-primary)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                        <span style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>{addr}</span>
-                      </div>
-                    ))}
-                  </div>
-                </li>
+            {/* 公司 */}
+            <div>
+              <p className="font-mono text-[11px] tracking-[0.22em] mb-5" style={{ color: 'var(--txt-3)' }}>{language === 'ZH' ? '公司' : 'Company'}</p>
+              <ul className="space-y-3 cjk-keep">
+                <li><a href="#platform" className="transition-colors hover:text-[var(--honey-2)]" style={{ color: 'var(--txt-2)' }}>{t(homeContent.nav.platform, language)}</a></li>
+                <li><a href="#sigma-cases" className="transition-colors hover:text-[var(--honey-2)]" style={{ color: 'var(--txt-2)' }}>{language === 'ZH' ? '工作流案例' : 'Workflow cases'}</a></li>
+                <li><a href="#about" className="transition-colors hover:text-[var(--honey-2)]" style={{ color: 'var(--txt-2)' }}>{t(homeContent.nav.about, language)}</a></li>
+                <li><a href="#faq" className="transition-colors hover:text-[var(--honey-2)]" style={{ color: 'var(--txt-2)' }}>{language === 'ZH' ? '常见问题' : 'FAQ'}</a></li>
+                <li><a href="#contact" className="transition-colors hover:text-[var(--honey-2)]" style={{ color: 'var(--txt-2)' }}>{t(homeContent.nav.contact, language)}</a></li>
+                <li><Link to="/differentiation" className="transition-colors hover:text-[var(--honey-2)]" style={{ color: 'var(--txt-2)' }}>{language === 'ZH' ? '项目制学习方法' : 'Project-based learning method'}</Link></li>
               </ul>
             </div>
           </div>
 
-          {/* Copyright */}
-          <div className="pt-6 pb-4 border-t border-white/10 text-center">
-            <p style={{ color: 'var(--text-secondary)', fontSize: 'clamp(12px, 2vw, 14px)' }}>
-              © {new Date().getFullYear()} BEEBEE AI {language === 'ZH' ? '学习力平台' : 'Learning Platform'}. All rights reserved.
-            </p>
+          <div className="mt-14 pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-[12.5px]" style={{ borderTop: '1px solid var(--bd)' }}>
+            <p className="text-[12.5px]">© {new Date().getFullYear()} BEEBEE AI Ltd. All rights reserved.</p>
+            <p className="text-[12.5px]">{language === 'ZH' ? '新西兰注册运营 · 奥克兰 / 成都' : 'Registered in New Zealand · Auckland / Chengdu'}</p>
           </div>
         </div>
       </footer>

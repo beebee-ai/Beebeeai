@@ -4,37 +4,42 @@ import { homeContent, t } from '../locales/homeContent';
 import { ExternalLink, Users, ChevronLeft, ChevronRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { Link } from 'react-router-dom';
+import { SectionHeader } from './SectionHeader';
+import { Reveal, Stagger, StaggerItem } from './Reveal';
 
-export function StudentWorksSection() {
+export function StudentWorksSection({ compact = false }: { compact?: boolean }) {
   const { language } = useLanguage();
   const projects = homeContent.works.featured;
   
-  // 前6个作品在网格中展示
-  const gridProjects = projects.slice(0, 6);
-  // 剩余作品在轮播中展示
-  const carouselProjects = projects.slice(6);
+  // 首页精简模式只展示 3 个作品；完整模式前 6 个进网格、其余进轮播
+  const gridProjects = projects.slice(0, compact ? 3 : 6);
+  const carouselProjects = compact ? [] : projects.slice(6);
 
   return (
-    <section id="works" className="px-4 border-t border-white/10 pt-8 md:pt-20 pb-8 md:pb-20" style={{ backgroundColor: 'var(--bg-surface)' }}>
-      <div className="max-w-7xl mx-auto w-full">
-        {/* Header */}
-        <div className="text-center mb-8 md:mb-16">
-          <h2 className="mb-4" style={{ 
-            color: 'var(--text-primary)',
-            fontSize: 'clamp(24px, 5vw, 42px)',
-            fontWeight: 600,
-            letterSpacing: '1px',
-            lineHeight: 1.3
-          }}>{t(homeContent.works.title, language)}</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.works.subtitle, language)}</p>
-        </div>
+    <section id="works" className={compact ? 'pt-[110px] md:pt-[140px] pb-8' : 'px-4 border-t border-white/10 pt-8 md:pt-20 pb-8 md:pb-20'}>
+      <div className={compact ? 'wrap' : 'max-w-7xl mx-auto w-full'}>
+        {compact ? (
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
+            <SectionHeader eyebrow={language === 'ZH' ? '教育培训 · 学员作品' : 'Training · Student Work'} title={t(homeContent.works.title, language)} subtitle={t(homeContent.works.subtitle, language)} />
+            <Reveal delay={0.15} className="shrink-0">
+              <Link to="/student-projects" className="btn btn-ghost btn-sm">
+                {language === 'ZH' ? '查看完整项目案例库' : 'Explore the complete project library'} <ExternalLink className="w-4 h-4" />
+              </Link>
+            </Reveal>
+          </div>
+        ) : (
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="mb-4" style={{ color: 'var(--text-primary)', fontSize: 'clamp(24px, 5vw, 42px)', fontWeight: 600, letterSpacing: '1px', lineHeight: 1.3 }}>{t(homeContent.works.title, language)}</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto" style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}>{t(homeContent.works.subtitle, language)}</p>
+          </div>
+        )}
 
-        {/* Grid Layout - 2 rows × 3 cols */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+        {/* Grid Layout */}
+        <Stagger className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ${compact ? 'mb-4' : 'mb-20'}`} gap={0.12}>
           {gridProjects.map((project, index) => (
-            <ProjectCard key={index} project={project} language={language} index={index} />
+            <StaggerItem key={index}><ProjectCard project={project} language={language} index={index} /></StaggerItem>
           ))}
-        </div>
+        </Stagger>
 
         {/* Carousel Section */}
         {carouselProjects.length > 0 && (
@@ -50,11 +55,11 @@ export function StudentWorksSection() {
             <CarouselSection projects={carouselProjects} language={language} />
           </div>
         )}
-        <div className="mt-10 text-center">
-          <Link to="/student-projects" className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-orange-500 transition-colors">
+        {!compact && <div className="mt-10 text-center">
+          <Link to="/student-projects" className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-gold-500 transition-colors">
             {language === 'ZH' ? '查看完整项目案例库' : 'Explore the complete project library'} <ExternalLink className="w-4 h-4" />
           </Link>
-        </div>
+        </div>}
       </div>
     </section>
   );
@@ -91,11 +96,11 @@ function ProjectCard({ project, language, index }: any) {
 
   // Use orange theme for grid cards
   const theme = { 
-    border: 'border-[#ff6900]/30 hover:border-[#ff6900]', 
-    badge: 'bg-[#ff6900]/90', 
-    shadow: 'hover:shadow-[#ff6900]/20', 
-    text: 'text-[#ff6900]', 
-    button: 'bg-[#ff6900] hover:bg-[#ff6900]' 
+    border: 'border-[color:var(--bd)] hover:border-[#ffb028]/40', 
+    badge: 'bg-[#ffb028]/90', 
+    shadow: 'hover:shadow-[0_24px_54px_rgba(0,0,0,.5)]', 
+    text: 'text-[var(--txt)]', 
+    button: 'bg-[#ffb028] hover:bg-[#ffb028]' 
   };
   
   // 检查是否是 RowingPro - 需要使用 object-cover 填充满容器
@@ -107,12 +112,13 @@ function ProjectCard({ project, language, index }: any) {
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group relative rounded-2xl overflow-hidden border ${theme.border} transition-all duration-500 bg-gradient-to-br from-black/80 to-black/40 backdrop-blur-sm hover:shadow-2xl ${theme.shadow} flex flex-col h-full cursor-pointer block`}
+      className={`group relative rounded-[24px] overflow-hidden border ${theme.border} transition-all duration-500 hover:-translate-y-1 ${theme.shadow} flex flex-col h-full cursor-pointer block`}
+      style={{ background: 'linear-gradient(170deg, var(--panel-2), var(--panel))' }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Image Section */}
-      <div className="relative aspect-video overflow-hidden bg-black">
+      <div className="relative aspect-video overflow-hidden" style={{ background: '#0e0d0b' }}>
         {/* Blurred Background - 只在非 RowingPro 项目中显示 */}
         {!isRowingPro && (
           <img 
@@ -150,7 +156,7 @@ function ProjectCard({ project, language, index }: any) {
                 key={idx}
                 className={`h-1 rounded-full transition-all duration-300 ${
                   idx === currentImg 
-                    ? 'w-4 bg-[#ff6900]' 
+                    ? 'w-4 bg-[#ffb028]' 
                     : 'w-1 bg-white/40'
                 }`}
               />
@@ -161,7 +167,7 @@ function ProjectCard({ project, language, index }: any) {
 
       {/* Content Section */}
       <div className="p-6 flex flex-col flex-1">
-        <h3 className={`mb-3 ${theme.text} leading-tight`} style={{ fontSize: 'clamp(16px, 2.8vw, 18px)' }}>{t(project.title, language)}</h3>
+        <h3 className={`mb-3 ${theme.text} leading-tight group-hover:text-[var(--honey-2)] transition-colors`} style={{ fontSize: '17px' }}>{t(project.title, language)}</h3>
         
         {/* Team Info */}
         <div className="mb-4 flex items-start gap-2">
@@ -175,7 +181,7 @@ function ProjectCard({ project, language, index }: any) {
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-4">
           {Object.values(project.tags).map((tag: any, idx) => (
-            <span key={idx} className="px-2.5 py-1 rounded-full bg-white/10 text-white/80 border border-white/20 backdrop-blur-sm" style={{ fontSize: 'clamp(11px, 2vw, 12px)' }}>
+            <span key={idx} className="tag tag-muted" style={{ letterSpacing: '0.04em', fontWeight: 500 }}>
               {t(tag, language)}
             </span>
           ))}

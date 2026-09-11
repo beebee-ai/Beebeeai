@@ -1,0 +1,11 @@
+{
+  "name": "BEEBEE AI",
+  "short_name": "BEEBEE AI",
+  "icons": [
+    { "src": "/brand/favicon-96.png", "sizes": "96x96", "type": "image/png" },
+    { "src": "/brand/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#121110",
+  "background_color": "#121110",
+  "display": "standalone"
+}

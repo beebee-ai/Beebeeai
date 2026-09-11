@@ -6,7 +6,7 @@ import { Language } from '../contexts/LanguageContext';
 
 export const navContent = {
   home: { ZH: '首页', EN: 'Home' },
-  platform: { ZH: '学习力平台', EN: 'Learning Platform' },
+  platform: { ZH: '成长路径', EN: 'Growth Path' },
   system: { ZH: '学习体系', EN: 'Curriculum' },
   works: { ZH: '学员作品', EN: 'Student Works' },
   philosophy: { ZH: '品牌理念', EN: 'Philosophy' },

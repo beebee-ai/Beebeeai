@@ -31,17 +31,17 @@ export default function CertificateDisplay({ certificate }: CertificateDisplayPr
   };
 
   return <div className="flex flex-col items-center space-y-6">
-    <div className="relative w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-[0_0_40px_rgba(255,105,0,0.18)] border border-[#ff6900]/25 group bg-[#0a0b0e]">
+    <div className="relative w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-[0_0_40px_rgba(255, 176, 40,0.18)] border border-[#ffb028]/25 group bg-[#0a0b0e]">
       <img src={certificate.imageUrl} alt={`${certificate.name} 的证书`} className="w-full h-auto object-cover" referrerPolicy="no-referrer" />
       <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-        <button type="button" onClick={handleDownload} disabled={isDownloading} className="flex items-center gap-2 px-8 py-4 bg-[#ff6900] hover:bg-[#ff6900]/90 disabled:bg-[#ff6900]/60 rounded-xl text-white font-medium transition-all shadow-[0_0_24px_rgba(255,105,0,0.5)]">
+        <button type="button" onClick={handleDownload} disabled={isDownloading} className="flex items-center gap-2 px-8 py-4 bg-[#ffb028] hover:bg-[#ffb028]/90 disabled:bg-[#ffb028]/60 rounded-xl text-white font-medium transition-all shadow-[0_0_24px_rgba(255, 176, 40,0.5)]">
           {isDownloading ? <><span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />正在下载...</> : <><Download className="w-5 h-5" />下载高清证书图片</>}
         </button>
       </div>
     </div>
-    <div className="flex flex-wrap justify-center items-center gap-3 text-[#ffdbc0] text-sm bg-[#ff6900]/10 px-6 py-2 rounded-full border border-[#ff6900]/30">
+    <div className="flex flex-wrap justify-center items-center gap-3 text-[#ffe3ad] text-sm bg-[#ffb028]/10 px-6 py-2 rounded-full border border-[#ffb028]/30">
       <span><strong className="mr-1 text-[#ffb380]">证书姓名</strong><span className="text-white font-mono">{certificate.name}</span></span>
-      {certificate.courseNumber && <><span className="w-1 h-1 rounded-full bg-[#ff6900]/60" /><span><strong className="mr-1 text-[#ffb380]">课程编号</strong><span className="text-white font-mono">{certificate.courseNumber}</span></span></>}
+      {certificate.courseNumber && <><span className="w-1 h-1 rounded-full bg-[#ffb028]/60" /><span><strong className="mr-1 text-[#ffb380]">课程编号</strong><span className="text-white font-mono">{certificate.courseNumber}</span></span></>}
     </div>
   </div>;
 }

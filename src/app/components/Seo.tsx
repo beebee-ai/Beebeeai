@@ -9,7 +9,7 @@ type SeoProps = {
 };
 
 const SITE_URL = 'https://beebee.ai';
-const SHARE_IMAGE = 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/beebee-ai/icons/web-app-manifest-512x512.png';
+const SHARE_IMAGE = 'https://beebee.ai/brand/icon-512.png';
 
 export function Seo({ title, description, path = '/', type = 'website', structuredData }: SeoProps) {
   const canonical = `${SITE_URL}${path === '/' ? '/' : path}`;

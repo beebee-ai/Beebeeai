@@ -27,15 +27,8 @@ export function DifferentiationDetail() {
         ]}
       />
       <Helmet>
-        <meta name="keywords" content="AI学习力, 终身学习力, 人工智能学习平台, 个性化学习, 项目化学习, 青少年AI学习, 职场AI能力, 企业家学习力, AI创造力, AI竞争力, AI领导力, BEEBEE AI" />
+        <meta name="keywords" content="项目制学习, AI 学习方法, 提问框架, 任务拆解, Alpha 实训营, Beta 实训营, BEEBEE AI" />
         <meta name="robots" content="index, follow" />
-        
-        {/* Favicons */}
-        <link rel="icon" type="image/x-icon" href="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/beebee-ai/icons/favicon.ico" />
-        <link rel="icon" type="image/svg+xml" href="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/beebee-ai/icons/favicon.svg" />
-        <link rel="icon" type="image/png" sizes="96x96" href="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/beebee-ai/icons/favicon-96x96.png" />
-        <link rel="apple-touch-icon" href="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/beebee-ai/icons/apple-touch-icon.png" />
-        <link rel="manifest" href="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/beebee-ai/icons/web-app-manifest-512x512.png" />
       </Helmet>
       <Navigation />
       
@@ -43,10 +36,10 @@ export function DifferentiationDetail() {
       <section className="px-4 pt-32 pb-16" style={{ backgroundColor: 'var(--bg-deep)' }}>
         <div className="max-w-7xl mx-auto w-full">
           <Link 
-            to="/#system" 
+            to="/#platform" 
             className="inline-flex items-center gap-2 mb-8 transition-colors"
             style={{ color: 'var(--text-secondary)' }}
-            onMouseEnter={(e) => e.currentTarget.style.color = 'var(--orange-primary)'}
+            onMouseEnter={(e) => e.currentTarget.style.color = 'var(--gold-primary)'}
             onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -81,13 +74,13 @@ export function DifferentiationDetail() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* ========== 板块1: 道法术器 ========== */}
-          <div className="bg-[#0d0f14] border border-white/10 rounded-3xl px-8 md:px-12 pb-8 md:pb-12 pt-4 md:pt-12 mb-12">
+          <div className="bg-[var(--bg-2)] border border-white/10 rounded-3xl px-8 md:px-12 pb-8 md:pb-12 pt-4 md:pt-12 mb-12">
             {/* 板块标题 */}
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-3 mb-4">
-                <div className="h-px w-8 bg-gradient-to-r from-transparent to-orange-500"></div>
-                <span className="text-orange-500 text-sm font-mono tracking-[0.3em] uppercase">01</span>
-                <div className="h-px w-8 bg-gradient-to-l from-transparent to-orange-500"></div>
+                <div className="h-px w-8 bg-gradient-to-r from-transparent to-gold-500"></div>
+                <span className="text-gold-500 text-sm font-mono tracking-[0.3em] uppercase">01</span>
+                <div className="h-px w-8 bg-gradient-to-l from-transparent to-gold-500"></div>
               </div>
               <h2 className="font-bold text-white mb-3" style={{ fontSize: 'clamp(24px, 5vw, 36px)' }}>
                 {t(differentiationContent.learningSystem.title, language)}
@@ -100,21 +93,21 @@ export function DifferentiationDetail() {
             {/* 4个卡片 */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8">
               {/* 道中之道 */}
-              <div className="group relative bg-[#111318] border border-white/5 hover:border-orange-500/40 rounded-2xl p-5 md:p-8 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.7)]">
-                <div className="absolute -right-6 -bottom-10 text-[140px] font-black text-white/[0.02] group-hover:text-orange-500/[0.08] transition-colors duration-500 leading-none select-none pointer-events-none font-serif">道</div>
+              <div className="group relative bg-[var(--panel)] border border-white/5 hover:border-gold-500/40 rounded-2xl p-5 md:p-8 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.7)]">
+                <div className="absolute -right-6 -bottom-10 text-[140px] font-black text-white/[0.02] group-hover:text-gold-500/[0.08] transition-colors duration-500 leading-none select-none pointer-events-none font-serif">道</div>
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white/5 rounded-xl flex items-center justify-center text-orange-500 mb-4 md:mb-6 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300 border border-white/5">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white/5 rounded-xl flex items-center justify-center text-gold-500 mb-4 md:mb-6 group-hover:bg-gold-500 group-hover:text-black transition-colors duration-300 border border-white/5">
                     <Brain className="w-5 h-5 md:w-6 md:h-6" />
                   </div>
                   <div className="mb-3 md:mb-4">
                     <h3 className="font-bold text-white font-serif mb-2" style={{ fontSize: 'clamp(18px, 3.5vw, 24px)' }}>
                       {t(differentiationContent.learningSystem.modules.dao.title, language)}
                     </h3>
-                    <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-gray-300 tracking-wider uppercase border border-white/5 group-hover:border-orange-500/30 group-hover:text-orange-500 transition-colors">
+                    <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-gray-300 tracking-wider uppercase border border-white/5 group-hover:border-gold-500/30 group-hover:text-gold-500 transition-colors">
                       {t(differentiationContent.learningSystem.modules.dao.badge, language)}
                     </span>
                   </div>
-                  <div className="h-0.5 w-16 bg-gradient-to-r from-gray-600 to-gray-700 my-4 md:my-5 group-hover:w-full group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-orange-400 transition-all duration-500 shadow-sm"></div>
+                  <div className="h-0.5 w-16 bg-gradient-to-r from-gray-600 to-gray-700 my-4 md:my-5 group-hover:w-full group-hover:bg-gradient-to-r group-hover:from-gold-500 group-hover:to-gold-400 transition-all duration-500 shadow-sm"></div>
                   <p className="text-gray-400 leading-relaxed" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
                     {t(differentiationContent.learningSystem.modules.dao.description, language)}
                   </p>
@@ -122,10 +115,10 @@ export function DifferentiationDetail() {
               </div>
 
               {/* 道中之术 */}
-              <div className="group relative bg-[#111318] border border-white/5 hover:border-orange-500/40 rounded-2xl p-5 md:p-8 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.7)]">
-                <div className="absolute -right-6 -bottom-10 text-[140px] font-black text-white/[0.02] group-hover:text-orange-500/[0.08] transition-colors duration-500 leading-none select-none pointer-events-none font-serif">法</div>
+              <div className="group relative bg-[var(--panel)] border border-white/5 hover:border-gold-500/40 rounded-2xl p-5 md:p-8 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.7)]">
+                <div className="absolute -right-6 -bottom-10 text-[140px] font-black text-white/[0.02] group-hover:text-gold-500/[0.08] transition-colors duration-500 leading-none select-none pointer-events-none font-serif">法</div>
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white/5 rounded-xl flex items-center justify-center text-orange-500 mb-4 md:mb-6 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300 border border-white/5">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white/5 rounded-xl flex items-center justify-center text-gold-500 mb-4 md:mb-6 group-hover:bg-gold-500 group-hover:text-black transition-colors duration-300 border border-white/5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-layers w-5 h-5 md:w-6 md:h-6" aria-hidden="true">
                       <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path>
                       <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path>
@@ -136,11 +129,11 @@ export function DifferentiationDetail() {
                     <h3 className="font-bold text-white font-serif mb-2" style={{ fontSize: 'clamp(18px, 3.5vw, 24px)' }}>
                       {t(differentiationContent.learningSystem.modules.fa.title, language)}
                     </h3>
-                    <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-gray-300 tracking-wider uppercase border border-white/5 group-hover:border-orange-500/30 group-hover:text-orange-500 transition-colors">
+                    <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-gray-300 tracking-wider uppercase border border-white/5 group-hover:border-gold-500/30 group-hover:text-gold-500 transition-colors">
                       {t(differentiationContent.learningSystem.modules.fa.badge, language)}
                     </span>
                   </div>
-                  <div className="h-0.5 w-16 bg-gradient-to-r from-gray-600 to-gray-700 my-4 md:my-5 group-hover:w-full group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-orange-400 transition-all duration-500 shadow-sm"></div>
+                  <div className="h-0.5 w-16 bg-gradient-to-r from-gray-600 to-gray-700 my-4 md:my-5 group-hover:w-full group-hover:bg-gradient-to-r group-hover:from-gold-500 group-hover:to-gold-400 transition-all duration-500 shadow-sm"></div>
                   <p className="text-gray-400 leading-relaxed" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
                     {t(differentiationContent.learningSystem.modules.fa.description, language)}
                   </p>
@@ -148,10 +141,10 @@ export function DifferentiationDetail() {
               </div>
 
               {/* 术中之道 */}
-              <div className="group relative bg-[#111318] border border-white/5 hover:border-orange-500/40 rounded-2xl p-5 md:p-8 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.7)]">
-                <div className="absolute -right-6 -bottom-10 text-[140px] font-black text-white/[0.02] group-hover:text-orange-500/[0.08] transition-colors duration-500 leading-none select-none pointer-events-none font-serif">术</div>
+              <div className="group relative bg-[var(--panel)] border border-white/5 hover:border-gold-500/40 rounded-2xl p-5 md:p-8 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.7)]">
+                <div className="absolute -right-6 -bottom-10 text-[140px] font-black text-white/[0.02] group-hover:text-gold-500/[0.08] transition-colors duration-500 leading-none select-none pointer-events-none font-serif">术</div>
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white/5 rounded-xl flex items-center justify-center text-orange-500 mb-4 md:mb-6 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300 border border-white/5">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white/5 rounded-xl flex items-center justify-center text-gold-500 mb-4 md:mb-6 group-hover:bg-gold-500 group-hover:text-black transition-colors duration-300 border border-white/5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-target w-5 h-5 md:w-6 md:h-6" aria-hidden="true">
                       <circle cx="12" cy="12" r="10"></circle>
                       <circle cx="12" cy="12" r="6"></circle>
@@ -162,11 +155,11 @@ export function DifferentiationDetail() {
                     <h3 className="font-bold text-white font-serif mb-2" style={{ fontSize: 'clamp(18px, 3.5vw, 24px)' }}>
                       {t(differentiationContent.learningSystem.modules.shu.title, language)}
                     </h3>
-                    <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-gray-300 tracking-wider uppercase border border-white/5 group-hover:border-orange-500/30 group-hover:text-orange-500 transition-colors">
+                    <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-gray-300 tracking-wider uppercase border border-white/5 group-hover:border-gold-500/30 group-hover:text-gold-500 transition-colors">
                       {t(differentiationContent.learningSystem.modules.shu.badge, language)}
                     </span>
                   </div>
-                  <div className="h-0.5 w-16 bg-gradient-to-r from-gray-600 to-gray-700 my-4 md:my-5 group-hover:w-full group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-orange-400 transition-all duration-500 shadow-sm"></div>
+                  <div className="h-0.5 w-16 bg-gradient-to-r from-gray-600 to-gray-700 my-4 md:my-5 group-hover:w-full group-hover:bg-gradient-to-r group-hover:from-gold-500 group-hover:to-gold-400 transition-all duration-500 shadow-sm"></div>
                   <p className="text-gray-400 leading-relaxed" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
                     {t(differentiationContent.learningSystem.modules.shu.description, language)}
                   </p>
@@ -174,10 +167,10 @@ export function DifferentiationDetail() {
               </div>
 
               {/* 术中之术 */}
-              <div className="group relative bg-[#111318] border border-white/5 hover:border-orange-500/40 rounded-2xl p-5 md:p-8 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.7)]">
-                <div className="absolute -right-6 -bottom-10 text-[140px] font-black text-white/[0.02] group-hover:text-orange-500/[0.08] transition-colors duration-500 leading-none select-none pointer-events-none font-serif">器</div>
+              <div className="group relative bg-[var(--panel)] border border-white/5 hover:border-gold-500/40 rounded-2xl p-5 md:p-8 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.7)]">
+                <div className="absolute -right-6 -bottom-10 text-[140px] font-black text-white/[0.02] group-hover:text-gold-500/[0.08] transition-colors duration-500 leading-none select-none pointer-events-none font-serif">器</div>
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white/5 rounded-xl flex items-center justify-center text-orange-500 mb-4 md:mb-6 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300 border border-white/5">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white/5 rounded-xl flex items-center justify-center text-gold-500 mb-4 md:mb-6 group-hover:bg-gold-500 group-hover:text-black transition-colors duration-300 border border-white/5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-zap w-5 h-5 md:w-6 md:h-6" aria-hidden="true">
                       <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
                     </svg>
@@ -186,11 +179,11 @@ export function DifferentiationDetail() {
                     <h3 className="font-bold text-white font-serif mb-2" style={{ fontSize: 'clamp(18px, 3.5vw, 24px)' }}>
                       {t(differentiationContent.learningSystem.modules.qi.title, language)}
                     </h3>
-                    <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-gray-300 tracking-wider uppercase border border-white/5 group-hover:border-orange-500/30 group-hover:text-orange-500 transition-colors">
+                    <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-gray-300 tracking-wider uppercase border border-white/5 group-hover:border-gold-500/30 group-hover:text-gold-500 transition-colors">
                       {t(differentiationContent.learningSystem.modules.qi.badge, language)}
                     </span>
                   </div>
-                  <div className="h-0.5 w-16 bg-gradient-to-r from-gray-600 to-gray-700 my-4 md:my-5 group-hover:w-full group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-orange-400 transition-all duration-500 shadow-sm"></div>
+                  <div className="h-0.5 w-16 bg-gradient-to-r from-gray-600 to-gray-700 my-4 md:my-5 group-hover:w-full group-hover:bg-gradient-to-r group-hover:from-gold-500 group-hover:to-gold-400 transition-all duration-500 shadow-sm"></div>
                   <p className="text-gray-400 leading-relaxed" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
                     {t(differentiationContent.learningSystem.modules.qi.description, language)}
                   </p>
@@ -199,11 +192,11 @@ export function DifferentiationDetail() {
             </div>
 
             {/* 差异化说明卡片1 */}
-            <div className="bg-gradient-to-br from-orange-500/5 to-transparent border border-orange-500/20 rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-6 backdrop-blur-md relative overflow-hidden group hover:border-orange-500/40 transition-colors duration-500">
-              <div className="absolute top-0 left-0 w-1 h-full bg-orange-500"></div>
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-orange-500/10 blur-3xl rounded-full group-hover:bg-orange-500/15 transition-colors"></div>
+            <div className="bg-gradient-to-br from-gold-500/5 to-transparent border border-gold-500/20 rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-6 backdrop-blur-md relative overflow-hidden group hover:border-gold-500/40 transition-colors duration-500">
+              <div className="absolute top-0 left-0 w-1 h-full bg-gold-500"></div>
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold-500/10 blur-3xl rounded-full group-hover:bg-gold-500/15 transition-colors"></div>
               <div className="flex-shrink-0">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/30 to-orange-500/10 flex items-center justify-center text-orange-500 shadow-[0_0_20px_rgba(255,107,0,0.2)]">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/30 to-gold-500/10 flex items-center justify-center text-gold-500 shadow-[0_0_20px_rgba(255,107,0,0.2)]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-lightbulb" aria-hidden="true">
                     <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path>
                     <path d="M9 18h6"></path>
@@ -215,7 +208,7 @@ export function DifferentiationDetail() {
                 <h4 className="font-bold text-white mb-2 flex flex-col md:flex-row md:items-center gap-2" style={{ fontSize: 'clamp(16px, 3vw, 20px)' }}>
                   {t(differentiationContent.learningSystem.card1.title, language)}
                   <span className="hidden md:inline w-1 h-1 rounded-full bg-gray-600"></span>
-                  <span className="text-orange-500 font-medium tracking-wide uppercase opacity-90" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
+                  <span className="text-gold-500 font-medium tracking-wide uppercase opacity-90" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
                     {t(differentiationContent.learningSystem.card1.subtitle, language)}
                   </span>
                 </h4>
@@ -227,13 +220,13 @@ export function DifferentiationDetail() {
           </div>
 
           {/* ========== 板块2: 学习力公式 ========== */}
-          <div id="learning-formula" className="bg-[#0d0f14] border border-white/10 rounded-3xl px-8 md:px-12 pb-8 md:pb-12 pt-4 md:pt-12 mb-12">
+          <div id="learning-formula" className="bg-[var(--bg-2)] border border-white/10 rounded-3xl px-8 md:px-12 pb-8 md:pb-12 pt-4 md:pt-12 mb-12">
             {/* 板块标题 */}
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-3 mb-4">
-                <div className="h-px w-8 bg-gradient-to-r from-transparent to-orange-500"></div>
-                <span className="text-orange-500 text-sm font-mono tracking-[0.3em] uppercase">02</span>
-                <div className="h-px w-8 bg-gradient-to-l from-transparent to-orange-500"></div>
+                <div className="h-px w-8 bg-gradient-to-r from-transparent to-gold-500"></div>
+                <span className="text-gold-500 text-sm font-mono tracking-[0.3em] uppercase">02</span>
+                <div className="h-px w-8 bg-gradient-to-l from-transparent to-gold-500"></div>
               </div>
               <h2 className="font-bold text-white mb-3" style={{ fontSize: 'clamp(24px, 5vw, 36px)' }}>
                 {t(differentiationContent.learningFormula.sectionTitle, language)}
@@ -244,13 +237,13 @@ export function DifferentiationDetail() {
             </div>
 
             {/* 公式展示 */}
-            <div className="relative rounded-2xl overflow-hidden border border-white/5 bg-[#111318] mb-8">
+            <div className="relative rounded-2xl overflow-hidden border border-white/5 bg-[var(--panel)] mb-8">
               <div className="absolute inset-0 bg-grid-white/[0.02] bg-[length:30px_30px]"></div>
               <div className="relative z-10 px-6 py-16 md:py-20 flex flex-col items-center justify-center text-center">
                 <div className="flex flex-col xl:flex-row items-center gap-8 xl:gap-16">
                   {/* Q² 卡片 */}
-                  <div className="bg-[#0d0f14] border border-orange-500/20 rounded-xl p-4 flex flex-col items-center w-64 transform hover:scale-105 transition-transform duration-300">
-                    <span className="font-bold text-orange-500 mb-1 font-mono" style={{ fontSize: 'clamp(28px, 5vw, 36px)' }}>
+                  <div className="bg-[var(--bg-2)] border border-gold-500/20 rounded-xl p-4 flex flex-col items-center w-64 transform hover:scale-105 transition-transform duration-300">
+                    <span className="font-bold text-gold-500 mb-1 font-mono" style={{ fontSize: 'clamp(28px, 5vw, 36px)' }}>
                       {t(differentiationContent.learningFormula.q2.title, language)}
                     </span>
                     <span className="text-gray-400 uppercase tracking-widest mb-2" style={{ fontSize: 'clamp(10px, 1.8vw, 12px)' }}>
@@ -264,13 +257,13 @@ export function DifferentiationDetail() {
                   <div className="flex items-center gap-4 md:gap-8 font-mono font-bold text-white tracking-tighter">
                     <span className="text-gray-500" style={{ fontSize: 'clamp(40px, 8vw, 60px)' }}>L</span>
                     <span className="text-gray-700" style={{ fontSize: 'clamp(24px, 5vw, 36px)' }}>=</span>
-                    <span className="text-orange-500" style={{ fontSize: 'clamp(48px, 10vw, 80px)' }}>Q²</span>
+                    <span className="text-gold-500" style={{ fontSize: 'clamp(48px, 10vw, 80px)' }}>Q²</span>
                     <span className="text-gray-700" style={{ fontSize: 'clamp(24px, 5vw, 36px)' }}>×</span>
                     <span className="text-blue-400" style={{ fontSize: 'clamp(48px, 10vw, 80px)' }}>P</span>
                   </div>
 
                   {/* P 卡片 */}
-                  <div className="bg-[#0d0f14] border border-blue-500/20 rounded-xl p-4 flex flex-col items-center w-64 transform hover:scale-105 transition-transform duration-300">
+                  <div className="bg-[var(--bg-2)] border border-blue-500/20 rounded-xl p-4 flex flex-col items-center w-64 transform hover:scale-105 transition-transform duration-300">
                     <span className="font-bold text-blue-400 mb-1 font-mono" style={{ fontSize: 'clamp(28px, 5vw, 36px)' }}>
                       {t(differentiationContent.learningFormula.p.title, language)}
                     </span>
@@ -285,11 +278,11 @@ export function DifferentiationDetail() {
             </div>
 
             {/* 差异化说明卡片2 */}
-            <div className="bg-gradient-to-br from-orange-500/5 to-transparent border border-orange-500/20 rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-6 backdrop-blur-md relative overflow-hidden group hover:border-orange-500/40 transition-colors duration-500">
-              <div className="absolute top-0 left-0 w-1 h-full bg-orange-500"></div>
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-orange-500/10 blur-3xl rounded-full group-hover:bg-orange-500/15 transition-colors"></div>
+            <div className="bg-gradient-to-br from-gold-500/5 to-transparent border border-gold-500/20 rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-6 backdrop-blur-md relative overflow-hidden group hover:border-gold-500/40 transition-colors duration-500">
+              <div className="absolute top-0 left-0 w-1 h-full bg-gold-500"></div>
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold-500/10 blur-3xl rounded-full group-hover:bg-gold-500/15 transition-colors"></div>
               <div className="flex-shrink-0">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/30 to-orange-500/10 flex items-center justify-center text-orange-500 shadow-[0_0_20px_rgba(255,107,0,0.2)]">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/30 to-gold-500/10 flex items-center justify-center text-gold-500 shadow-[0_0_20px_rgba(255,107,0,0.2)]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-lightbulb" aria-hidden="true">
                     <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path>
                     <path d="M9 18h6"></path>
@@ -301,7 +294,7 @@ export function DifferentiationDetail() {
                 <h4 className="font-bold text-white mb-2 flex flex-col md:flex-row md:items-center gap-2" style={{ fontSize: 'clamp(16px, 3vw, 20px)' }}>
                   {t(differentiationContent.learningFormula.card2.title, language)}
                   <span className="hidden md:inline w-1 h-1 rounded-full bg-gray-600"></span>
-                  <span className="text-orange-500 font-medium tracking-wide uppercase opacity-90" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
+                  <span className="text-gold-500 font-medium tracking-wide uppercase opacity-90" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
                     {t(differentiationContent.learningFormula.card2.subtitle, language)}
                   </span>
                 </h4>
@@ -313,13 +306,13 @@ export function DifferentiationDetail() {
           </div>
 
           {/* ========== 板块3: 三维能力模型 ========== */}
-          <div id="three-dimensions" className="bg-[#0d0f14] border border-white/10 rounded-3xl px-8 md:px-12 pb-8 md:pb-12 pt-4 md:pt-12 mb-12">
+          <div id="three-dimensions" className="bg-[var(--bg-2)] border border-white/10 rounded-3xl px-8 md:px-12 pb-8 md:pb-12 pt-4 md:pt-12 mb-12">
             {/* 板块标题 */}
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-3 mb-4">
-                <div className="h-px w-8 bg-gradient-to-r from-transparent to-orange-500"></div>
-                <span className="text-orange-500 text-sm font-mono tracking-[0.3em] uppercase">03</span>
-                <div className="h-px w-8 bg-gradient-to-l from-transparent to-orange-500"></div>
+                <div className="h-px w-8 bg-gradient-to-r from-transparent to-gold-500"></div>
+                <span className="text-gold-500 text-sm font-mono tracking-[0.3em] uppercase">03</span>
+                <div className="h-px w-8 bg-gradient-to-l from-transparent to-gold-500"></div>
               </div>
               <h2 className="font-bold text-white mb-3" style={{ fontSize: 'clamp(24px, 5vw, 36px)' }}>
                 {t(differentiationContent.threeDimensions.title, language)}
@@ -332,7 +325,7 @@ export function DifferentiationDetail() {
             {/* 能力模型展示 */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-8">
               <div className="lg:col-span-5">
-                <div className="w-12 h-1 bg-orange-500 rounded-full mb-6"></div>
+                <div className="w-12 h-1 bg-gold-500 rounded-full mb-6"></div>
                 <p className="text-gray-300 leading-relaxed" style={{ fontSize: 'clamp(15px, 2.8vw, 18px)' }}>
                   {t(differentiationContent.threeDimensions.description, language)}
                 </p>
@@ -341,7 +334,7 @@ export function DifferentiationDetail() {
               {/* 三个能力卡片 */}
               <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {/* AI 创造力 10% */}
-                <div className="relative rounded-2xl p-6 border bg-[#111318] border-white/5 opacity-80 hover:opacity-100 flex flex-col items-center text-center group transition-all duration-300">
+                <div className="relative rounded-2xl p-6 border bg-[var(--panel)] border-white/5 opacity-80 hover:opacity-100 flex flex-col items-center text-center group transition-all duration-300">
                   <div className="font-black bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent mb-4" style={{ fontSize: 'clamp(28px, 5vw, 36px)' }}>
                     {t(differentiationContent.threeDimensions.cards.creativity.percentage, language)}
                   </div>
@@ -354,8 +347,8 @@ export function DifferentiationDetail() {
                 </div>
 
                 {/* AI 竞争力 60% - 中间高亮 */}
-                <div className="relative rounded-2xl p-6 border bg-[#1a1c23] border-orange-500/50 ring-1 ring-orange-500/20 shadow-[0_0_30px_-10px_rgba(255,107,0,0.3)] scale-105 z-10 flex flex-col items-center text-center group transition-all duration-300">
-                  <div className="font-black bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent mb-4" style={{ fontSize: 'clamp(28px, 5vw, 36px)' }}>
+                <div className="relative rounded-2xl p-6 border bg-[var(--panel-2)] border-gold-500/50 ring-1 ring-gold-500/20 shadow-[0_0_30px_-10px_rgba(255,107,0,0.3)] scale-105 z-10 flex flex-col items-center text-center group transition-all duration-300">
+                  <div className="font-black bg-gradient-to-r from-gold-500 to-gold-400 bg-clip-text text-transparent mb-4" style={{ fontSize: 'clamp(28px, 5vw, 36px)' }}>
                     {t(differentiationContent.threeDimensions.cards.competitiveness.percentage, language)}
                   </div>
                   <h4 className="font-bold text-white mb-2" style={{ fontSize: 'clamp(15px, 2.8vw, 18px)' }}>
@@ -367,7 +360,7 @@ export function DifferentiationDetail() {
                 </div>
 
                 {/* AI 领导力 30% */}
-                <div className="relative rounded-2xl p-6 border bg-[#111318] border-white/5 opacity-80 hover:opacity-100 flex flex-col items-center text-center group transition-all duration-300">
+                <div className="relative rounded-2xl p-6 border bg-[var(--panel)] border-white/5 opacity-80 hover:opacity-100 flex flex-col items-center text-center group transition-all duration-300">
                   <div className="font-black bg-gradient-to-r from-purple-500 to-pink-400 bg-clip-text text-transparent mb-4" style={{ fontSize: 'clamp(28px, 5vw, 36px)' }}>
                     {t(differentiationContent.threeDimensions.cards.leadership.percentage, language)}
                   </div>
@@ -382,11 +375,11 @@ export function DifferentiationDetail() {
             </div>
 
             {/* 差异化说明卡片3 */}
-            <div className="bg-gradient-to-br from-orange-500/5 to-transparent border border-orange-500/20 rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-6 backdrop-blur-md relative overflow-hidden group hover:border-orange-500/40 transition-colors duration-500">
-              <div className="absolute top-0 left-0 w-1 h-full bg-orange-500"></div>
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-orange-500/10 blur-3xl rounded-full group-hover:bg-orange-500/15 transition-colors"></div>
+            <div className="bg-gradient-to-br from-gold-500/5 to-transparent border border-gold-500/20 rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-6 backdrop-blur-md relative overflow-hidden group hover:border-gold-500/40 transition-colors duration-500">
+              <div className="absolute top-0 left-0 w-1 h-full bg-gold-500"></div>
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold-500/10 blur-3xl rounded-full group-hover:bg-gold-500/15 transition-colors"></div>
               <div className="flex-shrink-0">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/30 to-orange-500/10 flex items-center justify-center text-orange-500 shadow-[0_0_20px_rgba(255,107,0,0.2)]">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/30 to-gold-500/10 flex items-center justify-center text-gold-500 shadow-[0_0_20px_rgba(255,107,0,0.2)]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-lightbulb" aria-hidden="true">
                     <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path>
                     <path d="M9 18h6"></path>
@@ -398,7 +391,7 @@ export function DifferentiationDetail() {
                 <h4 className="font-bold text-white mb-2 flex flex-col md:flex-row md:items-center gap-2" style={{ fontSize: 'clamp(16px, 3vw, 20px)' }}>
                   {t(differentiationContent.threeDimensions.card3.title, language)}
                   <span className="hidden md:inline w-1 h-1 rounded-full bg-gray-600"></span>
-                  <span className="text-orange-500 font-medium tracking-wide uppercase opacity-90" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
+                  <span className="text-gold-500 font-medium tracking-wide uppercase opacity-90" style={{ fontSize: 'clamp(12px, 2.2vw, 14px)' }}>
                     {t(differentiationContent.threeDimensions.card3.subtitle, language)}
                   </span>
                 </h4>
@@ -410,13 +403,13 @@ export function DifferentiationDetail() {
           </div>
 
           {/* ========== 板块4: 蜂道四式 ========== */}
-          <div id="bee-method" className="bg-[#0d0f14] border border-white/10 rounded-3xl px-8 md:px-12 pb-8 md:pb-12 pt-4 md:pt-12">
+          <div id="bee-method" className="bg-[var(--bg-2)] border border-white/10 rounded-3xl px-8 md:px-12 pb-8 md:pb-12 pt-4 md:pt-12">
             {/* 板块标题 */}
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-3 mb-4">
-                <div className="h-px w-8 bg-gradient-to-r from-transparent to-orange-500"></div>
-                <span className="text-orange-500 text-sm font-mono tracking-[0.3em] uppercase">04</span>
-                <div className="h-px w-8 bg-gradient-to-l from-transparent to-orange-500"></div>
+                <div className="h-px w-8 bg-gradient-to-r from-transparent to-gold-500"></div>
+                <span className="text-gold-500 text-sm font-mono tracking-[0.3em] uppercase">04</span>
+                <div className="h-px w-8 bg-gradient-to-l from-transparent to-gold-500"></div>
               </div>
               <h2 className="font-bold text-white mb-3" style={{ fontSize: 'clamp(24px, 5vw, 36px)' }}>
                 {t(differentiationContent.beeMethod.title, language)}
@@ -433,11 +426,11 @@ export function DifferentiationDetail() {
               {/* 01 采集 */}
               <div className="relative group w-full">
                 <div className="aspect-square relative flex items-center justify-center transform transition-transform duration-300 hover:scale-110 z-10">
-                  <svg className="absolute inset-0 w-full h-full text-[#111318] group-hover:text-[#16181e] transition-colors duration-300 drop-shadow-2xl" viewBox="0 0 100 100" fill="currentColor">
-                    <path d="M50 0 L93.3 25 V75 L50 100 L6.7 75 V25 Z" stroke="rgba(255,255,255,0.1)" strokeWidth="1" className="group-hover:stroke-orange-500/50 transition-colors duration-300"></path>
+                  <svg className="absolute inset-0 w-full h-full text-[#1b1916] group-hover:text-[#201d18] transition-colors duration-300 drop-shadow-2xl" viewBox="0 0 100 100" fill="currentColor">
+                    <path d="M50 0 L93.3 25 V75 L50 100 L6.7 75 V25 Z" stroke="rgba(255,255,255,0.1)" strokeWidth="1" className="group-hover:stroke-gold-500/50 transition-colors duration-300"></path>
                   </svg>
                   <div className="relative z-10 flex flex-col items-center text-center p-2 md:p-4">
-                    <div className="text-orange-500/80 mb-1 md:mb-2 transform group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-gold-500/80 mb-1 md:mb-2 transform group-hover:scale-110 transition-transform duration-300">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="md:w-6 md:h-6" aria-hidden="true">
                         <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
                         <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
@@ -461,11 +454,11 @@ export function DifferentiationDetail() {
               {/* 02 精炼 */}
               <div className="relative group w-full">
                 <div className="aspect-square relative flex items-center justify-center transform transition-transform duration-300 hover:scale-110 z-10">
-                  <svg className="absolute inset-0 w-full h-full text-[#111318] group-hover:text-[#16181e] transition-colors duration-300 drop-shadow-2xl" viewBox="0 0 100 100" fill="currentColor">
-                    <path d="M50 0 L93.3 25 V75 L50 100 L6.7 75 V25 Z" stroke="rgba(255,255,255,0.1)" strokeWidth="1" className="group-hover:stroke-orange-500/50 transition-colors duration-300"></path>
+                  <svg className="absolute inset-0 w-full h-full text-[#1b1916] group-hover:text-[#201d18] transition-colors duration-300 drop-shadow-2xl" viewBox="0 0 100 100" fill="currentColor">
+                    <path d="M50 0 L93.3 25 V75 L50 100 L6.7 75 V25 Z" stroke="rgba(255,255,255,0.1)" strokeWidth="1" className="group-hover:stroke-gold-500/50 transition-colors duration-300"></path>
                   </svg>
                   <div className="relative z-10 flex flex-col items-center text-center p-2 md:p-4">
-                    <div className="text-orange-500/80 mb-1 md:mb-2 transform group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-gold-500/80 mb-1 md:mb-2 transform group-hover:scale-110 transition-transform duration-300">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="md:w-6 md:h-6" aria-hidden="true">
                         <path d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z"></path>
                       </svg>
@@ -487,11 +480,11 @@ export function DifferentiationDetail() {
               {/* 03 酿造 */}
               <div className="relative group w-full">
                 <div className="aspect-square relative flex items-center justify-center transform transition-transform duration-300 hover:scale-110 z-10">
-                  <svg className="absolute inset-0 w-full h-full text-[#111318] group-hover:text-[#16181e] transition-colors duration-300 drop-shadow-2xl" viewBox="0 0 100 100" fill="currentColor">
-                    <path d="M50 0 L93.3 25 V75 L50 100 L6.7 75 V25 Z" stroke="rgba(255,255,255,0.1)" strokeWidth="1" className="group-hover:stroke-orange-500/50 transition-colors duration-300"></path>
+                  <svg className="absolute inset-0 w-full h-full text-[#1b1916] group-hover:text-[#201d18] transition-colors duration-300 drop-shadow-2xl" viewBox="0 0 100 100" fill="currentColor">
+                    <path d="M50 0 L93.3 25 V75 L50 100 L6.7 75 V25 Z" stroke="rgba(255,255,255,0.1)" strokeWidth="1" className="group-hover:stroke-gold-500/50 transition-colors duration-300"></path>
                   </svg>
                   <div className="relative z-10 flex flex-col items-center text-center p-2 md:p-4">
-                    <div className="text-orange-500/80 mb-1 md:mb-2 transform group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-gold-500/80 mb-1 md:mb-2 transform group-hover:scale-110 transition-transform duration-300">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="md:w-6 md:h-6" aria-hidden="true">
                         <path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"></path>
                         <path d="M6.453 15h11.094"></path>
@@ -515,11 +508,11 @@ export function DifferentiationDetail() {
               {/* 04 协作 */}
               <div className="relative group w-full">
                 <div className="aspect-square relative flex items-center justify-center transform transition-transform duration-300 hover:scale-110 z-10">
-                  <svg className="absolute inset-0 w-full h-full text-[#111318] group-hover:text-[#16181e] transition-colors duration-300 drop-shadow-2xl" viewBox="0 0 100 100" fill="currentColor">
-                    <path d="M50 0 L93.3 25 V75 L50 100 L6.7 75 V25 Z" stroke="rgba(255,255,255,0.1)" strokeWidth="1" className="group-hover:stroke-orange-500/50 transition-colors duration-300"></path>
+                  <svg className="absolute inset-0 w-full h-full text-[#1b1916] group-hover:text-[#201d18] transition-colors duration-300 drop-shadow-2xl" viewBox="0 0 100 100" fill="currentColor">
+                    <path d="M50 0 L93.3 25 V75 L50 100 L6.7 75 V25 Z" stroke="rgba(255,255,255,0.1)" strokeWidth="1" className="group-hover:stroke-gold-500/50 transition-colors duration-300"></path>
                   </svg>
                   <div className="relative z-10 flex flex-col items-center text-center p-2 md:p-4">
-                    <div className="text-orange-500/80 mb-1 md:mb-2 transform group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-gold-500/80 mb-1 md:mb-2 transform group-hover:scale-110 transition-transform duration-300">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="md:w-6 md:h-6" aria-hidden="true">
                         <circle cx="18" cy="5" r="3"></circle>
                         <circle cx="6" cy="12" r="3"></circle>
@@ -544,11 +537,11 @@ export function DifferentiationDetail() {
             </div>
 
             {/* 差异化说明卡片4 */}
-            <div className="bg-gradient-to-br from-orange-500/5 to-transparent border border-orange-500/20 rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-6 backdrop-blur-md relative overflow-hidden group hover:border-orange-500/40 transition-colors duration-500">
-              <div className="absolute top-0 left-0 w-1 h-full bg-orange-500"></div>
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-orange-500/10 blur-3xl rounded-full group-hover:bg-orange-500/15 transition-colors"></div>
+            <div className="bg-gradient-to-br from-gold-500/5 to-transparent border border-gold-500/20 rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-6 backdrop-blur-md relative overflow-hidden group hover:border-gold-500/40 transition-colors duration-500">
+              <div className="absolute top-0 left-0 w-1 h-full bg-gold-500"></div>
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold-500/10 blur-3xl rounded-full group-hover:bg-gold-500/15 transition-colors"></div>
               <div className="flex-shrink-0">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/30 to-orange-500/10 flex items-center justify-center text-orange-500 shadow-[0_0_20px_rgba(255,107,0,0.2)]">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/30 to-gold-500/10 flex items-center justify-center text-gold-500 shadow-[0_0_20px_rgba(255,107,0,0.2)]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-lightbulb" aria-hidden="true">
                     <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path>
                     <path d="M9 18h6"></path>
@@ -560,7 +553,7 @@ export function DifferentiationDetail() {
                 <h4 className="text-lg md:text-xl font-bold text-white mb-2 flex flex-col md:flex-row md:items-center gap-2">
                   {t(differentiationContent.beeMethod.card4.title, language)}
                   <span className="hidden md:inline w-1 h-1 rounded-full bg-gray-600"></span>
-                  <span className="text-orange-500 text-sm font-medium tracking-wide uppercase opacity-90">
+                  <span className="text-gold-500 text-sm font-medium tracking-wide uppercase opacity-90">
                     {t(differentiationContent.beeMethod.card4.subtitle, language)}
                   </span>
                 </h4>
@@ -585,16 +578,16 @@ export function DifferentiationDetail() {
               to="/#contact"
               className="px-8 py-4 rounded-lg transition-colors"
               style={{
-                backgroundColor: 'var(--orange-primary)',
+                backgroundColor: 'var(--gold-primary)',
                 color: '#fff',
                 textDecoration: 'none'
               }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--orange-hover)'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--orange-primary)'}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--gold-hover)'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--gold-primary)'}
             >
               {t(differentiationContent.cta.button1, language)}
             </Link>
-            <Link to="/#platform" className="px-8 py-4 border border-orange-500/40 rounded-lg hover:bg-orange-500/10 transition-colors text-white">
+            <Link to="/#platform" className="px-8 py-4 border border-gold-500/40 rounded-lg hover:bg-gold-500/10 transition-colors text-white">
               {language === 'ZH' ? '查看实训入口' : 'Explore training options'}
             </Link>
             <Link to="/student-projects" className="px-8 py-4 border border-white/30 rounded-lg hover:bg-white/10 transition-colors text-white">
@@ -613,9 +606,9 @@ export function DifferentiationDetail() {
           </div>
         </div>
       </section>
-      <section className="px-4 py-14 border-t border-white/10 bg-[#0d0f14]" aria-labelledby="platform-comparison">
+      <section className="px-4 py-14 border-t border-white/10 bg-[var(--bg-2)]" aria-labelledby="platform-comparison">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-mono tracking-[0.24em] text-orange-500 mb-4">AI LEARNING PLATFORM COMPARISON</p>
+          <p className="text-xs font-mono tracking-[0.24em] text-gold-500 mb-4">AI LEARNING PLATFORM COMPARISON</p>
           <h2 id="platform-comparison" className="text-2xl md:text-3xl font-semibold">{language === 'ZH' ? 'AI 学习平台推荐如何选择？' : 'How should you compare AI learning platforms?'}</h2>
           <p className="mt-5 text-gray-400 leading-8">{language === 'ZH' ? '建议比较四点：是否围绕真实问题学习、是否要求完成可展示项目、是否训练提问与任务拆解、是否提供过程反馈与复盘。BEEBEE AI 的重点不是堆叠工具功能，而是帮助学习者把想法交付为真实成果。' : 'Compare whether learning starts from real problems, produces demonstrable projects, develops questioning and task decomposition, and includes feedback and reflection. BEEBEE AI focuses on turning ideas into real outcomes rather than listing tool features.'}</p>
           <h3 className="mt-8 text-lg font-medium">{language === 'ZH' ? 'AI 学习平台比较时应该看什么？' : 'What matters when comparing AI learning platforms?'}</h3>

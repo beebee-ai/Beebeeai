@@ -7,196 +7,51 @@ import { Language } from "../contexts/LanguageContext";
 export const homeContent = {
   // Hero Section
   hero: {
-    title: {
-      ZH: "BEEBEE，用 AI 进化学习力",
-      EN: "BEEBEE, Evolve Learning with AI",
+    eyebrow: {
+      ZH: "BEEBEE AI · 企业 AI 陪跑专家",
+      EN: "BEEBEE AI · Enterprise AI Partner",
+    },
+    titleLine1: {
+      ZH: "从第一个 Agent\u00A0上线，",
+      EN: "From the first agent going live,",
+    },
+    titleLine2: {
+      ZH: "到\u00A0AI\u00A0真正进入|企业日常业务。",
+      EN: "to AI running in your daily business.",
     },
     subtitle: {
-      ZH: "面向青少年、职场人士与企业团队，通过项目制实训与真实产品开发，把 AI 能力转化为可展示、可复用的成果",
-      EN: "For young learners, professionals and enterprise teams—turn AI skills into demonstrable, reusable outcomes through real projects",
+      ZH: "两条业务线，一条成长路径：教育培训（Alpha、Beta）培养会用\u00A0AI\u00A0做事的人，咨询落地（Sigma）陪企业把\u00A0AI\u00A0跑进日常业务。",
+      EN: "Two lines of business, one growth path: training (Alpha, Beta) develops people who get things done with AI; consulting and delivery (Sigma) walks enterprises from the first agent to AI in daily operations.",
     },
-    cta: {
-      ZH: "开始探索",
-      EN: "Start Exploring",
-    },
-  },
-
-  // Platform Section
-  platform: {
-    title: {
-      ZH: "学习力平台",
-      EN: "Learning Platform",
-    },
-    subtitle: {
-      ZH: "两大学习路线，根据你的技术背景与学习目标自由选择",
-      EN: "Two learning paths, choose based on your technical background and learning goals",
-    },
-    stats: {
-      students: {
-        number: { ZH: "1200+", EN: "1200+" },
-        label: { ZH: "累计学员", EN: "Total Students" },
+    paths: [
+      {
+        code: "Alpha",
+        stage: { ZH: "教育培训 · 入门", EN: "Training · Beginner" },
+        tagline: { ZH: "让初学者快速入门", EN: "Get beginners up and running fast" },
+        cta: { ZH: "进入 Alpha 实训营", EN: "Explore Alpha" },
+        href: "https://bee-alpha.com/",
+        hrefEn: "https://bee-alpha.com/",
+        color: "#FF6900",
       },
-      projects: {
-        number: { ZH: "200+", EN: "200+" },
-        label: { ZH: "实战项目", EN: "Real Projects" },
+      {
+        code: "Beta",
+        stage: { ZH: "教育培训 · 进阶", EN: "Training · Advanced" },
+        tagline: { ZH: "让专业人士转变为 AI Master", EN: "Turn professionals into AI Masters" },
+        cta: { ZH: "进入 Beta 实训营", EN: "Explore Beta" },
+        href: "https://bee-beta.com/",
+        hrefEn: "https://bee-beta.com/",
+        color: "#06B6D4",
       },
-      satisfaction: {
-        number: { ZH: "98%", EN: "98%" },
-        label: { ZH: "满意度", EN: "Satisfaction" },
+      {
+        code: "Sigma",
+        stage: { ZH: "咨询落地 · 企业", EN: "Consulting · Enterprise" },
+        tagline: { ZH: "让企业有机会把 AI 真正落地进日常业务", EN: "Give enterprises a real path to bring AI into daily business" },
+        cta: { ZH: "进入 BEE Sigma", EN: "Visit BEE Sigma" },
+        href: "https://beesigma.com/",
+        hrefEn: "https://beesigma.com/en",
+        color: "#FFB028",
       },
-      support: {
-        number: { ZH: "24/7", EN: "24/7" },
-        label: { ZH: "在线支持", EN: "Online Support" },
-      },
-    },
-    alpha: {
-      title: { ZH: "ALPHA 实训营", EN: "ALPHA Training Camp" },
-      subtitle: {
-        ZH: "无代码经验 · 快速落地",
-        EN: "No Coding · Quick Results",
-      },
-      description: {
-        ZH: "以终为始，不问细节只求落地。重术轻道，快速掌握AI产品能力。",
-        EN: "Start with the end in mind. Focus on implementation, master AI product capabilities quickly.",
-      },
-      features: {
-        feature1: {
-          ZH: "零基础友好路径",
-          EN: "Beginner-friendly path",
-        },
-        feature2: {
-          ZH: "聚焦产品应用实践",
-          EN: "Focus on product applications",
-        },
-        feature3: {
-          ZH: "蜂群协作共同成长",
-          EN: "Collaborative growth",
-        },
-        feature4: {
-          ZH: "快速产出实际成果",
-          EN: "Rapid practical results",
-        },
-      },
-      cta: { ZH: "了解详情", EN: "Learn More" },
-    },
-    beta: {
-      title: { ZH: "BETA 实训营", EN: "BETA Training Camp" },
-      subtitle: {
-        ZH: "有编程经验 · 深度掌控",
-        EN: "Coding Experience · Deep Control",
-      },
-      description: {
-        ZH: "以始为终，既探本质更求实用。道术并重，全面打造AI开发能力。",
-        EN: "End-to-end learning. Balance theory and practice, build comprehensive AI development skills.",
-      },
-      features: {
-        feature1: {
-          ZH: "真实商业项目实战",
-          EN: "Real business projects",
-        },
-        feature2: {
-          ZH: "深入技术实现细节",
-          EN: "Deep technical details",
-        },
-        feature3: {
-          ZH: "完整产品开发流程",
-          EN: "Full development lifecycle",
-        },
-        feature4: {
-          ZH: "系统级架构与工程化能力",
-          EN: "System architecture & engineering capabilities",
-        },
-      },
-      cta: { ZH: "了解详情", EN: "Learn More" },
-    },
-    learningPlatform: {
-      title: { ZH: "学习平台", EN: "Learning Platform" },
-      subtitle: {
-        ZH: "内部应用 · 知识中枢",
-        EN: "Internal App · Knowledge Hub",
-      },
-      description: {
-        ZH: "服务于所有实训营学员的统一学习平台，提供课程资源、工具库和学习社区支持。",
-        EN: "Unified learning platform for all training camp students, providing course resources, tools, and community support.",
-      },
-      featuresTitle: {
-        ZH: "平台核心功能",
-        EN: "Core Features",
-      },
-      features: {
-        feature1: {
-          ZH: "海量视频课程资源",
-          EN: "Extensive video courses",
-        },
-        feature2: {
-          ZH: "AI工具库实操训练",
-          EN: "AI tools hands-on training",
-        },
-        feature3: {
-          ZH: "学习社区互助成长",
-          EN: "Learning community support",
-        },
-        feature4: {
-          ZH: "专业能力认证体系",
-          EN: "Professional certification",
-        },
-      },
-      cta: { ZH: "进入平台", EN: "Enter Platform" },
-    },
-  },
-
-  // Differentiation Section
-  differentiation: {
-    title: { ZH: "我们的差异化", EN: "Our Differentiation" },
-    subtitle: {
-      ZH: "为什么选择 BEEBEE AI？",
-      EN: "Why Choose BEEBEE AI?",
-    },
-    item1: {
-      title: { ZH: "理念革新", EN: "Innovative Philosophy" },
-      subtitle: {
-        ZH: "拒绝填鸭教育，掌握AI提问力",
-        EN: "Reject rote learning, master AI questioning",
-      },
-      description: {
-        ZH: "不仅是学知识，更是训练驾驭AI的思维。我们相信，在AI时代，提出好问题比记住答案更重要。",
-        EN: "Not just learning knowledge, but training AI-driven thinking. We believe asking good questions is more important than remembering answers in the AI era.",
-      },
-    },
-    item2: {
-      title: { ZH: "结果导向", EN: "Results-Oriented" },
-      subtitle: {
-        ZH: '"人想 + AI做"，学习即刻变现',
-        EN: '"Human thinks + AI does", instant ROI on learning',
-      },
-      description: {
-        ZH: "让每一次实战，都转化为可视化的作品。从第一课开始,你就能看到自己创造的价值。",
-        EN: "Transform every practice into visible work. From day one, you can see the value you create.",
-      },
-    },
-    item3: {
-      title: { ZH: "全维进化", EN: "Holistic Evolution" },
-      subtitle: {
-        ZH: "道法术器，构建完整闭环",
-        EN: "Philosophy, method, technique, and tools - complete loop",
-      },
-      description: {
-        ZH: "从底层逻辑到实操工具，系统化掌握AI。我们不只教技能，更帮你建立完整的认知体系。",
-        EN: "From fundamental logic to practical tools, master AI systematically. We teach not just skills, but help you build a complete cognitive framework.",
-      },
-    },
-    item4: {
-      title: { ZH: "价值重塑", EN: "Value Transformation" },
-      subtitle: {
-        ZH: '构建你被需要的"三维竞争力"',
-        EN: 'Build your "3D competitiveness"',
-      },
-      description: {
-        ZH: "打造创造力、竞争力、领导力，成为超级个体。让自己成为AI时代真正被需要的人才。",
-        EN: "Build creativity, competitiveness, and leadership to become a super individual. Be the talent truly needed in the AI era.",
-      },
-    },
-    cta: { ZH: "了解详情", EN: "Learn More" },
+    ],
   },
 
   // Student Works Section
@@ -210,8 +65,8 @@ export const homeContent = {
     featured: [
       {
         badge: {
-          ZH: "BETA 无界营（Infinity）",
-          EN: "BETA Infinity Camp",
+          ZH: "Beta 无界营（Infinity）",
+          EN: "Beta Infinity Camp",
         },
         title: {
           ZH: "Hobbi - 心灵冥想日记",
@@ -252,8 +107,8 @@ export const homeContent = {
       },
       {
         badge: {
-          ZH: "BETA 无界营（Infinity）",
-          EN: "BETA Infinity Camp",
+          ZH: "Beta 无界营（Infinity）",
+          EN: "Beta Infinity Camp",
         },
         title: {
           ZH: "YummyYummy - AI美食助手",
@@ -292,8 +147,8 @@ export const homeContent = {
       },
       {
         badge: {
-          ZH: "BETA 深空营（Cosmos）",
-          EN: "BETA Cosmos Camp",
+          ZH: "Beta 深空营（Cosmos）",
+          EN: "Beta Cosmos Camp",
         },
         title: {
           ZH: "Climate Intelligence Hub - 气候智能中心",
@@ -331,8 +186,8 @@ export const homeContent = {
       },
       {
         badge: {
-          ZH: "ALPHA 远航营（Odyssey）",
-          EN: "ALPHA Odyssey Camp",
+          ZH: "Alpha 远航营（Odyssey）",
+          EN: "Alpha Odyssey Camp",
         },
         title: {
           ZH: "RowingPro - AI划船训练平台",
@@ -364,8 +219,8 @@ export const homeContent = {
       },
       {
         badge: {
-          ZH: "ALPHA—ZERO启航营（Genesis）",
-          EN: "ALPHA ZERO Genesis Camp",
+          ZH: "Alpha—ZERO启航营（Genesis）",
+          EN: "Alpha ZERO Genesis Camp",
         },
         title: {
           ZH: "字在午餐 Word Snack - 海外中文学习助手",
@@ -395,8 +250,8 @@ export const homeContent = {
       },
       {
         badge: {
-          ZH: "ALPHA—ZERO启航营（Genesis）",
-          EN: "ALPHA ZERO Genesis Camp",
+          ZH: "Alpha—ZERO启航营（Genesis）",
+          EN: "Alpha ZERO Genesis Camp",
         },
         title: {
           ZH: "Relab SEO - AI内容营销工具",
@@ -431,8 +286,8 @@ export const homeContent = {
       },
       {
         badge: {
-          ZH: "ALPHA—ZERO启航营（Genesis）",
-          EN: "ALPHA ZERO Genesis Camp",
+          ZH: "Alpha—ZERO启航营（Genesis）",
+          EN: "Alpha ZERO Genesis Camp",
         },
         title: {
           ZH: "纯素甄选 - 素食生活方式平台",
@@ -467,8 +322,8 @@ export const homeContent = {
       },
       {
         badge: {
-          ZH: "ALPHA—ZERO启航营（Genesis）",
-          EN: "ALPHA ZERO Genesis Camp",
+          ZH: "Alpha—ZERO启航营（Genesis）",
+          EN: "Alpha ZERO Genesis Camp",
         },
         title: {
           ZH: "PropertyAI NZ - 新西兰AI房产平台",
@@ -503,8 +358,8 @@ export const homeContent = {
       },
       {
         badge: {
-          ZH: "ALPHA—ZERO启航营（Genesis）",
-          EN: "ALPHA ZERO Genesis Camp",
+          ZH: "Alpha—ZERO启航营（Genesis）",
+          EN: "Alpha ZERO Genesis Camp",
         },
         title: {
           ZH: "PROJECT:Echo - 游戏化目标管理系统",
@@ -536,8 +391,8 @@ export const homeContent = {
       },
       {
         badge: {
-          ZH: "ALPHA 远航营（Odyssey）",
-          EN: "ALPHA Odyssey Camp",
+          ZH: "Alpha 远航营（Odyssey）",
+          EN: "Alpha Odyssey Camp",
         },
         title: {
           ZH: "智能健康饮食助手 - AI营养管理专家",
@@ -575,8 +430,8 @@ export const homeContent = {
       },
       {
         badge: {
-          ZH: "ALPHA 远航营（Odyssey）",
-          EN: "ALPHA Odyssey Camp",
+          ZH: "Alpha 远航营（Odyssey）",
+          EN: "Alpha Odyssey Camp",
         },
         title: {
           ZH: "生活日历与知识盒 - 个人成长生态系统",
@@ -609,71 +464,6 @@ export const homeContent = {
     ],
   },
 
-  // Philosophy Section
-  philosophy: {
-    title: { ZH: "品牌理念", EN: "Our Philosophy" },
-    subtitle: {
-      ZH: "人机共创未来，终身学习进化",
-      EN: "Co-creating the future with AI, lifelong learning evolution",
-    },
-    visionMission: {
-      title: { ZH: "愿景与使命", EN: "Vision & Mission" },
-      content: {
-        ZH: "重构社会分工体系，推动产业从【人力密集型】向【知识+AI密集型】转型",
-        EN: "Restructure social division of labor, drive industry transformation from labor-intensive to knowledge+AI-intensive",
-      },
-    },
-    aiEra: {
-      title: {
-        ZH: "AI时代头部企业",
-        EN: "Leading AI Era Enterprise",
-      },
-      content: {
-        ZH: "成为最具代表性的科技赋能头部企业，引领行业变革",
-        EN: "Become the most representative tech-empowered leading enterprise, leading industry transformation",
-      },
-    },
-    system: {
-      title: {
-        ZH: "道法术器体系",
-        EN: "Philosophy-Method-Technique-Tool System",
-      },
-      content: {
-        ZH: "通过完整体系，重塑人类在AI时代的核心价值",
-        EN: "Reshape human core value in AI era through complete system",
-      },
-    },
-    humanAI: {
-      title: { ZH: "人机共未来", EN: "Human-AI Co-creation" },
-      content: {
-        ZH: '实现"人想+AI做"的产业智能化，让每个人发挥最大价值',
-        EN: 'Achieve "human thinks + AI does" industry intelligence, maximize everyone\'s value',
-      },
-    },
-    lifelongLearning: {
-      title: { ZH: "终身学习力", EN: "Lifelong Learning" },
-      content: {
-        ZH: "培养具备终身学习力的新一代人才,适应时代变化",
-        EN: "Cultivate new generation talents with lifelong learning capability, adapt to era changes",
-      },
-    },
-    coreValues: {
-      label: { ZH: "核心价值观", EN: "Core Values" },
-      title: {
-        ZH: "学习将取代教育",
-        EN: "Learning Will Replace Education",
-      },
-      subtitle: {
-        ZH: "当AI接管生产·人类专注意义",
-        EN: "When AI takes over production · Humans focus on meaning",
-      },
-      value1: { ZH: "轻量化", EN: "Lightweight" },
-      value2: { ZH: "数量级", EN: "Scalability" },
-      value3: { ZH: "定制化", EN: "Customization" },
-      value4: { ZH: "高效性", EN: "Efficiency" },
-    },
-  },
-
   // About Section
   about: {
     title: { ZH: "关于我们", EN: "About Us" },
@@ -691,16 +481,16 @@ export const homeContent = {
     },
     intro: {
       p1: {
-        ZH: "BEEBEE AI LTD是一家总部位于新西兰的国际科技公司，团队分布在新西兰、英国、加拿大、美国泰国、中国。公司专注于GenAI智能产品研发，由具有20年以上互联网/IT经验及8年AI全模态应用开发经验的资深人士于2022年创立。",
-        EN: "BEEBEE AI LTD is an international technology company headquartered in New Zealand, with teams distributed across New Zealand, UK, Canada, USA, Thailand, and China. The company focuses on GenAI product development, founded in 2022 by veterans with 20+ years of Internet/IT experience and 8 years of AI multimodal application development experience.",
+        ZH: "BEEBEE\u00A0AI\u00A0LTD 是一家总部位于新西兰的国际科技公司，团队分布在新西兰、英国、加拿大、美国、泰国、中国，由具有 25\u00A0年以上互联网/IT\u00A0经验及 8\u00A0年\u00A0AI\u00A0应用开发经验的资深人士于 2023\u00A0年创立。",
+        EN: "BEEBEE AI LTD is an international technology company headquartered in New Zealand, with teams across New Zealand, the UK, Canada, the USA, Thailand and China. It was founded in 2023 by veterans with 25+ years in internet/IT and 8 years building AI applications.",
       },
       p2: {
-        ZH: "公司的使命是通过'AI × 私域知识'提升个人与组织的生产力。其核心产品2Brain（第二大脑）于2024年推出，可以帮企业导入多模态内容（文档、音频/视频、网站、聊天记录）形成私有知识库，并实时可视化为动态知识图谱，几分钟内即可部署基于RAG（检索增强生成）的聊天机器人和各类业务流智能体。",
-        EN: "The company's mission is to enhance individual and organizational productivity through 'AI × Private Knowledge'. Its core product 2Brain (Second Brain) was launched in 2024, helping enterprises import multimodal content (documents, audio/video, websites, chat logs) to form private knowledge bases, visualized in real-time as dynamic knowledge graphs, and deploy RAG-based chatbots and various business workflow agents within minutes.",
+        ZH: "我们做两件事：教育培训与咨询落地。教育培训由 Alpha、Beta\u00A0实训营构成，培养能把\u00A0AI\u00A0用到真实任务里的人；咨询落地由 BEE\u00A0Sigma\u00A0承接，以 AI\u00A0Native、可管理的企业\u00A0Agent\u00A0平台连接企业现有系统，陪企业从第一个\u00A0Agent\u00A0上线走到\u00A0AI\u00A0进入日常业务。",
+        EN: "We do two things: training, and consulting with delivery. Training is the Alpha and Beta programs, developing people who can put AI to work on real tasks. Consulting and delivery is BEE Sigma, an AI-native, manageable enterprise agent platform that connects to the systems you already run and walks you from the first agent going live to AI in daily operations.",
       },
       p3: {
-        ZH: "在品牌架构中，BEEBEE AI 面向青少年、职场人士与企业团队提供 AI 学习力和项目制实训；2Brain 是企业知识管理与智能体产品；BEE Sigma 是面向企业客户的 AI 咨询与落地服务品牌。2Brain 已为全球数十家客户提供企业级应用落地服务。",
-        EN: "Within the brand architecture, BEEBEE AI provides AI learning and project-based training for young learners, professionals and enterprise teams; 2Brain is the enterprise knowledge-management and agent product; BEE Sigma is the enterprise AI consulting and implementation brand. 2Brain has delivered enterprise applications for dozens of clients globally.",
+        ZH: "两条线彼此支撑：实训营里走出来的人，正是企业落地\u00A0AI\u00A0时最需要的人；企业里真实的业务场景，又不断成为实训营的项目来源。我们已在新西兰与中国两地为多个行业的企业交付\u00A0AI\u00A0落地项目。",
+        EN: "The two lines reinforce each other: the people who come out of our programs are exactly who enterprises need to land AI, and real business scenarios from those enterprises keep feeding the programs with projects. We have delivered AI projects for businesses across multiple industries in New Zealand and China.",
       },
     },
     highlights: {
@@ -714,15 +504,15 @@ export const homeContent = {
       deepExperience: {
         title: { ZH: "深厚经验", EN: "Deep Experience" },
         desc: {
-          ZH: "20年以上互联网/IT经验及8年AI全模态应用开发经验",
-          EN: "20+ years of Internet/IT and 8 years of AI multimodal development experience",
+          ZH: "25 年以上互联网/IT经验及8年AI全模态应用开发经验",
+          EN: "25+ years of Internet/IT and 8 years of AI multimodal development experience",
         },
       },
       enterprise: {
         title: { ZH: "企业级服务", EN: "Enterprise Service" },
         desc: {
-          ZH: "已为全球数十家客户提供企业级应用落地服务",
-          EN: "Served dozens of global clients with enterprise-level solutions",
+          ZH: "已在新西兰与中国两地交付 8 个行业的 AI 落地场景",
+          EN: "8 industry scenarios delivered across New Zealand and China",
         },
       },
     },
@@ -738,19 +528,19 @@ export const homeContent = {
       name: { ZH: "周品", EN: "Pin Zhou" },
       title: { ZH: "创始人 & CEO", EN: "Founder & CEO" },
       bio: {
-        ZH: "周品先生是一位拥有超过20年IT和互联网产品运营创业经验的资深创业者，作为全球第一批GPT时代的创业者，他在人工智能领域拥有8年的相关经验,始终保持着对新技术的强烈好奇心。",
-        EN: "Mr. Pin Zhou is a seasoned entrepreneur with over 20 years of IT and internet product operations experience. As one of the first global entrepreneurs in the GPT era, he has 8 years of AI experience and maintains a strong curiosity for new technologies.",
+        ZH: "周品先生是一位拥有超过 25 年IT和互联网产品运营创业经验的资深创业者，作为全球第一批GPT时代的创业者，他在人工智能领域拥有8年的相关经验,始终保持着对新技术的强烈好奇心。",
+        EN: "Mr. Pin Zhou is a seasoned entrepreneur with over 25 years of IT and internet product operations experience. As one of the first global entrepreneurs in the GPT era, he has 8 years of AI experience and maintains a strong curiosity for new technologies.",
       },
       careerTitle: { ZH: "职业经历", EN: "Career History" },
       career: {
         beebee: {
           title: {
-            ZH: "BEEBEE AI - 2022年创立",
-            EN: "BEEBEE AI - Founded 2022",
+            ZH: "BEEBEE AI - 2023 年创立",
+            EN: "BEEBEE AI - Founded 2023",
           },
           desc: {
-            ZH: "总部新西兰，团队分布于新西兰、英国、加拿大美国、泰国和中国，聚焦人工智能与知识管理产品研发",
-            EN: "Headquartered in New Zealand, teams across NZ, UK, Canada, USA, Thailand, and China, focused on AI and knowledge management product development",
+            ZH: "总部新西兰，团队分布于新西兰、英国、加拿大、美国、泰国和中国，聚焦企业 AI 落地与 AI 人才培养",
+            EN: "Headquartered in New Zealand, teams across NZ, UK, Canada, USA, Thailand, and China, focused on enterprise AI delivery and AI talent development",
           },
         },
         quwan: {
@@ -804,8 +594,8 @@ export const homeContent = {
       },
       quote: {
         text: {
-          ZH: "让每一位对AI充满热情的年轻人，都能在这里找到属于自己的成长方向，成为动人工智能发展的中坚力量。",
-          EN: "Let every young person passionate about AI find their own growth direction here and become a backbone force driving AI development.",
+          ZH: "关注的不是「讲 AI」，而是「把 AI 变成真正能跑起来的业务系统」。",
+          EN: "What matters is not talking about AI, but turning AI into business systems that actually run.",
         },
         author: { ZH: "— 周品", EN: "— Pin Zhou" },
       },
@@ -816,15 +606,15 @@ export const homeContent = {
   contact: {
     title: { ZH: "联系我们", EN: "Contact Us" },
     subtitle: {
-      ZH: "准备好开始你的 AI 学习之旅了吗？",
-      EN: "Ready to start your AI learning journey?",
+      ZH: "企业 AI 落地、实训营报名或合作，都可以从这里开始。",
+      EN: "Enterprise AI delivery, program enrolment or partnership — start here.",
     },
     formTitle: { ZH: "咨询表单", EN: "Inquiry Form" },
     form: {
-      studentName: { ZH: "同学姓名", EN: "Student Name" },
+      studentName: { ZH: "姓名", EN: "Name" },
       studentAge: {
-        ZH: "同学年龄（选填）",
-        EN: "Student Age (Optional)",
+        ZH: "公司或学校（选填）",
+        EN: "Company or school (optional)",
       },
       country: { ZH: "所在国家", EN: "Country" },
       email: { ZH: "电子邮件", EN: "Email" },
@@ -834,8 +624,8 @@ export const homeContent = {
       },
       inquiry: { ZH: "咨询说明", EN: "Inquiry Details" },
       inquiryPlaceholder: {
-        ZH: "我想咨询课程相关信息，请联系我。",
-        EN: "I would like to inquire about course information. Please contact me.",
+        ZH: "请简单说明您的需求：企业 AI 落地、实训营报名或其他合作。",
+        EN: "Tell us briefly what you need: enterprise AI delivery, program enrolment or other partnership.",
       },
       cancel: { ZH: "取消", EN: "Cancel" },
       submit: { ZH: "提交", EN: "Submit" },
@@ -855,20 +645,20 @@ export const homeContent = {
   // Footer
   footer: {
     tagline: {
-      ZH: "用AI进化学习力",
-      EN: "Evolve Learning with AI",
+      ZH: "企业 AI 陪跑专家",
+      EN: "Enterprise AI Partner",
     },
     quickNav: {
       ZH: "快速导航",
       EN: "Quick Navigation",
     },
     trainingCamps: {
-      ZH: "实训营",
-      EN: "Training Camps",
+      ZH: "成长路径与服务",
+      EN: "Programs & Services",
     },
     platformLinks: {
-      alpha: { ZH: "ALPHA 实训营", EN: "ALPHA Training Camp" },
-      beta: { ZH: "BETA 实训营", EN: "BETA Training Camp" },
+      alpha: { ZH: "Alpha 实训营", EN: "Alpha Training Camp" },
+      beta: { ZH: "Beta 实训营", EN: "Beta Training Camp" },
       platform: { ZH: "学习平台", EN: "Learning Platform" },
     },
     contactInfo: {
@@ -878,18 +668,16 @@ export const homeContent = {
       },
     },
     copyright: {
-      ZH: "© 2025 BEEBEE AI 学习力平台. All rights reserved.",
-      EN: "© 2025 BEEBEE AI Learning Platform. All rights reserved.",
+      ZH: "© 2025 BEEBEE AI Ltd. All rights reserved.",
+      EN: "© 2025 BEEBEE AI Ltd. All rights reserved.",
     },
   },
 
   // Navigation (for reuse in header and footer)
   nav: {
     home: { ZH: "首页", EN: "Home" },
-    platform: { ZH: "学习力平台", EN: "Learning Platform" },
-    system: { ZH: "学习体系", EN: "Curriculum" },
+    platform: { ZH: "成长路径", EN: "Growth Path" },
     works: { ZH: "学员作品", EN: "Student Works" },
-    philosophy: { ZH: "品牌理念", EN: "Philosophy" },
     about: { ZH: "关于我们", EN: "About Us" },
     contact: { ZH: "联系我们", EN: "Contact Us" },
   },
