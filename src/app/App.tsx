@@ -73,7 +73,6 @@ function HomePage() {
       <Helmet>
         <meta name="keywords" content="企业 AI 陪跑, 企业 Agent 平台, AI Agent 落地, 企业 AI 咨询, 业务流程自动化, AI Native, 可管理的 Agent, 新西兰 AI 落地, BEEBEE AI, BEE Sigma" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://beebee.ai" />
       </Helmet>
       <Navigation />
       
