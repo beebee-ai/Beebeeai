@@ -6,6 +6,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { homeContent, t } from './locales/homeContent';
 import { ContactForm } from './components/ContactForm';
+import { GoogleReviewLink } from './components/GoogleReviewLink';
 import { Toaster } from 'sonner';
 import { StudentWorksSection } from './components/StudentWorksSection';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
@@ -313,6 +314,10 @@ function HomePage() {
                   <p key={idx} className="leading-6" style={{ color: 'var(--txt-2)', fontSize: '14px' }}>{addr}</p>
                 ))}
               </div>
+              <div className="mt-7 pt-6" style={{ borderTop: '1px solid var(--bd)' }}>
+                <p className="text-sm leading-6" style={{ color: 'var(--txt-2)' }}>{language === 'ZH' ? '来访交流或体验过我们的服务？欢迎在 Google 分享你的真实体验与建议。' : 'Visited us or experienced our services? Share your honest experience and feedback on Google.'}</p>
+                <GoogleReviewLink className="mt-4" />
+              </div>
             </Reveal>
             <Reveal className="panel p-7 md:p-8" delay={0.08}>
               <h3 className="mb-6" style={{ color: 'var(--txt)' }}>{t(homeContent.contact.formTitle, language)}</h3>
@@ -337,6 +342,7 @@ function HomePage() {
               <div className="mt-4 space-y-1.5 text-[13px] leading-6">
                 {t(homeContent.footer.contactInfo.address, language).split('\n').map((addr, idx) => <p key={idx} className="text-[13px]">{addr}</p>)}
               </div>
+              <GoogleReviewLink compact className="mt-4" />
             </div>
 
             {/* 教育培训 */}
